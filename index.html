@@ -7,55 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERWEB | Creación de páginas web profesionales en Guatemala</title>
+<title>ERWEB | Creación de páginas web en Guatemala</title>
 
 <meta name="description"
-content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala. Diseño web, publicación, mantenimiento e integración con redes sociales.">
+content="ERWEB Guatemala - Creación de páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos. Diseño web, mantenimiento, publicación e integración con WhatsApp y redes sociales.">
 
 <meta name="keywords"
-content="páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, diseño de sitios web, páginas para empresas, páginas para negocios, ERWEB">
+content="páginas web Guatemala, creación de páginas web Guatemala, diseño web Guatemala, páginas web para empresas, páginas web para negocios, diseño de páginas web, ERWEB">
 
 <meta name="author" content="ERWEB">
 
 <meta name="robots" content="index, follow">
 
-<meta name="language" content="Spanish">
+<meta name="theme-color" content="#07111f">
 
-<link rel="canonical" href="https://erweb-inicio.github.io/erweb/">
-
-<!-- Open Graph para Facebook y redes sociales -->
-
-<meta property="og:type" content="website">
-
-<meta property="og:title"
-content="ERWEB | Creación de páginas web profesionales">
-
-<meta property="og:description"
-content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
-
-<meta property="og:url"
-content="https://erweb-inicio.github.io/erweb/">
-
-<meta property="og:image"
-content="https://erweb-inicio.github.io/erweb/LOGO.jpg">
-
-<meta property="og:site_name" content="ERWEB">
-
-<meta property="og:locale" content="es_GT">
-
-<!-- Twitter / X -->
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title"
-content="ERWEB | Creación de páginas web profesionales">
-
-<meta name="twitter:description"
-content="Diseño y creación de páginas web profesionales para empresas, negocios y emprendimientos.">
-
-<meta name="twitter:image"
-content="https://erweb-inicio.github.io/erweb/LOGO.jpg">
-
+<link rel="canonical"
+href="https://TU-DOMINIO/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -68,6 +35,29 @@ rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<!-- =====================================================
+     OPEN GRAPH
+===================================================== -->
+
+<meta property="og:type"
+content="website">
+
+<meta property="og:title"
+content="ERWEB | Creación de páginas web en Guatemala">
+
+<meta property="og:description"
+content="Creamos páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos.">
+
+<meta property="og:image"
+content="LOGO.jpg">
+
+<meta property="og:site_name"
+content="ERWEB">
+
+<meta property="og:locale"
+content="es_GT">
 
 
 <style>
@@ -123,22 +113,27 @@ header {
 
     z-index: 1000;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    overflow: visible;
 }
 
 
 /* =====================================================
-   ÁREA DEL LOGO
-   ANIMACIÓN DE LUZ EN LAS 4 ORILLAS
+   CONTENEDOR DEL LOGO
 ===================================================== */
 
-.logo-wrapper {
+.logo-container {
 
     position: relative;
 
-    height: 78px;
+    height: 76px;
 
-    width: 245px;
+    width: 250px;
+
+    margin-left: 0;
 
     display: flex;
 
@@ -146,22 +141,24 @@ header {
 
     justify-content: flex-start;
 
-    overflow: hidden;
+    overflow: visible;
 
-    margin-left: 0;
+    padding: 5px 8px;
 
 }
 
 
-/* LÍNEA ANIMADA */
+/* =====================================================
+   ANIMACIÓN DE LUZ ALREDEDOR DEL LOGO
+===================================================== */
 
-.logo-wrapper::before {
+.logo-container::before {
 
     content: "";
 
     position: absolute;
 
-    inset: 1px;
+    inset: 0;
 
     border-radius: 8px;
 
@@ -171,10 +168,11 @@ header {
         conic-gradient(
             from 0deg,
             transparent 0deg,
-            transparent 300deg,
-            #00b7ff 325deg,
-            #ffffff 340deg,
-            #00b7ff 355deg,
+            transparent 35deg,
+            #00b7ff 55deg,
+            #ffffff 70deg,
+            #00b7ff 85deg,
+            transparent 105deg,
             transparent 360deg
         );
 
@@ -187,51 +185,91 @@ header {
     mask-composite: exclude;
 
     animation:
-        logoLight 3.5s linear infinite;
+        logoLight 4s linear infinite;
+
+    filter:
+        drop-shadow(0 0 5px #00b7ff)
+        drop-shadow(0 0 10px rgba(0,183,255,0.65));
 
     pointer-events: none;
 
+    z-index: 2;
 }
 
 
-/* SEGUNDA CAPA SUAVE DE BRILLO */
+/* SEGUNDO BRILLO SUTIL */
 
-.logo-wrapper::after {
+.logo-container::after {
 
     content: "";
 
     position: absolute;
 
-    inset: 0;
+    inset: 2px;
 
     border-radius: 8px;
 
     box-shadow:
-        0 0 8px rgba(0,183,255,0.25);
+        0 0 8px rgba(0,183,255,0.15);
+
+    animation:
+        logoGlow 2s ease-in-out infinite alternate;
 
     pointer-events: none;
 
+    z-index: 1;
 }
 
+
+/* MOVIMIENTO CONTINUO POR LAS CUATRO ORILLAS */
 
 @keyframes logoLight {
 
     0% {
-        transform: rotate(0deg);
+        transform:
+            rotate(0deg);
     }
 
     100% {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
 
 }
 
 
-/* LOGO */
+/* BRILLO */
+
+@keyframes logoGlow {
+
+    from {
+
+        opacity: 0.35;
+
+        box-shadow:
+            0 0 5px rgba(0,183,255,0.15);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 18px rgba(0,183,255,0.45);
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo-img {
 
-    height: 125px;
+    height: 72px;
 
     width: auto;
 
@@ -245,9 +283,9 @@ header {
 
     position: relative;
 
-    z-index: 2;
+    z-index: 3;
 
-    margin-left: 0;
+    margin: 0;
 
 }
 
@@ -264,7 +302,7 @@ nav {
 
     align-items: center;
 
-    gap: 30px;
+    gap: 28px;
 
     padding-right: 5%;
 }
@@ -287,7 +325,6 @@ nav a {
 nav a:hover {
 
     color: #00b7ff;
-
 }
 
 
@@ -304,7 +341,6 @@ nav a:hover {
     margin-left: auto;
 
     margin-right: 5%;
-
 }
 
 
@@ -371,7 +407,8 @@ nav a:hover {
 
     padding: 40px 25px;
 
-    background: rgba(3,10,18,0.18);
+    background:
+        rgba(3,10,18,0.18);
 
     border-radius: 20px;
 }
@@ -398,7 +435,8 @@ nav a:hover {
 
 .hero h1 {
 
-    font-size: clamp(45px,7vw,82px);
+    font-size:
+        clamp(45px,7vw,82px);
 
     line-height: 1.05;
 
@@ -473,7 +511,8 @@ section {
 
 .section-title h2 {
 
-    font-size: clamp(38px,5vw,56px);
+    font-size:
+        clamp(38px,5vw,56px);
 
     margin-top: 10px;
 
@@ -801,8 +840,6 @@ section {
 }
 
 
-/* IMÁGENES PROCESO */
-
 .process-talk {
 
     background-image:
@@ -919,13 +956,11 @@ section {
 }
 
 
-/* TEXTO MÁS GRANDE Y VISIBLE */
-
 .web-design-overlay span {
 
     color: #00c8ff;
 
-    font-size: 21px;
+    font-size: 18px;
 
     font-weight: 800;
 
@@ -942,17 +977,17 @@ section {
 
     margin-top: 8px;
 
-    font-size: 22px;
+    font-size: 24px;
 }
 
 
 .web-design-overlay p {
 
-    color: #c6d0dc;
+    color: #ffffff;
 
     margin-top: 8px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.6;
 }
@@ -1098,7 +1133,9 @@ section {
 }
 
 
-/* COSTOS */
+/* =====================================================
+   COSTOS
+===================================================== */
 
 .cost-box {
 
@@ -1148,23 +1185,9 @@ section {
 }
 
 
-/* DESCRIPCIÓN DEL PAGO */
-
-.payment-description {
-
-    color: #aeb9c5;
-
-    font-size: 12px;
-
-    line-height: 1.6;
-
-    margin-top: -12px;
-
-    margin-bottom: 18px;
-}
-
-
-/* MANTENIMIENTO */
+/* =====================================================
+   MANTENIMIENTO
+===================================================== */
 
 .maintenance {
 
@@ -1213,7 +1236,9 @@ section {
 }
 
 
-/* NOTA GENERAL */
+/* =====================================================
+   NOTA
+===================================================== */
 
 .maintenance-note {
 
@@ -1574,12 +1599,12 @@ footer p {
 
     nav {
 
-        gap: 18px;
+        gap: 16px;
     }
 
     nav a {
 
-        font-size: 15px;
+        font-size: 14px;
     }
 
 }
@@ -1593,23 +1618,26 @@ footer p {
     }
 
 
-    /* LOGO EN CELULAR */
+    /* LOGO MÁS GRANDE PERO COMPLETO */
 
-    .logo-wrapper {
+    .logo-container {
 
-        width: 205px;
+        width: 220px;
 
-        height: 74px;
+        height: 72px;
+
+        padding:
+            4px 7px;
     }
 
 
     .logo-img {
 
-        height: 112px;
+        height: 66px;
 
-        max-width: 195px;
+        max-width: 205px;
 
-        margin-left: 0;
+        object-fit: contain;
     }
 
 
@@ -1640,12 +1668,6 @@ footer p {
     nav.active {
 
         display: flex;
-    }
-
-
-    nav a {
-
-        font-size: 17px;
     }
 
 
@@ -1741,12 +1763,6 @@ footer p {
     }
 
 
-    .web-design-overlay span {
-
-        font-size: 18px;
-    }
-
-
     .social-floating {
 
         right: 15px;
@@ -1799,7 +1815,7 @@ footer p {
 
     <a href="#inicio"
        aria-label="ERWEB Inicio"
-       class="logo-wrapper">
+       class="logo-container">
 
         <img
             src="LOGO.jpg"
@@ -1928,18 +1944,13 @@ footer p {
 
         <div class="service-card service-web">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-code"></i>
-
             </div>
-
 
             <h3>
                 Página web
             </h3>
-
 
             <p>
 
@@ -1948,24 +1959,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-store">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-cart-shopping"></i>
-
             </div>
-
 
             <h3>
                 Tiendas online (dentro de la página web)
             </h3>
-
 
             <p>
 
@@ -1974,24 +1979,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-responsive">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-mobile-screen-button"></i>
-
             </div>
-
 
             <h3>
                 Diseño adaptable
             </h3>
-
 
             <p>
 
@@ -2000,24 +1999,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-publish">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-rocket"></i>
-
             </div>
-
 
             <h3>
                 Publicación web
             </h3>
-
 
             <p>
 
@@ -2026,24 +2019,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-maintenance">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-screwdriver-wrench"></i>
-
             </div>
-
 
             <h3>
                 Mantenimiento
             </h3>
-
 
             <p>
 
@@ -2052,24 +2039,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-whatsapp">
 
-
             <div class="service-icon">
-
                 <i class="fa-brands fa-whatsapp"></i>
-
             </div>
-
 
             <h3>
                 Integración con WhatsApp
             </h3>
-
 
             <p>
 
@@ -2077,7 +2058,6 @@ footer p {
                 clientes puedan comunicarse directamente contigo.
 
             </p>
-
 
         </div>
 
@@ -2096,16 +2076,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             NUESTRO MÉTODO
         </small>
 
-
         <h2>
             ¿Cómo trabajamos?
         </h2>
-
 
     </div>
 
@@ -2115,96 +2092,72 @@ footer p {
 
         <div class="process-card process-talk">
 
-
             <div class="number">
                 1
             </div>
-
 
             <h3>
                 Hablamos
             </h3>
 
-
             <p>
-
                 Conocemos tu negocio
                 y lo que necesitas.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-design">
 
-
             <div class="number">
                 2
             </div>
-
 
             <h3>
                 Diseñamos
             </h3>
 
-
             <p>
-
                 Creamos una propuesta
                 visual para tu página.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-develop">
 
-
             <div class="number">
                 3
             </div>
-
 
             <h3>
                 Desarrollamos
             </h3>
 
-
             <p>
-
                 Construimos la página
                 y configuramos sus funciones.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-publish">
 
-
             <div class="number">
                 4
             </div>
-
 
             <h3>
                 Publicamos
             </h3>
 
-
             <p>
-
                 Ponemos tu sitio en Internet
                 para que tus clientes puedan encontrarlo.
-
             </p>
-
 
         </div>
 
@@ -2225,16 +2178,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             CREACIÓN WEB
         </small>
 
-
         <h2>
             Diseñamos tu presencia digital
         </h2>
-
 
         <p>
 
@@ -2245,7 +2195,6 @@ footer p {
 
         </p>
 
-
     </div>
 
 
@@ -2253,7 +2202,6 @@ footer p {
 
 
         <div class="web-design-card">
-
 
             <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
@@ -2263,16 +2211,13 @@ footer p {
 
             <div class="web-design-overlay">
 
-
                 <span>
                     DISEÑO Y DESARROLLO
                 </span>
 
-
                 <h3>
                     Páginas web profesionales
                 </h3>
-
 
                 <p>
 
@@ -2281,15 +2226,12 @@ footer p {
 
                 </p>
 
-
             </div>
-
 
         </div>
 
 
         <div class="web-design-card">
-
 
             <img
                 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
@@ -2299,16 +2241,13 @@ footer p {
 
             <div class="web-design-overlay">
 
-
                 <span>
                     DISEÑO ADAPTABLE
                 </span>
 
-
                 <h3>
                     Tu web en cualquier dispositivo
                 </h3>
-
 
                 <p>
 
@@ -2317,9 +2256,7 @@ footer p {
 
                 </p>
 
-
             </div>
-
 
         </div>
 
@@ -2340,16 +2277,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             OPCIONES
         </small>
 
-
         <h2>
             Costos de creación de páginas web
         </h2>
-
 
         <p>
 
@@ -2357,7 +2291,6 @@ footer p {
             a las necesidades de tu negocio.
 
         </p>
-
 
     </div>
 
@@ -2371,16 +2304,13 @@ footer p {
 
         <div class="plan">
 
-
             <div class="plan-label">
                 PLAN 01
             </div>
 
-
             <h3>
                 Página Inicial Básica
             </h3>
-
 
             <p class="plan-description">
 
@@ -2397,79 +2327,50 @@ footer p {
 
             <ul>
 
-                <li>
-                    Página informativa
-                </li>
+                <li>Página informativa</li>
 
-                <li>
-                    Diseño adaptable
-                </li>
+                <li>Diseño adaptable</li>
 
-                <li>
-                    Sección de contacto
-                </li>
+                <li>Sección de contacto</li>
 
-                <li>
-                    Botón de WhatsApp
-                </li>
+                <li>Botón de WhatsApp</li>
 
-                <li>
-                    Publicación web
-                </li>
+                <li>Publicación web</li>
 
-                <li>
-                    Galería de imágenes
-                </li>
+                <li>Galería de imágenes</li>
 
-                <li>
-                    Optimización para celulares
-                </li>
+                <li>Optimización para celulares</li>
 
-                <li>
-                    Soporte
-                </li>
+                <li>Soporte</li>
 
             </ul>
 
 
             <div class="cost-box">
 
-
                 <div class="cost-title">
-                    Costo de creación
+                    Costo de creación — pago único por creación de página
                 </div>
-
 
                 <div class="price">
-                    Q750 – Q950
+                    Q750–Q950
                 </div>
-
-
-                <p class="payment-description">
-
-                    Pago único por la creación y desarrollo
-                    de la página web.
-
-                </p>
 
 
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
 
-
                 <div class="maintenance-price">
-                    Q700 – Q950
+                    Q700–Q950
                 </div>
 
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
-
 
                     <p>
 
@@ -2482,9 +2383,7 @@ footer p {
 
                     </p>
 
-
                 </div>
-
 
             </div>
 
@@ -2509,11 +2408,9 @@ footer p {
 
         <div class="plan">
 
-
             <div class="plan-label">
                 PLAN 02
             </div>
-
 
             <h3>
                 Página Profesional
@@ -2536,106 +2433,57 @@ footer p {
 
             <ul>
 
-                <li>
-                    Diseño personalizado
-                </li>
+                <li>Diseño personalizado</li>
 
-                <li>
-                    Varias secciones
-                </li>
+                <li>Varias secciones</li>
 
-                <li>
-                    Galería de imágenes
-                </li>
+                <li>Galería de imágenes</li>
 
-                <li>
-                    Videos
-                </li>
+                <li>Videos</li>
 
-                <li>
-                    Botón de WhatsApp
-                </li>
+                <li>Botón de WhatsApp</li>
 
-                <li>
-                    Botón de correo electrónico
-                </li>
+                <li>Botón de correo electrónico</li>
 
-                <li>
-                    Botón de Facebook
-                </li>
+                <li>Botón de Facebook</li>
 
-                <li>
-                    Botón de Instagram
-                </li>
+                <li>Botón de Instagram</li>
 
-                <li>
-                    Botón de TikTok
-                </li>
+                <li>Botón de TikTok</li>
 
-                <li>
-                    Formulario de contacto
-                </li>
+                <li>Formulario de contacto</li>
 
-                <li>
-                    Optimización para celulares
-                </li>
+                <li>Optimización para celulares</li>
 
-                <li>
-                    Publicación web
-                </li>
+                <li>Publicación web</li>
 
-                <li>
-                    Pestañas para catálogo de productos
-                </li>
+                <li>Sección para subir CVs o currículums</li>
 
-                <li>
-                    Sección para subir CVs o currículums
-                </li>
+                <li>Pestañas para catálogo de productos</li>
 
-                <li>
-                    Integración con redes sociales
-                </li>
+                <li>Integración con redes sociales</li>
 
-                <li>
-                    Soporte
-                </li>
+                <li>Soporte técnico</li>
 
-                <li>
-                    Configuración técnica y seguridad básica
-                </li>
-
-                <li>
-                    Estructura preparada para futuras mejoras
-                </li>
+                <li>Configuración técnica y seguridad básica</li>
 
             </ul>
 
 
             <div class="cost-box">
 
-
                 <div class="cost-title">
-                    Costo de creación
+                    Costo de creación — pago único por creación de página
                 </div>
-
 
                 <div class="price">
                     Q1,400
                 </div>
 
 
-                <p class="payment-description">
-
-                    Pago único por la creación y desarrollo
-                    de la página web.
-
-                </p>
-
-
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
-
 
                 <div class="maintenance-price">
                     Q1,350
@@ -2644,11 +2492,9 @@ footer p {
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
-
 
                     <p>
 
@@ -2661,9 +2507,7 @@ footer p {
 
                     </p>
 
-
                 </div>
-
 
             </div>
 
@@ -2687,11 +2531,9 @@ footer p {
 
     <div class="maintenance-note">
 
-
         <h3>
             Mantenimiento de tu página web
         </h3>
-
 
         <p>
 
@@ -2706,7 +2548,6 @@ footer p {
             establecidas para el servicio.
 
         </p>
-
 
     </div>
 
@@ -2724,22 +2565,18 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             SOBRE ERWEB
         </small>
-
 
         <h2>
             Transformamos ideas en páginas web
         </h2>
 
-
     </div>
 
 
     <div class="about-content">
-
 
         <p>
 
@@ -2759,7 +2596,6 @@ footer p {
 
         </p>
 
-
     </div>
 
 </section>
@@ -2776,22 +2612,18 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             HABLEMOS
         </small>
-
 
         <h2>
             ¿Tienes un proyecto?
         </h2>
 
-
     </div>
 
 
     <div class="contact-box">
-
 
         <h3>
             Cuéntanos qué necesitas
@@ -2818,7 +2650,6 @@ footer p {
             Escribir por Messenger
 
         </a>
-
 
     </div>
 
