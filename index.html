@@ -1,75 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ERWEB | Creación de páginas web profesionales</title>
-
-<meta name="description"
-content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala. Diseño web, publicación, mantenimiento e integración con redes sociales.">
-
-<meta name="robots" content="index, follow">
-
-<meta name="author" content="ERWEB">
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ERWEB | Creación de páginas web profesionales en Guatemala</title><meta name="description"
+content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala. Diseño web, publicación, mantenimiento e integración con WhatsApp y redes sociales.">
 
 <meta name="keywords"
-content="páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, ERWEB, sitios web, páginas para empresas, páginas para negocios">
+content="ERWEB, páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, páginas web para negocios, desarrollo web Guatemala">
 
-<meta property="og:title"
-content="ERWEB | Creación de páginas web profesionales">
-
-<meta property="og:description"
-content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
-
-<meta property="og:type" content="website">
-
-<meta property="og:locale" content="es_GT">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-<!-- DATOS ESTRUCTURADOS PARA GOOGLE -->
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "ERWEB",
-  "description": "Creación de páginas web profesionales, modernas y adaptadas a celulares.",
-  "email": "erwebinicio@gmail.com",
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61594227622678"
-  ],
-  "areaServed": {
-    "@type": "Country",
-    "name": "Guatemala"
-  },
-  "serviceType": [
-    "Diseño web",
-    "Creación de páginas web",
-    "Publicación web",
-    "Mantenimiento de páginas web",
-    "Integración con redes sociales"
-  ]
-}
-</script>
-
-
-<style>
+<meta name="author" content="ERWEB"><meta name="robots" content="index, follow"><meta name="theme-color" content="#07111f"><link rel="canonical"
+href="https://www.facebook.com/profile.php?id=61594227622678"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"><link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
 
 /* =====================================================
    CONFIGURACIÓN GENERAL
@@ -86,13 +25,9 @@ html {
 }
 
 body {
-
     font-family: 'Montserrat', sans-serif;
-
     background: #07111f;
-
     color: white;
-
     overflow-x: hidden;
 }
 
@@ -126,248 +61,144 @@ header {
 
     z-index: 1000;
 
-    border-bottom:
-        1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 
 /* =====================================================
-   ÁREA DEL LOGO
-   LA ANIMACIÓN SE APLICA AL MARCO COMPLETO
+   LOGO + MARCO ANIMADO
 ===================================================== */
 
-.logo-area {
+.logo-link {
+
+    display: block;
+
+    margin: 0;
+
+    padding: 0;
+
+    line-height: 0;
+
+    text-decoration: none;
+}
+
+
+/*
+   El marco tiene exactamente el tamaño del logo.
+   La luz gira dentro de sus propios límites.
+*/
+
+.logo-frame {
 
     position: relative;
 
-    width: 330px;
+    height: 76px;
 
-    height: 78px;
+    width: auto;
 
-    display: flex;
+    max-width: 310px;
+
+    display: inline-flex;
 
     align-items: center;
 
-    justify-content: flex-start;
+    justify-content: center;
 
-    flex-shrink: 0;
+    overflow: hidden;
 
-    margin-left: 0;
+    border-radius: 3px;
 
-    overflow: visible;
+    padding: 2px;
+
+    background: #07111f;
 }
 
 
-/* BORDE BASE */
+/*
+   Línea luminosa giratoria.
+   El gradiente gira sobre el mismo rectángulo
+   del logo y no puede desplazarse fuera de él.
+*/
 
-.logo-area::before {
+.logo-frame::before {
 
     content: "";
 
     position: absolute;
 
-    inset: 1px;
-
-    border:
-        2px solid
-        rgba(0,183,255,0.35);
-
-    border-radius: 4px;
-
-    pointer-events: none;
-
-    z-index: 3;
-}
-
-
-/* =====================================================
-   LUZ QUE RECORRE LAS 4 ORILLAS
-===================================================== */
-
-.logo-area::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: -1px;
-
-    left: -1px;
-
-    width: 55px;
-
-    height: 3px;
+    inset: 0;
 
     background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #ffffff,
-            #7de7ff,
-            #00b7ff,
-            #ffffff,
-            transparent
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 320deg,
+            #00b7ff 340deg,
+            #ffffff 350deg,
+            #00b7ff 355deg,
+            transparent 360deg
         );
 
-    border-radius: 10px;
+    animation: logoLight 4s linear infinite;
 
-    box-shadow:
-        0 0 7px #00b7ff,
-        0 0 15px #00b7ff,
-        0 0 28px rgba(0,183,255,0.85);
-
-    pointer-events: none;
-
-    z-index: 10;
-
-    animation:
-        luzLogo 6s linear infinite;
+    z-index: 0;
 }
 
 
-/* =====================================================
-   RECORRIDO COMPLETO:
-   SUPERIOR → DERECHA → INFERIOR → IZQUIERDA
-===================================================== */
+/*
+   Segunda capa interior.
+   Oculta el centro del gradiente y deja visible
+   únicamente el efecto sobre las cuatro orillas.
+*/
 
-@keyframes luzLogo {
+.logo-frame::after {
 
-    /* BORDE SUPERIOR */
+    content: "";
 
-    0% {
+    position: absolute;
 
-        top: -1px;
+    inset: 2px;
 
-        left: -1px;
+    background: #07111f;
 
-        width: 55px;
+    border-radius: 2px;
 
-        height: 3px;
-    }
-
-
-    23% {
-
-        top: -1px;
-
-        left: calc(100% - 54px);
-
-        width: 55px;
-
-        height: 3px;
-    }
-
-
-    /* BAJA POR EL BORDE DERECHO */
-
-    25% {
-
-        top: -1px;
-
-        left: calc(100% - 4px);
-
-        width: 3px;
-
-        height: 55px;
-    }
-
-
-    48% {
-
-        top: calc(100% - 54px);
-
-        left: calc(100% - 4px);
-
-        width: 3px;
-
-        height: 55px;
-    }
-
-
-    /* RECORRE BORDE INFERIOR */
-
-    50% {
-
-        top: calc(100% - 4px);
-
-        left: calc(100% - 54px);
-
-        width: 55px;
-
-        height: 3px;
-    }
-
-
-    73% {
-
-        top: calc(100% - 4px);
-
-        left: -1px;
-
-        width: 55px;
-
-        height: 3px;
-    }
-
-
-    /* SUBE POR BORDE IZQUIERDO */
-
-    75% {
-
-        top: calc(100% - 54px);
-
-        left: -1px;
-
-        width: 3px;
-
-        height: 55px;
-    }
-
-
-    98% {
-
-        top: -1px;
-
-        left: -1px;
-
-        width: 3px;
-
-        height: 55px;
-    }
-
-
-    100% {
-
-        top: -1px;
-
-        left: -1px;
-
-        width: 55px;
-
-        height: 3px;
-    }
+    z-index: 1;
 }
 
-
-/* LOGO */
 
 .logo-img {
-
-    width: 100%;
-
-    height: 76px;
-
-    object-fit: contain;
-
-    object-position: left center;
-
-    display: block;
 
     position: relative;
 
     z-index: 2;
 
-    padding: 2px 8px 2px 0;
+    height: 72px;
+
+    width: auto;
+
+    max-width: 306px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/*
+   Animación continua alrededor del rectángulo.
+*/
+
+@keyframes logoLight {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
 }
 
 
@@ -385,7 +216,7 @@ nav {
 
     gap: 30px;
 
-    padding-right: 4%;
+    padding-right: 5%;
 }
 
 nav a {
@@ -394,7 +225,7 @@ nav a {
 
     text-decoration: none;
 
-    font-size: 16px;
+    font-size: 17px;
 
     font-weight: 700;
 
@@ -405,13 +236,11 @@ nav a {
 
 nav a:hover {
 
-    color: #00c8ff;
-
-    transform: translateY(-1px);
+    color: #00b7ff;
 }
 
 
-/* BOTÓN MENÚ */
+/* BOTÓN MENÚ CELULAR */
 
 .menu-btn {
 
@@ -428,7 +257,7 @@ nav a:hover {
 
 
 /* =====================================================
-   HERO
+   INICIO / HERO
 ===================================================== */
 
 .hero {
@@ -490,8 +319,7 @@ nav a:hover {
 
     padding: 40px 25px;
 
-    background:
-        rgba(3,10,18,0.18);
+    background: rgba(3,10,18,0.18);
 
     border-radius: 20px;
 }
@@ -499,7 +327,7 @@ nav a:hover {
 
 .hero small {
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     font-weight: 800;
 
@@ -518,8 +346,7 @@ nav a:hover {
 
 .hero h1 {
 
-    font-size:
-        clamp(45px,7vw,82px);
+    font-size: clamp(45px,7vw,82px);
 
     line-height: 1.05;
 
@@ -534,7 +361,7 @@ nav a:hover {
 
 .hero h1 span {
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     text-shadow:
         0 3px 15px rgba(0,183,255,0.5);
@@ -578,13 +405,13 @@ section {
 
 .section-title small {
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     font-weight: 800;
 
     letter-spacing: 2px;
 
-    font-size: 30px;
+    font-size: 28px;
 
     display: block;
 
@@ -594,8 +421,7 @@ section {
 
 .section-title h2 {
 
-    font-size:
-        clamp(40px,5vw,58px);
+    font-size: clamp(38px,5vw,56px);
 
     margin-top: 10px;
 
@@ -704,7 +530,7 @@ section {
         translateY(-8px);
 
     border-color:
-        #00c8ff;
+        #00b7ff;
 }
 
 
@@ -737,7 +563,7 @@ section {
 
     margin-bottom: 12px;
 
-    font-size: 22px;
+    font-size: 21px;
 }
 
 
@@ -751,7 +577,9 @@ section {
 }
 
 
-/* IMÁGENES */
+/* =====================================================
+   IMÁGENES SERVICIOS
+===================================================== */
 
 .service-web {
 
@@ -874,7 +702,7 @@ section {
         translateY(-7px);
 
     border-color:
-        #00c8ff;
+        #00b7ff;
 }
 
 
@@ -922,6 +750,10 @@ section {
     line-height: 1.6;
 }
 
+
+/* =====================================================
+   IMÁGENES PROCESO
+===================================================== */
 
 .process-talk {
 
@@ -1041,17 +873,16 @@ section {
 
 .web-design-overlay span {
 
-    color: #00c8ff;
+    color: #19c9ff;
 
-    font-size: 19px;
+    font-size: 18px;
 
     font-weight: 800;
 
     letter-spacing: 1.5px;
 
-    display: block;
-
-    margin-bottom: 8px;
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.9);
 }
 
 
@@ -1059,7 +890,7 @@ section {
 
     margin-top: 8px;
 
-    font-size: 25px;
+    font-size: 22px;
 }
 
 
@@ -1137,7 +968,7 @@ section {
 
 .plan-label {
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     font-size: 14px;
 
@@ -1207,7 +1038,7 @@ section {
 
     content: "✓";
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     font-weight: 900;
 
@@ -1247,7 +1078,7 @@ section {
 
     font-weight: 800;
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     margin:
         5px 0 20px;
@@ -1264,6 +1095,24 @@ section {
 
     margin:
         5px 0 20px;
+}
+
+
+/* =====================================================
+   DESCRIPCIÓN DEL PAGO
+===================================================== */
+
+.payment-description {
+
+    color: #aeb9c5;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-top: -10px;
+
+    margin-bottom: 18px;
 }
 
 
@@ -1292,7 +1141,7 @@ section {
 
     font-size: 14px;
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     margin-bottom: 8px;
 }
@@ -1318,7 +1167,7 @@ section {
 }
 
 
-/* NOTA */
+/* NOTA GENERAL */
 
 .maintenance-note {
 
@@ -1343,7 +1192,7 @@ section {
 
 .maintenance-note h3 {
 
-    color: #00c8ff;
+    color: #00b7ff;
 
     font-size: 23px;
 
@@ -1478,7 +1327,7 @@ section {
 
 
 /* =====================================================
-   BOTONES
+   BOTONES GENERALES
 ===================================================== */
 
 .btn {
@@ -1639,7 +1488,7 @@ footer {
 
 .footer-logo {
 
-    height: 80px;
+    height: 70px;
 
     width: auto;
 
@@ -1683,16 +1532,6 @@ footer p {
             1fr 1fr;
     }
 
-    nav {
-
-        gap: 18px;
-    }
-
-    nav a {
-
-        font-size: 14px;
-    }
-
 }
 
 
@@ -1704,27 +1543,25 @@ footer p {
     }
 
 
-    /* LOGO EN CELULAR */
+    /*
+       En celular el logo sigue completo
+       y el marco conserva exactamente
+       sus dimensiones.
+    */
 
-    .logo-area {
+    .logo-frame {
 
-        width: 270px;
+        height: 70px;
 
-        height: 72px;
-
-        max-width: 78vw;
+        max-width: 270px;
     }
 
 
     .logo-img {
 
-        width: 100%;
+        height: 66px;
 
-        height: 70px;
-
-        object-fit: contain;
-
-        padding-right: 5px;
+        max-width: 266px;
     }
 
 
@@ -1852,13 +1689,7 @@ footer p {
 
     .web-design-overlay span {
 
-        font-size: 17px;
-    }
-
-
-    .web-design-overlay h3 {
-
-        font-size: 21px;
+        font-size: 16px;
     }
 
 
@@ -1897,510 +1728,465 @@ footer p {
 
 }
 
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
+</style></head><body><!-- =====================================================
      HEADER
-===================================================== -->
+===================================================== --><header><a href="#inicio"
+   class="logo-link"
+   aria-label="ERWEB Inicio">
 
-<header>
-
-
-    <a
-        href="#inicio"
-        aria-label="ERWEB Inicio"
-        class="logo-area">
+    <div class="logo-frame">
 
         <img
             src="LOGO.jpg"
-            alt="Logo ERWEB"
+            alt="ERWEB - Creación de páginas web"
             class="logo-img">
 
+    </div>
+
+</a>
+
+
+<div
+    class="menu-btn"
+    onclick="toggleMenu()"
+    aria-label="Abrir menú">
+
+    <i class="fa-solid fa-bars"></i>
+
+</div>
+
+
+<nav id="menu">
+
+    <a href="#inicio">
+        Inicio
     </a>
 
+    <a href="#servicios">
+        Servicios
+    </a>
 
-    <div
-        class="menu-btn"
-        onclick="toggleMenu()"
-        aria-label="Abrir menú">
+    <a href="#diseno-web">
+        Diseño web
+    </a>
 
-        <i class="fa-solid fa-bars"></i>
+    <a href="#planes">
+        Costos
+    </a>
+
+    <a href="#contacto">
+        Contacto
+    </a>
+
+</nav>
+
+</header><!-- =====================================================
+     INICIO
+===================================================== --><section
+    class="hero"
+    id="inicio"><div class="hero-content">
+
+
+    <small>
+
+        DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
+
+    </small>
+
+
+    <h1>
+
+        Tu negocio merece
+        una web
+
+        <span>
+            profesional.
+        </span>
+
+    </h1>
+
+
+    <p>
+
+        En ERWEB creamos páginas web modernas,
+        rápidas y adaptadas a celulares para ayudarte
+        a mostrar tu negocio en Internet.
+
+    </p>
+
+
+</div>
+
+</section><!-- =====================================================
+     SERVICIOS
+===================================================== --><section
+    class="services"
+    id="servicios"><div class="section-title">
+
+
+    <small>
+        LO QUE HACEMOS
+    </small>
+
+
+    <h2>
+        Nuestro servicio
+    </h2>
+
+
+    <p>
+
+        Soluciones web pensadas para empresas,
+        negocios y emprendimientos que quieren
+        tener presencia profesional en Internet.
+
+    </p>
+
+
+</div>
+
+
+<div class="service-grid">
+
+
+    <div class="service-card service-web">
+
+
+        <div class="service-icon">
+
+            <i class="fa-solid fa-code"></i>
+
+        </div>
+
+
+        <h3>
+            Página web
+        </h3>
+
+
+        <p>
+
+            Creamos sitios web modernos y profesionales
+            adaptados a las necesidades de cada negocio.
+
+        </p>
+
 
     </div>
 
 
-    <nav id="menu">
-
-        <a href="#inicio">
-            Inicio
-        </a>
-
-        <a href="#servicios">
-            Servicios
-        </a>
-
-        <a href="#diseno-web">
-            Diseño web
-        </a>
-
-        <a href="#planes">
-            Costos
-        </a>
-
-        <a href="#contacto">
-            Contacto
-        </a>
-
-    </nav>
-
-</header>
+    <div class="service-card service-store">
 
 
-<!-- =====================================================
-     INICIO
-===================================================== -->
+        <div class="service-icon">
 
-<section
-    class="hero"
-    id="inicio">
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
 
 
-    <div class="hero-content">
+        <h3>
+            Tiendas online (dentro de la página web)
+        </h3>
 
 
-        <small>
+        <p>
 
-            DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
+            Diseñamos catálogos y tiendas digitales
+            para mostrar productos y facilitar las ventas.
 
-        </small>
+        </p>
 
 
-        <h1>
+    </div>
 
-            Tu negocio merece
-            una web
+
+    <div class="service-card service-responsive">
+
+
+        <div class="service-icon">
+
+            <i class="fa-solid fa-mobile-screen-button"></i>
+
+        </div>
+
+
+        <h3>
+            Diseño adaptable
+        </h3>
+
+
+        <p>
+
+            Tu página funcionará correctamente
+            en celulares, tablets y computadoras.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="service-card service-publish">
+
+
+        <div class="service-icon">
+
+            <i class="fa-solid fa-rocket"></i>
+
+        </div>
+
+
+        <h3>
+            Publicación web
+        </h3>
+
+
+        <p>
+
+            Te ayudamos a publicar tu página en Internet
+            y dejarla disponible para tus clientes.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="service-card service-maintenance">
+
+
+        <div class="service-icon">
+
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+        </div>
+
+
+        <h3>
+            Mantenimiento
+        </h3>
+
+
+        <p>
+
+            Realizamos modificaciones, actualizaciones
+            y mejoras para mantener tu página actualizada.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="service-card service-whatsapp">
+
+
+        <div class="service-icon">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </div>
+
+
+        <h3>
+            Integración con WhatsApp
+        </h3>
+
+
+        <p>
+
+            Agregamos botones de contacto para que tus
+            clientes puedan comunicarse directamente contigo.
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+</section><!-- =====================================================
+     PROCESO
+===================================================== --><section id="proceso"><div class="section-title">
+
+
+    <small>
+        NUESTRO MÉTODO
+    </small>
+
+
+    <h2>
+        ¿Cómo trabajamos?
+    </h2>
+
+
+</div>
+
+
+<div class="process-grid">
+
+
+    <div class="process-card process-talk">
+
+
+        <div class="number">
+            1
+        </div>
+
+
+        <h3>
+            Hablamos
+        </h3>
+
+
+        <p>
+
+            Conocemos tu negocio
+            y lo que necesitas.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="process-card process-design">
+
+
+        <div class="number">
+            2
+        </div>
+
+
+        <h3>
+            Diseñamos
+        </h3>
+
+
+        <p>
+
+            Creamos una propuesta
+            visual para tu página.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="process-card process-develop">
+
+
+        <div class="number">
+            3
+        </div>
+
+
+        <h3>
+            Desarrollamos
+        </h3>
+
+
+        <p>
+
+            Construimos la página
+            y configuramos sus funciones.
+
+        </p>
+
+
+    </div>
+
+
+    <div class="process-card process-publish">
+
+
+        <div class="number">
+            4
+        </div>
+
+
+        <h3>
+            Publicamos
+        </h3>
+
+
+        <p>
+
+            Ponemos tu sitio en Internet
+            para que tus clientes puedan encontrarlo.
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+</section><!-- =====================================================
+     DISEÑO WEB
+===================================================== --><section
+    class="web-design"
+    id="diseno-web"><div class="section-title">
+
+
+    <small>
+        CREACIÓN WEB
+    </small>
+
+
+    <h2>
+        Diseñamos tu presencia digital
+    </h2>
+
+
+    <p>
+
+        Creamos páginas web modernas, atractivas
+        y adaptadas a diferentes dispositivos para
+        que tu negocio tenga una presencia profesional
+        en Internet.
+
+    </p>
+
+
+</div>
+
+
+<div class="web-design-grid">
+
+
+    <div class="web-design-card">
+
+
+        <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
+            alt="Diseño y desarrollo de páginas web"
+            loading="lazy">
+
+
+        <div class="web-design-overlay">
+
 
             <span>
-                profesional.
+                DISEÑO Y DESARROLLO
             </span>
 
-        </h1>
-
-
-        <p>
-
-            En ERWEB creamos páginas web modernas,
-            rápidas y adaptadas a celulares para ayudarte
-            a mostrar tu negocio en Internet.
-
-        </p>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SERVICIOS
-===================================================== -->
-
-<section
-    class="services"
-    id="servicios">
-
-
-    <div class="section-title">
-
-
-        <small>
-            LO QUE HACEMOS
-        </small>
-
-
-        <h2>
-            Nuestro servicio
-        </h2>
-
-
-        <p>
-
-            Soluciones web pensadas para empresas,
-            negocios y emprendimientos que quieren
-            tener una presencia profesional en Internet.
-
-        </p>
-
-
-    </div>
-
-
-    <div class="service-grid">
-
-
-        <div class="service-card service-web">
-
-            <div class="service-icon">
-
-                <i class="fa-solid fa-code"></i>
-
-            </div>
-
 
             <h3>
-                Página web
+                Páginas web profesionales
             </h3>
 
 
             <p>
 
-                Creamos sitios web modernos y profesionales
-                adaptados a las necesidades de cada negocio.
+                Diseños modernos pensados para
+                presentar tu negocio de manera profesional.
 
             </p>
-
-        </div>
-
-
-        <div class="service-card service-store">
-
-            <div class="service-icon">
-
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-
-
-            <h3>
-                Página web (tienda online)
-            </h3>
-
-
-            <p>
-
-                Diseñamos catálogos y páginas comerciales
-                para mostrar productos y facilitar las ventas.
-
-            </p>
-
-        </div>
-
-
-        <div class="service-card service-responsive">
-
-            <div class="service-icon">
-
-                <i class="fa-solid fa-mobile-screen-button"></i>
-
-            </div>
-
-
-            <h3>
-                Diseño adaptable
-            </h3>
-
-
-            <p>
-
-                Tu página funcionará correctamente
-                en celulares, tablets y computadoras.
-
-            </p>
-
-        </div>
-
-
-        <div class="service-card service-publish">
-
-            <div class="service-icon">
-
-                <i class="fa-solid fa-rocket"></i>
-
-            </div>
-
-
-            <h3>
-                Publicación web
-            </h3>
-
-
-            <p>
-
-                Te ayudamos a publicar tu página en Internet
-                y dejarla disponible para tus clientes.
-
-            </p>
-
-        </div>
-
-
-        <div class="service-card service-maintenance">
-
-            <div class="service-icon">
-
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-
-            </div>
-
-
-            <h3>
-                Mantenimiento
-            </h3>
-
-
-            <p>
-
-                Realizamos modificaciones, actualizaciones
-                y mejoras para mantener tu página actualizada.
-
-            </p>
-
-        </div>
-
-
-        <div class="service-card service-whatsapp">
-
-            <div class="service-icon">
-
-                <i class="fa-brands fa-whatsapp"></i>
-
-            </div>
-
-
-            <h3>
-                Integración con WhatsApp
-            </h3>
-
-
-            <p>
-
-                Agregamos botones de contacto para que tus
-                clientes puedan comunicarse directamente contigo.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PROCESO
-===================================================== -->
-
-<section id="proceso">
-
-
-    <div class="section-title">
-
-
-        <small>
-            NUESTRO MÉTODO
-        </small>
-
-
-        <h2>
-            ¿Cómo trabajamos?
-        </h2>
-
-
-    </div>
-
-
-    <div class="process-grid">
-
-
-        <div class="process-card process-talk">
-
-            <div class="number">
-                1
-            </div>
-
-            <h3>
-                Hablamos
-            </h3>
-
-            <p>
-                Conocemos tu negocio
-                y lo que necesitas.
-            </p>
-
-        </div>
-
-
-        <div class="process-card process-design">
-
-            <div class="number">
-                2
-            </div>
-
-            <h3>
-                Diseñamos
-            </h3>
-
-            <p>
-                Creamos una propuesta
-                visual para tu página.
-            </p>
-
-        </div>
-
-
-        <div class="process-card process-develop">
-
-            <div class="number">
-                3
-            </div>
-
-            <h3>
-                Desarrollamos
-            </h3>
-
-            <p>
-                Construimos la página
-                y configuramos sus funciones.
-            </p>
-
-        </div>
-
-
-        <div class="process-card process-publish">
-
-            <div class="number">
-                4
-            </div>
-
-            <h3>
-                Publicamos
-            </h3>
-
-            <p>
-                Ponemos tu sitio en Internet
-                para que tus clientes puedan encontrarlo.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     DISEÑO WEB
-===================================================== -->
-
-<section
-    class="web-design"
-    id="diseno-web">
-
-
-    <div class="section-title">
-
-
-        <small>
-            CREACIÓN WEB
-        </small>
-
-
-        <h2>
-            Diseñamos tu presencia digital
-        </h2>
-
-
-        <p>
-
-            Creamos páginas web modernas, atractivas
-            y adaptadas a diferentes dispositivos para
-            que tu negocio tenga una presencia profesional
-            en Internet.
-
-        </p>
-
-
-    </div>
-
-
-    <div class="web-design-grid">
-
-
-        <div class="web-design-card">
-
-
-            <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
-                alt="Diseño y desarrollo de páginas web profesionales"
-                loading="lazy">
-
-
-            <div class="web-design-overlay">
-
-
-                <span>
-                    DISEÑO Y DESARROLLO
-                </span>
-
-
-                <h3>
-                    Páginas web profesionales
-                </h3>
-
-
-                <p>
-
-                    Diseños modernos pensados para
-                    presentar tu negocio de manera profesional.
-
-                </p>
-
-
-            </div>
-
-
-        </div>
-
-
-        <div class="web-design-card">
-
-
-            <img
-                src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
-                alt="Diseño web adaptable para celulares"
-                loading="lazy">
-
-
-            <div class="web-design-overlay">
-
-
-                <span>
-                    DISEÑO ADAPTABLE
-                </span>
-
-
-                <h3>
-                    Tu web en cualquier dispositivo
-                </h3>
-
-
-                <p>
-
-                    Una experiencia visual preparada
-                    para celulares, tablets y computadoras.
-
-                </p>
-
-
-            </div>
 
 
         </div>
@@ -2408,561 +2194,601 @@ footer p {
 
     </div>
 
-</section>
+
+    <div class="web-design-card">
 
 
-<!-- =====================================================
+        <img
+            src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
+            alt="Diseño web adaptable"
+            loading="lazy">
+
+
+        <div class="web-design-overlay">
+
+
+            <span>
+                DISEÑO ADAPTABLE
+            </span>
+
+
+            <h3>
+                Tu web en cualquier dispositivo
+            </h3>
+
+
+            <p>
+
+                Una experiencia visual preparada
+                para celulares, tablets y computadoras.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+</section><!-- =====================================================
      COSTOS
-===================================================== -->
-
-<section
+===================================================== --><section
     class="plans"
-    id="planes">
+    id="planes"><div class="section-title">
 
 
-    <div class="section-title">
+    <small>
+        OPCIONES
+    </small>
 
 
-        <small>
-            OPCIONES
-        </small>
+    <h2>
+        Costos de creación de páginas web
+    </h2>
 
 
-        <h2>
-            Costos de creación de páginas web
-        </h2>
+    <p>
+
+        Elige la opción que mejor se adapte
+        a las necesidades de tu negocio.
+
+    </p>
 
 
-        <p>
+</div>
 
-            Elige la opción que mejor se adapte
-            a las necesidades de tu negocio.
+
+<div class="plans-grid">
+
+
+    <!-- =================================================
+         PLAN 1
+    ================================================== -->
+
+    <div class="plan">
+
+
+        <div class="plan-label">
+            PLAN 01
+        </div>
+
+
+        <h3>
+            Página Inicial Básica
+        </h3>
+
+
+        <p class="plan-description">
+
+            Una opción ideal para comenzar tu presencia
+            profesional en Internet.
 
         </p>
 
 
-    </div>
+        <div class="includes-title">
+            Incluye:
+        </div>
 
 
-    <div class="plans-grid">
+        <ul>
 
 
-        <!-- =================================================
-             PLAN 1
-        ================================================== -->
-
-        <div class="plan">
+            <li>
+                Página informativa
+            </li>
 
 
-            <div class="plan-label">
-                PLAN 01
+            <li>
+                Diseño adaptable
+            </li>
+
+
+            <li>
+                Sección de contacto
+            </li>
+
+
+            <li>
+                Botón de WhatsApp
+            </li>
+
+
+            <li>
+                Publicación web
+            </li>
+
+
+            <li>
+                Galería de imágenes
+            </li>
+
+
+            <li>
+                Optimización para celulares
+            </li>
+
+
+            <li>
+                Soporte
+            </li>
+
+
+        </ul>
+
+
+        <div class="cost-box">
+
+
+            <div class="cost-title">
+                Costo de creación — pago único
             </div>
 
 
-            <h3>
-                Página Inicial Básica
-            </h3>
+            <div class="price">
+                Q750 – Q950
+            </div>
 
 
-            <p class="plan-description">
+            <p class="payment-description">
 
-                Una opción ideal para comenzar tu presencia
-                profesional en Internet.
+                Pago único por la creación y desarrollo
+                de la página web.
 
             </p>
 
 
-            <div class="includes-title">
-                Incluye:
+            <div class="cost-title">
+                Mantenimiento anual
             </div>
 
 
-            <ul>
-
-                <li>
-                    Página informativa
-                </li>
-
-                <li>
-                    Diseño adaptable
-                </li>
-
-                <li>
-                    Sección de contacto
-                </li>
-
-                <li>
-                    Botón de WhatsApp
-                </li>
-
-                <li>
-                    Publicación web
-                </li>
-
-                <li>
-                    Galería de imágenes
-                </li>
-
-                <li>
-                    Optimización para celulares
-                </li>
-
-                <li>
-                    Soporte
-                </li>
-
-            </ul>
-
-
-            <div class="cost-box">
-
-
-                <div class="cost-title">
-                    Costo de creación
-                </div>
-
-
-                <div class="price">
-                    Q750 – Q950
-                </div>
-
-
-                <div class="cost-title">
-                    Mantenimiento anual
-                </div>
-
-
-                <div class="maintenance-price">
-                    Q700 – Q950
-                </div>
-
-
-                <div class="maintenance">
-
-                    <h4>
-                        ¿Qué incluye el mantenimiento?
-                    </h4>
-
-
-                    <p>
-
-                        Mantenimiento y actualización de la página,
-                        cambio de imágenes, modificación de información
-                        y textos, ajustes necesarios y soporte para
-                        mantener el sitio actualizado.
-
-                    </p>
-
-                </div>
-
-
+            <div class="maintenance-price">
+                Q700 – Q950
             </div>
 
 
-            <a
-                href="https://m.me/61594227622678?ref=Quiero%20cotizar%20una%20Pagina%20Inicial%20Basica"
-                class="btn btn-secondary"
-                target="_blank"
-                rel="noopener noreferrer">
+            <div class="maintenance">
 
-                Cotizar
 
-            </a>
+                <h4>
+                    ¿Qué incluye el mantenimiento?
+                </h4>
+
+
+                <p>
+
+                    Mantenimiento y actualización de la página,
+                    cambio de imágenes, modificación de información
+                    y textos, ajustes necesarios y soporte para
+                    mantener el sitio actualizado.
+
+                </p>
+
+
+            </div>
 
 
         </div>
-
-
-        <!-- =================================================
-             PLAN 2
-        ================================================== -->
-
-        <div class="plan">
-
-
-            <div class="plan-label">
-                PLAN 02
-            </div>
-
-
-            <h3>
-                Página Profesional
-            </h3>
-
-
-            <p class="plan-description">
-
-                Una solución completa para empresas y negocios
-                que buscan una presencia digital profesional,
-                moderna y personalizada.
-
-            </p>
-
-
-            <div class="includes-title">
-                Incluye:
-            </div>
-
-
-            <ul>
-
-                <li>
-                    Diseño personalizado
-                </li>
-
-                <li>
-                    Varias secciones
-                </li>
-
-                <li>
-                    Galería de imágenes
-                </li>
-
-                <li>
-                    Videos
-                </li>
-
-                <li>
-                    Botón de WhatsApp
-                </li>
-
-                <li>
-                    Botón de correo electrónico
-                </li>
-
-                <li>
-                    Botón de Facebook
-                </li>
-
-                <li>
-                    Botón de Instagram
-                </li>
-
-                <li>
-                    Botón de TikTok
-                </li>
-
-                <li>
-                    Formulario de contacto
-                </li>
-
-                <li>
-                    Optimización para celulares
-                </li>
-
-                <li>
-                    Publicación web
-                </li>
-
-                <li>
-                    Catálogo de productos
-                </li>
-
-                <li>
-                    Pestañas para catálogo de productos
-                </li>
-
-                <li>
-                    Sección para subir CVs o currículums
-                </li>
-
-                <li>
-                    Integración con redes sociales
-                </li>
-
-                <li>
-                    Configuración técnica y seguridad básica
-                </li>
-
-                <li>
-                    Soporte y actualizaciones
-                </li>
-
-            </ul>
-
-
-            <div class="cost-box">
-
-
-                <div class="cost-title">
-                    Costo de creación
-                </div>
-
-
-                <div class="price">
-                    Q1,400
-                </div>
-
-
-                <div class="cost-title">
-                    Mantenimiento anual
-                </div>
-
-
-                <div class="maintenance-price">
-                    Q1,350
-                </div>
-
-
-                <div class="maintenance">
-
-                    <h4>
-                        ¿Qué incluye el mantenimiento?
-                    </h4>
-
-
-                    <p>
-
-                        Mantenimiento y actualización de la página,
-                        cambio de imágenes, modificación de información
-                        y textos, ajustes necesarios, soporte y mejoras
-                        para mantener el sitio actualizado.
-
-                    </p>
-
-                </div>
-
-
-            </div>
-
-
-            <a
-                href="https://m.me/61594227622678?ref=Quiero%20cotizar%20una%20Pagina%20Profesional"
-                class="btn btn-primary"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                Cotizar
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-
-    <div class="maintenance-note">
-
-
-        <h3>
-            Mantenimiento de tu página web
-        </h3>
-
-
-        <p>
-
-            El servicio de mantenimiento incluye
-            actualizaciones periódicas de la página,
-            cambios de imágenes, modificación de textos
-            e información, ajustes y mejoras necesarias
-            para mantener el sitio actualizado.
-
-        </p>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     NOSOTROS
-===================================================== -->
-
-<section
-    class="about"
-    id="nosotros">
-
-
-    <div class="section-title">
-
-
-        <small>
-            SOBRE ERWEB
-        </small>
-
-
-        <h2>
-            Transformamos ideas en páginas web
-        </h2>
-
-
-    </div>
-
-
-    <div class="about-content">
-
-
-        <p>
-
-            ERWEB nace con la idea de ayudar a pequeños
-            negocios, emprendedores y empresas a tener
-            una presencia profesional en Internet.
-
-        </p>
-
-
-        <p>
-
-            Creemos que una página web no tiene que ser
-            complicada ni inaccesible. Nuestro objetivo
-            es crear sitios modernos, funcionales y
-            adaptados a las necesidades de cada cliente.
-
-        </p>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACTO
-===================================================== -->
-
-<section
-    class="contact"
-    id="contacto">
-
-
-    <div class="section-title">
-
-
-        <small>
-            HABLEMOS
-        </small>
-
-
-        <h2>
-            ¿Tienes un proyecto?
-        </h2>
-
-
-    </div>
-
-
-    <div class="contact-box">
-
-
-        <h3>
-            Cuéntanos qué necesitas
-        </h3>
-
-
-        <p>
-
-            Escríbenos y cuéntanos qué tipo de página
-            web necesitas. Te ayudaremos a encontrar
-            la mejor opción para tu negocio.
-
-        </p>
 
 
         <a
-            href="https://m.me/61594227622678"
+            href="https://m.me/61594227622678?ref=Quiero%20cotizar%20una%20Pagina%20Inicial%20Basica"
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Cotizar
+
+        </a>
+
+
+    </div>
+
+
+    <!-- =================================================
+         PLAN 2
+    ================================================== -->
+
+    <div class="plan">
+
+
+        <div class="plan-label">
+            PLAN 02
+        </div>
+
+
+        <h3>
+            Página Profesional
+        </h3>
+
+
+        <p class="plan-description">
+
+            Una solución completa para empresas y negocios
+            que buscan una presencia digital profesional,
+            moderna y personalizada.
+
+        </p>
+
+
+        <div class="includes-title">
+            Incluye:
+        </div>
+
+
+        <ul>
+
+
+            <li>
+                Diseño personalizado
+            </li>
+
+
+            <li>
+                Varias secciones
+            </li>
+
+
+            <li>
+                Galería de imágenes
+            </li>
+
+
+            <li>
+                Videos
+            </li>
+
+
+            <li>
+                Botón de WhatsApp
+            </li>
+
+
+            <li>
+                Botón de correo electrónico
+            </li>
+
+
+            <li>
+                Botón de Facebook
+            </li>
+
+
+            <li>
+                Botón de Instagram
+            </li>
+
+
+            <li>
+                Botón de TikTok
+            </li>
+
+
+            <li>
+                Formulario de contacto
+            </li>
+
+
+            <li>
+                Optimización para celulares
+            </li>
+
+
+            <li>
+                Publicación web
+            </li>
+
+
+            <li>
+                Soporte
+            </li>
+
+
+            <li>
+                Sección para subir CVs o currículums
+            </li>
+
+
+            <li>
+                Pestañas para organizar el contenido
+            </li>
+
+
+            <li>
+                Catálogo de productos
+            </li>
+
+
+            <li>
+                Configuración técnica y seguridad básica
+            </li>
+
+
+            <li>
+                Optimización básica de velocidad
+            </li>
+
+
+        </ul>
+
+
+        <div class="cost-box">
+
+
+            <div class="cost-title">
+                Costo de creación — pago único
+            </div>
+
+
+            <div class="price">
+                Q1,400
+            </div>
+
+
+            <p class="payment-description">
+
+                Pago único por la creación, diseño
+                y desarrollo de la página web.
+
+            </p>
+
+
+            <div class="cost-title">
+                Mantenimiento anual
+            </div>
+
+
+            <div class="maintenance-price">
+                Q1,350
+            </div>
+
+
+            <div class="maintenance">
+
+
+                <h4>
+                    ¿Qué incluye el mantenimiento?
+                </h4>
+
+
+                <p>
+
+                    Mantenimiento y actualización de la página,
+                    cambio de imágenes, modificación de información
+                    y textos, ajustes, mejoras necesarias y soporte
+                    para mantener el sitio actualizado.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+        <a
+            href="https://m.me/61594227622678?ref=Quiero%20cotizar%20una%20Pagina%20Profesional"
             class="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer">
 
-            <i class="fa-brands fa-facebook-messenger"></i>
-
-            Escribir por Messenger
+            Cotizar
 
         </a>
 
 
     </div>
 
-</section>
+
+</div>
 
 
-<!-- =====================================================
-     BOTONES FLOTANTES
-===================================================== -->
-
-<div class="social-floating">
+<div class="maintenance-note">
 
 
-    <!-- FACEBOOK -->
+    <h3>
+        Mantenimiento de tu página web
+    </h3>
+
+
+    <p>
+
+        El servicio de mantenimiento incluye
+        actualizaciones periódicas de la página,
+        cambios de imágenes, modificación de textos
+        e información, ajustes y mejoras necesarias
+        para mantener el sitio actualizado.
+
+    </p>
+
+
+</div>
+
+</section><!-- =====================================================
+     SOBRE ERWEB
+===================================================== --><section
+    class="about"
+    id="nosotros"><div class="section-title">
+
+
+    <small>
+        SOBRE ERWEB
+    </small>
+
+
+    <h2>
+        Transformamos ideas en páginas web
+    </h2>
+
+
+</div>
+
+
+<div class="about-content">
+
+
+    <p>
+
+        ERWEB nace con la idea de ayudar a pequeños
+        negocios, emprendedores y empresas a tener
+        una presencia profesional en Internet.
+
+    </p>
+
+
+    <p>
+
+        Creemos que una página web no tiene que ser
+        complicada ni inaccesible. Nuestro objetivo
+        es crear sitios modernos, funcionales y
+        adaptados a las necesidades de cada cliente.
+
+    </p>
+
+
+</div>
+
+</section><!-- =====================================================
+     CONTACTO
+===================================================== --><section
+    class="contact"
+    id="contacto"><div class="section-title">
+
+
+    <small>
+        HABLEMOS
+    </small>
+
+
+    <h2>
+        ¿Tienes un proyecto?
+    </h2>
+
+
+</div>
+
+
+<div class="contact-box">
+
+
+    <h3>
+        Cuéntanos qué necesitas
+    </h3>
+
+
+    <p>
+
+        Escríbenos y cuéntanos qué tipo de página
+        web necesitas. Te ayudaremos a encontrar
+        la mejor opción para tu negocio.
+
+    </p>
+
 
     <a
-        href="https://www.facebook.com/profile.php?id=61594227622678"
-        class="social-button facebook-button"
+        href="https://m.me/61594227622678"
+        class="btn btn-primary"
         target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook ERWEB">
+        rel="noopener noreferrer">
 
-        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-facebook-messenger"></i>
 
-    </a>
-
-
-    <!-- CORREO -->
-
-    <a
-        href="mailto:erwebinicio@gmail.com"
-        class="social-button email-button"
-        aria-label="Correo electrónico ERWEB">
-
-        <i class="fa-solid fa-envelope"></i>
-
-    </a>
-
-
-    <!-- WHATSAPP -->
-
-    <a
-        href="https://wa.me/50200000000?text=Hola%20ERWEB,%20quiero%20informaci%C3%B3n%20sobre%20la%20creaci%C3%B3n%20de%20una%20p%C3%A1gina%20web."
-        class="social-button whatsapp-button"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="WhatsApp ERWEB">
-
-        <i class="fa-brands fa-whatsapp"></i>
+        Escribir por Messenger
 
     </a>
 
 
 </div>
 
+</section><!-- =====================================================
+     BOTONES FLOTANTES
+===================================================== --><div class="social-floating"><!-- FACEBOOK -->
 
-<!-- =====================================================
+<a
+    href="https://www.facebook.com/profile.php?id=61594227622678"
+    class="social-button facebook-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook ERWEB">
+
+    <i class="fa-brands fa-facebook-f"></i>
+
+</a>
+
+
+<!-- CORREO -->
+
+<a
+    href="mailto:erwebinicio@gmail.com"
+    class="social-button email-button"
+    aria-label="Correo electrónico ERWEB">
+
+    <i class="fa-solid fa-envelope"></i>
+
+</a>
+
+
+<!-- WHATSAPP -->
+
+<a
+    href="https://wa.me/50200000000?text=Hola%20ERWEB,%20quiero%20informaci%C3%B3n%20sobre%20la%20creaci%C3%B3n%20de%20una%20p%C3%A1gina%20web."
+    class="social-button whatsapp-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp ERWEB">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</div><!-- =====================================================
      FOOTER
-===================================================== -->
-
-<footer>
-
-
-    <img
-        src="LOGO.jpg"
-        alt="Logo ERWEB"
-        class="footer-logo">
+===================================================== --><footer><img
+    src="LOGO.jpg"
+    alt="Logo ERWEB"
+    class="footer-logo">
 
 
-    <p>
-        Creación de páginas web profesionales.
-    </p>
+<p>
+    Creación de páginas web profesionales.
+</p>
 
 
-    <p style="margin-top:15px;">
+<p style="margin-top:15px;">
 
-        © 2026 ERWEB.
-        Todos los derechos reservados.
+    © 2026 ERWEB.
+    Todos los derechos reservados.
 
-    </p>
+</p>
 
-
-</footer>
-
-
-<!-- =====================================================
+</footer><!-- =====================================================
      JAVASCRIPT
-===================================================== -->
-
-<script>
+===================================================== --><script>
 
 function toggleMenu() {
 
@@ -2992,9 +2818,4 @@ document
 
 });
 
-</script>
-
-
-</body>
-
-</html>
+</script></body></html>
