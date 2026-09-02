@@ -23,10 +23,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-/* =====================================================
-   CONFIGURACIÓN GENERAL
-===================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -54,144 +50,86 @@ a {
 ===================================================== */
 
 header {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     height: 82px;
-
     background: rgba(5,12,23,0.96);
-
     backdrop-filter: blur(10px);
-
     display: flex;
-
     align-items: center;
-
     z-index: 1000;
-
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-
-/* LOGO */
-
 .logo-img {
-
     height: 140px;
-
     width: auto;
-
     max-width: 330px;
-
     object-fit: contain;
-
+    object-position: center;
     display: block;
-
     margin-left: 0;
 }
 
-
-/* MENÚ */
-
 nav {
-
     margin-left: auto;
-
     display: flex;
-
     align-items: center;
-
     gap: 28px;
-
     padding-right: 5%;
 }
 
 nav a {
-
     color: white;
-
     text-decoration: none;
-
     font-size: 14px;
-
     font-weight: 700;
-
     transition: 0.3s;
 }
 
 nav a:hover {
-
     color: #00b7ff;
 }
 
-
-/* BOTÓN MENÚ CELULAR */
-
 .menu-btn {
-
     display: none;
-
     font-size: 30px;
-
     cursor: pointer;
-
     margin-left: auto;
-
     margin-right: 5%;
 }
 
 
 /* =====================================================
-   INICIO / HERO
+   HERO
 ===================================================== */
 
 .hero {
-
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     padding: 140px 20px 80px;
-
     position: relative;
-
     overflow: hidden;
 
     background-image:
-
         url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=90");
 
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
 }
 
-
-/* CAPA OSCURA SOBRE LA IMAGEN */
-
 .hero::before {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
 
     background:
-
         linear-gradient(
             135deg,
             rgba(3,10,18,0.90),
@@ -202,86 +140,49 @@ nav a:hover {
     z-index: 0;
 }
 
-
-/* CONTENIDO */
-
 .hero-content {
-
     position: relative;
-
     z-index: 1;
-
     max-width: 1000px;
-
     padding: 40px 25px;
-
     background: rgba(3,10,18,0.18);
-
     border-radius: 20px;
 }
 
-
-/* TEXTO SUPERIOR */
-
 .hero small {
-
     color: #00b7ff;
-
     font-weight: 800;
-
     letter-spacing: 3px;
-
     font-size: 22px;
-
     line-height: 1.5;
-
     display: block;
 
     text-shadow:
         0 2px 8px rgba(0,0,0,0.9);
 }
 
-
-/* TÍTULO */
-
 .hero h1 {
-
     font-size: clamp(45px,7vw,82px);
-
     line-height: 1.05;
-
     margin: 25px 0;
-
     font-weight: 800;
 
     text-shadow:
         0 4px 15px rgba(0,0,0,0.9);
 }
 
-
-/* PALABRA AZUL */
-
 .hero h1 span {
-
     color: #00b7ff;
 
     text-shadow:
         0 3px 15px rgba(0,183,255,0.5);
 }
 
-
-/* DESCRIPCIÓN */
-
 .hero p {
-
     max-width: 750px;
-
     margin: auto;
-
     color: #f0f5fa;
-
     font-size: 18px;
-
     line-height: 1.7;
 
     text-shadow:
@@ -294,55 +195,34 @@ nav a:hover {
 ===================================================== */
 
 section {
-
     padding: 100px 7%;
 }
 
-
 .section-title {
-
     text-align: center;
-
     margin-bottom: 60px;
 }
 
-
 .section-title small {
-
     color: #00b7ff;
-
     font-weight: 800;
-
     letter-spacing: 2px;
-
     font-size: 28px;
-
     display: block;
-
     margin-bottom: 15px;
 }
 
-
 .section-title h2 {
-
     font-size: clamp(38px,5vw,56px);
-
     margin-top: 10px;
-
     line-height: 1.15;
 }
 
-
 .section-title p {
-
     color: #9eabb9;
-
     margin: 18px auto 0;
-
     max-width: 700px;
-
     line-height: 1.7;
-
     font-size: 16px;
 }
 
@@ -352,32 +232,20 @@ section {
 ===================================================== */
 
 .services {
-
     background: #091625;
 }
 
-
 .service-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns: repeat(3,1fr);
     gap: 25px;
 }
 
-
 .service-card {
-
     position: relative;
-
     min-height: 280px;
-
     padding: 35px;
-
     border-radius: 15px;
-
     overflow: hidden;
 
     border:
@@ -385,13 +253,10 @@ section {
         rgba(0,183,255,0.35);
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: flex-end;
 
     background-size: cover;
-
     background-position: center;
 
     box-shadow:
@@ -400,13 +265,9 @@ section {
     transition: 0.3s;
 }
 
-
 .service-card::before {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
 
     background:
@@ -419,107 +280,70 @@ section {
     z-index: 0;
 }
 
-
 .service-card > * {
-
     position: relative;
-
     z-index: 1;
 }
 
-
 .service-card:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-        #00b7ff;
+    transform: translateY(-8px);
+    border-color: #00b7ff;
 }
 
-
 .service-icon {
-
     width: 55px;
-
     height: 55px;
-
     border-radius: 12px;
 
     background:
         rgba(0,183,255,0.90);
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     color: #00101c;
-
     font-size: 25px;
-
     margin-bottom: auto;
 }
 
-
 .service-card h3 {
-
     margin-bottom: 12px;
-
     font-size: 21px;
 }
 
-
 .service-card p {
-
     color: #e0e7ee;
-
     line-height: 1.7;
-
     font-size: 14px;
 }
 
-
-/* IMÁGENES SERVICIOS */
-
 .service-web {
-
     background-image:
     url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .service-store {
-
     background-image:
     url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .service-responsive {
-
     background-image:
     url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .service-publish {
-
     background-image:
     url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .service-maintenance {
-
     background-image:
     url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .service-whatsapp {
-
     background-image:
     url("https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=1000&q=85");
 }
@@ -530,38 +354,24 @@ section {
 ===================================================== */
 
 .process-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns: repeat(4,1fr);
     gap: 25px;
 }
 
-
 .process-card {
-
     position: relative;
-
     min-height: 280px;
-
     padding: 35px 25px;
-
     border-radius: 16px;
-
     overflow: hidden;
-
     text-align: center;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 
     background-size: cover;
-
     background-position: center;
 
     border:
@@ -574,110 +384,69 @@ section {
     transition: 0.3s;
 }
 
-
 .process-card::before {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        rgba(3,10,18,0.68);
-
+    background: rgba(3,10,18,0.68);
     z-index: 0;
 }
 
-
 .process-card > * {
-
     position: relative;
-
     z-index: 1;
 }
 
-
 .process-card:hover {
-
-    transform:
-        translateY(-7px);
-
-    border-color:
-        #00b7ff;
+    transform: translateY(-7px);
+    border-color: #00b7ff;
 }
 
-
 .number {
-
     width: 60px;
-
     height: 60px;
-
     border-radius: 50%;
 
     background: #00b7ff;
-
     color: #00101c;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    margin:
-        0 auto 20px;
+    margin: 0 auto 20px;
 
     font-size: 20px;
-
     font-weight: 800;
 }
 
-
 .process-card h3 {
-
     font-size: 21px;
 }
 
-
 .process-card p {
-
     color: #e0e7ee;
-
     margin-top: 10px;
-
     font-size: 14px;
-
     line-height: 1.6;
 }
 
-
-/* IMÁGENES PROCESO */
-
 .process-talk {
-
     background-image:
     url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .process-design {
-
     background-image:
     url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .process-develop {
-
     background-image:
     url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=85");
 }
 
-
 .process-publish {
-
     background-image:
     url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85");
 }
@@ -688,34 +457,21 @@ section {
 ===================================================== */
 
 .web-design {
-
     background: #091625;
 }
 
-
 .web-design-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns: repeat(2,1fr);
     gap: 30px;
-
     max-width: 1100px;
-
     margin: auto;
 }
 
-
 .web-design-card {
-
     position: relative;
-
     height: 330px;
-
     border-radius: 18px;
-
     overflow: hidden;
 
     border:
@@ -725,42 +481,26 @@ section {
     background: #0d1c2d;
 
     box-shadow:
-        0 15px 40px
-        rgba(0,0,0,0.25);
+        0 15px 40px rgba(0,0,0,0.25);
 }
 
-
 .web-design-card img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
     display: block;
-
     transition: 0.5s;
 }
 
-
 .web-design-card:hover img {
-
-    transform:
-        scale(1.06);
+    transform: scale(1.06);
 }
 
-
 .web-design-overlay {
-
     position: absolute;
-
     left: 0;
-
     right: 0;
-
     bottom: 0;
-
     padding: 30px;
 
     background:
@@ -770,35 +510,22 @@ section {
         );
 }
 
-
 .web-design-overlay span {
-
     color: #00b7ff;
-
-    font-size: 14px;
-
+    font-size: 16px;
     font-weight: 800;
-
     letter-spacing: 1.5px;
 }
 
-
 .web-design-overlay h3 {
-
     margin-top: 8px;
-
     font-size: 22px;
 }
 
-
 .web-design-overlay p {
-
     color: #c6d0dc;
-
     margin-top: 8px;
-
     font-size: 13px;
-
     line-height: 1.6;
 }
 
@@ -808,28 +535,18 @@ section {
 ===================================================== */
 
 .plans {
-
     background: #07111f;
 }
 
-
 .plans-grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns: repeat(2,1fr);
     gap: 30px;
-
     max-width: 1050px;
-
     margin: auto;
 }
 
-
 .plan {
-
     background: #0d1c2d;
 
     border:
@@ -841,114 +558,75 @@ section {
     padding: 38px 32px;
 
     display: flex;
-
     flex-direction: column;
 
     box-shadow:
-        0 10px 35px
-        rgba(0,183,255,0.08);
+        0 10px 35px rgba(0,183,255,0.08);
 
     transition: 0.3s;
 }
 
-
 .plan:hover {
-
-    transform:
-        translateY(-7px);
+    transform: translateY(-7px);
 
     box-shadow:
-        0 15px 40px
-        rgba(0,183,255,0.18);
+        0 15px 40px rgba(0,183,255,0.18);
 }
-
 
 .plan-label {
-
     color: #00b7ff;
-
     font-size: 14px;
-
     font-weight: 800;
-
     letter-spacing: 1.5px;
-
     margin-bottom: 10px;
 }
-
 
 .plan h3 {
-
     font-size: 28px;
-
     margin-bottom: 12px;
 }
 
-
 .plan-description {
-
     color: #aeb9c5;
-
     font-size: 14px;
-
     line-height: 1.7;
-
     margin-bottom: 10px;
 }
 
-
 .includes-title {
-
     margin-top: 20px;
-
     margin-bottom: 12px;
-
     font-size: 16px;
-
     color: white;
-
     font-weight: 800;
 }
 
-
 .plan ul {
-
     list-style: none;
-
     margin-bottom: 25px;
 }
 
-
 .plan li {
-
     color: #c2ccd7;
-
     margin: 12px 0;
-
     font-size: 14px;
-
     line-height: 1.5;
 }
 
-
 .plan li::before {
-
     content: "✓";
-
     color: #00b7ff;
-
     font-weight: 900;
-
     margin-right: 10px;
 }
 
 
-/* COSTOS */
+/* =====================================================
+   COSTOS ACTUALIZADOS
+===================================================== */
 
 .cost-box {
-
     margin-top: auto;
-
     padding-top: 20px;
 
     border-top:
@@ -956,47 +634,32 @@ section {
         rgba(255,255,255,0.10);
 }
 
-
 .cost-title {
-
     color: #9eabb9;
-
     font-size: 13px;
-
     font-weight: 600;
 }
 
-
 .price {
-
     font-size: 40px;
-
     font-weight: 800;
-
     color: #00b7ff;
-
-    margin:
-        5px 0 20px;
+    margin: 5px 0 20px;
 }
-
 
 .maintenance-price {
-
     font-size: 28px;
-
     font-weight: 800;
-
     color: white;
-
-    margin:
-        5px 0 20px;
+    margin: 5px 0 20px;
 }
 
 
-/* MANTENIMIENTO */
+/* =====================================================
+   MANTENIMIENTO
+===================================================== */
 
 .maintenance {
-
     background:
         rgba(0,183,255,0.06);
 
@@ -1005,52 +668,31 @@ section {
         #00b7ff;
 
     padding: 16px;
-
     margin-bottom: 25px;
-
     border-radius: 5px;
 }
 
-
 .maintenance h4 {
-
     font-size: 14px;
-
     color: #00b7ff;
-
     margin-bottom: 8px;
 }
 
-
 .maintenance p {
-
     color: #aeb9c5;
-
     font-size: 12px;
-
     line-height: 1.7;
 }
 
-
 .plan .btn {
-
     text-align: center;
-
     margin-top: auto;
-
     width: 100%;
 }
 
-
-/* NOTA GENERAL */
-
 .maintenance-note {
-
     max-width: 1000px;
-
-    margin:
-        50px auto 0;
-
+    margin: 50px auto 0;
     padding: 30px;
 
     background: #0d1c2d;
@@ -1060,27 +702,18 @@ section {
         rgba(0,183,255,0.35);
 
     border-radius: 15px;
-
     text-align: center;
 }
 
-
 .maintenance-note h3 {
-
     color: #00b7ff;
-
     font-size: 23px;
-
     margin-bottom: 15px;
 }
 
-
 .maintenance-note p {
-
     color: #aeb9c5;
-
     line-height: 1.8;
-
     font-size: 14px;
 }
 
@@ -1090,29 +723,19 @@ section {
 ===================================================== */
 
 .about {
-
     background: #07111f;
 }
 
-
 .about-content {
-
     max-width: 850px;
-
     margin: auto;
-
     text-align: center;
 }
 
-
 .about-content p {
-
     color: #aeb9c5;
-
     line-height: 1.9;
-
     margin-bottom: 20px;
-
     font-size: 15px;
 }
 
@@ -1122,49 +745,32 @@ section {
 ===================================================== */
 
 .contact {
-
     position: relative;
 
     background-image:
     url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=85");
 
     background-size: cover;
-
     background-position: center;
-
     background-attachment: fixed;
 }
 
-
 .contact::before {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
-
-    background:
-        rgba(3,10,18,0.82);
-
+    background: rgba(3,10,18,0.82);
     z-index: 0;
 }
 
-
 .contact > * {
-
     position: relative;
-
     z-index: 1;
 }
 
-
 .contact-box {
-
     max-width: 800px;
-
     margin: auto;
-
     text-align: center;
 
     background:
@@ -1181,68 +787,45 @@ section {
     backdrop-filter: blur(5px);
 }
 
-
 .contact-box h3 {
-
     font-size: 25px;
 }
 
-
 .contact-box p {
-
     color: #c6d0dc;
-
     line-height: 1.7;
-
-    margin:
-        15px auto 30px;
-
+    margin: 15px auto 30px;
     max-width: 600px;
 }
 
 
 /* =====================================================
-   BOTONES GENERALES
+   BOTONES
 ===================================================== */
 
 .btn {
-
-    padding:
-        15px 28px;
-
+    padding: 15px 28px;
     border-radius: 8px;
-
     text-decoration: none;
-
     font-weight: 700;
-
     transition: 0.3s;
-
     display: inline-block;
 }
 
-
 .btn-primary {
-
     background: #00b7ff;
-
     color: #00101c;
 }
 
-
 .btn-primary:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 10px 30px
         rgba(0,183,255,0.30);
 }
 
-
 .btn-secondary {
-
     border:
         1px solid
         rgba(255,255,255,0.25);
@@ -1250,14 +833,9 @@ section {
     color: white;
 }
 
-
 .btn-secondary:hover {
-
-    border-color:
-        #00b7ff;
-
-    color:
-        #00b7ff;
+    border-color: #00b7ff;
+    color: #00b7ff;
 }
 
 
@@ -1266,39 +844,27 @@ section {
 ===================================================== */
 
 .social-floating {
-
     position: fixed;
-
     right: 22px;
-
     bottom: 25px;
 
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
 
     z-index: 2000;
 }
 
-
 .social-button {
-
     width: 58px;
-
     height: 58px;
-
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-decoration: none;
-
     font-size: 27px;
 
     transition: 0.3s;
@@ -1308,41 +874,24 @@ section {
         rgba(0,0,0,0.35);
 }
 
-
 .social-button:hover {
-
     transform:
         translateY(-4px)
         scale(1.05);
 }
 
-
-/* FACEBOOK */
-
 .facebook-button {
-
     background: #1877F2;
-
     color: white;
 }
 
-
-/* CORREO */
-
 .email-button {
-
     background: white;
-
     color: #e53935;
 }
 
-
-/* WHATSAPP */
-
 .whatsapp-button {
-
     background: #25D366;
-
     color: white;
 }
 
@@ -1352,33 +901,21 @@ section {
 ===================================================== */
 
 footer {
-
     background: #050c16;
-
     text-align: center;
-
     padding: 40px 20px;
 }
 
-
 .footer-logo {
-
     height: 80px;
-
     width: auto;
-
     max-width: 250px;
-
     object-fit: contain;
-
     margin-bottom: 12px;
 }
 
-
 footer p {
-
     color: #788594;
-
     font-size: 13px;
 }
 
@@ -1390,21 +927,15 @@ footer p {
 @media(max-width:1000px) {
 
     .service-grid {
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .process-grid {
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .web-design-grid {
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
 }
@@ -1413,174 +944,112 @@ footer p {
 @media(max-width:700px) {
 
     header {
-
         height: 78px;
     }
 
-
     .logo-img {
-
         height: 120px;
-
         max-width: 280px;
-
         margin-left: 0;
     }
 
-
     nav {
-
         position: absolute;
-
         top: 78px;
-
         left: 0;
-
         width: 100%;
 
         background: #07111f;
 
         flex-direction: column;
-
         text-align: center;
 
         padding: 25px;
 
         display: none;
-
         gap: 20px;
     }
 
-
     nav.active {
-
         display: flex;
     }
 
-
     .menu-btn {
-
         display: block;
     }
 
-
     section {
-
-        padding:
-            80px 5%;
+        padding: 80px 5%;
     }
-
 
     .hero {
-
-        padding-top:
-            120px;
+        padding-top: 120px;
     }
 
-
     .hero small {
-
         font-size: 15px;
-
         letter-spacing: 1.8px;
     }
 
-
     .hero h1 {
-
         font-size:
             clamp(40px,12vw,58px);
     }
 
-
     .hero p {
-
         font-size: 16px;
     }
 
-
     .section-title {
-
         margin-bottom: 45px;
     }
 
-
     .section-title small {
-
         font-size: 22px;
-
         line-height: 1.4;
     }
 
-
     .section-title h2 {
-
         font-size: 34px;
     }
-
 
     .service-grid,
     .plans-grid,
     .process-grid,
     .web-design-grid {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
-
 
     .service-card {
-
-        min-height:
-            300px;
+        min-height: 300px;
     }
-
 
     .process-card {
-
-        min-height:
-            270px;
+        min-height: 270px;
     }
-
 
     .web-design-card {
-
-        height:
-            280px;
+        height: 280px;
     }
 
-
     .social-floating {
-
         right: 15px;
-
         bottom: 20px;
-
         gap: 10px;
     }
 
-
     .social-button {
-
         width: 54px;
-
         height: 54px;
-
         font-size: 25px;
     }
 
-
     .maintenance-note {
-
-        padding:
-            25px 20px;
+        padding: 25px 20px;
     }
 
-
     .contact {
-
-        background-attachment:
-            scroll;
+        background-attachment: scroll;
     }
 
 }
@@ -1599,9 +1068,7 @@ footer p {
 
 <header>
 
-
-    <a href="#inicio"
-       aria-label="ERWEB Inicio">
+    <a href="#inicio" aria-label="ERWEB Inicio">
 
         <img
             src="LOGO.jpg"
@@ -1656,16 +1123,11 @@ footer p {
     class="hero"
     id="inicio">
 
-
     <div class="hero-content">
 
-
         <small>
-
             DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
-
         </small>
-
 
         <h1>
 
@@ -1678,7 +1140,6 @@ footer p {
 
         </h1>
 
-
         <p>
 
             En ERWEB creamos páginas web modernas,
@@ -1686,7 +1147,6 @@ footer p {
             a mostrar tu negocio en Internet.
 
         </p>
-
 
     </div>
 
@@ -1701,19 +1161,15 @@ footer p {
     class="services"
     id="servicios">
 
-
     <div class="section-title">
-
 
         <small>
             LO QUE HACEMOS
         </small>
 
-
         <h2>
             Nuestros servicios
         </h2>
-
 
         <p>
 
@@ -1723,7 +1179,6 @@ footer p {
 
         </p>
 
-
     </div>
 
 
@@ -1732,18 +1187,13 @@ footer p {
 
         <div class="service-card service-web">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-code"></i>
-
             </div>
-
 
             <h3>
                 Páginas web
             </h3>
-
 
             <p>
 
@@ -1752,24 +1202,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-store">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-cart-shopping"></i>
-
             </div>
-
 
             <h3>
                 Tiendas online
             </h3>
-
 
             <p>
 
@@ -1778,24 +1222,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-responsive">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-mobile-screen-button"></i>
-
             </div>
-
 
             <h3>
                 Diseño adaptable
             </h3>
-
 
             <p>
 
@@ -1804,24 +1242,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-publish">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-rocket"></i>
-
             </div>
-
 
             <h3>
                 Publicación web
             </h3>
-
 
             <p>
 
@@ -1830,24 +1262,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-maintenance">
 
-
             <div class="service-icon">
-
                 <i class="fa-solid fa-screwdriver-wrench"></i>
-
             </div>
-
 
             <h3>
                 Mantenimiento
             </h3>
-
 
             <p>
 
@@ -1856,24 +1282,18 @@ footer p {
 
             </p>
 
-
         </div>
 
 
         <div class="service-card service-whatsapp">
 
-
             <div class="service-icon">
-
                 <i class="fa-brands fa-whatsapp"></i>
-
             </div>
-
 
             <h3>
                 Integración con WhatsApp
             </h3>
-
 
             <p>
 
@@ -1881,7 +1301,6 @@ footer p {
                 clientes puedan comunicarse directamente contigo.
 
             </p>
-
 
         </div>
 
@@ -1897,19 +1316,15 @@ footer p {
 
 <section id="proceso">
 
-
     <div class="section-title">
-
 
         <small>
             NUESTRO MÉTODO
         </small>
 
-
         <h2>
             ¿Cómo trabajamos?
         </h2>
-
 
     </div>
 
@@ -1919,96 +1334,72 @@ footer p {
 
         <div class="process-card process-talk">
 
-
             <div class="number">
                 1
             </div>
-
 
             <h3>
                 Hablamos
             </h3>
 
-
             <p>
-
                 Conocemos tu negocio
                 y lo que necesitas.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-design">
 
-
             <div class="number">
                 2
             </div>
-
 
             <h3>
                 Diseñamos
             </h3>
 
-
             <p>
-
                 Creamos una propuesta
                 visual para tu página.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-develop">
 
-
             <div class="number">
                 3
             </div>
-
 
             <h3>
                 Desarrollamos
             </h3>
 
-
             <p>
-
                 Construimos la página
                 y configuramos sus funciones.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-publish">
 
-
             <div class="number">
                 4
             </div>
-
 
             <h3>
                 Publicamos
             </h3>
 
-
             <p>
-
                 Ponemos tu sitio en Internet
                 para que tus clientes puedan encontrarlo.
-
             </p>
-
 
         </div>
 
@@ -2026,19 +1417,15 @@ footer p {
     class="web-design"
     id="diseno-web">
 
-
     <div class="section-title">
-
 
         <small>
             CREACIÓN WEB
         </small>
 
-
         <h2>
             Diseñamos tu presencia digital
         </h2>
-
 
         <p>
 
@@ -2049,7 +1436,6 @@ footer p {
 
         </p>
 
-
     </div>
 
 
@@ -2058,25 +1444,20 @@ footer p {
 
         <div class="web-design-card">
 
-
             <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
                 alt="Diseño y desarrollo de páginas web"
                 loading="lazy">
 
-
             <div class="web-design-overlay">
-
 
                 <span>
                     DISEÑO Y DESARROLLO
                 </span>
 
-
                 <h3>
                     Páginas web profesionales
                 </h3>
-
 
                 <p>
 
@@ -2085,34 +1466,27 @@ footer p {
 
                 </p>
 
-
             </div>
-
 
         </div>
 
 
         <div class="web-design-card">
 
-
             <img
                 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
                 alt="Diseño web adaptable"
                 loading="lazy">
 
-
             <div class="web-design-overlay">
-
 
                 <span>
                     DISEÑO ADAPTABLE
                 </span>
 
-
                 <h3>
                     Tu web en cualquier dispositivo
                 </h3>
-
 
                 <p>
 
@@ -2121,9 +1495,7 @@ footer p {
 
                 </p>
 
-
             </div>
-
 
         </div>
 
@@ -2144,16 +1516,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             OPCIONES
         </small>
 
-
         <h2>
             Costos de creación de páginas web
         </h2>
-
 
         <p>
 
@@ -2161,7 +1530,6 @@ footer p {
             a las necesidades de tu negocio.
 
         </p>
-
 
     </div>
 
@@ -2175,16 +1543,13 @@ footer p {
 
         <div class="plan">
 
-
             <div class="plan-label">
                 PLAN 01
             </div>
 
-
             <h3>
                 Página Inicial Básica
             </h3>
-
 
             <p class="plan-description">
 
@@ -2193,88 +1558,71 @@ footer p {
 
             </p>
 
-
             <div class="includes-title">
                 Incluye:
             </div>
 
-
             <ul>
-
 
                 <li>
                     Página informativa
                 </li>
 
-
                 <li>
                     Diseño adaptable
                 </li>
-
 
                 <li>
                     Sección de contacto
                 </li>
 
-
                 <li>
                     Botón de WhatsApp
                 </li>
-
 
                 <li>
                     Publicación web
                 </li>
 
-
                 <li>
                     Galería de imágenes
                 </li>
-
 
                 <li>
                     Optimización para celulares
                 </li>
 
-
                 <li>
                     Soporte
                 </li>
-
 
             </ul>
 
 
             <div class="cost-box">
 
-
                 <div class="cost-title">
                     Costo de creación
                 </div>
 
-
                 <div class="price">
-                    Q900
+                    Q700 – Q950
                 </div>
-
 
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
 
-
                 <div class="maintenance-price">
-                    Q900
+                    Q800 – Q950
                 </div>
 
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
-
 
                     <p>
 
@@ -2287,9 +1635,7 @@ footer p {
 
                     </p>
 
-
                 </div>
-
 
             </div>
 
@@ -2314,16 +1660,13 @@ footer p {
 
         <div class="plan">
 
-
             <div class="plan-label">
                 PLAN 02
             </div>
 
-
             <h3>
                 Página Profesional
             </h3>
-
 
             <p class="plan-description">
 
@@ -2333,133 +1676,107 @@ footer p {
 
             </p>
 
-
             <div class="includes-title">
                 Incluye:
             </div>
 
-
             <ul>
-
 
                 <li>
                     Diseño personalizado
                 </li>
 
-
                 <li>
                     Varias secciones
                 </li>
-
 
                 <li>
                     Galería de imágenes
                 </li>
 
-
                 <li>
                     Videos
                 </li>
-
 
                 <li>
                     Integración con WhatsApp
                 </li>
 
-
                 <li>
                     Integración con correo electrónico
                 </li>
-
 
                 <li>
                     Integración con Facebook
                 </li>
 
-
                 <li>
                     Integración con Instagram
                 </li>
-
 
                 <li>
                     Integración con TikTok
                 </li>
 
-
                 <li>
                     Formulario de contacto
                 </li>
-
 
                 <li>
                     Optimización para celulares
                 </li>
 
-
                 <li>
                     Publicación web
                 </li>
-
 
                 <li>
                     Catálogo de productos
                 </li>
 
-
                 <li>
                     Integración con redes sociales
                 </li>
-
 
                 <li>
                     Soporte
                 </li>
 
-
                 <li>
                     SEO básico
                 </li>
 
-
                 <li>
                     Configuración técnica y seguridad básica
                 </li>
-
 
             </ul>
 
 
             <div class="cost-box">
 
-
                 <div class="cost-title">
                     Costo de creación
                 </div>
 
-
                 <div class="price">
-                    Q1,300
+                    Q1,400
                 </div>
-
 
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
 
-
                 <div class="maintenance-price">
-                    Q1,200
+                    Q1,250
                 </div>
 
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
-
 
                     <p>
 
@@ -2472,9 +1789,7 @@ footer p {
 
                     </p>
 
-
                 </div>
-
 
             </div>
 
@@ -2498,11 +1813,9 @@ footer p {
 
     <div class="maintenance-note">
 
-
         <h3>
             Mantenimiento de tu página web
         </h3>
-
 
         <p>
 
@@ -2518,8 +1831,8 @@ footer p {
 
         </p>
 
-
     </div>
+
 
 </section>
 
@@ -2532,25 +1845,20 @@ footer p {
     class="about"
     id="nosotros">
 
-
     <div class="section-title">
-
 
         <small>
             SOBRE ERWEB
         </small>
 
-
         <h2>
             Transformamos ideas en páginas web
         </h2>
-
 
     </div>
 
 
     <div class="about-content">
-
 
         <p>
 
@@ -2560,7 +1868,6 @@ footer p {
 
         </p>
 
-
         <p>
 
             Creemos que una página web no tiene que ser
@@ -2569,7 +1876,6 @@ footer p {
             adaptados a las necesidades de cada cliente.
 
         </p>
-
 
     </div>
 
@@ -2584,30 +1890,24 @@ footer p {
     class="contact"
     id="contacto">
 
-
     <div class="section-title">
-
 
         <small>
             HABLEMOS
         </small>
 
-
         <h2>
             ¿Tienes un proyecto?
         </h2>
-
 
     </div>
 
 
     <div class="contact-box">
 
-
         <h3>
             Cuéntanos qué necesitas
         </h3>
-
 
         <p>
 
@@ -2629,7 +1929,6 @@ footer p {
             Escribir por Messenger
 
         </a>
-
 
     </div>
 
@@ -2692,17 +1991,14 @@ footer p {
 
 <footer>
 
-
     <img
         src="LOGO.jpg"
         alt="Logo ERWEB"
         class="footer-logo">
 
-
     <p>
         Creación de páginas web profesionales.
     </p>
-
 
     <p style="margin-top:15px;">
 
@@ -2710,7 +2006,6 @@ footer p {
         Todos los derechos reservados.
 
     </p>
-
 
 </footer>
 
