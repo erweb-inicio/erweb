@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERWEB | Creación de páginas web</title>
+<title>ERWEB | Creación de páginas web profesionales</title>
 
 <meta name="description"
 content="ERWEB - Creación de páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
@@ -56,10 +56,12 @@ a {
 header {
 
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
+
     height: 82px;
 
     background: rgba(5,12,23,0.96);
@@ -67,11 +69,13 @@ header {
     backdrop-filter: blur(10px);
 
     display: flex;
+
     align-items: center;
 
     z-index: 1000;
 
     border-bottom: 1px solid rgba(255,255,255,0.08);
+
 }
 
 
@@ -79,13 +83,9 @@ header {
    LOGO
 ===================================================== */
 
-.logo-container {
+.logo-link {
 
-    position: relative;
-
-    height: 78px;
-
-    width: 250px;
+    height: 82px;
 
     display: flex;
 
@@ -93,99 +93,100 @@ header {
 
     justify-content: flex-start;
 
-    overflow: visible;
-
-    padding: 2px;
+    text-decoration: none;
 
     margin-left: 0;
+
+    flex-shrink: 0;
+
 }
 
 
-/* BORDE ANIMADO */
+.logo-frame {
 
-.logo-container::before {
+    position: relative;
+
+    height: 76px;
+
+    width: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 3px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+}
+
+
+/* BORDE LUMINOSO ANIMADO */
+
+.logo-frame::before {
 
     content: "";
 
     position: absolute;
 
-    inset: 0;
-
-    border-radius: 12px;
-
-    padding: 2px;
+    inset: -50%;
 
     background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            transparent 25%,
-            #00b7ff 40%,
-            #ffffff 50%,
-            #00b7ff 60%,
-            transparent 75%,
-            transparent 100%
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 250deg,
+            #00b7ff 285deg,
+            #ffffff 305deg,
+            #00b7ff 325deg,
+            transparent 350deg,
+            transparent 360deg
         );
 
-    background-size: 300% 100%;
-
     animation:
-        logoLight 3.5s linear infinite;
+        logoRecorrido 4s linear infinite;
 
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-
-    mask-composite: exclude;
-
-    pointer-events: none;
-
-    z-index: 3;
-}
-
-
-@keyframes logoLight {
-
-    0% {
-        background-position: 300% 0;
-    }
-
-    100% {
-        background-position: -300% 0;
-    }
+    z-index: 0;
 
 }
 
 
-.logo-link {
+/* FONDO INTERIOR DEL MARCO */
 
-    display: flex;
+.logo-frame::after {
 
-    align-items: center;
+    content: "";
 
-    justify-content: flex-start;
+    position: absolute;
 
-    height: 100%;
+    inset: 3px;
 
-    width: 100%;
+    background: #050c17;
 
-    text-decoration: none;
+    border-radius: 8px;
+
+    z-index: 1;
+
+}
+
+
+/* IMAGEN DEL LOGO */
+
+.logo-img {
 
     position: relative;
 
     z-index: 2;
-}
 
-
-.logo-img {
-
-    height: 155px;
+    height: 70px;
 
     width: auto;
 
-    max-width: 330px;
+    max-width: 300px;
 
     object-fit: contain;
 
@@ -193,10 +194,27 @@ header {
 
     display: block;
 
-    margin-left: -8px;
+    margin: 0;
 
-    filter:
-        drop-shadow(0 3px 10px rgba(0,0,0,0.6));
+}
+
+
+/* ANIMACIÓN QUE RECORRE TODO EL BORDE */
+
+@keyframes logoRecorrido {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
 }
 
 
@@ -212,11 +230,11 @@ nav {
 
     align-items: center;
 
-    gap: 32px;
+    gap: 28px;
 
     padding-right: 5%;
-}
 
+}
 
 nav a {
 
@@ -230,15 +248,12 @@ nav a {
 
     transition: 0.3s;
 
-    white-space: nowrap;
 }
-
 
 nav a:hover {
 
     color: #00b7ff;
 
-    transform: translateY(-2px);
 }
 
 
@@ -255,11 +270,12 @@ nav a:hover {
     margin-left: auto;
 
     margin-right: 5%;
+
 }
 
 
 /* =====================================================
-   HERO
+   INICIO / HERO
 ===================================================== */
 
 .hero {
@@ -281,7 +297,6 @@ nav a:hover {
     overflow: hidden;
 
     background-image:
-
         url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=90");
 
     background-size: cover;
@@ -289,6 +304,7 @@ nav a:hover {
     background-position: center;
 
     background-repeat: no-repeat;
+
 }
 
 
@@ -301,7 +317,6 @@ nav a:hover {
     inset: 0;
 
     background:
-
         linear-gradient(
             135deg,
             rgba(3,10,18,0.90),
@@ -310,6 +325,7 @@ nav a:hover {
         );
 
     z-index: 0;
+
 }
 
 
@@ -326,6 +342,7 @@ nav a:hover {
     background: rgba(3,10,18,0.18);
 
     border-radius: 20px;
+
 }
 
 
@@ -345,6 +362,7 @@ nav a:hover {
 
     text-shadow:
         0 2px 8px rgba(0,0,0,0.9);
+
 }
 
 
@@ -360,6 +378,7 @@ nav a:hover {
 
     text-shadow:
         0 4px 15px rgba(0,0,0,0.9);
+
 }
 
 
@@ -369,6 +388,7 @@ nav a:hover {
 
     text-shadow:
         0 3px 15px rgba(0,183,255,0.5);
+
 }
 
 
@@ -386,6 +406,7 @@ nav a:hover {
 
     text-shadow:
         0 2px 8px rgba(0,0,0,0.9);
+
 }
 
 
@@ -396,6 +417,7 @@ nav a:hover {
 section {
 
     padding: 100px 7%;
+
 }
 
 
@@ -404,6 +426,7 @@ section {
     text-align: center;
 
     margin-bottom: 60px;
+
 }
 
 
@@ -415,21 +438,23 @@ section {
 
     letter-spacing: 2px;
 
-    font-size: 30px;
+    font-size: 28px;
 
     display: block;
 
     margin-bottom: 15px;
+
 }
 
 
 .section-title h2 {
 
-    font-size: clamp(40px,5vw,58px);
+    font-size: clamp(38px,5vw,56px);
 
     margin-top: 10px;
 
     line-height: 1.15;
+
 }
 
 
@@ -444,6 +469,7 @@ section {
     line-height: 1.7;
 
     font-size: 16px;
+
 }
 
 
@@ -454,6 +480,7 @@ section {
 .services {
 
     background: #091625;
+
 }
 
 
@@ -465,6 +492,7 @@ section {
         repeat(3,1fr);
 
     gap: 25px;
+
 }
 
 
@@ -498,6 +526,7 @@ section {
         0 15px 35px rgba(0,0,0,0.25);
 
     transition: 0.3s;
+
 }
 
 
@@ -517,6 +546,7 @@ section {
         );
 
     z-index: 0;
+
 }
 
 
@@ -525,6 +555,7 @@ section {
     position: relative;
 
     z-index: 1;
+
 }
 
 
@@ -535,6 +566,7 @@ section {
 
     border-color:
         #00b7ff;
+
 }
 
 
@@ -560,6 +592,7 @@ section {
     font-size: 25px;
 
     margin-bottom: auto;
+
 }
 
 
@@ -568,6 +601,7 @@ section {
     margin-bottom: 12px;
 
     font-size: 21px;
+
 }
 
 
@@ -578,6 +612,7 @@ section {
     line-height: 1.7;
 
     font-size: 14px;
+
 }
 
 
@@ -587,6 +622,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -594,6 +630,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -601,6 +638,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -608,6 +646,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -615,6 +654,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -622,12 +662,20 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
 /* =====================================================
    PROCESO
 ===================================================== */
+
+#proceso {
+
+    background: #07111f;
+
+}
+
 
 .process-grid {
 
@@ -637,6 +685,7 @@ section {
         repeat(4,1fr);
 
     gap: 25px;
+
 }
 
 
@@ -672,6 +721,7 @@ section {
         0 15px 35px rgba(0,0,0,0.25);
 
     transition: 0.3s;
+
 }
 
 
@@ -687,6 +737,7 @@ section {
         rgba(3,10,18,0.68);
 
     z-index: 0;
+
 }
 
 
@@ -695,6 +746,7 @@ section {
     position: relative;
 
     z-index: 1;
+
 }
 
 
@@ -705,6 +757,7 @@ section {
 
     border-color:
         #00b7ff;
+
 }
 
 
@@ -732,12 +785,14 @@ section {
     font-size: 20px;
 
     font-weight: 800;
+
 }
 
 
 .process-card h3 {
 
     font-size: 21px;
+
 }
 
 
@@ -750,6 +805,7 @@ section {
     font-size: 14px;
 
     line-height: 1.6;
+
 }
 
 
@@ -757,6 +813,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -764,6 +821,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -771,6 +829,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -778,6 +837,7 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85");
+
 }
 
 
@@ -788,6 +848,7 @@ section {
 .web-design {
 
     background: #091625;
+
 }
 
 
@@ -803,6 +864,7 @@ section {
     max-width: 1100px;
 
     margin: auto;
+
 }
 
 
@@ -825,6 +887,7 @@ section {
     box-shadow:
         0 15px 40px
         rgba(0,0,0,0.25);
+
 }
 
 
@@ -839,6 +902,7 @@ section {
     display: block;
 
     transition: 0.5s;
+
 }
 
 
@@ -846,6 +910,7 @@ section {
 
     transform:
         scale(1.06);
+
 }
 
 
@@ -866,25 +931,23 @@ section {
             transparent,
             rgba(3,10,18,0.95)
         );
+
 }
 
 
-/* TEXTO DESTACADO */
-
 .web-design-overlay span {
 
-    color: #20c8ff;
+    color: #00b7ff;
 
-    font-size: 21px;
+    font-size: 18px;
 
     font-weight: 800;
 
     letter-spacing: 1.5px;
 
-    display: block;
-
     text-shadow:
         0 2px 8px rgba(0,0,0,0.9);
+
 }
 
 
@@ -893,6 +956,7 @@ section {
     margin-top: 8px;
 
     font-size: 22px;
+
 }
 
 
@@ -905,6 +969,7 @@ section {
     font-size: 13px;
 
     line-height: 1.6;
+
 }
 
 
@@ -915,6 +980,7 @@ section {
 .plans {
 
     background: #07111f;
+
 }
 
 
@@ -930,6 +996,7 @@ section {
     max-width: 1050px;
 
     margin: auto;
+
 }
 
 
@@ -954,6 +1021,7 @@ section {
         rgba(0,183,255,0.08);
 
     transition: 0.3s;
+
 }
 
 
@@ -965,6 +1033,7 @@ section {
     box-shadow:
         0 15px 40px
         rgba(0,183,255,0.18);
+
 }
 
 
@@ -979,6 +1048,7 @@ section {
     letter-spacing: 1.5px;
 
     margin-bottom: 10px;
+
 }
 
 
@@ -987,6 +1057,7 @@ section {
     font-size: 28px;
 
     margin-bottom: 12px;
+
 }
 
 
@@ -999,6 +1070,7 @@ section {
     line-height: 1.7;
 
     margin-bottom: 10px;
+
 }
 
 
@@ -1013,6 +1085,7 @@ section {
     color: white;
 
     font-weight: 800;
+
 }
 
 
@@ -1021,6 +1094,7 @@ section {
     list-style: none;
 
     margin-bottom: 25px;
+
 }
 
 
@@ -1033,6 +1107,7 @@ section {
     font-size: 14px;
 
     line-height: 1.5;
+
 }
 
 
@@ -1045,10 +1120,13 @@ section {
     font-weight: 900;
 
     margin-right: 10px;
+
 }
 
 
-/* COSTOS */
+/* =====================================================
+   COSTOS
+===================================================== */
 
 .cost-box {
 
@@ -1059,6 +1137,7 @@ section {
     border-top:
         1px solid
         rgba(255,255,255,0.10);
+
 }
 
 
@@ -1069,6 +1148,7 @@ section {
     font-size: 13px;
 
     font-weight: 600;
+
 }
 
 
@@ -1082,6 +1162,7 @@ section {
 
     margin:
         5px 0 20px;
+
 }
 
 
@@ -1095,39 +1176,13 @@ section {
 
     margin:
         5px 0 20px;
+
 }
 
 
-.price-range {
-
-    font-size: 37px;
-
-    font-weight: 800;
-
-    color: #00b7ff;
-
-    margin:
-        5px 0 20px;
-}
-
-
-/* DESCRIPCIÓN DE PAGO */
-
-.payment-description {
-
-    color: #9eabb9;
-
-    font-size: 12px;
-
-    line-height: 1.6;
-
-    margin-top: -12px;
-
-    margin-bottom: 18px;
-}
-
-
-/* MANTENIMIENTO */
+/* =====================================================
+   MANTENIMIENTO
+===================================================== */
 
 .maintenance {
 
@@ -1143,6 +1198,7 @@ section {
     margin-bottom: 25px;
 
     border-radius: 5px;
+
 }
 
 
@@ -1153,6 +1209,7 @@ section {
     color: #00b7ff;
 
     margin-bottom: 8px;
+
 }
 
 
@@ -1163,6 +1220,7 @@ section {
     font-size: 12px;
 
     line-height: 1.7;
+
 }
 
 
@@ -1173,10 +1231,11 @@ section {
     margin-top: auto;
 
     width: 100%;
+
 }
 
 
-/* NOTA */
+/* NOTA GENERAL */
 
 .maintenance-note {
 
@@ -1196,6 +1255,7 @@ section {
     border-radius: 15px;
 
     text-align: center;
+
 }
 
 
@@ -1206,6 +1266,7 @@ section {
     font-size: 23px;
 
     margin-bottom: 15px;
+
 }
 
 
@@ -1216,6 +1277,7 @@ section {
     line-height: 1.8;
 
     font-size: 14px;
+
 }
 
 
@@ -1226,6 +1288,7 @@ section {
 .about {
 
     background: #07111f;
+
 }
 
 
@@ -1236,6 +1299,7 @@ section {
     margin: auto;
 
     text-align: center;
+
 }
 
 
@@ -1248,6 +1312,7 @@ section {
     margin-bottom: 20px;
 
     font-size: 15px;
+
 }
 
 
@@ -1267,6 +1332,7 @@ section {
     background-position: center;
 
     background-attachment: fixed;
+
 }
 
 
@@ -1282,6 +1348,7 @@ section {
         rgba(3,10,18,0.82);
 
     z-index: 0;
+
 }
 
 
@@ -1290,6 +1357,7 @@ section {
     position: relative;
 
     z-index: 1;
+
 }
 
 
@@ -1313,12 +1381,14 @@ section {
         rgba(0,183,255,0.40);
 
     backdrop-filter: blur(5px);
+
 }
 
 
 .contact-box h3 {
 
     font-size: 25px;
+
 }
 
 
@@ -1332,6 +1402,7 @@ section {
         15px auto 30px;
 
     max-width: 600px;
+
 }
 
 
@@ -1353,6 +1424,7 @@ section {
     transition: 0.3s;
 
     display: inline-block;
+
 }
 
 
@@ -1361,6 +1433,7 @@ section {
     background: #00b7ff;
 
     color: #00101c;
+
 }
 
 
@@ -1372,6 +1445,7 @@ section {
     box-shadow:
         0 10px 30px
         rgba(0,183,255,0.30);
+
 }
 
 
@@ -1382,6 +1456,7 @@ section {
         rgba(255,255,255,0.25);
 
     color: white;
+
 }
 
 
@@ -1392,11 +1467,12 @@ section {
 
     color:
         #00b7ff;
+
 }
 
 
 /* =====================================================
-   REDES SOCIALES
+   REDES SOCIALES FLOTANTES
 ===================================================== */
 
 .social-floating {
@@ -1414,6 +1490,7 @@ section {
     gap: 12px;
 
     z-index: 2000;
+
 }
 
 
@@ -1440,6 +1517,7 @@ section {
     box-shadow:
         0 5px 20px
         rgba(0,0,0,0.35);
+
 }
 
 
@@ -1448,30 +1526,40 @@ section {
     transform:
         translateY(-4px)
         scale(1.05);
+
 }
 
+
+/* FACEBOOK */
 
 .facebook-button {
 
     background: #1877F2;
 
     color: white;
+
 }
 
+
+/* CORREO */
 
 .email-button {
 
     background: white;
 
     color: #e53935;
+
 }
 
+
+/* WHATSAPP */
 
 .whatsapp-button {
 
     background: #25D366;
 
     color: white;
+
 }
 
 
@@ -1486,20 +1574,22 @@ footer {
     text-align: center;
 
     padding: 40px 20px;
+
 }
 
 
 .footer-logo {
 
-    height: 90px;
+    height: 80px;
 
     width: auto;
 
-    max-width: 280px;
+    max-width: 250px;
 
     object-fit: contain;
 
     margin-bottom: 12px;
+
 }
 
 
@@ -1508,6 +1598,7 @@ footer p {
     color: #788594;
 
     font-size: 13px;
+
 }
 
 
@@ -1521,18 +1612,21 @@ footer p {
 
         grid-template-columns:
             1fr 1fr;
+
     }
 
     .process-grid {
 
         grid-template-columns:
             1fr 1fr;
+
     }
 
     .web-design-grid {
 
         grid-template-columns:
             1fr 1fr;
+
     }
 
 }
@@ -1543,24 +1637,30 @@ footer p {
     header {
 
         height: 78px;
+
     }
 
 
-    .logo-container {
+    .logo-link {
 
-        height: 74px;
+        height: 78px;
 
-        width: 205px;
+    }
+
+
+    .logo-frame {
+
+        height: 72px;
+
     }
 
 
     .logo-img {
 
-        height: 145px;
+        height: 66px;
 
-        max-width: 290px;
+        max-width: 260px;
 
-        margin-left: -10px;
     }
 
 
@@ -1585,24 +1685,28 @@ footer p {
         display: none;
 
         gap: 20px;
+
     }
 
 
     nav.active {
 
         display: flex;
+
     }
 
 
     nav a {
 
-        font-size: 17px;
+        font-size: 18px;
+
     }
 
 
     .menu-btn {
 
         display: block;
+
     }
 
 
@@ -1610,6 +1714,7 @@ footer p {
 
         padding:
             80px 5%;
+
     }
 
 
@@ -1617,6 +1722,7 @@ footer p {
 
         padding-top:
             120px;
+
     }
 
 
@@ -1625,6 +1731,7 @@ footer p {
         font-size: 15px;
 
         letter-spacing: 1.8px;
+
     }
 
 
@@ -1632,32 +1739,37 @@ footer p {
 
         font-size:
             clamp(40px,12vw,58px);
+
     }
 
 
     .hero p {
 
         font-size: 16px;
+
     }
 
 
     .section-title {
 
         margin-bottom: 45px;
+
     }
 
 
     .section-title small {
 
-        font-size: 23px;
+        font-size: 22px;
 
         line-height: 1.4;
+
     }
 
 
     .section-title h2 {
 
         font-size: 34px;
+
     }
 
 
@@ -1668,6 +1780,7 @@ footer p {
 
         grid-template-columns:
             1fr;
+
     }
 
 
@@ -1675,6 +1788,7 @@ footer p {
 
         min-height:
             300px;
+
     }
 
 
@@ -1682,6 +1796,7 @@ footer p {
 
         min-height:
             270px;
+
     }
 
 
@@ -1689,12 +1804,14 @@ footer p {
 
         height:
             280px;
+
     }
 
 
     .web-design-overlay span {
 
-        font-size: 18px;
+        font-size: 16px;
+
     }
 
 
@@ -1705,6 +1822,7 @@ footer p {
         bottom: 20px;
 
         gap: 10px;
+
     }
 
 
@@ -1715,6 +1833,7 @@ footer p {
         height: 54px;
 
         font-size: 25px;
+
     }
 
 
@@ -1722,6 +1841,7 @@ footer p {
 
         padding:
             25px 20px;
+
     }
 
 
@@ -1729,6 +1849,7 @@ footer p {
 
         background-attachment:
             scroll;
+
     }
 
 }
@@ -1747,21 +1868,21 @@ footer p {
 
 <header>
 
-    <div class="logo-container">
 
-        <a
-            href="#inicio"
-            class="logo-link"
-            aria-label="ERWEB Inicio">
+    <a href="#inicio"
+       aria-label="ERWEB Inicio"
+       class="logo-link">
+
+        <div class="logo-frame">
 
             <img
                 src="LOGO.jpg"
                 alt="Logo ERWEB"
                 class="logo-img">
 
-        </a>
+        </div>
 
-    </div>
+    </a>
 
 
     <div
@@ -1920,7 +2041,7 @@ footer p {
 
 
             <h3>
-                Tiendas online (dentro de la página web)
+                Tienda online (dentro de la página web)
             </h3>
 
 
@@ -2072,72 +2193,96 @@ footer p {
 
         <div class="process-card process-talk">
 
+
             <div class="number">
                 1
             </div>
+
 
             <h3>
                 Hablamos
             </h3>
 
+
             <p>
+
                 Conocemos tu negocio
                 y lo que necesitas.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-design">
 
+
             <div class="number">
                 2
             </div>
+
 
             <h3>
                 Diseñamos
             </h3>
 
+
             <p>
+
                 Creamos una propuesta
                 visual para tu página.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-develop">
 
+
             <div class="number">
                 3
             </div>
+
 
             <h3>
                 Desarrollamos
             </h3>
 
+
             <p>
+
                 Construimos la página
                 y configuramos sus funciones.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-publish">
 
+
             <div class="number">
                 4
             </div>
+
 
             <h3>
                 Publicamos
             </h3>
 
+
             <p>
+
                 Ponemos tu sitio en Internet
                 para que tus clientes puedan encontrarlo.
+
             </p>
+
 
         </div>
 
@@ -2369,20 +2514,13 @@ footer p {
 
 
                 <div class="cost-title">
-                    Costo de creación
+                    Costo de creación — pago único por la creación de la página
                 </div>
 
 
-                <div class="price-range">
+                <div class="price">
                     Q750 – Q950
                 </div>
-
-
-                <p class="payment-description">
-
-                    Pago único por la creación de la página web.
-
-                </p>
 
 
                 <div class="cost-title">
@@ -2517,7 +2655,7 @@ footer p {
                 </li>
 
                 <li>
-                    Catálogo de productos
+                    Pestaña de catálogo de productos
                 </li>
 
                 <li>
@@ -2525,19 +2663,19 @@ footer p {
                 </li>
 
                 <li>
-                    Pestañas para organizar el contenido
-                </li>
-
-                <li>
                     Integración con redes sociales
                 </li>
 
                 <li>
-                    Soporte
+                    Soporte técnico
                 </li>
 
                 <li>
                     Configuración técnica y seguridad básica
+                </li>
+
+                <li>
+                    Organización de contenido y secciones
                 </li>
 
             </ul>
@@ -2547,20 +2685,13 @@ footer p {
 
 
                 <div class="cost-title">
-                    Costo de creación
+                    Costo de creación — pago único por la creación de la página
                 </div>
 
 
                 <div class="price">
                     Q1,400
                 </div>
-
-
-                <p class="payment-description">
-
-                    Pago único por la creación de la página web.
-
-                </p>
 
 
                 <div class="cost-title">
