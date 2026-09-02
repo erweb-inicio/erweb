@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ERWEB | Creación de páginas web</title>
@@ -22,7 +24,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <style>
 
 /* =====================================================
-   GENERAL
+   CONFIGURACIÓN GENERAL
 ===================================================== */
 
 * {
@@ -52,11 +54,14 @@ a {
 ===================================================== */
 
 header {
+
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
+
     height: 82px;
 
     background: rgba(5,12,23,0.96);
@@ -64,6 +69,7 @@ header {
     backdrop-filter: blur(10px);
 
     display: flex;
+
     align-items: center;
 
     z-index: 1000;
@@ -71,46 +77,77 @@ header {
     border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+
+/* LOGO */
+
 .logo-img {
-    height: 70px;
+
+    height: 140px;
+
     width: auto;
-    max-width: 240px;
+
+    max-width: 330px;
+
     object-fit: contain;
+
     display: block;
+
     margin-left: 0;
 }
 
+
+/* MENÚ */
+
 nav {
+
     margin-left: auto;
+
     display: flex;
+
     align-items: center;
+
     gap: 28px;
+
     padding-right: 5%;
 }
 
 nav a {
+
     color: white;
+
     text-decoration: none;
+
     font-size: 14px;
-    font-weight: 600;
+
+    font-weight: 700;
+
     transition: 0.3s;
 }
 
 nav a:hover {
+
     color: #00b7ff;
 }
 
+
+/* BOTÓN MENÚ CELULAR */
+
 .menu-btn {
+
     display: none;
+
     font-size: 30px;
+
     cursor: pointer;
+
     margin-left: auto;
+
     margin-right: 5%;
 }
 
 
 /* =====================================================
-   HERO
+   INICIO / HERO
 ===================================================== */
 
 .hero {
@@ -118,94 +155,137 @@ nav a:hover {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     padding: 140px 20px 80px;
 
-    background:
-    radial-gradient(
-        circle at 20% 30%,
-        rgba(0,183,255,0.20),
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 80% 70%,
-        rgba(0,90,255,0.20),
-        transparent 30%
-    ),
-    #07111f;
+    position: relative;
+
+    overflow: hidden;
+
+    background-image:
+
+        url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=90");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
 }
+
+
+/* CAPA OSCURA SOBRE LA IMAGEN */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(3,10,18,0.90),
+            rgba(3,20,35,0.75),
+            rgba(0,70,110,0.45)
+        );
+
+    z-index: 0;
+}
+
+
+/* CONTENIDO */
 
 .hero-content {
+
+    position: relative;
+
+    z-index: 1;
+
     max-width: 1000px;
+
+    padding: 40px 25px;
+
+    background: rgba(3,10,18,0.18);
+
+    border-radius: 20px;
 }
+
+
+/* TEXTO SUPERIOR */
 
 .hero small {
+
     color: #00b7ff;
+
     font-weight: 800;
+
     letter-spacing: 3px;
+
     font-size: 22px;
+
     line-height: 1.5;
+
     display: block;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.9);
 }
+
+
+/* TÍTULO */
 
 .hero h1 {
+
     font-size: clamp(45px,7vw,82px);
+
     line-height: 1.05;
+
     margin: 25px 0;
+
     font-weight: 800;
+
+    text-shadow:
+        0 4px 15px rgba(0,0,0,0.9);
 }
+
+
+/* PALABRA AZUL */
 
 .hero h1 span {
+
     color: #00b7ff;
+
+    text-shadow:
+        0 3px 15px rgba(0,183,255,0.5);
 }
+
+
+/* DESCRIPCIÓN */
 
 .hero p {
+
     max-width: 750px;
+
     margin: auto;
-    color: #c6d0dc;
+
+    color: #f0f5fa;
+
     font-size: 18px;
+
     line-height: 1.7;
-}
 
-.hero-buttons {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 15px 28px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.btn-primary {
-    background: #00b7ff;
-    color: #00101c;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0,183,255,0.3);
-}
-
-.btn-secondary {
-    border: 1px solid rgba(255,255,255,0.25);
-    color: white;
-}
-
-.btn-secondary:hover {
-    border-color: #00b7ff;
-    color: #00b7ff;
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.9);
 }
 
 
@@ -214,34 +294,55 @@ nav a:hover {
 ===================================================== */
 
 section {
+
     padding: 100px 7%;
 }
 
+
 .section-title {
+
     text-align: center;
+
     margin-bottom: 60px;
 }
 
+
 .section-title small {
+
     color: #00b7ff;
+
     font-weight: 800;
+
     letter-spacing: 2px;
+
     font-size: 28px;
+
     display: block;
+
     margin-bottom: 15px;
 }
 
+
 .section-title h2 {
+
     font-size: clamp(38px,5vw,56px);
+
     margin-top: 10px;
+
     line-height: 1.15;
 }
 
+
 .section-title p {
+
     color: #9eabb9;
+
     margin: 18px auto 0;
+
     max-width: 700px;
+
     line-height: 1.7;
+
     font-size: 16px;
 }
 
@@ -251,14 +352,21 @@ section {
 ===================================================== */
 
 .services {
+
     background: #091625;
 }
 
+
 .service-grid {
+
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap: 25px;
 }
+
 
 .service-card {
 
@@ -272,22 +380,26 @@ section {
 
     overflow: hidden;
 
-    border: 2px solid rgba(0,183,255,0.35);
+    border:
+        2px solid
+        rgba(0,183,255,0.35);
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end;
 
     background-size: cover;
+
     background-position: center;
 
     box-shadow:
-    0 15px 35px rgba(0,0,0,0.25);
+        0 15px 35px rgba(0,0,0,0.25);
 
     transition: 0.3s;
 }
 
-/* CAPA OSCURA */
 
 .service-card::before {
 
@@ -298,38 +410,49 @@ section {
     inset: 0;
 
     background:
-    linear-gradient(
-        to top,
-        rgba(3,10,18,0.96),
-        rgba(3,10,18,0.45)
-    );
+        linear-gradient(
+            to top,
+            rgba(3,10,18,0.96),
+            rgba(3,10,18,0.40)
+        );
 
     z-index: 0;
 }
 
+
 .service-card > * {
+
     position: relative;
+
     z-index: 1;
 }
 
+
 .service-card:hover {
-    transform: translateY(-8px);
-    border-color: #00b7ff;
-    box-shadow:
-    0 20px 45px rgba(0,183,255,0.15);
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        #00b7ff;
 }
+
 
 .service-icon {
 
     width: 55px;
+
     height: 55px;
 
     border-radius: 12px;
 
-    background: rgba(0,183,255,0.85);
+    background:
+        rgba(0,183,255,0.90);
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     color: #00101c;
@@ -339,46 +462,64 @@ section {
     margin-bottom: auto;
 }
 
+
 .service-card h3 {
+
     margin-bottom: 12px;
+
     font-size: 21px;
 }
 
+
 .service-card p {
+
     color: #e0e7ee;
+
     line-height: 1.7;
+
     font-size: 14px;
 }
 
 
-/* IMÁGENES DE SERVICIOS */
+/* IMÁGENES SERVICIOS */
 
 .service-web {
+
     background-image:
     url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 .service-store {
+
     background-image:
     url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 .service-responsive {
+
     background-image:
     url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 .service-publish {
+
     background-image:
     url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 .service-maintenance {
+
     background-image:
     url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 .service-whatsapp {
+
     background-image:
     url("https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=1000&q=85");
 }
@@ -393,10 +534,11 @@ section {
     display: grid;
 
     grid-template-columns:
-    repeat(4,1fr);
+        repeat(4,1fr);
 
     gap: 25px;
 }
+
 
 .process-card {
 
@@ -413,19 +555,25 @@ section {
     text-align: center;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 
     background-size: cover;
+
     background-position: center;
 
-    border: 2px solid rgba(0,183,255,0.30);
+    border:
+        2px solid
+        rgba(0,183,255,0.30);
 
     box-shadow:
-    0 15px 35px rgba(0,0,0,0.25);
+        0 15px 35px rgba(0,0,0,0.25);
 
     transition: 0.3s;
 }
+
 
 .process-card::before {
 
@@ -436,26 +584,34 @@ section {
     inset: 0;
 
     background:
-    rgba(3,10,18,0.68);
+        rgba(3,10,18,0.68);
 
     z-index: 0;
 }
 
+
 .process-card > * {
+
     position: relative;
+
     z-index: 1;
 }
 
+
 .process-card:hover {
 
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 
-    border-color: #00b7ff;
+    border-color:
+        #00b7ff;
 }
+
 
 .number {
 
     width: 60px;
+
     height: 60px;
 
     border-radius: 50%;
@@ -467,18 +623,23 @@ section {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    margin: 0 auto 20px;
+    margin:
+        0 auto 20px;
 
     font-size: 20px;
 
     font-weight: 800;
 }
 
+
 .process-card h3 {
+
     font-size: 21px;
 }
+
 
 .process-card p {
 
@@ -492,7 +653,7 @@ section {
 }
 
 
-/* IMÁGENES DEL PROCESO */
+/* IMÁGENES PROCESO */
 
 .process-talk {
 
@@ -500,17 +661,20 @@ section {
     url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 .process-design {
 
     background-image:
     url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85");
 }
 
+
 .process-develop {
 
     background-image:
     url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=85");
 }
+
 
 .process-publish {
 
@@ -524,15 +688,17 @@ section {
 ===================================================== */
 
 .web-design {
+
     background: #091625;
 }
+
 
 .web-design-grid {
 
     display: grid;
 
     grid-template-columns:
-    repeat(2,1fr);
+        repeat(2,1fr);
 
     gap: 30px;
 
@@ -540,6 +706,7 @@ section {
 
     margin: auto;
 }
+
 
 .web-design-card {
 
@@ -552,17 +719,21 @@ section {
     overflow: hidden;
 
     border:
-    1px solid rgba(255,255,255,0.08);
+        1px solid
+        rgba(255,255,255,0.08);
 
     background: #0d1c2d;
 
     box-shadow:
-    0 15px 40px rgba(0,0,0,0.25);
+        0 15px 40px
+        rgba(0,0,0,0.25);
 }
+
 
 .web-design-card img {
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -572,26 +743,33 @@ section {
     transition: 0.5s;
 }
 
+
 .web-design-card:hover img {
-    transform: scale(1.06);
+
+    transform:
+        scale(1.06);
 }
+
 
 .web-design-overlay {
 
     position: absolute;
 
     left: 0;
+
     right: 0;
+
     bottom: 0;
 
     padding: 30px;
 
     background:
-    linear-gradient(
-        transparent,
-        rgba(3,10,18,0.95)
-    );
+        linear-gradient(
+            transparent,
+            rgba(3,10,18,0.95)
+        );
 }
+
 
 .web-design-overlay span {
 
@@ -604,12 +782,14 @@ section {
     letter-spacing: 1.5px;
 }
 
+
 .web-design-overlay h3 {
 
     margin-top: 8px;
 
     font-size: 22px;
 }
+
 
 .web-design-overlay p {
 
@@ -624,19 +804,21 @@ section {
 
 
 /* =====================================================
-   PLANES
+   COSTOS
 ===================================================== */
 
 .plans {
+
     background: #07111f;
 }
+
 
 .plans-grid {
 
     display: grid;
 
     grid-template-columns:
-    repeat(2,1fr);
+        repeat(2,1fr);
 
     gap: 30px;
 
@@ -645,12 +827,14 @@ section {
     margin: auto;
 }
 
+
 .plan {
 
     background: #0d1c2d;
 
     border:
-    2px solid #00b7ff;
+        2px solid
+        #00b7ff;
 
     border-radius: 18px;
 
@@ -661,24 +845,23 @@ section {
     flex-direction: column;
 
     box-shadow:
-    0 10px 35px rgba(0,183,255,0.08);
+        0 10px 35px
+        rgba(0,183,255,0.08);
 
     transition: 0.3s;
 }
 
+
 .plan:hover {
 
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 
     box-shadow:
-    0 15px 40px rgba(0,183,255,0.18);
+        0 15px 40px
+        rgba(0,183,255,0.18);
 }
 
-.plan.featured {
-
-    box-shadow:
-    0 15px 45px rgba(0,183,255,0.20);
-}
 
 .plan-label {
 
@@ -693,12 +876,14 @@ section {
     margin-bottom: 10px;
 }
 
+
 .plan h3 {
 
     font-size: 28px;
 
     margin-bottom: 12px;
 }
+
 
 .plan-description {
 
@@ -710,6 +895,7 @@ section {
 
     margin-bottom: 10px;
 }
+
 
 .includes-title {
 
@@ -724,12 +910,14 @@ section {
     font-weight: 800;
 }
 
+
 .plan ul {
 
     list-style: none;
 
     margin-bottom: 25px;
 }
+
 
 .plan li {
 
@@ -742,6 +930,7 @@ section {
     line-height: 1.5;
 }
 
+
 .plan li::before {
 
     content: "✓";
@@ -753,6 +942,9 @@ section {
     margin-right: 10px;
 }
 
+
+/* COSTOS */
+
 .cost-box {
 
     margin-top: auto;
@@ -760,8 +952,10 @@ section {
     padding-top: 20px;
 
     border-top:
-    1px solid rgba(255,255,255,0.10);
+        1px solid
+        rgba(255,255,255,0.10);
 }
+
 
 .cost-title {
 
@@ -772,6 +966,7 @@ section {
     font-weight: 600;
 }
 
+
 .price {
 
     font-size: 40px;
@@ -780,8 +975,10 @@ section {
 
     color: #00b7ff;
 
-    margin: 5px 0 20px;
+    margin:
+        5px 0 20px;
 }
+
 
 .maintenance-price {
 
@@ -791,16 +988,21 @@ section {
 
     color: white;
 
-    margin: 5px 0 20px;
+    margin:
+        5px 0 20px;
 }
+
+
+/* MANTENIMIENTO */
 
 .maintenance {
 
     background:
-    rgba(0,183,255,0.06);
+        rgba(0,183,255,0.06);
 
     border-left:
-    3px solid #00b7ff;
+        3px solid
+        #00b7ff;
 
     padding: 16px;
 
@@ -808,6 +1010,7 @@ section {
 
     border-radius: 5px;
 }
+
 
 .maintenance h4 {
 
@@ -818,6 +1021,7 @@ section {
     margin-bottom: 8px;
 }
 
+
 .maintenance p {
 
     color: #aeb9c5;
@@ -826,6 +1030,7 @@ section {
 
     line-height: 1.7;
 }
+
 
 .plan .btn {
 
@@ -836,23 +1041,29 @@ section {
     width: 100%;
 }
 
+
+/* NOTA GENERAL */
+
 .maintenance-note {
 
     max-width: 1000px;
 
-    margin: 50px auto 0;
+    margin:
+        50px auto 0;
 
     padding: 30px;
 
     background: #0d1c2d;
 
     border:
-    1px solid rgba(0,183,255,0.35);
+        1px solid
+        rgba(0,183,255,0.35);
 
     border-radius: 15px;
 
     text-align: center;
 }
+
 
 .maintenance-note h3 {
 
@@ -862,6 +1073,7 @@ section {
 
     margin-bottom: 15px;
 }
+
 
 .maintenance-note p {
 
@@ -878,8 +1090,10 @@ section {
 ===================================================== */
 
 .about {
+
     background: #07111f;
 }
+
 
 .about-content {
 
@@ -889,6 +1103,7 @@ section {
 
     text-align: center;
 }
+
 
 .about-content p {
 
@@ -903,7 +1118,7 @@ section {
 
 
 /* =====================================================
-   CONTACTO CON IMAGEN
+   CONTACTO
 ===================================================== */
 
 .contact {
@@ -920,6 +1135,7 @@ section {
     background-attachment: fixed;
 }
 
+
 .contact::before {
 
     content: "";
@@ -929,10 +1145,11 @@ section {
     inset: 0;
 
     background:
-    rgba(3,10,18,0.82);
+        rgba(3,10,18,0.82);
 
     z-index: 0;
 }
+
 
 .contact > * {
 
@@ -940,6 +1157,7 @@ section {
 
     z-index: 1;
 }
+
 
 .contact-box {
 
@@ -950,21 +1168,25 @@ section {
     text-align: center;
 
     background:
-    rgba(13,28,45,0.90);
+        rgba(13,28,45,0.90);
 
     padding: 50px 30px;
 
     border-radius: 18px;
 
     border:
-    2px solid rgba(0,183,255,0.40);
+        2px solid
+        rgba(0,183,255,0.40);
 
     backdrop-filter: blur(5px);
 }
 
+
 .contact-box h3 {
+
     font-size: 25px;
 }
+
 
 .contact-box p {
 
@@ -972,14 +1194,75 @@ section {
 
     line-height: 1.7;
 
-    margin: 15px auto 30px;
+    margin:
+        15px auto 30px;
 
     max-width: 600px;
 }
 
 
 /* =====================================================
-   BOTONES FLOTANTES
+   BOTONES GENERALES
+===================================================== */
+
+.btn {
+
+    padding:
+        15px 28px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+    display: inline-block;
+}
+
+
+.btn-primary {
+
+    background: #00b7ff;
+
+    color: #00101c;
+}
+
+
+.btn-primary:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,183,255,0.30);
+}
+
+
+.btn-secondary {
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    color: white;
+}
+
+
+.btn-secondary:hover {
+
+    border-color:
+        #00b7ff;
+
+    color:
+        #00b7ff;
+}
+
+
+/* =====================================================
+   REDES SOCIALES FLOTANTES
 ===================================================== */
 
 .social-floating {
@@ -988,7 +1271,7 @@ section {
 
     right: 22px;
 
-    bottom: 95px;
+    bottom: 25px;
 
     display: flex;
 
@@ -998,6 +1281,7 @@ section {
 
     z-index: 2000;
 }
+
 
 .social-button {
 
@@ -1020,15 +1304,20 @@ section {
     transition: 0.3s;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,0.35);
+        0 5px 20px
+        rgba(0,0,0,0.35);
 }
+
 
 .social-button:hover {
 
     transform:
-    translateY(-4px)
-    scale(1.05);
+        translateY(-4px)
+        scale(1.05);
 }
+
+
+/* FACEBOOK */
 
 .facebook-button {
 
@@ -1037,12 +1326,18 @@ section {
     color: white;
 }
 
+
+/* CORREO */
+
 .email-button {
 
     background: white;
 
     color: #e53935;
 }
+
+
+/* WHATSAPP */
 
 .whatsapp-button {
 
@@ -1065,18 +1360,20 @@ footer {
     padding: 40px 20px;
 }
 
+
 .footer-logo {
 
-    height: 65px;
+    height: 80px;
 
     width: auto;
 
-    max-width: 220px;
+    max-width: 250px;
 
     object-fit: contain;
 
     margin-bottom: 12px;
 }
+
 
 footer p {
 
@@ -1093,33 +1390,43 @@ footer p {
 @media(max-width:1000px) {
 
     .service-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .process-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .web-design-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
     }
+
 }
 
 
 @media(max-width:700px) {
 
     header {
+
         height: 78px;
     }
 
+
     .logo-img {
 
-        height: 65px;
+        height: 120px;
 
-        max-width: 215px;
+        max-width: 280px;
 
         margin-left: 0;
     }
+
 
     nav {
 
@@ -1144,21 +1451,32 @@ footer p {
         gap: 20px;
     }
 
+
     nav.active {
+
         display: flex;
     }
 
+
     .menu-btn {
+
         display: block;
     }
 
+
     section {
-        padding: 80px 5%;
+
+        padding:
+            80px 5%;
     }
 
+
     .hero {
-        padding-top: 120px;
+
+        padding-top:
+            120px;
     }
+
 
     .hero small {
 
@@ -1167,19 +1485,25 @@ footer p {
         letter-spacing: 1.8px;
     }
 
+
     .hero h1 {
 
         font-size:
-        clamp(40px,12vw,58px);
+            clamp(40px,12vw,58px);
     }
 
+
     .hero p {
+
         font-size: 16px;
     }
 
+
     .section-title {
+
         margin-bottom: 45px;
     }
+
 
     .section-title small {
 
@@ -1188,38 +1512,53 @@ footer p {
         line-height: 1.4;
     }
 
+
     .section-title h2 {
+
         font-size: 34px;
     }
+
 
     .service-grid,
     .plans-grid,
     .process-grid,
     .web-design-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
+
 
     .service-card {
-        min-height: 300px;
+
+        min-height:
+            300px;
     }
+
 
     .process-card {
-        min-height: 270px;
+
+        min-height:
+            270px;
     }
 
+
     .web-design-card {
-        height: 280px;
+
+        height:
+            280px;
     }
+
 
     .social-floating {
 
         right: 15px;
 
-        bottom: 85px;
+        bottom: 20px;
 
         gap: 10px;
     }
+
 
     .social-button {
 
@@ -1230,12 +1569,18 @@ footer p {
         font-size: 25px;
     }
 
+
     .maintenance-note {
-        padding: 25px 20px;
+
+        padding:
+            25px 20px;
     }
 
+
     .contact {
-        background-attachment: scroll;
+
+        background-attachment:
+            scroll;
     }
 
 }
@@ -1254,7 +1599,9 @@ footer p {
 
 <header>
 
-    <a href="#inicio" aria-label="ERWEB Inicio">
+
+    <a href="#inicio"
+       aria-label="ERWEB Inicio">
 
         <img
             src="LOGO.jpg"
@@ -1276,19 +1623,25 @@ footer p {
 
     <nav id="menu">
 
-        <a href="#inicio">Inicio</a>
+        <a href="#inicio">
+            Inicio
+        </a>
 
-        <a href="#servicios">Servicios</a>
+        <a href="#servicios">
+            Servicios
+        </a>
 
-        <a href="#proceso">Proceso</a>
+        <a href="#diseno-web">
+            Diseño web
+        </a>
 
-        <a href="#diseno-web">Diseño web</a>
+        <a href="#planes">
+            Costos
+        </a>
 
-        <a href="#planes">Costos</a>
-
-        <a href="#nosotros">Nosotros</a>
-
-        <a href="#contacto">Contacto</a>
+        <a href="#contacto">
+            Contacto
+        </a>
 
     </nav>
 
@@ -1299,13 +1652,20 @@ footer p {
      INICIO
 ===================================================== -->
 
-<section class="hero" id="inicio">
+<section
+    class="hero"
+    id="inicio">
+
 
     <div class="hero-content">
 
+
         <small>
+
             DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
+
         </small>
+
 
         <h1>
 
@@ -1318,6 +1678,7 @@ footer p {
 
         </h1>
 
+
         <p>
 
             En ERWEB creamos páginas web modernas,
@@ -1326,17 +1687,6 @@ footer p {
 
         </p>
 
-        <div class="hero-buttons">
-
-            <a href="#servicios" class="btn btn-primary">
-                Ver servicios
-            </a>
-
-            <a href="#contacto" class="btn btn-secondary">
-                Solicitar cotización
-            </a>
-
-        </div>
 
     </div>
 
@@ -1347,17 +1697,23 @@ footer p {
      SERVICIOS
 ===================================================== -->
 
-<section class="services" id="servicios">
+<section
+    class="services"
+    id="servicios">
+
 
     <div class="section-title">
+
 
         <small>
             LO QUE HACEMOS
         </small>
 
+
         <h2>
             Nuestros servicios
         </h2>
+
 
         <p>
 
@@ -1367,6 +1723,7 @@ footer p {
 
         </p>
 
+
     </div>
 
 
@@ -1375,13 +1732,18 @@ footer p {
 
         <div class="service-card service-web">
 
+
             <div class="service-icon">
+
                 <i class="fa-solid fa-code"></i>
+
             </div>
+
 
             <h3>
                 Páginas web
             </h3>
+
 
             <p>
 
@@ -1390,18 +1752,24 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-store">
 
+
             <div class="service-icon">
+
                 <i class="fa-solid fa-cart-shopping"></i>
+
             </div>
+
 
             <h3>
                 Tiendas online
             </h3>
+
 
             <p>
 
@@ -1410,18 +1778,24 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-responsive">
 
+
             <div class="service-icon">
+
                 <i class="fa-solid fa-mobile-screen-button"></i>
+
             </div>
+
 
             <h3>
                 Diseño adaptable
             </h3>
+
 
             <p>
 
@@ -1430,18 +1804,24 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-publish">
 
+
             <div class="service-icon">
+
                 <i class="fa-solid fa-rocket"></i>
+
             </div>
+
 
             <h3>
                 Publicación web
             </h3>
+
 
             <p>
 
@@ -1450,18 +1830,24 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-maintenance">
 
+
             <div class="service-icon">
+
                 <i class="fa-solid fa-screwdriver-wrench"></i>
+
             </div>
+
 
             <h3>
                 Mantenimiento
             </h3>
+
 
             <p>
 
@@ -1470,18 +1856,24 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-whatsapp">
 
+
             <div class="service-icon">
+
                 <i class="fa-brands fa-whatsapp"></i>
+
             </div>
+
 
             <h3>
                 Integración con WhatsApp
             </h3>
+
 
             <p>
 
@@ -1489,6 +1881,7 @@ footer p {
                 clientes puedan comunicarse directamente contigo.
 
             </p>
+
 
         </div>
 
@@ -1504,15 +1897,19 @@ footer p {
 
 <section id="proceso">
 
+
     <div class="section-title">
+
 
         <small>
             NUESTRO MÉTODO
         </small>
 
+
         <h2>
             ¿Cómo trabajamos?
         </h2>
+
 
     </div>
 
@@ -1522,68 +1919,96 @@ footer p {
 
         <div class="process-card process-talk">
 
+
             <div class="number">
                 1
             </div>
+
 
             <h3>
                 Hablamos
             </h3>
 
+
             <p>
-                Conocemos tu negocio y lo que necesitas.
+
+                Conocemos tu negocio
+                y lo que necesitas.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-design">
 
+
             <div class="number">
                 2
             </div>
+
 
             <h3>
                 Diseñamos
             </h3>
 
+
             <p>
-                Creamos una propuesta visual para tu página.
+
+                Creamos una propuesta
+                visual para tu página.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-develop">
 
+
             <div class="number">
                 3
             </div>
+
 
             <h3>
                 Desarrollamos
             </h3>
 
+
             <p>
-                Construimos la página y configuramos sus funciones.
+
+                Construimos la página
+                y configuramos sus funciones.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-publish">
 
+
             <div class="number">
                 4
             </div>
+
 
             <h3>
                 Publicamos
             </h3>
 
+
             <p>
-                Ponemos tu sitio en Internet para que tus clientes puedan encontrarlo.
+
+                Ponemos tu sitio en Internet
+                para que tus clientes puedan encontrarlo.
+
             </p>
+
 
         </div>
 
@@ -1597,17 +2022,23 @@ footer p {
      DISEÑO WEB
 ===================================================== -->
 
-<section class="web-design" id="diseno-web">
+<section
+    class="web-design"
+    id="diseno-web">
+
 
     <div class="section-title">
+
 
         <small>
             CREACIÓN WEB
         </small>
 
+
         <h2>
             Diseñamos tu presencia digital
         </h2>
+
 
         <p>
 
@@ -1618,6 +2049,7 @@ footer p {
 
         </p>
 
+
     </div>
 
 
@@ -1626,20 +2058,25 @@ footer p {
 
         <div class="web-design-card">
 
+
             <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
                 alt="Diseño y desarrollo de páginas web"
                 loading="lazy">
 
+
             <div class="web-design-overlay">
+
 
                 <span>
                     DISEÑO Y DESARROLLO
                 </span>
 
+
                 <h3>
                     Páginas web profesionales
                 </h3>
+
 
                 <p>
 
@@ -1648,36 +2085,45 @@ footer p {
 
                 </p>
 
+
             </div>
+
 
         </div>
 
 
         <div class="web-design-card">
 
+
             <img
                 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
                 alt="Diseño web adaptable"
                 loading="lazy">
 
+
             <div class="web-design-overlay">
+
 
                 <span>
                     DISEÑO ADAPTABLE
                 </span>
 
+
                 <h3>
                     Tu web en cualquier dispositivo
                 </h3>
 
+
                 <p>
 
-                    Una experiencia visual preparada para
-                    celulares, tablets y computadoras.
+                    Una experiencia visual preparada
+                    para celulares, tablets y computadoras.
 
                 </p>
 
+
             </div>
+
 
         </div>
 
@@ -1691,17 +2137,23 @@ footer p {
      COSTOS
 ===================================================== -->
 
-<section class="plans" id="planes">
+<section
+    class="plans"
+    id="planes">
+
 
     <div class="section-title">
+
 
         <small>
             OPCIONES
         </small>
 
+
         <h2>
             Costos de creación de páginas web
         </h2>
+
 
         <p>
 
@@ -1710,23 +2162,29 @@ footer p {
 
         </p>
 
+
     </div>
 
 
     <div class="plans-grid">
 
 
-        <!-- PLAN 1 -->
+        <!-- =================================================
+             PLAN 1
+        ================================================== -->
 
         <div class="plan">
+
 
             <div class="plan-label">
                 PLAN 01
             </div>
 
+
             <h3>
                 Página Inicial Básica
             </h3>
+
 
             <p class="plan-description">
 
@@ -1735,82 +2193,88 @@ footer p {
 
             </p>
 
+
             <div class="includes-title">
                 Incluye:
             </div>
 
+
             <ul>
+
 
                 <li>
                     Página informativa
                 </li>
 
+
                 <li>
                     Diseño adaptable
                 </li>
+
 
                 <li>
                     Sección de contacto
                 </li>
 
+
                 <li>
                     Botón de WhatsApp
                 </li>
+
 
                 <li>
                     Publicación web
                 </li>
 
-                <li>
-                    Diseño personalizado
-                </li>
 
                 <li>
                     Galería de imágenes
                 </li>
 
-                <li>
-                    Formulario de contacto
-                </li>
-
-                <li>
-                    Integración con redes sociales
-                </li>
 
                 <li>
                     Optimización para celulares
                 </li>
 
+
                 <li>
                     Soporte
                 </li>
+
 
             </ul>
 
 
             <div class="cost-box">
 
+
                 <div class="cost-title">
                     Costo de creación
                 </div>
+
 
                 <div class="price">
                     Q900
                 </div>
 
+
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
+
 
                 <div class="maintenance-price">
                     Q900
                 </div>
 
+
                 <div class="maintenance">
+
 
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
+
 
                     <p>
 
@@ -1823,7 +2287,9 @@ footer p {
 
                     </p>
 
+
                 </div>
+
 
             </div>
 
@@ -1838,101 +2304,162 @@ footer p {
 
             </a>
 
+
         </div>
 
 
-        <!-- PLAN 2 -->
+        <!-- =================================================
+             PLAN 2
+        ================================================== -->
 
-        <div class="plan featured">
+        <div class="plan">
+
 
             <div class="plan-label">
-                PLAN 02 · RECOMENDADO
+                PLAN 02
             </div>
+
 
             <h3>
                 Página Profesional
             </h3>
 
+
             <p class="plan-description">
 
-                Una opción completa para negocios que buscan
-                una presencia profesional y personalizada
-                en Internet.
+                Una solución completa para empresas y negocios
+                que buscan una presencia digital profesional,
+                moderna y personalizada.
 
             </p>
+
 
             <div class="includes-title">
                 Incluye:
             </div>
 
+
             <ul>
+
 
                 <li>
                     Diseño personalizado
                 </li>
 
+
                 <li>
                     Varias secciones
                 </li>
+
 
                 <li>
                     Galería de imágenes
                 </li>
 
+
+                <li>
+                    Videos
+                </li>
+
+
                 <li>
                     Integración con WhatsApp
                 </li>
+
+
+                <li>
+                    Integración con correo electrónico
+                </li>
+
+
+                <li>
+                    Integración con Facebook
+                </li>
+
+
+                <li>
+                    Integración con Instagram
+                </li>
+
+
+                <li>
+                    Integración con TikTok
+                </li>
+
 
                 <li>
                     Formulario de contacto
                 </li>
 
+
                 <li>
                     Optimización para celulares
                 </li>
+
 
                 <li>
                     Publicación web
                 </li>
 
+
                 <li>
                     Catálogo de productos
                 </li>
+
 
                 <li>
                     Integración con redes sociales
                 </li>
 
+
                 <li>
                     Soporte
                 </li>
+
+
+                <li>
+                    SEO básico
+                </li>
+
+
+                <li>
+                    Configuración técnica y seguridad básica
+                </li>
+
 
             </ul>
 
 
             <div class="cost-box">
 
+
                 <div class="cost-title">
                     Costo de creación
                 </div>
+
 
                 <div class="price">
                     Q1,300
                 </div>
 
+
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
+
 
                 <div class="maintenance-price">
                     Q1,200
                 </div>
 
+
                 <div class="maintenance">
+
 
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
+
 
                     <p>
 
@@ -1945,7 +2472,9 @@ footer p {
 
                     </p>
 
+
                 </div>
+
 
             </div>
 
@@ -1960,6 +2489,7 @@ footer p {
 
             </a>
 
+
         </div>
 
 
@@ -1968,9 +2498,11 @@ footer p {
 
     <div class="maintenance-note">
 
+
         <h3>
             Mantenimiento de tu página web
         </h3>
+
 
         <p>
 
@@ -1986,6 +2518,7 @@ footer p {
 
         </p>
 
+
     </div>
 
 </section>
@@ -1995,22 +2528,29 @@ footer p {
      NOSOTROS
 ===================================================== -->
 
-<section class="about" id="nosotros">
+<section
+    class="about"
+    id="nosotros">
+
 
     <div class="section-title">
+
 
         <small>
             SOBRE ERWEB
         </small>
 
+
         <h2>
             Transformamos ideas en páginas web
         </h2>
+
 
     </div>
 
 
     <div class="about-content">
+
 
         <p>
 
@@ -2019,6 +2559,7 @@ footer p {
             una presencia profesional en Internet.
 
         </p>
+
 
         <p>
 
@@ -2029,6 +2570,7 @@ footer p {
 
         </p>
 
+
     </div>
 
 </section>
@@ -2038,26 +2580,34 @@ footer p {
      CONTACTO
 ===================================================== -->
 
-<section class="contact" id="contacto">
+<section
+    class="contact"
+    id="contacto">
+
 
     <div class="section-title">
+
 
         <small>
             HABLEMOS
         </small>
 
+
         <h2>
             ¿Tienes un proyecto?
         </h2>
+
 
     </div>
 
 
     <div class="contact-box">
 
+
         <h3>
             Cuéntanos qué necesitas
         </h3>
+
 
         <p>
 
@@ -2079,6 +2629,7 @@ footer p {
             Escribir por Messenger
 
         </a>
+
 
     </div>
 
@@ -2141,14 +2692,17 @@ footer p {
 
 <footer>
 
+
     <img
         src="LOGO.jpg"
         alt="Logo ERWEB"
         class="footer-logo">
 
+
     <p>
         Creación de páginas web profesionales.
     </p>
+
 
     <p style="margin-top:15px;">
 
@@ -2156,6 +2710,7 @@ footer p {
         Todos los derechos reservados.
 
     </p>
+
 
 </footer>
 
@@ -2198,4 +2753,5 @@ document
 
 
 </body>
+
 </html>
