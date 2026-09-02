@@ -10,16 +10,16 @@
 <title>ERWEB | Creación de páginas web profesionales en Guatemala</title>
 
 <meta name="description"
-content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala. Diseño web, publicación, mantenimiento e integración con redes sociales.">
+content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala.">
 
 <meta name="keywords"
-content="páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, sitios web para negocios, ERWEB">
+content="ERWEB, páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, sitios web, diseño adaptable, páginas para negocios">
 
 <meta name="author" content="ERWEB">
 
 <meta name="robots" content="index, follow">
 
-<meta name="theme-color" content="#07111f">
+<link rel="canonical" href="https://erwebinicio.github.io/">
 
 <meta property="og:title"
 content="ERWEB | Creación de páginas web profesionales">
@@ -31,10 +31,7 @@ content="Creamos páginas web modernas, profesionales y adaptadas a celulares pa
 
 <meta property="og:image" content="LOGO.jpg">
 
-<link rel="canonical" href="https://erwebinicio.github.io/">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
@@ -97,127 +94,129 @@ header {
 
     z-index: 1000;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom:
+        1px solid rgba(255,255,255,0.08);
 }
 
 
 /* =====================================================
    LOGO
-   RECTÁNGULO EXACTO DE LA IMAGEN
+   RECTÁNGULO EXACTO + LUZ EN LAS 4 ORILLAS
 ===================================================== */
 
-.logo-wrapper {
+.logo-container {
 
     position: relative;
 
-    display: inline-block;
+    width: 300px;
 
-    margin: 0;
+    height: 76px;
 
-    padding: 0;
+    flex-shrink: 0;
 
-    line-height: 0;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     overflow: hidden;
+
+    border-radius: 3px;
 }
 
 
-/* IMAGEN */
+/*
+   BORDE ANIMADO
 
-.logo-img {
+   La máscara elimina el centro y deja
+   solamente el borde del rectángulo.
+*/
 
-    height: 140px;
-
-    width: auto;
-
-    max-width: 330px;
-
-    display: block;
-
-    object-fit: contain;
-
-    position: relative;
-
-    z-index: 1;
-}
-
-
-/* =====================================================
-   LUZ DEL LOGO
-   CONTENIDA DENTRO DEL RECTÁNGULO
-===================================================== */
-
-.logo-wrapper::after {
+.logo-container::before {
 
     content: "";
 
     position: absolute;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
-    width: 100%;
-    height: 100%;
+    padding: 2px;
 
-    box-sizing: border-box;
-
-    border: 3px solid transparent;
-
-    pointer-events: none;
-
-    z-index: 5;
+    border-radius: 3px;
 
     background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            transparent 42%,
-            rgba(255,255,255,0.20) 47%,
-            #ffffff 50%,
-            rgba(255,255,255,0.20) 53%,
-            transparent 58%,
-            transparent 100%
-        ) border-box;
-
-    background-size: 400% 400%;
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            transparent 72deg,
+            #00b7ff 88deg,
+            #ffffff 98deg,
+            #00b7ff 108deg,
+            transparent 124deg,
+            transparent 360deg
+        );
 
     -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
 
     -webkit-mask-composite: xor;
 
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
     mask-composite: exclude;
 
-    animation: luzLogo 4s linear infinite;
+    animation:
+        luzLogo 4s linear infinite;
+
+    z-index: 2;
+
+    pointer-events: none;
 }
 
 
-/* =====================================================
-   RECORRIDO DE LA LUZ
-   ARRIBA → DERECHA → ABAJO → IZQUIERDA
-===================================================== */
+/*
+   IMAGEN DEL LOGO
+
+   La imagen permanece completamente
+   fija y no cambia de tamaño.
+*/
+
+.logo-img {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+
+    margin: 0;
+
+    max-width: none;
+}
+
+
+/* ANIMACIÓN DE LA LUZ */
 
 @keyframes luzLogo {
 
-    0% {
-        background-position: 0% 0%;
+    from {
+        transform: rotate(0deg);
     }
 
-    25% {
-        background-position: 100% 0%;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
-    75% {
-        background-position: 0% 100%;
-    }
-
-    100% {
-        background-position: 0% 0%;
+    to {
+        transform: rotate(360deg);
     }
 
 }
@@ -246,7 +245,7 @@ nav a {
 
     text-decoration: none;
 
-    font-size: 17px;
+    font-size: 16px;
 
     font-weight: 700;
 
@@ -276,7 +275,7 @@ nav a:hover {
 
 
 /* =====================================================
-   INICIO
+   INICIO / HERO
 ===================================================== */
 
 .hero {
@@ -298,7 +297,6 @@ nav a:hover {
     overflow: hidden;
 
     background-image:
-
         url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=90");
 
     background-size: cover;
@@ -318,7 +316,6 @@ nav a:hover {
     inset: 0;
 
     background:
-
         linear-gradient(
             135deg,
             rgba(3,10,18,0.90),
@@ -340,7 +337,8 @@ nav a:hover {
 
     padding: 40px 25px;
 
-    background: rgba(3,10,18,0.18);
+    background:
+        rgba(3,10,18,0.18);
 
     border-radius: 20px;
 }
@@ -367,7 +365,8 @@ nav a:hover {
 
 .hero h1 {
 
-    font-size: clamp(45px,7vw,82px);
+    font-size:
+        clamp(45px,7vw,82px);
 
     line-height: 1.05;
 
@@ -442,7 +441,8 @@ section {
 
 .section-title h2 {
 
-    font-size: clamp(38px,5vw,56px);
+    font-size:
+        clamp(38px,5vw,56px);
 
     margin-top: 10px;
 
@@ -646,12 +646,6 @@ section {
    PROCESO
 ===================================================== */
 
-#proceso {
-
-    background: #07111f;
-}
-
-
 .process-grid {
 
     display: grid;
@@ -776,6 +770,8 @@ section {
 }
 
 
+/* IMÁGENES PROCESO */
+
 .process-talk {
 
     background-image:
@@ -896,11 +892,14 @@ section {
 
     color: #00b7ff;
 
-    font-size: 22px;
+    font-size: 21px;
 
     font-weight: 800;
 
     letter-spacing: 1.5px;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.9);
 }
 
 
@@ -1064,7 +1063,9 @@ section {
 }
 
 
-/* COSTOS */
+/* =====================================================
+   COSTOS
+===================================================== */
 
 .cost-box {
 
@@ -1090,7 +1091,7 @@ section {
 
 .price {
 
-    font-size: 40px;
+    font-size: 38px;
 
     font-weight: 800;
 
@@ -1114,7 +1115,25 @@ section {
 }
 
 
-/* MANTENIMIENTO */
+/* TEXTO EXPLICATIVO DEL PAGO */
+
+.payment-description {
+
+    color: #aeb9c5;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-top: -12px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   MANTENIMIENTO
+===================================================== */
 
 .maintenance {
 
@@ -1163,7 +1182,9 @@ section {
 }
 
 
-/* NOTA */
+/* =====================================================
+   NOTA GENERAL
+===================================================== */
 
 .maintenance-note {
 
@@ -1438,6 +1459,8 @@ section {
 }
 
 
+/* FACEBOOK */
+
 .facebook-button {
 
     background: #1877F2;
@@ -1446,6 +1469,8 @@ section {
 }
 
 
+/* CORREO */
+
 .email-button {
 
     background: white;
@@ -1453,6 +1478,8 @@ section {
     color: #e53935;
 }
 
+
+/* WHATSAPP */
 
 .whatsapp-button {
 
@@ -1533,21 +1560,16 @@ footer p {
     }
 
 
-    .logo-img {
+    /*
+       El contenedor conserva el rectángulo
+       y la imagen permanece completa.
+    */
 
-        height: 120px;
+    .logo-container {
 
-        max-width: 280px;
-    }
+        width: 250px;
 
-
-    .logo-wrapper {
-
-        margin: 0;
-
-        padding: 0;
-
-        overflow: hidden;
+        height: 68px;
     }
 
 
@@ -1578,12 +1600,6 @@ footer p {
     nav.active {
 
         display: flex;
-    }
-
-
-    nav a {
-
-        font-size: 18px;
     }
 
 
@@ -1681,7 +1697,7 @@ footer p {
 
     .web-design-overlay span {
 
-        font-size: 18px;
+        font-size: 17px;
     }
 
 
@@ -1735,19 +1751,17 @@ footer p {
 <header>
 
 
-    <div class="logo-wrapper">
+    <a
+        href="#inicio"
+        class="logo-container"
+        aria-label="ERWEB Inicio">
 
-        <a href="#inicio"
-           aria-label="ERWEB Inicio">
+        <img
+            src="LOGO.jpg"
+            alt="Logo ERWEB"
+            class="logo-img">
 
-            <img
-                src="LOGO.jpg"
-                alt="Logo ERWEB - Creación de páginas web"
-                class="logo-img">
-
-        </a>
-
-    </div>
+    </a>
 
 
     <div
@@ -1800,7 +1814,9 @@ footer p {
 
 
         <small>
+
             DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
+
         </small>
 
 
@@ -2008,13 +2024,13 @@ footer p {
 
 
             <h3>
-                Integración con WhatsApp
+                Botón de WhatsApp
             </h3>
 
 
             <p>
 
-                Agregamos botones de contacto para que tus
+                Agregamos un botón de contacto para que tus
                 clientes puedan comunicarse directamente contigo.
 
             </p>
@@ -2306,7 +2322,9 @@ footer p {
     <div class="plans-grid">
 
 
-        <!-- PLAN 1 -->
+        <!-- =================================================
+             PLAN 1
+        ================================================== -->
 
         <div class="plan">
 
@@ -2336,21 +2354,46 @@ footer p {
 
             <ul>
 
-                <li>Página informativa</li>
 
-                <li>Diseño adaptable</li>
+                <li>
+                    Página informativa
+                </li>
 
-                <li>Sección de contacto</li>
 
-                <li>Botón de WhatsApp</li>
+                <li>
+                    Diseño adaptable
+                </li>
 
-                <li>Publicación web</li>
 
-                <li>Galería de imágenes</li>
+                <li>
+                    Sección de contacto
+                </li>
 
-                <li>Optimización para celulares</li>
 
-                <li>Soporte</li>
+                <li>
+                    Botón de WhatsApp
+                </li>
+
+
+                <li>
+                    Publicación web
+                </li>
+
+
+                <li>
+                    Galería de imágenes
+                </li>
+
+
+                <li>
+                    Optimización para celulares
+                </li>
+
+
+                <li>
+                    Soporte
+                </li>
+
 
             </ul>
 
@@ -2359,13 +2402,18 @@ footer p {
 
 
                 <div class="cost-title">
-                    Costo de creación — pago único
+                    Costo de creación
                 </div>
 
 
                 <div class="price">
                     Q750 – Q950
                 </div>
+
+
+                <p class="payment-description">
+                    Pago único por la creación de la página web.
+                </p>
 
 
                 <div class="cost-title">
@@ -2388,10 +2436,10 @@ footer p {
 
                     <p>
 
-                        Actualizaciones periódicas de la página,
-                        cambios de imágenes, modificación de
-                        información y textos, ajustes necesarios
-                        y soporte para mantener el sitio actualizado.
+                        Mantenimiento y actualización de la página,
+                        cambio de imágenes, modificación de información
+                        y textos, ajustes necesarios y mejoras para
+                        mantener el sitio actualizado.
 
                     </p>
 
@@ -2416,7 +2464,9 @@ footer p {
         </div>
 
 
-        <!-- PLAN 2 -->
+        <!-- =================================================
+             PLAN 2
+        ================================================== -->
 
         <div class="plan">
 
@@ -2447,41 +2497,91 @@ footer p {
 
             <ul>
 
-                <li>Diseño personalizado</li>
 
-                <li>Varias secciones</li>
+                <li>
+                    Diseño personalizado
+                </li>
 
-                <li>Galería de imágenes</li>
 
-                <li>Videos</li>
+                <li>
+                    Varias secciones
+                </li>
 
-                <li>Botón de WhatsApp</li>
 
-                <li>Botón de correo electrónico</li>
+                <li>
+                    Galería de imágenes
+                </li>
 
-                <li>Botón de Facebook</li>
 
-                <li>Botón de Instagram</li>
+                <li>
+                    Videos
+                </li>
 
-                <li>Botón de TikTok</li>
 
-                <li>Formulario de contacto</li>
+                <li>
+                    Botón de WhatsApp
+                </li>
 
-                <li>Optimización para celulares</li>
 
-                <li>Publicación web</li>
+                <li>
+                    Botón de correo electrónico
+                </li>
 
-                <li>Soporte</li>
 
-                <li>Integración con redes sociales</li>
+                <li>
+                    Botón de Facebook
+                </li>
 
-                <li>Sección para subir CVs o currículums</li>
 
-                <li>Pestaña para catálogo de productos</li>
+                <li>
+                    Botón de Instagram
+                </li>
 
-                <li>Configuración técnica básica</li>
 
-                <li>Seguridad básica del sitio</li>
+                <li>
+                    Botón de TikTok
+                </li>
+
+
+                <li>
+                    Formulario de contacto
+                </li>
+
+
+                <li>
+                    Optimización para celulares
+                </li>
+
+
+                <li>
+                    Publicación web
+                </li>
+
+
+                <li>
+                    Sección para subir CVs o currículums
+                </li>
+
+
+                <li>
+                    Pestañas para catálogo de productos
+                </li>
+
+
+                <li>
+                    Integración con redes sociales
+                </li>
+
+
+                <li>
+                    Soporte
+                </li>
+
+
+                <li>
+                    Configuración técnica y seguridad básica
+                </li>
+
 
             </ul>
 
@@ -2490,13 +2590,18 @@ footer p {
 
 
                 <div class="cost-title">
-                    Costo de creación — pago único
+                    Costo de creación
                 </div>
 
 
                 <div class="price">
                     Q1,400
                 </div>
+
+
+                <p class="payment-description">
+                    Pago único por la creación de la página web.
+                </p>
 
 
                 <div class="cost-title">
@@ -2519,10 +2624,10 @@ footer p {
 
                     <p>
 
-                        Actualizaciones periódicas, cambios de
-                        imágenes, modificación de información y
-                        textos, ajustes, mejoras necesarias,
-                        soporte y mantenimiento general del sitio.
+                        Mantenimiento y actualización de la página,
+                        cambio de imágenes, modificación de información
+                        y textos, ajustes necesarios y mejoras para
+                        mantener el sitio actualizado.
 
                     </p>
 
