@@ -7,53 +7,59 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERWEB | Creación de páginas web profesionales en Guatemala</title>
+<title>ERWEB | Creación de páginas web profesionales</title>
 
 <meta name="description"
-content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala. Diseño web, publicación, mantenimiento e integración con WhatsApp y redes sociales.">
+content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala. Diseño web, publicación, mantenimiento e integración con redes sociales.">
 
 <meta name="keywords"
-content="páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, diseño de sitios web, ERWEB, páginas para negocios, páginas para empresas">
+content="páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, páginas web para negocios, ERWEB, desarrollo web, sitios web">
 
-<meta name="author" content="ERWEB">
+<meta name="author"
+content="ERWEB">
 
-<meta name="robots" content="index, follow">
+<meta name="robots"
+content="index, follow">
 
-<meta name="language" content="Spanish">
+<meta name="theme-color"
+content="#07111f">
 
-<link rel="canonical" href="https://erwebinicio.github.io/">
+<link rel="canonical"
+href="https://erwebinicio.github.io/">
 
-<!-- Open Graph -->
-
-<meta property="og:type" content="website">
-
-<meta property="og:title"
-content="ERWEB | Creación de páginas web profesionales">
-
-<meta property="og:description"
-content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
-
-<meta property="og:url"
-content="https://erwebinicio.github.io/">
-
-<meta property="og:site_name" content="ERWEB">
-
-<meta property="og:locale" content="es_GT">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
 <link rel="preconnect"
 href="https://fonts.gstatic.com"
 crossorigin>
 
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
 rel="stylesheet">
 
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<!-- =====================================================
+     DATOS ESTRUCTURADOS PARA GOOGLE
+===================================================== -->
+
+<script type="application/ld+json">
+
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ERWEB",
+    "url": "https://erwebinicio.github.io/",
+    "email": "erwebinicio@gmail.com",
+    "sameAs": [
+        "https://www.facebook.com/profile.php?id=61594227622678"
+    ],
+    "description": "ERWEB se dedica a la creación de páginas web profesionales, modernas y adaptadas a celulares."
+}
+
+</script>
 
 
 <style>
@@ -99,7 +105,7 @@ header {
 
     height: 82px;
 
-    background: rgba(5,12,23,0.97);
+    background: rgba(5,12,23,0.96);
 
     backdrop-filter: blur(10px);
 
@@ -109,23 +115,23 @@ header {
 
     z-index: 1000;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
 }
 
 
 /* =====================================================
    CONTENEDOR DEL LOGO
-   EL CONTENEDOR ES EXACTAMENTE EL ÁREA
-   DONDE SE MUESTRA LA ANIMACIÓN
 ===================================================== */
 
 .logo-wrapper {
 
     position: relative;
 
-    width: 330px;
+    height: 82px;
 
-    height: 78px;
+    width: 270px;
 
     display: flex;
 
@@ -135,168 +141,308 @@ header {
 
     overflow: hidden;
 
-    margin-left: 0;
-
     flex-shrink: 0;
 
+    text-decoration: none;
 }
 
 
 /* =====================================================
-   LÍNEA DE LUZ QUE RECORRE EL RECTÁNGULO
-===================================================== */
-
-.logo-wrapper::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 2px;
-
-    padding: 3px;
-
-    border-radius: 4px;
-
-    background:
-        conic-gradient(
-            from 0deg,
-            transparent 0deg,
-            transparent 285deg,
-            rgba(0,183,255,0.05) 300deg,
-            rgba(0,183,255,0.25) 315deg,
-            #ffffff 330deg,
-            #00d9ff 340deg,
-            rgba(0,183,255,0.35) 350deg,
-            transparent 360deg
-        );
-
-    /*
-       MÁSCARA:
-       SOLO DEJA VISIBLE EL BORDE.
-       EL CENTRO DE LA IMAGEN NO SE TOCA.
-    */
-
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-
-    -webkit-mask-composite: xor;
-
-    mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-
-    mask-composite: exclude;
-
-    pointer-events: none;
-
-    z-index: 5;
-
-    animation:
-        logoLight 3.2s linear infinite;
-
-}
-
-
-/* BRILLO EXTERIOR MUY CONTROLADO */
-
-.logo-wrapper::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 2px;
-
-    border-radius: 4px;
-
-    padding: 2px;
-
-    background:
-        conic-gradient(
-            from 0deg,
-            transparent 0deg,
-            transparent 300deg,
-            rgba(0,183,255,0.15) 325deg,
-            rgba(0,183,255,0.7) 340deg,
-            transparent 360deg
-        );
-
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-
-    -webkit-mask-composite: xor;
-
-    mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-
-    mask-composite: exclude;
-
-    pointer-events: none;
-
-    z-index: 4;
-
-    filter:
-        drop-shadow(
-            0 0 5px rgba(0,183,255,0.7)
-        );
-
-    animation:
-        logoLight 3.2s linear infinite;
-
-}
-
-
-/* =====================================================
-   ANIMACIÓN
-===================================================== */
-
-@keyframes logoLight {
-
-    from {
-
-        transform:
-            rotate(0deg);
-
-    }
-
-    to {
-
-        transform:
-            rotate(360deg);
-
-    }
-
-}
-
-
-/* =====================================================
-   IMAGEN DEL LOGO
+   LOGO
 ===================================================== */
 
 .logo-img {
 
-    position: relative;
+    height: 78px;
 
-    z-index: 3;
-
-    width: auto;
-
-    height: 72px;
-
-    max-width: 320px;
+    width: 265px;
 
     object-fit: contain;
-
-    object-position: left center;
 
     display: block;
 
     margin: 0;
 
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   CONTENEDOR DE LA LUZ
+===================================================== */
+
+.logo-light {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   LÍNEAS DE LUZ
+===================================================== */
+
+.logo-light span {
+
+    position: absolute;
+
+    display: block;
+
+    box-shadow:
+        0 0 5px #00b7ff,
+        0 0 10px #00b7ff,
+        0 0 18px rgba(0,183,255,0.9);
+
+}
+
+
+/* =====================================================
+   LUZ BORDE SUPERIOR
+===================================================== */
+
+.logo-light .top {
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffffff,
+            #00b7ff,
+            #ffffff,
+            transparent
+        );
+
+    animation:
+        light-top 5s linear infinite;
+}
+
+
+/* =====================================================
+   LUZ BORDE DERECHO
+===================================================== */
+
+.logo-light .right {
+
+    top: 0;
+
+    right: 0;
+
+    width: 2px;
+
+    height: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #ffffff,
+            #00b7ff,
+            #ffffff,
+            transparent
+        );
+
+    animation:
+        light-right 5s linear infinite;
+}
+
+
+/* =====================================================
+   LUZ BORDE INFERIOR
+===================================================== */
+
+.logo-light .bottom {
+
+    bottom: 0;
+
+    right: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffffff,
+            #00b7ff,
+            #ffffff,
+            transparent
+        );
+
+    animation:
+        light-bottom 5s linear infinite;
+}
+
+
+/* =====================================================
+   LUZ BORDE IZQUIERDO
+===================================================== */
+
+.logo-light .left {
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 2px;
+
+    height: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #ffffff,
+            #00b7ff,
+            #ffffff,
+            transparent
+        );
+
+    animation:
+        light-left 5s linear infinite;
+}
+
+
+/* =====================================================
+   ANIMACIÓN BORDE SUPERIOR
+===================================================== */
+
+@keyframes light-top {
+
+    0% {
+        width: 0;
+        left: 0;
+    }
+
+    20% {
+        width: 100%;
+        left: 0;
+    }
+
+    25% {
+        width: 0;
+        left: 100%;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+
+/* =====================================================
+   ANIMACIÓN BORDE DERECHO
+===================================================== */
+
+@keyframes light-right {
+
+    0%,
+    20% {
+        height: 0;
+        top: 0;
+    }
+
+    25% {
+        height: 0;
+        top: 0;
+    }
+
+    45% {
+        height: 100%;
+        top: 0;
+    }
+
+    50% {
+        height: 0;
+        top: 100%;
+    }
+
+    100% {
+        height: 0;
+        top: 100%;
+    }
+}
+
+
+/* =====================================================
+   ANIMACIÓN BORDE INFERIOR
+===================================================== */
+
+@keyframes light-bottom {
+
+    0%,
+    45% {
+        width: 0;
+        right: 0;
+    }
+
+    50% {
+        width: 0;
+        right: 0;
+    }
+
+    70% {
+        width: 100%;
+        right: 0;
+    }
+
+    75% {
+        width: 0;
+        right: 100%;
+    }
+
+    100% {
+        width: 0;
+        right: 100%;
+    }
+}
+
+
+/* =====================================================
+   ANIMACIÓN BORDE IZQUIERDO
+===================================================== */
+
+@keyframes light-left {
+
+    0%,
+    70% {
+        height: 0;
+        bottom: 0;
+    }
+
+    75% {
+        height: 0;
+        bottom: 0;
+    }
+
+    95% {
+        height: 100%;
+        bottom: 0;
+    }
+
+    100% {
+        height: 0;
+        bottom: 100%;
+    }
 }
 
 
@@ -312,7 +458,7 @@ nav {
 
     align-items: center;
 
-    gap: 32px;
+    gap: 28px;
 
     padding-right: 5%;
 }
@@ -328,8 +474,6 @@ nav a {
     font-weight: 700;
 
     transition: 0.3s;
-
-    white-space: nowrap;
 }
 
 nav a:hover {
@@ -338,7 +482,9 @@ nav a:hover {
 }
 
 
-/* BOTÓN MENÚ CELULAR */
+/* =====================================================
+   BOTÓN MENÚ CELULAR
+===================================================== */
 
 .menu-btn {
 
@@ -355,7 +501,7 @@ nav a:hover {
 
 
 /* =====================================================
-   INICIO
+   INICIO / HERO
 ===================================================== */
 
 .hero {
@@ -370,7 +516,8 @@ nav a:hover {
 
     text-align: center;
 
-    padding: 140px 20px 80px;
+    padding:
+        140px 20px 80px;
 
     position: relative;
 
@@ -415,9 +562,11 @@ nav a:hover {
 
     max-width: 1000px;
 
-    padding: 40px 25px;
+    padding:
+        40px 25px;
 
-    background: rgba(3,10,18,0.18);
+    background:
+        rgba(3,10,18,0.18);
 
     border-radius: 20px;
 }
@@ -444,7 +593,8 @@ nav a:hover {
 
 .hero h1 {
 
-    font-size: clamp(45px,7vw,82px);
+    font-size:
+        clamp(45px,7vw,82px);
 
     line-height: 1.05;
 
@@ -519,7 +669,8 @@ section {
 
 .section-title h2 {
 
-    font-size: clamp(38px,5vw,56px);
+    font-size:
+        clamp(38px,5vw,56px);
 
     margin-top: 10px;
 
@@ -531,7 +682,8 @@ section {
 
     color: #9eabb9;
 
-    margin: 18px auto 0;
+    margin:
+        18px auto 0;
 
     max-width: 700px;
 
@@ -661,7 +813,7 @@ section {
 
     margin-bottom: 12px;
 
-    font-size: 21px;
+    font-size: 23px;
 }
 
 
@@ -725,12 +877,6 @@ section {
    PROCESO
 ===================================================== */
 
-#proceso {
-
-    background: #07111f;
-}
-
-
 .process-grid {
 
     display: grid;
@@ -748,7 +894,8 @@ section {
 
     min-height: 280px;
 
-    padding: 35px 25px;
+    padding:
+        35px 25px;
 
     border-radius: 16px;
 
@@ -839,7 +986,7 @@ section {
 
 .process-card h3 {
 
-    font-size: 21px;
+    font-size: 23px;
 }
 
 
@@ -854,10 +1001,6 @@ section {
     line-height: 1.6;
 }
 
-
-/* =====================================================
-   IMÁGENES PROCESO
-===================================================== */
 
 .process-talk {
 
@@ -977,15 +1120,13 @@ section {
 
 .web-design-overlay span {
 
-    color: #00cfff;
+    color: #38c9ff;
 
-    font-size: 19px;
+    font-size: 20px;
 
     font-weight: 800;
 
     letter-spacing: 1.5px;
-
-    display: block;
 
     text-shadow:
         0 2px 8px rgba(0,0,0,0.9);
@@ -996,7 +1137,7 @@ section {
 
     margin-top: 8px;
 
-    font-size: 25px;
+    font-size: 24px;
 }
 
 
@@ -1047,7 +1188,8 @@ section {
 
     border-radius: 18px;
 
-    padding: 38px 32px;
+    padding:
+        38px 32px;
 
     display: flex;
 
@@ -1180,7 +1322,7 @@ section {
 
 .price {
 
-    font-size: 40px;
+    font-size: 38px;
 
     font-weight: 800;
 
@@ -1203,24 +1345,6 @@ section {
         5px 0 20px;
 }
 
-
-.payment-description {
-
-    color: #9eabb9;
-
-    font-size: 12px;
-
-    line-height: 1.6;
-
-    margin-top: -12px;
-
-    margin-bottom: 18px;
-}
-
-
-/* =====================================================
-   MANTENIMIENTO
-===================================================== */
 
 .maintenance {
 
@@ -1270,7 +1394,7 @@ section {
 
 
 /* =====================================================
-   NOTA GENERAL
+   NOTA DE MANTENIMIENTO
 ===================================================== */
 
 .maintenance-note {
@@ -1399,7 +1523,8 @@ section {
     background:
         rgba(13,28,45,0.90);
 
-    padding: 50px 30px;
+    padding:
+        50px 30px;
 
     border-radius: 18px;
 
@@ -1491,7 +1616,7 @@ section {
 
 
 /* =====================================================
-   REDES SOCIALES
+   REDES SOCIALES FLOTANTES
 ===================================================== */
 
 .social-floating {
@@ -1586,7 +1711,8 @@ footer {
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding:
+        40px 20px;
 }
 
 
@@ -1647,25 +1773,19 @@ footer p {
     }
 
 
-    /* LOGO MÁS PEQUEÑO SOLO PARA
-       ADAPTARSE AL CELULAR,
-       PERO COMPLETO */
-
     .logo-wrapper {
 
-        width: 255px;
+        width: 230px;
 
-        height: 74px;
-
-        overflow: hidden;
+        height: 78px;
     }
 
 
     .logo-img {
 
-        height: 67px;
+        width: 225px;
 
-        max-width: 245px;
+        height: 74px;
     }
 
 
@@ -1690,6 +1810,12 @@ footer p {
         display: none;
 
         gap: 20px;
+    }
+
+
+    nav a {
+
+        font-size: 17px;
     }
 
 
@@ -1791,6 +1917,12 @@ footer p {
     }
 
 
+    .web-design-overlay span {
+
+        font-size: 17px;
+    }
+
+
     .social-floating {
 
         right: 15px;
@@ -1841,15 +1973,27 @@ footer p {
 <header>
 
 
-    <a
-        href="#inicio"
-        aria-label="ERWEB Inicio"
-        class="logo-wrapper">
+    <a href="#inicio"
+       aria-label="ERWEB Inicio"
+       class="logo-wrapper">
 
         <img
             src="LOGO.jpg"
-            alt="Logo ERWEB - Creación de páginas web"
+            alt="Logo ERWEB"
             class="logo-img">
+
+
+        <div class="logo-light">
+
+            <span class="top"></span>
+
+            <span class="right"></span>
+
+            <span class="bottom"></span>
+
+            <span class="left"></span>
+
+        </div>
 
     </a>
 
@@ -1904,7 +2048,9 @@ footer p {
 
 
         <small>
+
             DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
+
         </small>
 
 
@@ -1960,7 +2106,7 @@ footer p {
 
             Soluciones web pensadas para empresas,
             negocios y emprendimientos que quieren
-            tener presencia profesional en Internet.
+            tener una presencia profesional en Internet.
 
         </p>
 
@@ -2002,12 +2148,12 @@ footer p {
             </div>
 
             <h3>
-                Tiendas online (dentro de la página web)
+                Página web (Tiendas online)
             </h3>
 
             <p>
 
-                Diseñamos catálogos y espacios digitales
+                Diseñamos catálogos y tiendas digitales
                 para mostrar productos y facilitar las ventas.
 
             </p>
@@ -2244,10 +2390,9 @@ footer p {
 
         <div class="web-design-card">
 
-
             <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
-                alt="Diseño y desarrollo de páginas web profesionales"
+                alt="Diseño y desarrollo de páginas web"
                 loading="lazy">
 
 
@@ -2270,16 +2415,14 @@ footer p {
 
             </div>
 
-
         </div>
 
 
         <div class="web-design-card">
 
-
             <img
                 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
-                alt="Diseño web adaptable para celulares y computadoras"
+                alt="Diseño web adaptable"
                 loading="lazy">
 
 
@@ -2301,7 +2444,6 @@ footer p {
                 </p>
 
             </div>
-
 
         </div>
 
@@ -2348,7 +2490,6 @@ footer p {
         ================================================== -->
 
         <div class="plan">
-
 
             <div class="plan-label">
                 PLAN 01
@@ -2423,14 +2564,6 @@ footer p {
                 </div>
 
 
-                <p class="payment-description">
-
-                    Pago único por la creación
-                    y configuración inicial de la página web.
-
-                </p>
-
-
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
@@ -2443,21 +2576,19 @@ footer p {
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
 
-
                     <p>
 
-                        Actualización de información,
-                        modificación de textos e imágenes,
-                        ajustes necesarios y mantenimiento
-                        general de la página.
+                        Mantenimiento y actualización semanal
+                        y mensual, cambio de imágenes,
+                        modificación de información y textos,
+                        ajustes necesarios y soporte para
+                        mantener la página actualizada.
 
                     </p>
-
 
                 </div>
 
@@ -2484,7 +2615,6 @@ footer p {
         ================================================== -->
 
         <div class="plan">
-
 
             <div class="plan-label">
                 PLAN 02
@@ -2561,11 +2691,11 @@ footer p {
                 </li>
 
                 <li>
-                    Pestaña para catálogo de productos
+                    Sección para subir CVs o currículums
                 </li>
 
                 <li>
-                    Sección para subir CVs o currículums
+                    Pestañas para catálogo de productos
                 </li>
 
                 <li>
@@ -2573,7 +2703,7 @@ footer p {
                 </li>
 
                 <li>
-                    Soporte
+                    Soporte y actualizaciones
                 </li>
 
                 <li>
@@ -2596,15 +2726,6 @@ footer p {
                 </div>
 
 
-                <p class="payment-description">
-
-                    Pago único por la creación,
-                    diseño y configuración inicial
-                    de la página web profesional.
-
-                </p>
-
-
                 <div class="cost-title">
                     Mantenimiento anual
                 </div>
@@ -2617,21 +2738,19 @@ footer p {
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
 
-
                     <p>
 
-                        Actualización periódica de la página,
-                        cambios de imágenes, modificación de
-                        textos e información, ajustes necesarios
-                        y soporte para mantener el sitio actualizado.
+                        Mantenimiento y actualización semanal
+                        y mensual, cambio de imágenes,
+                        modificación de información y textos,
+                        ajustes necesarios y soporte para
+                        mantener el sitio actualizado.
 
                     </p>
-
 
                 </div>
 
@@ -2658,11 +2777,9 @@ footer p {
 
     <div class="maintenance-note">
 
-
         <h3>
             Mantenimiento de tu página web
         </h3>
-
 
         <p>
 
@@ -2673,7 +2790,6 @@ footer p {
             para mantener el sitio actualizado.
 
         </p>
-
 
     </div>
 
@@ -2691,22 +2807,18 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             SOBRE ERWEB
         </small>
-
 
         <h2>
             Transformamos ideas en páginas web
         </h2>
 
-
     </div>
 
 
     <div class="about-content">
-
 
         <p>
 
@@ -2726,7 +2838,6 @@ footer p {
 
         </p>
 
-
     </div>
 
 </section>
@@ -2743,22 +2854,18 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             HABLEMOS
         </small>
-
 
         <h2>
             ¿Tienes un proyecto?
         </h2>
 
-
     </div>
 
 
     <div class="contact-box">
-
 
         <h3>
             Cuéntanos qué necesitas
