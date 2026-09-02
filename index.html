@@ -101,8 +101,8 @@ header {
 
 /* =====================================================
    LOGO
-   RECTÁNGULO + UNA SOLA LÍNEA DE LUZ
-   RECORRIENDO TODO EL PERÍMETRO
+   RECTÁNGULO FIJO + LÍNEA DE LUZ
+   RECORRIENDO LOS 4 BORDES
 ===================================================== */
 
 .logo-container {
@@ -124,18 +124,11 @@ header {
     overflow: hidden;
 
     border-radius: 3px;
-
-    text-decoration: none;
 }
 
 
-/*
-   IMAGEN DEL LOGO
-
-   El logo NO se mueve.
-   El logo NO gira.
-   El logo NO cambia de tamaño.
-*/
+/* IMAGEN DEL LOGO
+   NO SE MUEVE NI CAMBIA DE TAMAÑO */
 
 .logo-img {
 
@@ -159,19 +152,9 @@ header {
 }
 
 
-/*
-   RECTÁNGULO DE LUZ
-
-   Esta línea es un SVG que sigue exactamente
-   los cuatro lados del rectángulo.
-
-   NO gira.
-   NO se sale.
-   NO crea un círculo.
-
-   Una pequeña línea luminosa recorre:
-   ARRIBA → DERECHA → ABAJO → IZQUIERDA.
-*/
+/* =====================================================
+   LÍNEA DE LUZ RECTANGULAR
+===================================================== */
 
 .logo-light {
 
@@ -187,55 +170,105 @@ header {
 
     pointer-events: none;
 
-    overflow: visible;
+    overflow: hidden;
 }
 
 
-.logo-light rect {
+/*
+   CLIP:
+   La luz queda estrictamente dentro
+   del rectángulo del logo.
+*/
+
+.logo-light {
+
+    clip-path: inset(0);
+}
+
+
+/*
+   LÍNEA AZUL
+   RECORRE EL PERÍMETRO COMPLETO
+*/
+
+.logo-light .light-main {
 
     fill: none;
 
     stroke: #00b7ff;
 
-    stroke-width: 3;
+    stroke-width: 2;
 
     stroke-linecap: round;
 
-    /*
-       Una línea pequeña y un espacio grande.
-       Esto crea el efecto de "punto/línea de luz"
-       recorriendo el borde.
-    */
+    stroke-linejoin: round;
 
-    stroke-dasharray: 45 430;
+    vector-effect: non-scaling-stroke;
+
+    stroke-dasharray: 18 82;
 
     stroke-dashoffset: 0;
 
-    filter:
-        drop-shadow(0 0 3px #00b7ff)
-        drop-shadow(0 0 8px rgba(0,183,255,0.9))
-        drop-shadow(0 0 14px rgba(0,183,255,0.65));
-
     animation:
-        recorrerLogo 4s linear infinite;
+        recorrerLogo
+        4s
+        linear
+        infinite;
 }
 
 
 /*
-   La animación mueve únicamente la línea
-   a lo largo del mismo rectángulo.
+   CENTRO BLANCO DE LA LUZ
+   DA UN EFECTO MÁS BRILLANTE
+   SIN SALIR DEL RECTÁNGULO
+*/
 
-   No se utiliza rotate().
+.logo-light .light-core {
+
+    fill: none;
+
+    stroke: #ffffff;
+
+    stroke-width: 1;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    vector-effect: non-scaling-stroke;
+
+    stroke-dasharray: 8 92;
+
+    stroke-dashoffset: 0;
+
+    animation:
+        recorrerLogo
+        4s
+        linear
+        infinite;
+}
+
+
+/*
+   ANIMACIÓN:
+   LA LÍNEA AVANZA POR EL CAMINO
+   DEL RECTÁNGULO.
+
+   NO HAY ROTACIÓN.
 */
 
 @keyframes recorrerLogo {
 
     from {
+
         stroke-dashoffset: 0;
+
     }
 
     to {
-        stroke-dashoffset: -475px;
+
+        stroke-dashoffset: -100;
+
     }
 
 }
@@ -1134,6 +1167,8 @@ section {
 }
 
 
+/* TEXTO EXPLICATIVO DEL PAGO */
+
 .payment-description {
 
     color: #aeb9c5;
@@ -1577,6 +1612,10 @@ footer p {
     }
 
 
+    /* =================================================
+       LOGO EN CELULAR
+    ================================================= */
+
     .logo-container {
 
         width: 250px;
@@ -1769,17 +1808,19 @@ footer p {
         aria-label="ERWEB Inicio">
 
 
-        <!-- LOGO FIJO -->
-
         <img
             src="LOGO.jpg"
             alt="Logo ERWEB"
             class="logo-img">
 
 
-        <!-- =================================================
-             LÍNEA DE LUZ QUE RECORRE EL RECTÁNGULO
-             ================================================= -->
+        <!-- =============================================
+             LÍNEA DE LUZ DEL LOGO
+
+             ESTA LÍNEA SIGUE EL RECTÁNGULO.
+             NO GIRA.
+             NO SALE DEL RECTÁNGULO.
+        ============================================== -->
 
         <svg
             class="logo-light"
@@ -1789,12 +1830,26 @@ footer p {
 
 
             <rect
+                class="light-main"
                 x="2"
                 y="2"
                 width="296"
                 height="72"
                 rx="3"
-                ry="3">
+                ry="3"
+                pathLength="100">
+            </rect>
+
+
+            <rect
+                class="light-core"
+                x="2"
+                y="2"
+                width="296"
+                height="72"
+                rx="3"
+                ry="3"
+                pathLength="100">
             </rect>
 
 
@@ -2394,21 +2449,46 @@ footer p {
 
             <ul>
 
-                <li>Página informativa</li>
 
-                <li>Diseño adaptable</li>
+                <li>
+                    Página informativa
+                </li>
 
-                <li>Sección de contacto</li>
 
-                <li>Botón de WhatsApp</li>
+                <li>
+                    Diseño adaptable
+                </li>
 
-                <li>Publicación web</li>
 
-                <li>Galería de imágenes</li>
+                <li>
+                    Sección de contacto
+                </li>
 
-                <li>Optimización para celulares</li>
 
-                <li>Soporte</li>
+                <li>
+                    Botón de WhatsApp
+                </li>
+
+
+                <li>
+                    Publicación web
+                </li>
+
+
+                <li>
+                    Galería de imágenes
+                </li>
+
+
+                <li>
+                    Optimización para celulares
+                </li>
+
+
+                <li>
+                    Soporte
+                </li>
+
 
             </ul>
 
@@ -2422,7 +2502,7 @@ footer p {
 
 
                 <div class="price">
-                    Q950
+                    Q750 – Q950
                 </div>
 
 
@@ -2437,7 +2517,7 @@ footer p {
 
 
                 <div class="maintenance-price">
-                    Q950
+                    Q700 – Q950
                 </div>
 
 
@@ -2512,39 +2592,91 @@ footer p {
 
             <ul>
 
-                <li>Diseño personalizado</li>
 
-                <li>Varias secciones</li>
+                <li>
+                    Diseño personalizado
+                </li>
 
-                <li>Galería de imágenes</li>
 
-                <li>Videos</li>
+                <li>
+                    Varias secciones
+                </li>
 
-                <li>Botón de WhatsApp</li>
 
-                <li>Botón de correo electrónico</li>
+                <li>
+                    Galería de imágenes
+                </li>
 
-                <li>Botón de Facebook</li>
 
-                <li>Botón de Instagram</li>
+                <li>
+                    Videos
+                </li>
 
-                <li>Botón de TikTok</li>
 
-                <li>Formulario de contacto</li>
+                <li>
+                    Botón de WhatsApp
+                </li>
 
-                <li>Optimización para celulares</li>
 
-                <li>Publicación web</li>
+                <li>
+                    Botón de correo electrónico
+                </li>
 
-                <li>Sección para subir CVs o currículums</li>
 
-                <li>Pestañas para catálogo de productos</li>
+                <li>
+                    Botón de Facebook
+                </li>
 
-                <li>Integración con redes sociales</li>
 
-                <li>Soporte</li>
+                <li>
+                    Botón de Instagram
+                </li>
 
-                <li>Configuración técnica y seguridad básica</li>
+
+                <li>
+                    Botón de TikTok
+                </li>
+
+
+                <li>
+                    Formulario de contacto
+                </li>
+
+
+                <li>
+                    Optimización para celulares
+                </li>
+
+
+                <li>
+                    Publicación web
+                </li>
+
+
+                <li>
+                    Sección para subir CVs o currículums
+                </li>
+
+
+                <li>
+                    Pestañas para catálogo de productos
+                </li>
+
+
+                <li>
+                    Integración con redes sociales
+                </li>
+
+
+                <li>
+                    Soporte
+                </li>
+
+
+                <li>
+                    Configuración técnica y seguridad básica
+                </li>
+
 
             </ul>
 
@@ -2573,7 +2705,7 @@ footer p {
 
 
                 <div class="maintenance-price">
-                    Q1,250
+                    Q1,350
                 </div>
 
 
