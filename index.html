@@ -7,59 +7,41 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ERWEB | Creación de páginas web profesionales</title>
+<title>ERWEB | Creación de páginas web profesionales en Guatemala</title>
 
 <meta name="description"
 content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala. Diseño web, publicación, mantenimiento e integración con redes sociales.">
 
 <meta name="keywords"
-content="páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, páginas web para negocios, ERWEB, desarrollo web, sitios web">
+content="páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, sitios web para negocios, ERWEB">
 
-<meta name="author"
-content="ERWEB">
+<meta name="author" content="ERWEB">
 
-<meta name="robots"
-content="index, follow">
+<meta name="robots" content="index, follow">
 
-<meta name="theme-color"
-content="#07111f">
+<meta name="theme-color" content="#07111f">
 
-<link rel="canonical"
-href="https://erwebinicio.github.io/">
+<meta property="og:title"
+content="ERWEB | Creación de páginas web profesionales">
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<meta property="og:description"
+content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="LOGO.jpg">
+
+<link rel="canonical" href="https://erwebinicio.github.io/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
 rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-<!-- =====================================================
-     DATOS ESTRUCTURADOS PARA GOOGLE
-===================================================== -->
-
-<script type="application/ld+json">
-
-{
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ERWEB",
-    "url": "https://erwebinicio.github.io/",
-    "email": "erwebinicio@gmail.com",
-    "sameAs": [
-        "https://www.facebook.com/profile.php?id=61594227622678"
-    ],
-    "description": "ERWEB se dedica a la creación de páginas web profesionales, modernas y adaptadas a celulares."
-}
-
-</script>
 
 
 <style>
@@ -115,334 +97,129 @@ header {
 
     z-index: 1000;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 
 /* =====================================================
-   CONTENEDOR DEL LOGO
+   LOGO
+   RECTÁNGULO EXACTO DE LA IMAGEN
 ===================================================== */
 
 .logo-wrapper {
 
     position: relative;
 
-    height: 82px;
-
-    width: 270px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-start;
-
-    overflow: hidden;
-
-    flex-shrink: 0;
-
-    text-decoration: none;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo-img {
-
-    height: 78px;
-
-    width: 265px;
-
-    object-fit: contain;
-
-    display: block;
+    display: inline-block;
 
     margin: 0;
 
+    padding: 0;
+
+    line-height: 0;
+
+    overflow: hidden;
+}
+
+
+/* IMAGEN */
+
+.logo-img {
+
+    height: 140px;
+
+    width: auto;
+
+    max-width: 330px;
+
+    display: block;
+
+    object-fit: contain;
+
     position: relative;
 
-    z-index: 2;
+    z-index: 1;
 }
 
 
 /* =====================================================
-   CONTENEDOR DE LA LUZ
+   LUZ DEL LOGO
+   CONTENIDA DENTRO DEL RECTÁNGULO
 ===================================================== */
 
-.logo-light {
+.logo-wrapper::after {
+
+    content: "";
 
     position: absolute;
 
-    inset: 0;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    border: 3px solid transparent;
 
     pointer-events: none;
 
     z-index: 5;
 
-    overflow: hidden;
-}
-
-
-/* =====================================================
-   LÍNEAS DE LUZ
-===================================================== */
-
-.logo-light span {
-
-    position: absolute;
-
-    display: block;
-
-    box-shadow:
-        0 0 5px #00b7ff,
-        0 0 10px #00b7ff,
-        0 0 18px rgba(0,183,255,0.9);
-
-}
-
-
-/* =====================================================
-   LUZ BORDE SUPERIOR
-===================================================== */
-
-.logo-light .top {
-
-    top: 0;
-
-    left: 0;
-
-    width: 0;
-
-    height: 2px;
-
     background:
         linear-gradient(
             90deg,
-            transparent,
-            #ffffff,
-            #00b7ff,
-            #ffffff,
-            transparent
-        );
+            transparent 0%,
+            transparent 42%,
+            rgba(255,255,255,0.20) 47%,
+            #ffffff 50%,
+            rgba(255,255,255,0.20) 53%,
+            transparent 58%,
+            transparent 100%
+        ) border-box;
 
-    animation:
-        light-top 5s linear infinite;
+    background-size: 400% 400%;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    animation: luzLogo 4s linear infinite;
 }
 
 
 /* =====================================================
-   LUZ BORDE DERECHO
+   RECORRIDO DE LA LUZ
+   ARRIBA → DERECHA → ABAJO → IZQUIERDA
 ===================================================== */
 
-.logo-light .right {
-
-    top: 0;
-
-    right: 0;
-
-    width: 2px;
-
-    height: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            #ffffff,
-            #00b7ff,
-            #ffffff,
-            transparent
-        );
-
-    animation:
-        light-right 5s linear infinite;
-}
-
-
-/* =====================================================
-   LUZ BORDE INFERIOR
-===================================================== */
-
-.logo-light .bottom {
-
-    bottom: 0;
-
-    right: 0;
-
-    width: 0;
-
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #ffffff,
-            #00b7ff,
-            #ffffff,
-            transparent
-        );
-
-    animation:
-        light-bottom 5s linear infinite;
-}
-
-
-/* =====================================================
-   LUZ BORDE IZQUIERDO
-===================================================== */
-
-.logo-light .left {
-
-    bottom: 0;
-
-    left: 0;
-
-    width: 2px;
-
-    height: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            #ffffff,
-            #00b7ff,
-            #ffffff,
-            transparent
-        );
-
-    animation:
-        light-left 5s linear infinite;
-}
-
-
-/* =====================================================
-   ANIMACIÓN BORDE SUPERIOR
-===================================================== */
-
-@keyframes light-top {
+@keyframes luzLogo {
 
     0% {
-        width: 0;
-        left: 0;
-    }
-
-    20% {
-        width: 100%;
-        left: 0;
+        background-position: 0% 0%;
     }
 
     25% {
-        width: 0;
-        left: 100%;
-    }
-
-    100% {
-        width: 0;
-        left: 100%;
-    }
-}
-
-
-/* =====================================================
-   ANIMACIÓN BORDE DERECHO
-===================================================== */
-
-@keyframes light-right {
-
-    0%,
-    20% {
-        height: 0;
-        top: 0;
-    }
-
-    25% {
-        height: 0;
-        top: 0;
-    }
-
-    45% {
-        height: 100%;
-        top: 0;
+        background-position: 100% 0%;
     }
 
     50% {
-        height: 0;
-        top: 100%;
-    }
-
-    100% {
-        height: 0;
-        top: 100%;
-    }
-}
-
-
-/* =====================================================
-   ANIMACIÓN BORDE INFERIOR
-===================================================== */
-
-@keyframes light-bottom {
-
-    0%,
-    45% {
-        width: 0;
-        right: 0;
-    }
-
-    50% {
-        width: 0;
-        right: 0;
-    }
-
-    70% {
-        width: 100%;
-        right: 0;
+        background-position: 100% 100%;
     }
 
     75% {
-        width: 0;
-        right: 100%;
+        background-position: 0% 100%;
     }
 
     100% {
-        width: 0;
-        right: 100%;
-    }
-}
-
-
-/* =====================================================
-   ANIMACIÓN BORDE IZQUIERDO
-===================================================== */
-
-@keyframes light-left {
-
-    0%,
-    70% {
-        height: 0;
-        bottom: 0;
+        background-position: 0% 0%;
     }
 
-    75% {
-        height: 0;
-        bottom: 0;
-    }
-
-    95% {
-        height: 100%;
-        bottom: 0;
-    }
-
-    100% {
-        height: 0;
-        bottom: 100%;
-    }
 }
 
 
@@ -482,9 +259,7 @@ nav a:hover {
 }
 
 
-/* =====================================================
-   BOTÓN MENÚ CELULAR
-===================================================== */
+/* BOTÓN MENÚ CELULAR */
 
 .menu-btn {
 
@@ -501,7 +276,7 @@ nav a:hover {
 
 
 /* =====================================================
-   INICIO / HERO
+   INICIO
 ===================================================== */
 
 .hero {
@@ -516,14 +291,14 @@ nav a:hover {
 
     text-align: center;
 
-    padding:
-        140px 20px 80px;
+    padding: 140px 20px 80px;
 
     position: relative;
 
     overflow: hidden;
 
     background-image:
+
         url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=90");
 
     background-size: cover;
@@ -543,6 +318,7 @@ nav a:hover {
     inset: 0;
 
     background:
+
         linear-gradient(
             135deg,
             rgba(3,10,18,0.90),
@@ -562,11 +338,9 @@ nav a:hover {
 
     max-width: 1000px;
 
-    padding:
-        40px 25px;
+    padding: 40px 25px;
 
-    background:
-        rgba(3,10,18,0.18);
+    background: rgba(3,10,18,0.18);
 
     border-radius: 20px;
 }
@@ -593,8 +367,7 @@ nav a:hover {
 
 .hero h1 {
 
-    font-size:
-        clamp(45px,7vw,82px);
+    font-size: clamp(45px,7vw,82px);
 
     line-height: 1.05;
 
@@ -659,7 +432,7 @@ section {
 
     letter-spacing: 2px;
 
-    font-size: 28px;
+    font-size: 30px;
 
     display: block;
 
@@ -669,8 +442,7 @@ section {
 
 .section-title h2 {
 
-    font-size:
-        clamp(38px,5vw,56px);
+    font-size: clamp(38px,5vw,56px);
 
     margin-top: 10px;
 
@@ -682,8 +454,7 @@ section {
 
     color: #9eabb9;
 
-    margin:
-        18px auto 0;
+    margin: 18px auto 0;
 
     max-width: 700px;
 
@@ -813,7 +584,7 @@ section {
 
     margin-bottom: 12px;
 
-    font-size: 23px;
+    font-size: 21px;
 }
 
 
@@ -827,9 +598,7 @@ section {
 }
 
 
-/* =====================================================
-   IMÁGENES SERVICIOS
-===================================================== */
+/* IMÁGENES */
 
 .service-web {
 
@@ -877,6 +646,12 @@ section {
    PROCESO
 ===================================================== */
 
+#proceso {
+
+    background: #07111f;
+}
+
+
 .process-grid {
 
     display: grid;
@@ -894,8 +669,7 @@ section {
 
     min-height: 280px;
 
-    padding:
-        35px 25px;
+    padding: 35px 25px;
 
     border-radius: 16px;
 
@@ -986,7 +760,7 @@ section {
 
 .process-card h3 {
 
-    font-size: 23px;
+    font-size: 21px;
 }
 
 
@@ -1120,16 +894,13 @@ section {
 
 .web-design-overlay span {
 
-    color: #38c9ff;
+    color: #00b7ff;
 
-    font-size: 20px;
+    font-size: 22px;
 
     font-weight: 800;
 
     letter-spacing: 1.5px;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,0.9);
 }
 
 
@@ -1137,7 +908,7 @@ section {
 
     margin-top: 8px;
 
-    font-size: 24px;
+    font-size: 22px;
 }
 
 
@@ -1188,8 +959,7 @@ section {
 
     border-radius: 18px;
 
-    padding:
-        38px 32px;
+    padding: 38px 32px;
 
     display: flex;
 
@@ -1294,9 +1064,7 @@ section {
 }
 
 
-/* =====================================================
-   COSTOS
-===================================================== */
+/* COSTOS */
 
 .cost-box {
 
@@ -1322,7 +1090,7 @@ section {
 
 .price {
 
-    font-size: 38px;
+    font-size: 40px;
 
     font-weight: 800;
 
@@ -1345,6 +1113,8 @@ section {
         5px 0 20px;
 }
 
+
+/* MANTENIMIENTO */
 
 .maintenance {
 
@@ -1393,9 +1163,7 @@ section {
 }
 
 
-/* =====================================================
-   NOTA DE MANTENIMIENTO
-===================================================== */
+/* NOTA */
 
 .maintenance-note {
 
@@ -1523,8 +1291,7 @@ section {
     background:
         rgba(13,28,45,0.90);
 
-    padding:
-        50px 30px;
+    padding: 50px 30px;
 
     border-radius: 18px;
 
@@ -1671,8 +1438,6 @@ section {
 }
 
 
-/* FACEBOOK */
-
 .facebook-button {
 
     background: #1877F2;
@@ -1681,8 +1446,6 @@ section {
 }
 
 
-/* CORREO */
-
 .email-button {
 
     background: white;
@@ -1690,8 +1453,6 @@ section {
     color: #e53935;
 }
 
-
-/* WHATSAPP */
 
 .whatsapp-button {
 
@@ -1711,8 +1472,7 @@ footer {
 
     text-align: center;
 
-    padding:
-        40px 20px;
+    padding: 40px 20px;
 }
 
 
@@ -1773,19 +1533,21 @@ footer p {
     }
 
 
-    .logo-wrapper {
+    .logo-img {
 
-        width: 230px;
+        height: 120px;
 
-        height: 78px;
+        max-width: 280px;
     }
 
 
-    .logo-img {
+    .logo-wrapper {
 
-        width: 225px;
+        margin: 0;
 
-        height: 74px;
+        padding: 0;
+
+        overflow: hidden;
     }
 
 
@@ -1813,15 +1575,15 @@ footer p {
     }
 
 
-    nav a {
-
-        font-size: 17px;
-    }
-
-
     nav.active {
 
         display: flex;
+    }
+
+
+    nav a {
+
+        font-size: 18px;
     }
 
 
@@ -1919,7 +1681,7 @@ footer p {
 
     .web-design-overlay span {
 
-        font-size: 17px;
+        font-size: 18px;
     }
 
 
@@ -1973,29 +1735,19 @@ footer p {
 <header>
 
 
-    <a href="#inicio"
-       aria-label="ERWEB Inicio"
-       class="logo-wrapper">
+    <div class="logo-wrapper">
 
-        <img
-            src="LOGO.jpg"
-            alt="Logo ERWEB"
-            class="logo-img">
+        <a href="#inicio"
+           aria-label="ERWEB Inicio">
 
+            <img
+                src="LOGO.jpg"
+                alt="Logo ERWEB - Creación de páginas web"
+                class="logo-img">
 
-        <div class="logo-light">
+        </a>
 
-            <span class="top"></span>
-
-            <span class="right"></span>
-
-            <span class="bottom"></span>
-
-            <span class="left"></span>
-
-        </div>
-
-    </a>
+    </div>
 
 
     <div
@@ -2048,9 +1800,7 @@ footer p {
 
 
         <small>
-
             DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
-
         </small>
 
 
@@ -2106,7 +1856,7 @@ footer p {
 
             Soluciones web pensadas para empresas,
             negocios y emprendimientos que quieren
-            tener una presencia profesional en Internet.
+            tener presencia profesional en Internet.
 
         </p>
 
@@ -2119,15 +1869,18 @@ footer p {
 
         <div class="service-card service-web">
 
+
             <div class="service-icon">
 
                 <i class="fa-solid fa-code"></i>
 
             </div>
 
+
             <h3>
                 Página web
             </h3>
+
 
             <p>
 
@@ -2136,10 +1889,12 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-store">
+
 
             <div class="service-icon">
 
@@ -2147,21 +1902,25 @@ footer p {
 
             </div>
 
+
             <h3>
-                Página web (Tiendas online)
+                Tiendas online (dentro de la página web)
             </h3>
+
 
             <p>
 
-                Diseñamos catálogos y tiendas digitales
+                Diseñamos catálogos y espacios digitales
                 para mostrar productos y facilitar las ventas.
 
             </p>
+
 
         </div>
 
 
         <div class="service-card service-responsive">
+
 
             <div class="service-icon">
 
@@ -2169,9 +1928,11 @@ footer p {
 
             </div>
 
+
             <h3>
                 Diseño adaptable
             </h3>
+
 
             <p>
 
@@ -2180,10 +1941,12 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-publish">
+
 
             <div class="service-icon">
 
@@ -2191,9 +1954,11 @@ footer p {
 
             </div>
 
+
             <h3>
                 Publicación web
             </h3>
+
 
             <p>
 
@@ -2202,10 +1967,12 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-maintenance">
+
 
             <div class="service-icon">
 
@@ -2213,9 +1980,11 @@ footer p {
 
             </div>
 
+
             <h3>
                 Mantenimiento
             </h3>
+
 
             <p>
 
@@ -2224,10 +1993,12 @@ footer p {
 
             </p>
 
+
         </div>
 
 
         <div class="service-card service-whatsapp">
+
 
             <div class="service-icon">
 
@@ -2235,9 +2006,11 @@ footer p {
 
             </div>
 
+
             <h3>
                 Integración con WhatsApp
             </h3>
+
 
             <p>
 
@@ -2245,6 +2018,7 @@ footer p {
                 clientes puedan comunicarse directamente contigo.
 
             </p>
+
 
         </div>
 
@@ -2263,13 +2037,16 @@ footer p {
 
     <div class="section-title">
 
+
         <small>
             NUESTRO MÉTODO
         </small>
 
+
         <h2>
             ¿Cómo trabajamos?
         </h2>
+
 
     </div>
 
@@ -2279,72 +2056,96 @@ footer p {
 
         <div class="process-card process-talk">
 
+
             <div class="number">
                 1
             </div>
+
 
             <h3>
                 Hablamos
             </h3>
 
+
             <p>
+
                 Conocemos tu negocio
                 y lo que necesitas.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-design">
 
+
             <div class="number">
                 2
             </div>
+
 
             <h3>
                 Diseñamos
             </h3>
 
+
             <p>
+
                 Creamos una propuesta
                 visual para tu página.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-develop">
 
+
             <div class="number">
                 3
             </div>
+
 
             <h3>
                 Desarrollamos
             </h3>
 
+
             <p>
+
                 Construimos la página
                 y configuramos sus funciones.
+
             </p>
+
 
         </div>
 
 
         <div class="process-card process-publish">
 
+
             <div class="number">
                 4
             </div>
+
 
             <h3>
                 Publicamos
             </h3>
 
+
             <p>
+
                 Ponemos tu sitio en Internet
                 para que tus clientes puedan encontrarlo.
+
             </p>
+
 
         </div>
 
@@ -2365,13 +2166,16 @@ footer p {
 
     <div class="section-title">
 
+
         <small>
             CREACIÓN WEB
         </small>
 
+
         <h2>
             Diseñamos tu presencia digital
         </h2>
+
 
         <p>
 
@@ -2382,6 +2186,7 @@ footer p {
 
         </p>
 
+
     </div>
 
 
@@ -2389,6 +2194,7 @@ footer p {
 
 
         <div class="web-design-card">
+
 
             <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
@@ -2398,13 +2204,16 @@ footer p {
 
             <div class="web-design-overlay">
 
+
                 <span>
                     DISEÑO Y DESARROLLO
                 </span>
 
+
                 <h3>
                     Páginas web profesionales
                 </h3>
+
 
                 <p>
 
@@ -2413,12 +2222,15 @@ footer p {
 
                 </p>
 
+
             </div>
+
 
         </div>
 
 
         <div class="web-design-card">
+
 
             <img
                 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
@@ -2428,13 +2240,16 @@ footer p {
 
             <div class="web-design-overlay">
 
+
                 <span>
                     DISEÑO ADAPTABLE
                 </span>
 
+
                 <h3>
                     Tu web en cualquier dispositivo
                 </h3>
+
 
                 <p>
 
@@ -2443,7 +2258,9 @@ footer p {
 
                 </p>
 
+
             </div>
+
 
         </div>
 
@@ -2464,13 +2281,16 @@ footer p {
 
     <div class="section-title">
 
+
         <small>
             OPCIONES
         </small>
 
+
         <h2>
             Costos de creación de páginas web
         </h2>
+
 
         <p>
 
@@ -2479,17 +2299,17 @@ footer p {
 
         </p>
 
+
     </div>
 
 
     <div class="plans-grid">
 
 
-        <!-- =================================================
-             PLAN 1
-        ================================================== -->
+        <!-- PLAN 1 -->
 
         <div class="plan">
+
 
             <div class="plan-label">
                 PLAN 01
@@ -2516,37 +2336,21 @@ footer p {
 
             <ul>
 
-                <li>
-                    Página informativa
-                </li>
+                <li>Página informativa</li>
 
-                <li>
-                    Diseño adaptable
-                </li>
+                <li>Diseño adaptable</li>
 
-                <li>
-                    Sección de contacto
-                </li>
+                <li>Sección de contacto</li>
 
-                <li>
-                    Botón de WhatsApp
-                </li>
+                <li>Botón de WhatsApp</li>
 
-                <li>
-                    Publicación web
-                </li>
+                <li>Publicación web</li>
 
-                <li>
-                    Galería de imágenes
-                </li>
+                <li>Galería de imágenes</li>
 
-                <li>
-                    Optimización para celulares
-                </li>
+                <li>Optimización para celulares</li>
 
-                <li>
-                    Soporte
-                </li>
+                <li>Soporte</li>
 
             </ul>
 
@@ -2576,19 +2380,21 @@ footer p {
 
                 <div class="maintenance">
 
+
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
 
+
                     <p>
 
-                        Mantenimiento y actualización semanal
-                        y mensual, cambio de imágenes,
-                        modificación de información y textos,
-                        ajustes necesarios y soporte para
-                        mantener la página actualizada.
+                        Actualizaciones periódicas de la página,
+                        cambios de imágenes, modificación de
+                        información y textos, ajustes necesarios
+                        y soporte para mantener el sitio actualizado.
 
                     </p>
+
 
                 </div>
 
@@ -2610,11 +2416,10 @@ footer p {
         </div>
 
 
-        <!-- =================================================
-             PLAN 2
-        ================================================== -->
+        <!-- PLAN 2 -->
 
         <div class="plan">
+
 
             <div class="plan-label">
                 PLAN 02
@@ -2642,73 +2447,41 @@ footer p {
 
             <ul>
 
-                <li>
-                    Diseño personalizado
-                </li>
+                <li>Diseño personalizado</li>
 
-                <li>
-                    Varias secciones
-                </li>
+                <li>Varias secciones</li>
 
-                <li>
-                    Galería de imágenes
-                </li>
+                <li>Galería de imágenes</li>
 
-                <li>
-                    Videos
-                </li>
+                <li>Videos</li>
 
-                <li>
-                    Botón de WhatsApp
-                </li>
+                <li>Botón de WhatsApp</li>
 
-                <li>
-                    Botón de correo electrónico
-                </li>
+                <li>Botón de correo electrónico</li>
 
-                <li>
-                    Botón de Facebook
-                </li>
+                <li>Botón de Facebook</li>
 
-                <li>
-                    Botón de Instagram
-                </li>
+                <li>Botón de Instagram</li>
 
-                <li>
-                    Botón de TikTok
-                </li>
+                <li>Botón de TikTok</li>
 
-                <li>
-                    Formulario de contacto
-                </li>
+                <li>Formulario de contacto</li>
 
-                <li>
-                    Optimización para celulares
-                </li>
+                <li>Optimización para celulares</li>
 
-                <li>
-                    Publicación web
-                </li>
+                <li>Publicación web</li>
 
-                <li>
-                    Sección para subir CVs o currículums
-                </li>
+                <li>Soporte</li>
 
-                <li>
-                    Pestañas para catálogo de productos
-                </li>
+                <li>Integración con redes sociales</li>
 
-                <li>
-                    Integración con redes sociales
-                </li>
+                <li>Sección para subir CVs o currículums</li>
 
-                <li>
-                    Soporte y actualizaciones
-                </li>
+                <li>Pestaña para catálogo de productos</li>
 
-                <li>
-                    Configuración técnica y seguridad básica
-                </li>
+                <li>Configuración técnica básica</li>
+
+                <li>Seguridad básica del sitio</li>
 
             </ul>
 
@@ -2738,19 +2511,21 @@ footer p {
 
                 <div class="maintenance">
 
+
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
 
+
                     <p>
 
-                        Mantenimiento y actualización semanal
-                        y mensual, cambio de imágenes,
-                        modificación de información y textos,
-                        ajustes necesarios y soporte para
-                        mantener el sitio actualizado.
+                        Actualizaciones periódicas, cambios de
+                        imágenes, modificación de información y
+                        textos, ajustes, mejoras necesarias,
+                        soporte y mantenimiento general del sitio.
 
                     </p>
+
 
                 </div>
 
@@ -2777,9 +2552,11 @@ footer p {
 
     <div class="maintenance-note">
 
+
         <h3>
             Mantenimiento de tu página web
         </h3>
+
 
         <p>
 
@@ -2791,13 +2568,14 @@ footer p {
 
         </p>
 
+
     </div>
 
 </section>
 
 
 <!-- =====================================================
-     SOBRE ERWEB
+     NOSOTROS
 ===================================================== -->
 
 <section
@@ -2807,18 +2585,22 @@ footer p {
 
     <div class="section-title">
 
+
         <small>
             SOBRE ERWEB
         </small>
+
 
         <h2>
             Transformamos ideas en páginas web
         </h2>
 
+
     </div>
 
 
     <div class="about-content">
+
 
         <p>
 
@@ -2838,6 +2620,7 @@ footer p {
 
         </p>
 
+
     </div>
 
 </section>
@@ -2854,18 +2637,22 @@ footer p {
 
     <div class="section-title">
 
+
         <small>
             HABLEMOS
         </small>
+
 
         <h2>
             ¿Tienes un proyecto?
         </h2>
 
+
     </div>
 
 
     <div class="contact-box">
+
 
         <h3>
             Cuéntanos qué necesitas
