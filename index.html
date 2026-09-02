@@ -56,20 +56,17 @@ a {
 header {
 
     position: fixed;
-
     top: 0;
     left: 0;
 
     width: 100%;
-
-    height: 100px;
+    height: 82px;
 
     background: rgba(5,12,23,0.96);
 
     backdrop-filter: blur(10px);
 
     display: flex;
-
     align-items: center;
 
     z-index: 1000;
@@ -82,21 +79,22 @@ header {
 
 .logo-img {
 
-    height: 120px;
+    height: 155px;
 
-    width: 260px;
+    width: auto;
 
-    max-width: none;
+    max-width: 340px;
 
     object-fit: contain;
 
-    object-position: center center;
+    object-position: center;
 
     display: block;
 
     margin-left: 0;
 
-    padding: 8px 0;
+    /* Evita que el logo se recorte */
+    transform: translateY(3px);
 }
 
 
@@ -110,7 +108,7 @@ nav {
 
     align-items: center;
 
-    gap: 28px;
+    gap: 30px;
 
     padding-right: 5%;
 }
@@ -121,7 +119,7 @@ nav a {
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 17px;
 
     font-weight: 700;
 
@@ -130,7 +128,7 @@ nav a {
 
 nav a:hover {
 
-    color: #00b7ff;
+    color: #00c8ff;
 }
 
 
@@ -166,13 +164,14 @@ nav a:hover {
 
     text-align: center;
 
-    padding: 150px 20px 80px;
+    padding: 140px 20px 80px;
 
     position: relative;
 
     overflow: hidden;
 
     background-image:
+
         url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=90");
 
     background-size: cover;
@@ -183,6 +182,8 @@ nav a:hover {
 }
 
 
+/* CAPA OSCURA */
+
 .hero::before {
 
     content: "";
@@ -192,6 +193,7 @@ nav a:hover {
     inset: 0;
 
     background:
+
         linear-gradient(
             135deg,
             rgba(3,10,18,0.90),
@@ -202,6 +204,8 @@ nav a:hover {
     z-index: 0;
 }
 
+
+/* CONTENIDO */
 
 .hero-content {
 
@@ -219,9 +223,11 @@ nav a:hover {
 }
 
 
+/* TEXTO SUPERIOR */
+
 .hero small {
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     font-weight: 800;
 
@@ -237,6 +243,8 @@ nav a:hover {
         0 2px 8px rgba(0,0,0,0.9);
 }
 
+
+/* TÍTULO */
 
 .hero h1 {
 
@@ -255,12 +263,14 @@ nav a:hover {
 
 .hero h1 span {
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     text-shadow:
         0 3px 15px rgba(0,183,255,0.5);
 }
 
+
+/* DESCRIPCIÓN */
 
 .hero p {
 
@@ -299,13 +309,13 @@ section {
 
 .section-title small {
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     font-weight: 800;
 
     letter-spacing: 2px;
 
-    font-size: 28px;
+    font-size: 30px;
 
     display: block;
 
@@ -424,7 +434,7 @@ section {
         translateY(-8px);
 
     border-color:
-        #00b7ff;
+        #00c8ff;
 }
 
 
@@ -594,7 +604,7 @@ section {
         translateY(-7px);
 
     border-color:
-        #00b7ff;
+        #00c8ff;
 }
 
 
@@ -761,13 +771,13 @@ section {
 }
 
 
-/* TEXTO BLANCO MÁS VISIBLE */
+/* TEXTOS MÁS GRANDES Y VISIBLES */
 
 .web-design-overlay span {
 
-    color: #ffffff;
+    color: #00c8ff;
 
-    font-size: 16px;
+    font-size: 21px;
 
     font-weight: 800;
 
@@ -782,17 +792,17 @@ section {
 
     margin-top: 8px;
 
-    font-size: 22px;
+    font-size: 25px;
 }
 
 
 .web-design-overlay p {
 
-    color: #c6d0dc;
+    color: #ffffff;
 
     margin-top: 8px;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.6;
 }
@@ -860,7 +870,7 @@ section {
 
 .plan-label {
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     font-size: 14px;
 
@@ -930,7 +940,7 @@ section {
 
     content: "✓";
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     font-weight: 900;
 
@@ -938,9 +948,7 @@ section {
 }
 
 
-/* =====================================================
-   COSTOS
-===================================================== */
+/* COSTOS */
 
 .cost-box {
 
@@ -961,8 +969,6 @@ section {
     font-size: 13px;
 
     font-weight: 600;
-
-    line-height: 1.5;
 }
 
 
@@ -972,7 +978,7 @@ section {
 
     font-weight: 800;
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     margin:
         5px 0 20px;
@@ -992,9 +998,7 @@ section {
 }
 
 
-/* =====================================================
-   MANTENIMIENTO
-===================================================== */
+/* MANTENIMIENTO */
 
 .maintenance {
 
@@ -1017,7 +1021,7 @@ section {
 
     font-size: 14px;
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     margin-bottom: 8px;
 }
@@ -1033,6 +1037,22 @@ section {
 }
 
 
+/* TEXTO PAGO ÚNICO */
+
+.payment-note {
+
+    color: #d8e2eb;
+
+    font-size: 12px;
+
+    margin-top: -12px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.5;
+}
+
+
 .plan .btn {
 
     text-align: center;
@@ -1044,7 +1064,7 @@ section {
 
 
 /* =====================================================
-   NOTA GENERAL
+   NOTA MANTENIMIENTO
 ===================================================== */
 
 .maintenance-note {
@@ -1070,7 +1090,7 @@ section {
 
 .maintenance-note h3 {
 
-    color: #00b7ff;
+    color: #00c8ff;
 
     font-size: 23px;
 
@@ -1205,7 +1225,7 @@ section {
 
 
 /* =====================================================
-   BOTONES
+   BOTONES GENERALES
 ===================================================== */
 
 .btn {
@@ -1320,6 +1340,8 @@ section {
 }
 
 
+/* FACEBOOK */
+
 .facebook-button {
 
     background: #1877F2;
@@ -1328,6 +1350,8 @@ section {
 }
 
 
+/* CORREO */
+
 .email-button {
 
     background: white;
@@ -1335,6 +1359,8 @@ section {
     color: #e53935;
 }
 
+
+/* WHATSAPP */
 
 .whatsapp-button {
 
@@ -1411,25 +1437,19 @@ footer p {
 
     header {
 
-        height: 82px;
+        height: 78px;
     }
 
 
     .logo-img {
 
-        height: 105px;
+        height: 125px;
 
-        width: 220px;
-
-        max-width: none;
-
-        object-fit: contain;
-
-        object-position: center center;
+        max-width: 285px;
 
         margin-left: 0;
 
-        padding: 6px 0;
+        transform: translateY(2px);
     }
 
 
@@ -1437,7 +1457,7 @@ footer p {
 
         position: absolute;
 
-        top: 82px;
+        top: 78px;
 
         left: 0;
 
@@ -1454,6 +1474,12 @@ footer p {
         display: none;
 
         gap: 20px;
+    }
+
+
+    nav a {
+
+        font-size: 18px;
     }
 
 
@@ -1557,7 +1583,13 @@ footer p {
 
     .web-design-overlay span {
 
-        font-size: 15px;
+        font-size: 18px;
+    }
+
+
+    .web-design-overlay h3 {
+
+        font-size: 22px;
     }
 
 
@@ -1609,6 +1641,7 @@ footer p {
 ===================================================== -->
 
 <header>
+
 
     <a href="#inicio"
        aria-label="ERWEB Inicio">
@@ -1671,9 +1704,7 @@ footer p {
 
 
         <small>
-
             DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
-
         </small>
 
 
@@ -1862,13 +1893,16 @@ footer p {
 
     <div class="section-title">
 
+
         <small>
             NUESTRO MÉTODO
         </small>
 
+
         <h2>
             ¿Cómo trabajamos?
         </h2>
+
 
     </div>
 
@@ -2184,13 +2218,18 @@ footer p {
 
 
                 <div class="cost-title">
-                    Costo de creación — pago único
+                    Costo de creación
                 </div>
 
 
                 <div class="price">
-                    Q950
+                    Q750 - Q950
                 </div>
+
+
+                <p class="payment-note">
+                    Pago único por la creación de la página web.
+                </p>
 
 
                 <div class="cost-title">
@@ -2199,7 +2238,7 @@ footer p {
 
 
                 <div class="maintenance-price">
-                    Q950
+                    Q700 - Q950
                 </div>
 
 
@@ -2343,6 +2382,16 @@ footer p {
 
 
                 <li>
+                    Pestañas para catálogo de productos
+                </li>
+
+
+                <li>
+                    Sección para subir CVs o currículums
+                </li>
+
+
+                <li>
                     Integración con redes sociales
                 </li>
 
@@ -2358,12 +2407,7 @@ footer p {
 
 
                 <li>
-                    Optimización de velocidad
-                </li>
-
-
-                <li>
-                    Estructura preparada para buscadores
+                    Estructura organizada para facilitar futuras actualizaciones
                 </li>
 
 
@@ -2374,13 +2418,18 @@ footer p {
 
 
                 <div class="cost-title">
-                    Costo de creación — pago único
+                    Costo de creación
                 </div>
 
 
                 <div class="price">
                     Q1,400
                 </div>
+
+
+                <p class="payment-note">
+                    Pago único por la creación de la página web.
+                </p>
 
 
                 <div class="cost-title">
@@ -2465,7 +2514,7 @@ footer p {
 
 
 <!-- =====================================================
-     NOSOTROS
+     SOBRE ERWEB
 ===================================================== -->
 
 <section
