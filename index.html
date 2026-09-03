@@ -76,12 +76,10 @@ a {
 header {
 
     position: fixed;
-
     top: 0;
     left: 0;
 
     width: 100%;
-
     height: 82px;
 
     background: rgba(5,12,23,0.96);
@@ -89,7 +87,6 @@ header {
     backdrop-filter: blur(10px);
 
     display: flex;
-
     align-items: center;
 
     z-index: 1000;
@@ -101,7 +98,6 @@ header {
 
 /* =====================================================
    LOGO
-   RECTÁNGULO FIJO + LÍNEA DE LUZ
 ===================================================== */
 
 .logo-container {
@@ -109,15 +105,12 @@ header {
     position: relative;
 
     width: 300px;
-
     height: 76px;
 
     flex-shrink: 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
@@ -133,11 +126,9 @@ header {
     z-index: 1;
 
     width: 100%;
-
     height: 100%;
 
     object-fit: contain;
-
     object-position: center;
 
     display: block;
@@ -148,10 +139,6 @@ header {
 }
 
 
-/* =====================================================
-   LÍNEA DE LUZ DEL LOGO
-===================================================== */
-
 .logo-light {
 
     position: absolute;
@@ -159,7 +146,6 @@ header {
     inset: 0;
 
     width: 100%;
-
     height: 100%;
 
     z-index: 3;
@@ -181,7 +167,6 @@ header {
     stroke-width: 2;
 
     stroke-linecap: round;
-
     stroke-linejoin: round;
 
     vector-effect: non-scaling-stroke;
@@ -207,7 +192,6 @@ header {
     stroke-width: 1;
 
     stroke-linecap: round;
-
     stroke-linejoin: round;
 
     vector-effect: non-scaling-stroke;
@@ -254,6 +238,7 @@ nav {
     padding-right: 5%;
 }
 
+
 nav a {
 
     color: white;
@@ -267,8 +252,8 @@ nav a {
     transition: 0.3s;
 }
 
-nav a:hover {
 
+nav a:hover {
     color: #00b7ff;
 }
 
@@ -282,13 +267,12 @@ nav a:hover {
     cursor: pointer;
 
     margin-left: auto;
-
     margin-right: 5%;
 }
 
 
 /* =====================================================
-   INICIO / HERO
+   HERO
 ===================================================== */
 
 .hero {
@@ -298,7 +282,6 @@ nav a:hover {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -423,7 +406,6 @@ nav a:hover {
 ===================================================== */
 
 section {
-
     padding: 100px 7%;
 }
 
@@ -520,9 +502,7 @@ section {
 
     justify-content: flex-end;
 
-    background-size: cover;
-
-    background-position: center;
+    background: #0b1929;
 
     box-shadow:
         0 15px 35px rgba(0,0,0,0.25);
@@ -531,28 +511,8 @@ section {
 }
 
 
-.service-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(3,10,18,0.96),
-            rgba(3,10,18,0.40)
-        );
-
-    z-index: 0;
-}
-
-
 /* =====================================================
-   ANIMACIÓN INDIVIDUAL
-   DE CADA RECUADRO
+   CAPA OSCURA SOBRE LAS ANIMACIONES
 ===================================================== */
 
 .service-card::after {
@@ -563,535 +523,40 @@ section {
 
     inset: 0;
 
-    z-index: 1;
+    background:
+        linear-gradient(
+            to top,
+            rgba(3,10,18,0.97),
+            rgba(3,10,18,0.38)
+        );
+
+    z-index: 2;
 
     pointer-events: none;
 }
 
 
-.service-card > * {
+.service-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        #00b7ff;
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.service-card > *:not(.service-animation) {
 
     position: relative;
 
-    z-index: 3;
+    z-index: 5;
 }
 
-
-/* =====================================================
-   1. PÁGINA WEB
-   EFECTO DE LÍNEAS DE CÓDIGO
-===================================================== */
-
-.service-web::after {
-
-    background:
-        repeating-linear-gradient(
-            0deg,
-            transparent 0px,
-            transparent 8px,
-            rgba(0,183,255,0.08) 9px,
-            transparent 10px
-        );
-
-    transform: translateY(-100%);
-
-    animation:
-        codigoWeb
-        5s
-        linear
-        infinite;
-}
-
-
-@keyframes codigoWeb {
-
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    85% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   2. TIENDA ONLINE
-   PUNTOS / ELEMENTOS EN MOVIMIENTO
-===================================================== */
-
-.service-store::after {
-
-    background:
-        radial-gradient(
-            circle at 15% 30%,
-            rgba(0,183,255,0.35) 0 2px,
-            transparent 3px
-        ),
-        radial-gradient(
-            circle at 75% 20%,
-            rgba(255,255,255,0.25) 0 2px,
-            transparent 3px
-        ),
-        radial-gradient(
-            circle at 45% 70%,
-            rgba(0,183,255,0.30) 0 3px,
-            transparent 4px
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(255,255,255,0.20) 0 2px,
-            transparent 3px
-        );
-
-    background-size:
-        120px 120px,
-        160px 160px,
-        190px 190px,
-        140px 140px;
-
-    animation:
-        movimientoTienda
-        8s
-        linear
-        infinite;
-}
-
-
-@keyframes movimientoTienda {
-
-    0% {
-
-        background-position:
-            0 0,
-            80px 20px,
-            20px 100px,
-            100px 80px;
-    }
-
-    50% {
-
-        background-position:
-            60px 30px,
-            20px 70px,
-            80px 40px,
-            40px 100px;
-    }
-
-    100% {
-
-        background-position:
-            120px 0,
-            0 20px,
-            20px 0,
-            120px 80px;
-    }
-
-}
-
-
-/* =====================================================
-   3. DISEÑO ADAPTABLE
-   BARRIDO DE LUZ
-===================================================== */
-
-.service-responsive::after {
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(0,183,255,0.25) 45%,
-            rgba(255,255,255,0.35) 50%,
-            rgba(0,183,255,0.25) 55%,
-            transparent 100%
-        );
-
-    background-size: 200% 100%;
-
-    animation:
-        responsiveLuz
-        4s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes responsiveLuz {
-
-    0% {
-
-        background-position:
-            200% 0;
-
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 1;
-    }
-
-    75% {
-        opacity: 1;
-    }
-
-    100% {
-
-        background-position:
-            -200% 0;
-
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   4. PUBLICACIÓN WEB
-   EFECTO DE LANZAMIENTO
-===================================================== */
-
-.service-publish::after {
-
-    background:
-        radial-gradient(
-            circle at 50% 85%,
-            rgba(0,183,255,0.35),
-            transparent 12%
-        );
-
-    transform:
-        scale(0.3);
-
-    opacity: 0;
-
-    animation:
-        lanzamientoWeb
-        4s
-        ease-out
-        infinite;
-}
-
-
-@keyframes lanzamientoWeb {
-
-    0% {
-
-        transform:
-            scale(0.2)
-            translateY(30%);
-
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 0.7;
-    }
-
-    100% {
-
-        transform:
-            scale(1.7)
-            translateY(-20%);
-
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   5. MANTENIMIENTO
-   LÍNEAS TÉCNICAS
-===================================================== */
-
-.service-maintenance::after {
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent 18px,
-            rgba(0,183,255,0.08) 19px,
-            transparent 20px
-        );
-
-    transform:
-        translateX(-40px);
-
-    animation:
-        mantenimientoTecnico
-        5s
-        linear
-        infinite;
-}
-
-
-@keyframes mantenimientoTecnico {
-
-    0% {
-        transform:
-            translateX(-50px);
-    }
-
-    50% {
-        transform:
-            translateX(0);
-    }
-
-    100% {
-        transform:
-            translateX(50px);
-    }
-
-}
-
-
-/* =====================================================
-   6. WHATSAPP
-   ONDAS DE COMUNICACIÓN
-===================================================== */
-
-.service-whatsapp::after {
-
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            transparent 0%,
-            transparent 15%,
-            rgba(0,183,255,0.18) 16%,
-            transparent 17%,
-            transparent 30%,
-            rgba(0,183,255,0.13) 31%,
-            transparent 32%,
-            transparent 45%,
-            rgba(0,183,255,0.08) 46%,
-            transparent 47%
-        );
-
-    transform:
-        scale(0.5);
-
-    animation:
-        ondasWhatsApp
-        4s
-        ease-out
-        infinite;
-}
-
-
-@keyframes ondasWhatsApp {
-
-    0% {
-
-        transform:
-            scale(0.5);
-
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    100% {
-
-        transform:
-            scale(1.5);
-
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   ANIMACIONES DE LOS ICONOS
-===================================================== */
-
-.service-web .service-icon {
-
-    animation:
-        iconoWeb
-        3s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes iconoWeb {
-
-    0%,100% {
-
-        box-shadow:
-            0 0 0
-            rgba(0,183,255,0);
-    }
-
-    50% {
-
-        box-shadow:
-            0 0 22px
-            rgba(0,183,255,0.45);
-    }
-
-}
-
-
-.service-store .service-icon {
-
-    animation:
-        iconoTienda
-        3s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes iconoTienda {
-
-    0%,100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-4px);
-    }
-
-}
-
-
-.service-responsive .service-icon {
-
-    animation:
-        iconoResponsive
-        3s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes iconoResponsive {
-
-    0%,100% {
-        transform:
-            scale(1);
-    }
-
-    50% {
-        transform:
-            scale(1.08);
-    }
-
-}
-
-
-.service-publish .service-icon {
-
-    animation:
-        iconoPublicar
-        2.5s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes iconoPublicar {
-
-    0%,100% {
-
-        transform:
-            translateY(0);
-    }
-
-    50% {
-
-        transform:
-            translateY(-6px);
-    }
-
-}
-
-
-.service-maintenance .service-icon {
-
-    animation:
-        iconoMantenimiento
-        5s
-        linear
-        infinite;
-}
-
-
-@keyframes iconoMantenimiento {
-
-    0% {
-
-        transform:
-            rotate(0deg);
-    }
-
-    100% {
-
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-
-.service-whatsapp .service-icon {
-
-    animation:
-        iconoWhatsApp
-        2s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes iconoWhatsApp {
-
-    0%,100% {
-
-        box-shadow:
-            0 0 0
-            rgba(0,183,255,0);
-    }
-
-    50% {
-
-        box-shadow:
-            0 0 0 8px
-            rgba(0,183,255,0.08),
-
-            0 0 25px
-            rgba(0,183,255,0.35);
-    }
-
-}
-
-
-/* =====================================================
-   CONTENIDO DE LOS SERVICIOS
-===================================================== */
 
 .service-icon {
 
@@ -1137,48 +602,861 @@ section {
 
 
 /* =====================================================
-   IMÁGENES SERVICIOS
+   CONTENEDOR GENERAL DE ANIMACIÓN
 ===================================================== */
 
-.service-web {
+.service-animation {
 
-    background-image:
-    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85");
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    pointer-events: none;
 }
 
 
-.service-store {
+/* =====================================================
+   ANIMACIÓN 1
+   PÁGINA WEB
+   CÓDIGO HTML SUBIENDO Y BAJANDO
+===================================================== */
 
-    background-image:
-    url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85");
+.code-window {
+
+    position: absolute;
+
+    width: 82%;
+
+    height: 190px;
+
+    left: 9%;
+
+    top: 28px;
+
+    background:
+        rgba(1,9,18,0.78);
+
+    border:
+        1px solid
+        rgba(0,183,255,0.30);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 30px
+        rgba(0,183,255,0.08);
 }
 
 
-.service-responsive {
+.code-header {
 
-    background-image:
-    url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=85");
+    height: 30px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding-left: 12px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
-.service-publish {
+.code-dot {
 
-    background-image:
-    url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=85");
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.35);
 }
 
 
-.service-maintenance {
+.code-scroll {
 
-    background-image:
-    url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85");
+    position: absolute;
+
+    left: 14px;
+    right: 10px;
+
+    top: 35px;
+
+    animation:
+        codigoSubeBaja
+        6s
+        ease-in-out
+        infinite;
 }
 
 
-.service-whatsapp {
+.code-line {
 
-    background-image:
-    url("https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=1000&q=85");
+    height: 19px;
+
+    white-space: nowrap;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 11px;
+
+    color: #8bdcff;
+
+    opacity: 0.90;
+}
+
+
+.code-line span {
+
+    color: #00b7ff;
+}
+
+
+@keyframes codigoSubeBaja {
+
+    0% {
+        transform: translateY(45px);
+    }
+
+    45% {
+        transform: translateY(-90px);
+    }
+
+    55% {
+        transform: translateY(-90px);
+    }
+
+    100% {
+        transform: translateY(45px);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMACIÓN 2
+   TIENDA ONLINE
+===================================================== */
+
+.shop-animation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.shop-products {
+
+    width: 85%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transform:
+        translateY(-8px);
+}
+
+
+.shop-item {
+
+    width: 72px;
+
+    height: 100px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid
+        rgba(0,183,255,0.35);
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    animation:
+        productoFlota
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+.shop-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.shop-item:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.shop-image {
+
+    height: 48px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,183,255,0.45),
+            rgba(255,255,255,0.10)
+        );
+
+    margin-bottom: 8px;
+}
+
+
+.shop-line {
+
+    height: 5px;
+
+    background:
+        rgba(255,255,255,0.25);
+
+    border-radius: 4px;
+
+    margin-bottom: 5px;
+}
+
+
+.shop-line.short {
+    width: 65%;
+}
+
+
+@keyframes productoFlota {
+
+    0%,100% {
+        transform: translateY(8px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMACIÓN 3
+   DISEÑO ADAPTABLE
+===================================================== */
+
+.responsive-animation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.devices {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transform:
+        translateY(-10px);
+}
+
+
+.device {
+
+    border:
+        2px solid
+        rgba(0,183,255,0.55);
+
+    background:
+        rgba(2,12,23,0.75);
+
+    box-shadow:
+        0 0 18px
+        rgba(0,183,255,0.10);
+
+    animation:
+        dispositivoRespira
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+.device-computer {
+
+    width: 105px;
+    height: 68px;
+
+    border-radius: 6px;
+}
+
+
+.device-tablet {
+
+    width: 55px;
+    height: 76px;
+
+    border-radius: 8px;
+
+    animation-delay: .4s;
+}
+
+
+.device-phone {
+
+    width: 34px;
+    height: 67px;
+
+    border-radius: 7px;
+
+    animation-delay: .8s;
+}
+
+
+.device-screen {
+
+    margin: 5px;
+
+    height: calc(100% - 10px);
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,183,255,0.18),
+            rgba(255,255,255,0.03)
+        );
+}
+
+
+@keyframes dispositivoRespira {
+
+    0%,100% {
+        transform: scale(0.96);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMACIÓN 4
+   PUBLICACIÓN WEB
+===================================================== */
+
+.publish-animation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.rocket-scene {
+
+    position: relative;
+
+    width: 210px;
+
+    height: 170px;
+
+    transform:
+        translateY(-12px);
+}
+
+
+.cloud {
+
+    position: absolute;
+
+    width: 70px;
+    height: 22px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    animation:
+        nubeMover
+        5s
+        linear
+        infinite;
+}
+
+
+.cloud::before,
+.cloud::after {
+
+    content: "";
+
+    position: absolute;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+}
+
+
+.cloud::before {
+
+    width: 30px;
+    height: 30px;
+
+    left: 12px;
+    top: -13px;
+}
+
+
+.cloud::after {
+
+    width: 25px;
+    height: 25px;
+
+    right: 10px;
+    top: -9px;
+}
+
+
+.cloud-1 {
+    top: 35px;
+    left: -20px;
+}
+
+
+.cloud-2 {
+    top: 80px;
+    right: -20px;
+    animation-delay: 2s;
+}
+
+
+.rocket {
+
+    position: absolute;
+
+    left: 72px;
+    top: 45px;
+
+    font-size: 55px;
+
+    color: #00b7ff;
+
+    transform:
+        rotate(-25deg);
+
+    animation:
+        coheteSube
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+.launch-line {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 65px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #00b7ff,
+            transparent
+        );
+
+    left: 96px;
+    top: 100px;
+
+    animation:
+        lanzamiento
+        1.2s
+        linear
+        infinite;
+}
+
+
+@keyframes coheteSube {
+
+    0%,100% {
+        transform:
+            translateY(12px)
+            rotate(-25deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(-25deg);
+    }
+
+}
+
+
+@keyframes lanzamiento {
+
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+}
+
+
+@keyframes nubeMover {
+
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .7;
+    }
+
+    80% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateX(45px);
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   ANIMACIÓN 5
+   MANTENIMIENTO
+===================================================== */
+
+.maintenance-animation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.maintenance-scene {
+
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.big-gear {
+
+    font-size: 82px;
+
+    color:
+        rgba(0,183,255,0.45);
+
+    animation:
+        girarGear
+        5s
+        linear
+        infinite;
+}
+
+
+.small-gear {
+
+    position: absolute;
+
+    right: 18px;
+    bottom: 20px;
+
+    font-size: 48px;
+
+    color:
+        rgba(255,255,255,0.30);
+
+    animation:
+        girarGearReverse
+        3s
+        linear
+        infinite;
+}
+
+
+.maintenance-code {
+
+    position: absolute;
+
+    top: 18px;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 12px;
+
+    color:
+        #00b7ff;
+
+    animation:
+        mantenimientoCodigo
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes girarGear {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes girarGearReverse {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+
+}
+
+
+@keyframes mantenimientoCodigo {
+
+    0%,100% {
+        opacity: .25;
+        transform: translateY(8px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMACIÓN 6
+   WHATSAPP
+===================================================== */
+
+.whatsapp-animation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.whatsapp-scene {
+
+    position: relative;
+
+    width: 220px;
+    height: 160px;
+}
+
+
+.chat-bubble {
+
+    position: absolute;
+
+    max-width: 130px;
+
+    padding: 10px 13px;
+
+    border-radius: 12px;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.20);
+
+    opacity: 0;
+
+    animation:
+        mensajeAparece
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+.chat-one {
+
+    left: 10px;
+    top: 25px;
+
+    background:
+        rgba(255,255,255,0.13);
+
+    color: white;
+}
+
+
+.chat-two {
+
+    right: 10px;
+    top: 70px;
+
+    background:
+        rgba(0,183,255,0.30);
+
+    color: white;
+
+    animation-delay:
+        1.5s;
+}
+
+
+.chat-three {
+
+    left: 45px;
+    top: 115px;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    color: #dce8f2;
+
+    animation-delay:
+        3s;
+}
+
+
+.chat-icon {
+
+    position: absolute;
+
+    left: 50%;
+    top: 48%;
+
+    transform:
+        translate(-50%,-50%);
+
+    font-size: 38px;
+
+    color:
+        rgba(37,211,102,0.55);
+
+    animation:
+        whatsappPulso
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes mensajeAparece {
+
+    0%,100% {
+        opacity: 0;
+        transform:
+            translateY(15px)
+            scale(.92);
+    }
+
+    15%,55% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    70% {
+        opacity: 0;
+        transform:
+            translateY(-8px)
+            scale(.95);
+    }
+
+}
+
+
+@keyframes whatsappPulso {
+
+    0%,100% {
+        transform:
+            translate(-50%,-50%)
+            scale(.95);
+    }
+
+    50% {
+        transform:
+            translate(-50%,-50%)
+            scale(1.12);
+    }
+
 }
 
 
@@ -1247,265 +1525,67 @@ section {
 }
 
 
-/* =====================================================
-   ANIMACIÓN INDIVIDUAL DEL PROCESO
-===================================================== */
-
-.process-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-
 .process-card > * {
 
     position: relative;
 
-    z-index: 3;
+    z-index: 1;
 }
 
 
-/* =====================================================
-   1. HABLAMOS
-   ONDAS DE COMUNICACIÓN
-===================================================== */
-
-.process-talk::after {
-
-    background:
-        radial-gradient(
-            ellipse,
-            transparent 0 30%,
-            rgba(0,183,255,0.14) 31%,
-            transparent 32% 45%,
-            rgba(0,183,255,0.10) 46%,
-            transparent 47%
-        );
+.process-card:hover {
 
     transform:
-        scale(0.5);
+        translateY(-7px);
 
-    animation:
-        ondasHablar
-        5s
-        ease-out
-        infinite;
+    border-color:
+        #00b7ff;
 }
 
 
-@keyframes ondasHablar {
+.number {
 
-    0% {
+    width: 60px;
 
-        transform:
-            scale(0.5);
-
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 1;
-    }
-
-    100% {
-
-        transform:
-            scale(1.2);
-
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   2. DISEÑAMOS
-   LÍNEA DE DISEÑO
-===================================================== */
-
-.process-design::after {
-
-    width: 150%;
-
-    height: 2px;
-
-    left: -150%;
-
-    top: 50%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(0,183,255,0.8),
-            white,
-            transparent
-        );
-
-    animation:
-        dibujarDiseno
-        4s
-        ease-in-out
-        infinite;
-}
-
-
-@keyframes dibujarDiseno {
-
-    0% {
-
-        left:
-            -150%;
-
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-
-        left:
-            100%;
-
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   3. DESARROLLAMOS
-   ESCÁNER DE CÓDIGO
-===================================================== */
-
-.process-develop::after {
-
-    left: 0;
-
-    top: -20%;
-
-    width: 100%;
-
-    height: 20%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(0,183,255,0.20),
-            rgba(255,255,255,0.25),
-            transparent
-        );
-
-    animation:
-        escanerCodigo
-        3.5s
-        linear
-        infinite;
-}
-
-
-@keyframes escanerCodigo {
-
-    0% {
-
-        top:
-            -20%;
-
-        opacity: 0;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    80% {
-        opacity: 1;
-    }
-
-    100% {
-
-        top:
-            100%;
-
-        opacity: 0;
-    }
-
-}
-
-
-/* =====================================================
-   4. PUBLICAMOS
-   SEÑAL DIGITAL
-===================================================== */
-
-.process-publish::after {
-
-    width: 40px;
-
-    height: 40px;
-
-    left:
-        calc(50% - 20px);
-
-    bottom: 15%;
-
-    border:
-        1px solid
-        rgba(0,183,255,0.5);
+    height: 60px;
 
     border-radius: 50%;
 
-    animation:
-        senalPublicacion
-        3.5s
-        ease-out
-        infinite;
+    background: #00b7ff;
+
+    color: #00101c;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin:
+        0 auto 20px;
+
+    font-size: 20px;
+
+    font-weight: 800;
 }
 
 
-@keyframes senalPublicacion {
+.process-card h3 {
 
-    0% {
-
-        transform:
-            scale(0.3);
-
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 1;
-    }
-
-    100% {
-
-        transform:
-            scale(4);
-
-        opacity: 0;
-    }
-
+    font-size: 21px;
 }
 
 
-/* =====================================================
-   IMÁGENES DEL PROCESO
-===================================================== */
+.process-card p {
+
+    color: #e0e7ee;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
 
 .process-talk {
 
@@ -1532,16 +1612,6 @@ section {
 
     background-image:
     url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85");
-}
-
-
-.process-card:hover {
-
-    transform:
-        translateY(-7px);
-
-    border-color:
-        #00b7ff;
 }
 
 
@@ -1618,9 +1688,7 @@ section {
     position: absolute;
 
     left: 0;
-
     right: 0;
-
     bottom: 0;
 
     padding: 30px;
@@ -2135,7 +2203,7 @@ section {
 
 
 /* =====================================================
-   REDES SOCIALES FLOTANTES
+   REDES SOCIALES
 ===================================================== */
 
 .social-floating {
@@ -2167,7 +2235,6 @@ section {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-decoration: none;
@@ -2454,21 +2521,80 @@ footer p {
             scroll;
     }
 
+
+    /* =============================================
+       ANIMACIONES EN CELULAR
+    ============================================= */
+
+    .code-window {
+
+        width: 88%;
+
+        left: 6%;
+
+        height: 185px;
+    }
+
+
+    .code-line {
+
+        font-size: 9px;
+    }
+
+
+    .shop-item {
+
+        width: 62px;
+
+        height: 92px;
+    }
+
+
+    .device-computer {
+
+        width: 90px;
+
+        height: 60px;
+    }
+
+
+    .device-tablet {
+
+        width: 48px;
+
+        height: 68px;
+    }
+
+
+    .device-phone {
+
+        width: 31px;
+
+        height: 62px;
+    }
+
 }
 
 
 /* =====================================================
-   REDUCIR ANIMACIONES SI EL DISPOSITIVO LO SOLICITA
+   REDUCCIÓN DE MOVIMIENTO
+   PARA PERSONAS QUE LO SOLICITEN
 ===================================================== */
 
 @media(prefers-reduced-motion: reduce) {
 
-    .service-card::after,
-    .process-card::after,
-    .service-card .service-icon {
+    *,
+    *::before,
+    *::after {
 
-        animation:
-            none !important;
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
     }
 
 }
@@ -2487,25 +2613,21 @@ footer p {
 
 <header>
 
-
     <a
         href="#inicio"
         class="logo-container"
         aria-label="ERWEB Inicio">
-
 
         <img
             src="LOGO.jpg"
             alt="Logo ERWEB"
             class="logo-img">
 
-
         <svg
             class="logo-light"
             viewBox="0 0 300 76"
             preserveAspectRatio="none"
             aria-hidden="true">
-
 
             <rect
                 class="light-main"
@@ -2518,7 +2640,6 @@ footer p {
                 pathLength="100">
             </rect>
 
-
             <rect
                 class="light-core"
                 x="2"
@@ -2530,9 +2651,7 @@ footer p {
                 pathLength="100">
             </rect>
 
-
         </svg>
-
 
     </a>
 
@@ -2582,16 +2701,11 @@ footer p {
     class="hero"
     id="inicio">
 
-
     <div class="hero-content">
 
-
         <small>
-
             DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
-
         </small>
-
 
         <h1>
 
@@ -2604,7 +2718,6 @@ footer p {
 
         </h1>
 
-
         <p>
 
             En ERWEB creamos páginas web modernas,
@@ -2612,7 +2725,6 @@ footer p {
             a mostrar tu negocio en Internet.
 
         </p>
-
 
     </div>
 
@@ -2630,16 +2742,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             LO QUE HACEMOS
         </small>
 
-
         <h2>
             Nuestro servicio
         </h2>
-
 
         <p>
 
@@ -2649,14 +2758,115 @@ footer p {
 
         </p>
 
-
     </div>
 
 
     <div class="service-grid">
 
 
-        <div class="service-card service-web">
+        <!-- =================================================
+             PÁGINA WEB
+        ================================================== -->
+
+        <div class="service-card">
+
+
+            <div class="service-animation">
+
+                <div class="code-window">
+
+                    <div class="code-header">
+
+                        <span class="code-dot"></span>
+                        <span class="code-dot"></span>
+                        <span class="code-dot"></span>
+
+                    </div>
+
+
+                    <div class="code-scroll">
+
+                        <div class="code-line">
+                            <span>&lt;!DOCTYPE html&gt;</span>
+                        </div>
+
+                        <div class="code-line">
+                            &lt;html lang="es"&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &lt;head&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&lt;title&gt;ERWEB&lt;/title&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &lt;/head&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &lt;body&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&lt;header&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bienvenido
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/h1&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&lt;/header&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&lt;main&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tu página web profesional
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/p&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &nbsp;&nbsp;&lt;/main&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &lt;/body&gt;
+                        </div>
+
+                        <div class="code-line">
+                            &lt;/html&gt;
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
 
             <div class="service-icon">
@@ -2682,7 +2892,54 @@ footer p {
         </div>
 
 
-        <div class="service-card service-store">
+        <!-- =================================================
+             TIENDA ONLINE
+        ================================================== -->
+
+        <div class="service-card">
+
+
+            <div class="service-animation shop-animation">
+
+                <div class="shop-products">
+
+
+                    <div class="shop-item">
+
+                        <div class="shop-image"></div>
+
+                        <div class="shop-line"></div>
+
+                        <div class="shop-line short"></div>
+
+                    </div>
+
+
+                    <div class="shop-item">
+
+                        <div class="shop-image"></div>
+
+                        <div class="shop-line"></div>
+
+                        <div class="shop-line short"></div>
+
+                    </div>
+
+
+                    <div class="shop-item">
+
+                        <div class="shop-image"></div>
+
+                        <div class="shop-line"></div>
+
+                        <div class="shop-line short"></div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
 
 
             <div class="service-icon">
@@ -2708,7 +2965,42 @@ footer p {
         </div>
 
 
-        <div class="service-card service-responsive">
+        <!-- =================================================
+             DISEÑO ADAPTABLE
+        ================================================== -->
+
+        <div class="service-card">
+
+
+            <div class="service-animation responsive-animation">
+
+                <div class="devices">
+
+
+                    <div class="device device-computer">
+
+                        <div class="device-screen"></div>
+
+                    </div>
+
+
+                    <div class="device device-tablet">
+
+                        <div class="device-screen"></div>
+
+                    </div>
+
+
+                    <div class="device device-phone">
+
+                        <div class="device-screen"></div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
 
 
             <div class="service-icon">
@@ -2734,7 +3026,36 @@ footer p {
         </div>
 
 
-        <div class="service-card service-publish">
+        <!-- =================================================
+             PUBLICACIÓN WEB
+        ================================================== -->
+
+        <div class="service-card">
+
+
+            <div class="service-animation publish-animation">
+
+                <div class="rocket-scene">
+
+
+                    <div class="cloud cloud-1"></div>
+
+                    <div class="cloud cloud-2"></div>
+
+
+                    <div class="rocket">
+
+                        <i class="fa-solid fa-rocket"></i>
+
+                    </div>
+
+
+                    <div class="launch-line"></div>
+
+
+                </div>
+
+            </div>
 
 
             <div class="service-icon">
@@ -2760,7 +3081,32 @@ footer p {
         </div>
 
 
-        <div class="service-card service-maintenance">
+        <!-- =================================================
+             MANTENIMIENTO
+        ================================================== -->
+
+        <div class="service-card">
+
+
+            <div class="service-animation maintenance-animation">
+
+                <div class="maintenance-scene">
+
+
+                    <div class="maintenance-code">
+                        &lt;UPDATE /&gt;
+                    </div>
+
+
+                    <i class="fa-solid fa-gear big-gear"></i>
+
+
+                    <i class="fa-solid fa-gear small-gear"></i>
+
+
+                </div>
+
+            </div>
 
 
             <div class="service-icon">
@@ -2786,7 +3132,50 @@ footer p {
         </div>
 
 
-        <div class="service-card service-whatsapp">
+        <!-- =================================================
+             WHATSAPP
+        ================================================== -->
+
+        <div class="service-card">
+
+
+            <div class="service-animation whatsapp-animation">
+
+                <div class="whatsapp-scene">
+
+
+                    <div class="chat-bubble chat-one">
+
+                        Hola, quiero información
+                        sobre la página web.
+
+                    </div>
+
+
+                    <div class="chat-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </div>
+
+
+                    <div class="chat-bubble chat-two">
+
+                        ¡Hola! Con gusto te ayudamos.
+
+                    </div>
+
+
+                    <div class="chat-bubble chat-three">
+
+                        Quiero cotizar mi página.
+
+                    </div>
+
+
+                </div>
+
+            </div>
 
 
             <div class="service-icon">
@@ -2826,16 +3215,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             NUESTRO MÉTODO
         </small>
 
-
         <h2>
             ¿Cómo trabajamos?
         </h2>
-
 
     </div>
 
@@ -2845,96 +3231,72 @@ footer p {
 
         <div class="process-card process-talk">
 
-
             <div class="number">
                 1
             </div>
-
 
             <h3>
                 Hablamos
             </h3>
 
-
             <p>
-
                 Conocemos tu negocio
                 y lo que necesitas.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-design">
 
-
             <div class="number">
                 2
             </div>
-
 
             <h3>
                 Diseñamos
             </h3>
 
-
             <p>
-
                 Creamos una propuesta
                 visual para tu página.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-develop">
 
-
             <div class="number">
                 3
             </div>
-
 
             <h3>
                 Desarrollamos
             </h3>
 
-
             <p>
-
                 Construimos la página
                 y configuramos sus funciones.
-
             </p>
-
 
         </div>
 
 
         <div class="process-card process-publish">
 
-
             <div class="number">
                 4
             </div>
-
 
             <h3>
                 Publicamos
             </h3>
 
-
             <p>
-
                 Ponemos tu sitio en Internet
                 para que tus clientes puedan encontrarlo.
-
             </p>
-
 
         </div>
 
@@ -2955,16 +3317,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             CREACIÓN WEB
         </small>
 
-
         <h2>
             Diseñamos tu presencia digital
         </h2>
-
 
         <p>
 
@@ -2975,7 +3334,6 @@ footer p {
 
         </p>
 
-
     </div>
 
 
@@ -2983,7 +3341,6 @@ footer p {
 
 
         <div class="web-design-card">
-
 
             <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
@@ -2993,16 +3350,13 @@ footer p {
 
             <div class="web-design-overlay">
 
-
                 <span>
                     DISEÑO Y DESARROLLO
                 </span>
 
-
                 <h3>
                     Páginas web profesionales
                 </h3>
-
 
                 <p>
 
@@ -3011,15 +3365,12 @@ footer p {
 
                 </p>
 
-
             </div>
-
 
         </div>
 
 
         <div class="web-design-card">
-
 
             <img
                 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
@@ -3029,16 +3380,13 @@ footer p {
 
             <div class="web-design-overlay">
 
-
                 <span>
                     DISEÑO ADAPTABLE
                 </span>
 
-
                 <h3>
                     Tu web en cualquier dispositivo
                 </h3>
-
 
                 <p>
 
@@ -3047,9 +3395,7 @@ footer p {
 
                 </p>
 
-
             </div>
-
 
         </div>
 
@@ -3070,16 +3416,13 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             OPCIONES
         </small>
 
-
         <h2>
             Costos de creación de páginas web
         </h2>
-
 
         <p>
 
@@ -3088,25 +3431,23 @@ footer p {
 
         </p>
 
-
     </div>
 
 
     <div class="plans-grid">
 
 
-        <div class="plan">
+        <!-- PLAN 1 -->
 
+        <div class="plan">
 
             <div class="plan-label">
                 PLAN 01
             </div>
 
-
             <h3>
                 Página Inicial Básica
             </h3>
-
 
             <p class="plan-description">
 
@@ -3123,53 +3464,34 @@ footer p {
 
             <ul>
 
-                <li>
-                    Página informativa
-                </li>
+                <li>Página informativa</li>
 
-                <li>
-                    Diseño adaptable
-                </li>
+                <li>Diseño adaptable</li>
 
-                <li>
-                    Sección de contacto
-                </li>
+                <li>Sección de contacto</li>
 
-                <li>
-                    Botón de WhatsApp
-                </li>
+                <li>Botón de WhatsApp</li>
 
-                <li>
-                    Publicación web
-                </li>
+                <li>Publicación web</li>
 
-                <li>
-                    Galería de imágenes
-                </li>
+                <li>Galería de imágenes</li>
 
-                <li>
-                    Optimización para celulares
-                </li>
+                <li>Optimización para celulares</li>
 
-                <li>
-                    Soporte
-                </li>
+                <li>Soporte</li>
 
             </ul>
 
 
             <div class="cost-box">
 
-
                 <div class="cost-title">
                     Costo de creación
                 </div>
 
-
                 <div class="price">
                     Q750 – Q950
                 </div>
-
 
                 <p class="payment-description">
                     Pago único por la creación de la página web.
@@ -3180,7 +3502,6 @@ footer p {
                     Mantenimiento anual
                 </div>
 
-
                 <div class="maintenance-price">
                     Q700 – Q950
                 </div>
@@ -3188,11 +3509,9 @@ footer p {
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
-
 
                     <p>
 
@@ -3203,9 +3522,7 @@ footer p {
 
                     </p>
 
-
                 </div>
-
 
             </div>
 
@@ -3220,22 +3537,20 @@ footer p {
 
             </a>
 
-
         </div>
 
 
-        <div class="plan">
+        <!-- PLAN 2 -->
 
+        <div class="plan">
 
             <div class="plan-label">
                 PLAN 02
             </div>
 
-
             <h3>
                 Página Profesional
             </h3>
-
 
             <p class="plan-description">
 
@@ -3292,16 +3607,13 @@ footer p {
 
             <div class="cost-box">
 
-
                 <div class="cost-title">
                     Costo de creación
                 </div>
 
-
                 <div class="price">
                     Q1,400
                 </div>
-
 
                 <p class="payment-description">
                     Pago único por la creación de la página web.
@@ -3312,7 +3624,6 @@ footer p {
                     Mantenimiento anual
                 </div>
 
-
                 <div class="maintenance-price">
                     Q1,350
                 </div>
@@ -3320,11 +3631,9 @@ footer p {
 
                 <div class="maintenance">
 
-
                     <h4>
                         ¿Qué incluye el mantenimiento?
                     </h4>
-
 
                     <p>
 
@@ -3335,9 +3644,7 @@ footer p {
 
                     </p>
 
-
                 </div>
-
 
             </div>
 
@@ -3352,7 +3659,6 @@ footer p {
 
             </a>
 
-
         </div>
 
 
@@ -3361,11 +3667,9 @@ footer p {
 
     <div class="maintenance-note">
 
-
         <h3>
             Mantenimiento de tu página web
         </h3>
-
 
         <p>
 
@@ -3376,7 +3680,6 @@ footer p {
             para mantener el sitio actualizado.
 
         </p>
-
 
     </div>
 
@@ -3394,22 +3697,18 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             SOBRE ERWEB
         </small>
-
 
         <h2>
             Transformamos ideas en páginas web
         </h2>
 
-
     </div>
 
 
     <div class="about-content">
-
 
         <p>
 
@@ -3429,7 +3728,6 @@ footer p {
 
         </p>
 
-
     </div>
 
 </section>
@@ -3446,27 +3744,22 @@ footer p {
 
     <div class="section-title">
 
-
         <small>
             HABLEMOS
         </small>
 
-
         <h2>
             ¿Tienes un proyecto?
         </h2>
-
 
     </div>
 
 
     <div class="contact-box">
 
-
         <h3>
             Cuéntanos qué necesitas
         </h3>
-
 
         <p>
 
@@ -3488,7 +3781,6 @@ footer p {
             Escribir por Messenger
 
         </a>
-
 
     </div>
 
