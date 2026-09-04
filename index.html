@@ -10,7 +10,7 @@ content="ERWEB | Creación de páginas web profesionales">
 <meta property="og:description"
 content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
 
-<meta property="og:type" content="website"><meta property="og:image" content="LOGO"><link rel="preconnect" href="https://fonts.googleapis.com">
+<meta property="og:type" content="website"><meta property="og:image" content="LOGO.jpg"><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
 rel="stylesheet"><link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
@@ -89,8 +89,7 @@ header {
 
 
 /* =====================================================
-   LUZ BLANCA DEL LOGO
-   RECORRE EXCLUSIVAMENTE LAS CUATRO ORILLAS
+   LUZ DEL LOGO
 ===================================================== */
 
 .logo-light {
@@ -101,23 +100,24 @@ header {
     z-index: 3;
     pointer-events: none;
     overflow: hidden;
+    clip-path: inset(0);
 }
 
 .logo-light .light-main {
     fill: none;
-    stroke: rgba(0,183,255,0.55);
+    stroke: #00b7ff;
     stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
     vector-effect: non-scaling-stroke;
-    stroke-dasharray: 18 82;
+    stroke-dasharray: 16 84;
     animation: recorrerLogo 4s linear infinite;
 }
 
 .logo-light .light-core {
     fill: none;
     stroke: #ffffff;
-    stroke-width: 1.8;
+    stroke-width: 1.2;
     stroke-linecap: round;
     stroke-linejoin: round;
     vector-effect: non-scaling-stroke;
@@ -225,9 +225,7 @@ nav a:hover {
     font-size: 22px;
     line-height: 1.5;
     display: block;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,0.9);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 
 .hero h1 {
@@ -235,16 +233,12 @@ nav a:hover {
     line-height: 1.05;
     margin: 25px 0;
     font-weight: 800;
-
-    text-shadow:
-        0 4px 15px rgba(0,0,0,0.9);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
 }
 
 .hero h1 span {
     color: #00b7ff;
-
-    text-shadow:
-        0 3px 15px rgba(0,183,255,0.5);
+    text-shadow: 0 3px 15px rgba(0,183,255,0.5);
 }
 
 .hero p {
@@ -253,9 +247,7 @@ nav a:hover {
     color: #f0f5fa;
     font-size: 18px;
     line-height: 1.7;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,0.9);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 
 
@@ -320,13 +312,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
     background-size: cover;
     background-position: center;
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.25);
-
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     transition: 0.3s;
 }
 
@@ -338,8 +326,8 @@ section {
     background:
         linear-gradient(
             to top,
-            rgba(3,10,18,0.96),
-            rgba(3,10,18,0.40)
+            rgba(3,10,18,0.97),
+            rgba(3,10,18,0.42)
         );
 
     z-index: 0;
@@ -360,11 +348,9 @@ section {
     height: 55px;
     border-radius: 12px;
     background: rgba(0,183,255,0.90);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #00101c;
     font-size: 25px;
     margin-bottom: auto;
@@ -383,136 +369,111 @@ section {
 
 
 /* =====================================================
-   ANIMACIONES DE SERVICIOS
+   ANIMACIÓN TIENDA ONLINE
 ===================================================== */
 
-
-/* ---------- PÁGINA WEB ---------- */
-
-.service-web {
-    background: #06101c;
+.service-store {
+    background: #07111f;
 }
 
-.web-animation {
+.store-animation {
     position: absolute;
     inset: 0;
-    overflow: hidden;
     z-index: 1;
-    opacity: 0.65;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.web-grid {
+.store-shelf {
     position: absolute;
-    inset: -100px;
-    background-image:
-        linear-gradient(rgba(0,183,255,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,183,255,0.08) 1px, transparent 1px);
-
-    background-size: 30px 30px;
-
-    transform:
-        perspective(500px)
-        rotateX(55deg);
-
-    animation:
-        gridMove 5s linear infinite;
+    left: 12%;
+    right: 12%;
+    bottom: 30%;
+    height: 3px;
+    background: rgba(0,183,255,0.45);
+    box-shadow: 0 0 12px rgba(0,183,255,0.35);
 }
 
-@keyframes gridMove {
-
-    from {
-        transform:
-            perspective(500px)
-            rotateX(55deg)
-            translateY(0);
-    }
-
-    to {
-        transform:
-            perspective(500px)
-            rotateX(55deg)
-            translateY(30px);
-    }
-
+.store-product {
+    position: absolute;
+    width: 42px;
+    height: 48px;
+    bottom: calc(30% + 3px);
+    border-radius: 6px;
+    background: linear-gradient(145deg,#e9f7ff,#5a7184);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+    animation: productosTienda 4s ease-in-out infinite;
 }
 
-.web-code {
+.store-product::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    top: 9px;
+    height: 5px;
+    border-radius: 3px;
+    background: #00b7ff;
+}
+
+.store-product:nth-child(2) {
+    left: 18%;
+    animation-delay: 0s;
+}
+
+.store-product:nth-child(3) {
+    left: 40%;
+    animation-delay: 0.7s;
+}
+
+.store-product:nth-child(4) {
+    left: 62%;
+    animation-delay: 1.4s;
+}
+
+.store-product:nth-child(5) {
+    left: 78%;
+    animation-delay: 2.1s;
+}
+
+.store-cart {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-
-    width: 85%;
-    padding: 15px;
-
-    border:
-        1px solid
-        rgba(0,183,255,0.35);
-
-    border-radius: 10px;
-
-    background:
-        rgba(3,10,18,0.85);
-
-    box-shadow:
-        0 0 30px
-        rgba(0,183,255,0.12);
-
-    font-family: monospace;
-    font-size: 12px;
-    line-height: 1.8;
-
-    animation:
-        codeFloat 3s ease-in-out infinite;
+    bottom: 13%;
+    transform: translateX(-50%);
+    font-size: 42px;
+    color: rgba(0,183,255,0.65);
+    animation: carritoTienda 2.8s ease-in-out infinite;
 }
 
-.web-code span {
-    display: block;
-    color: #00b7ff;
-}
-
-.web-code span:nth-child(2) {
-    color: #ffffff;
-}
-
-.web-code span:nth-child(3) {
-    color: #8bdcff;
-}
-
-.web-code span:nth-child(4) {
-    color: #ffffff;
-}
-
-.web-code span:nth-child(5) {
-    color: #00b7ff;
-}
-
-@keyframes codeFloat {
+@keyframes productosTienda {
 
     0%,100% {
-        transform:
-            translate(-50%,-50%)
-            translateY(4px);
+        transform: translateY(0) scale(1);
     }
 
     50% {
-        transform:
-            translate(-50%,-50%)
-            translateY(-8px);
+        transform: translateY(-14px) scale(1.04);
+    }
+
+}
+
+@keyframes carritoTienda {
+
+    0%,100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-5px);
     }
 
 }
 
 
-/* ---------- TIENDA ---------- */
-
-.service-store {
-    background-image:
-    url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85");
-}
-
-
-/* ---------- DISEÑO ADAPTABLE ---------- */
+/* =====================================================
+   DISEÑO ADAPTABLE
+===================================================== */
 
 .service-responsive {
     background: #07111f;
@@ -523,360 +484,367 @@ section {
     inset: 0;
     z-index: 1;
     overflow: hidden;
+    pointer-events: none;
 }
-
-
-/* teléfono */
-
-.device-phone {
-    position: absolute;
-
-    width: 52px;
-    height: 105px;
-
-    left: 16%;
-    top: 25%;
-
-    border:
-        3px solid
-        #dfe8ef;
-
-    border-radius: 9px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #152c40,
-            #06101c
-        );
-
-    box-shadow:
-        0 0 18px
-        rgba(0,183,255,0.35);
-
-    animation:
-        deviceFloat1 4s ease-in-out infinite;
-}
-
-.device-phone::after {
-    content: "";
-
-    position: absolute;
-
-    width: 25px;
-    height: 3px;
-
-    background: #7b8d9c;
-
-    border-radius: 10px;
-
-    bottom: 7px;
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-/* tablet */
-
-.device-tablet {
-    position: absolute;
-
-    width: 95px;
-    height: 130px;
-
-    left: 43%;
-    top: 19%;
-
-    border:
-        3px solid
-        #dfe8ef;
-
-    border-radius: 9px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #18344b,
-            #06101c
-        );
-
-    box-shadow:
-        0 0 22px
-        rgba(0,183,255,0.30);
-
-    animation:
-        deviceFloat2 4.5s ease-in-out infinite;
-}
-
-.device-tablet::after {
-    content: "";
-
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: #aab8c4;
-
-    bottom: 5px;
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-/* laptop */
 
 .device-laptop {
     position: absolute;
-
     width: 145px;
-    height: 88px;
-
-    right: 8%;
-    top: 21%;
-
-    border:
-        3px solid
-        #dfe8ef;
-
-    border-radius: 7px 7px 3px 3px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #19384f,
-            #06101c
-        );
-
-    box-shadow:
-        0 0 25px
-        rgba(0,183,255,0.28);
-
-    animation:
-        deviceFloat3 5s ease-in-out infinite;
+    height: 82px;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+    border: 5px solid #b9c9d5;
+    border-radius: 8px 8px 4px 4px;
+    background: #07111f;
+    box-shadow: 0 0 20px rgba(0,183,255,0.18);
 }
 
 .device-laptop::after {
     content: "";
-
     position: absolute;
+    width: 175px;
+    height: 8px;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background: #a9bbc8;
+}
 
-    width: 165px;
-    height: 7px;
+.device-tablet {
+    position: absolute;
+    width: 62px;
+    height: 91px;
+    left: 21%;
+    top: 35%;
+    border: 4px solid #c8d4dc;
+    border-radius: 9px;
+    background: #07111f;
+    box-shadow: 0 0 20px rgba(0,183,255,0.15);
+}
 
-    left: -13px;
-    bottom: -10px;
-
-    border-radius: 0 0 8px 8px;
-
-    background: #cbd6df;
-
-    box-shadow:
-        0 4px 8px
-        rgba(0,0,0,0.5);
+.device-phone {
+    position: absolute;
+    width: 42px;
+    height: 78px;
+    right: 21%;
+    top: 41%;
+    border: 4px solid #d5e0e7;
+    border-radius: 10px;
+    background: #07111f;
+    box-shadow: 0 0 20px rgba(0,183,255,0.2);
 }
 
 .device-screen {
     position: absolute;
-    inset: 8px;
-
+    inset: 7px;
     border-radius: 3px;
-
     background:
         linear-gradient(
             135deg,
-            rgba(0,183,255,0.35),
-            rgba(5,15,25,0.9)
+            rgba(0,183,255,0.28),
+            rgba(255,255,255,0.05)
         );
-
     overflow: hidden;
 }
 
 .device-screen::before {
     content: "";
-
     position: absolute;
-
-    width: 70%;
+    left: 8px;
+    right: 8px;
+    top: 15px;
     height: 5px;
-
-    left: 15%;
-    top: 25%;
-
+    border-radius: 5px;
     background: #00b7ff;
-
     box-shadow:
-        0 14px 0 rgba(255,255,255,0.4),
-        0 28px 0 rgba(0,183,255,0.45);
-
-    animation:
-        screenPulse 2s ease-in-out infinite;
+        0 14px 0 rgba(255,255,255,0.3),
+        0 28px 0 rgba(255,255,255,0.18);
 }
 
-@keyframes deviceFloat1 {
+.device-laptop,
+.device-tablet,
+.device-phone {
+    animation: dispositivosFlotan 3.5s ease-in-out infinite;
+}
+
+.device-tablet {
+    animation-delay: 0.5s;
+}
+
+.device-phone {
+    animation-delay: 1s;
+}
+
+@keyframes dispositivosFlotan {
 
     0%,100% {
-        transform: translateY(8px) rotate(-3deg);
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-8px) rotate(3deg);
+        transform: translateY(-9px);
     }
 
 }
 
-@keyframes deviceFloat2 {
+.device-laptop {
+    animation-name: laptopFlota;
+}
+
+@keyframes laptopFlota {
 
     0%,100% {
-        transform: translateY(-4px) rotate(2deg);
+        transform: translateX(-50%) translateY(0);
     }
 
     50% {
-        transform: translateY(10px) rotate(-2deg);
-    }
-
-}
-
-@keyframes deviceFloat3 {
-
-    0%,100% {
-        transform: translateY(7px);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-
-}
-
-@keyframes screenPulse {
-
-    0%,100% {
-        opacity: 0.55;
-    }
-
-    50% {
-        opacity: 1;
+        transform: translateX(-50%) translateY(-9px);
     }
 
 }
 
 
-/* ---------- PUBLICACIÓN WEB ---------- */
+/* =====================================================
+   PUBLICACIÓN WEB
+===================================================== */
 
 .service-publish {
     background: #07111f;
 }
 
-.rocket-animation {
+.publish-animation {
     position: absolute;
     inset: 0;
-    overflow: hidden;
     z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .rocket {
     position: absolute;
-
-    font-size: 72px;
-
     left: 50%;
-    top: 23%;
-
-    transform:
-        translateX(-50%)
-        rotate(-20deg);
-
-    color: #ffffff;
-
-    filter:
-        drop-shadow(
-            0 0 12px
-            rgba(0,183,255,0.7)
-        );
-
-    animation:
-        rocketFly 4s ease-in-out infinite;
+    top: 34%;
+    font-size: 55px;
+    color: #dcefff;
+    filter: drop-shadow(0 0 10px rgba(0,183,255,0.6));
+    animation: naveVuela 4s ease-in-out infinite;
 }
 
-.rocket-trail {
+.rocket-fire {
     position: absolute;
-
-    width: 5px;
-    height: 75px;
-
-    left: calc(50% - 20px);
-    top: 51%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff,
-            #00b7ff,
-            transparent
-        );
-
+    left: 50%;
+    top: calc(34% + 52px);
+    width: 8px;
+    height: 30px;
+    transform: translateX(-50%);
     border-radius: 50%;
-
-    filter:
-        blur(1px);
-
-    animation:
-        trailMove 1s ease-in-out infinite;
+    background: linear-gradient(to bottom,#ffffff,#00b7ff,transparent);
+    animation: fuegoNave 0.45s ease-in-out infinite alternate;
 }
 
-@keyframes rocketFly {
+@keyframes naveVuela {
 
-    0%,100% {
-        transform:
-            translateX(-50%)
-            translateY(12px)
-            rotate(-20deg);
+    0% {
+        transform: translate(-50%,20px) rotate(-8deg);
     }
 
     50% {
-        transform:
-            translateX(-50%)
-            translateY(-15px)
-            rotate(-20deg);
+        transform: translate(-50%,-28px) rotate(-8deg);
+    }
+
+    100% {
+        transform: translate(-50%,20px) rotate(-8deg);
     }
 
 }
 
-@keyframes trailMove {
+@keyframes fuegoNave {
 
-    0%,100% {
-        opacity: 0.35;
-        transform: scaleY(0.7);
+    from {
+        height: 20px;
+        opacity: 0.5;
     }
 
-    50% {
+    to {
+        height: 35px;
         opacity: 1;
-        transform: scaleY(1);
     }
 
 }
 
 
-/* ---------- MANTENIMIENTO ---------- */
+/* =====================================================
+   MANTENIMIENTO
+===================================================== */
 
 .service-maintenance {
-    background-image:
-    url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85");
+    background: #07111f;
+}
+
+.maintenance-animation {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.maintenance-animation .gear {
+    position: absolute;
+    color: rgba(0,183,255,0.62);
+    font-size: 65px;
+}
+
+.gear-one {
+    left: 25%;
+    top: 25%;
+    animation: girarGear 5s linear infinite;
+}
+
+.gear-two {
+    left: 49%;
+    top: 34%;
+    font-size: 45px !important;
+    animation: girarGearReverse 4s linear infinite;
+}
+
+.gear-three {
+    right: 20%;
+    top: 20%;
+    font-size: 38px !important;
+    animation: girarGear 3.5s linear infinite;
+}
+
+.maintenance-wrench {
+    position: absolute;
+    left: 50%;
+    top: 57%;
+    transform: translate(-50%,-50%);
+    color: rgba(235,244,250,0.75);
+    font-size: 55px;
+    animation: herramientaMovimiento 3s ease-in-out infinite;
+}
+
+@keyframes girarGear {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes girarGearReverse {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes herramientaMovimiento {
+
+    0%,100% {
+        transform: translate(-50%,-50%) rotate(-12deg);
+    }
+
+    50% {
+        transform: translate(-50%,-50%) rotate(12deg);
+    }
+
 }
 
 
-/* ---------- WHATSAPP ---------- */
+/* =====================================================
+   WHATSAPP
+===================================================== */
 
 .service-whatsapp {
-    background-image:
-    url("https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=1000&q=85");
+    background: #07111f;
+}
+
+.whatsapp-animation {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.chat-bubble {
+    position: absolute;
+    max-width: 150px;
+    padding: 10px 13px;
+    border-radius: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.3;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.chat-one {
+    top: 18%;
+    left: 14%;
+    background: rgba(37,211,102,0.85);
+    color: white;
+    animation: chatSube 4s ease-in-out infinite;
+}
+
+.chat-two {
+    top: 32%;
+    right: 13%;
+    background: rgba(255,255,255,0.9);
+    color: #17301f;
+    animation: chatSube 4s ease-in-out infinite 1s;
+}
+
+.chat-three {
+    top: 48%;
+    left: 25%;
+    background: rgba(37,211,102,0.75);
+    color: white;
+    animation: chatSube 4s ease-in-out infinite 2s;
+}
+
+.whatsapp-logo-animation {
+    position: absolute;
+    left: 50%;
+    top: 31%;
+    transform: translateX(-50%);
+    font-size: 58px;
+    color: rgba(37,211,102,0.75);
+    animation: whatsappPulso 2s ease-in-out infinite;
+}
+
+@keyframes chatSube {
+
+    0%,100% {
+        transform: translateY(8px);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+
+}
+
+@keyframes whatsappPulso {
+
+    0%,100% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.1);
+    }
+
 }
 
 
@@ -897,22 +865,13 @@ section {
     border-radius: 16px;
     overflow: hidden;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     background-size: cover;
     background-position: center;
-
-    border:
-        2px solid
-        rgba(0,183,255,0.30);
-
-    box-shadow:
-        0 15px 35px
-        rgba(0,0,0,0.25);
-
+    border: 2px solid rgba(0,183,255,0.30);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     transition: 0.3s;
 }
 
@@ -926,7 +885,7 @@ section {
 
 .process-card > * {
     position: relative;
-    z-index: 5;
+    z-index: 10;
 }
 
 .process-card:hover {
@@ -938,16 +897,12 @@ section {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-
     background: #00b7ff;
     color: #00101c;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin: 0 auto 20px;
-
     font-size: 20px;
     font-weight: 800;
 }
@@ -965,7 +920,7 @@ section {
 
 
 /* =====================================================
-   FONDOS DEL PROCESO
+   FONDOS PROCESO
 ===================================================== */
 
 .process-talk {
@@ -993,91 +948,78 @@ section {
    ANIMACIÓN HABLAMOS
 ===================================================== */
 
-.chat-animation {
+.talk-animation {
     position: absolute;
     inset: 0;
-    overflow: hidden;
     z-index: 1;
-    padding: 20px;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.chat-message {
+.talk-message {
     position: absolute;
-
-    padding: 9px 13px;
-
-    border-radius: 14px;
-
+    max-width: 155px;
+    padding: 9px 12px;
+    border-radius: 12px;
     font-size: 10px;
-
-    font-weight: 600;
-
-    max-width: 75%;
-
+    font-weight: 700;
     line-height: 1.35;
-
-    box-shadow:
-        0 5px 15px
-        rgba(0,0,0,0.25);
-
+    box-shadow: 0 7px 18px rgba(0,0,0,0.35);
     opacity: 0;
-
-    animation:
-        chatAppear 9s infinite;
 }
 
-.chat-message.one {
+.talk-message:nth-child(1) {
+    top: 17%;
     left: 8%;
-    top: 15%;
-    background: rgba(255,255,255,0.95);
-    color: #102030;
-    animation-delay: 0s;
+    background: rgba(255,255,255,0.92);
+    color: #15202b;
+    animation: mensajesHablamos 9s infinite;
 }
 
-.chat-message.two {
+.talk-message:nth-child(2) {
+    top: 34%;
     right: 7%;
-    top: 32%;
-    background: #00b7ff;
+    background: rgba(0,183,255,0.92);
     color: #00101c;
-    animation-delay: 2s;
+    animation: mensajesHablamos 9s infinite 2.2s;
 }
 
-.chat-message.three {
-    left: 8%;
-    top: 51%;
-    background: rgba(255,255,255,0.95);
-    color: #102030;
-    animation-delay: 4s;
+.talk-message:nth-child(3) {
+    top: 52%;
+    left: 12%;
+    background: rgba(255,255,255,0.92);
+    color: #15202b;
+    animation: mensajesHablamos 9s infinite 4.4s;
 }
 
-.chat-message.four {
-    right: 7%;
-    top: 70%;
-    background: #00b7ff;
+.talk-message:nth-child(4) {
+    top: 68%;
+    right: 10%;
+    background: rgba(0,183,255,0.92);
     color: #00101c;
-    animation-delay: 6s;
+    animation: mensajesHablamos 9s infinite 6.6s;
 }
 
-@keyframes chatAppear {
+@keyframes mensajesHablamos {
 
     0% {
         opacity: 0;
-        transform: translateY(10px) scale(0.95);
+        transform: translateY(15px) scale(0.9);
     }
 
-    8% {
+    10% {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 
-    22% {
+    25% {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 
-    30% {
+    35% {
         opacity: 0;
-        transform: translateY(-7px) scale(0.96);
+        transform: translateY(-10px) scale(0.96);
     }
 
     100% {
@@ -1096,103 +1038,118 @@ section {
     inset: 0;
     z-index: 1;
     overflow: hidden;
+    pointer-events: none;
+}
+
+.design-screen {
+    position: absolute;
+    width: 190px;
+    height: 115px;
+    left: 50%;
+    top: 18%;
+    transform: translateX(-50%);
+    border: 3px solid rgba(220,238,248,0.85);
+    border-radius: 7px;
+    background: rgba(3,10,18,0.75);
+    box-shadow:
+        0 0 25px rgba(0,183,255,0.28);
+}
+
+.design-screen::after {
+    content: "";
+    position: absolute;
+    width: 225px;
+    height: 6px;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    background: rgba(210,225,235,0.75);
+    border-radius: 5px;
+}
+
+.design-line {
+    position: absolute;
+    height: 5px;
+    border-radius: 4px;
+    background: #00b7ff;
+    left: 18px;
+    right: 18px;
+    animation: disenoLineas 3s ease-in-out infinite;
+}
+
+.design-line.one {
+    top: 20px;
+}
+
+.design-line.two {
+    top: 42px;
+    right: 65px;
+    animation-delay: .4s;
+}
+
+.design-line.three {
+    top: 64px;
+    right: 35px;
+    animation-delay: .8s;
 }
 
 .design-circle {
     position: absolute;
-
-    width: 120px;
-    height: 120px;
-
-    border:
-        2px solid
-        rgba(0,183,255,0.7);
-
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-
-    left: 50%;
-    top: 42%;
-
-    transform:
-        translate(-50%,-50%);
-
-    animation:
-        designPulse 3s ease-in-out infinite;
+    border: 3px solid rgba(255,255,255,0.75);
+    right: 20px;
+    bottom: 14px;
+    animation: circuloDiseno 3s ease-in-out infinite;
 }
 
-.design-circle::before,
-.design-circle::after {
-    content: "";
-
+.design-pencil {
     position: absolute;
-
-    background: rgba(0,183,255,0.6);
-}
-
-.design-circle::before {
-    width: 180px;
-    height: 2px;
-
-    left: -32px;
-    top: 59px;
-
-    transform: rotate(45deg);
-}
-
-.design-circle::after {
-    width: 180px;
-    height: 2px;
-
-    left: -32px;
-    top: 59px;
-
-    transform: rotate(-45deg);
-}
-
-.design-cursor {
-    position: absolute;
-
-    font-size: 42px;
-
-    color: white;
-
     left: 50%;
-    top: 42%;
-
-    animation:
-        cursorMove 3s ease-in-out infinite;
+    bottom: 13%;
+    font-size: 47px;
+    color: rgba(255,255,255,0.8);
+    animation: lapizMovimiento 3s ease-in-out infinite;
 }
 
-@keyframes designPulse {
+@keyframes disenoLineas {
 
     0%,100% {
-        transform:
-            translate(-50%,-50%)
-            scale(0.8);
-
-        opacity: 0.5;
+        transform: scaleX(0.45);
+        transform-origin: left;
+        opacity: 0.4;
     }
 
     50% {
-        transform:
-            translate(-50%,-50%)
-            scale(1.05);
-
+        transform: scaleX(1);
         opacity: 1;
     }
 
 }
 
-@keyframes cursorMove {
+@keyframes circuloDiseno {
 
     0%,100% {
-        transform:
-            translate(-10px,10px);
+        transform: scale(0.7);
+        opacity: 0.35;
     }
 
     50% {
-        transform:
-            translate(35px,-25px);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes lapizMovimiento {
+
+    0%,100% {
+        transform: translateX(-65px) rotate(-15deg);
+    }
+
+    50% {
+        transform: translateX(30px) rotate(15deg);
     }
 
 }
@@ -1200,97 +1157,82 @@ section {
 
 /* =====================================================
    ANIMACIÓN DESARROLLAMOS
-   CÓDIGO HTML ESCRIBIÉNDOSE Y BORRÁNDOSE
+   CÓDIGO QUE SE ESCRIBE Y LUEGO SE BORRA
 ===================================================== */
 
-.html-animation {
+.develop-animation {
     position: absolute;
     inset: 0;
-
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    z-index: 1;
-
-    overflow: hidden;
 }
 
-.html-code-box {
+.code-window {
     width: 88%;
-
-    padding: 18px;
-
-    border:
-        1px solid
-        rgba(0,183,255,0.45);
-
+    max-width: 330px;
+    height: 150px;
+    padding: 17px;
     border-radius: 10px;
-
-    background:
-        rgba(2,10,18,0.90);
-
+    background: rgba(2,8,15,0.92);
+    border: 1px solid rgba(0,183,255,0.35);
+    box-shadow: 0 0 25px rgba(0,0,0,0.45);
     text-align: left;
-
-    box-shadow:
-        0 0 25px
-        rgba(0,183,255,0.12);
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 11px;
-
-    line-height: 1.7;
-}
-
-.typing-line {
-    display: block;
-
-    white-space: nowrap;
-
     overflow: hidden;
+}
 
+.code-top {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.code-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #687786;
+}
+
+.code-lines {
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 1.65;
+    color: #dbeaf3;
+    white-space: pre;
+    height: 105px;
+    overflow: hidden;
+}
+
+.typing-code {
+    display: block;
     width: 0;
-
-    border-right:
-        2px solid
-        #00b7ff;
-
+    overflow: hidden;
+    border-right: 2px solid #00b7ff;
     animation:
-        typing 8s steps(34,end) infinite,
-        blinkCursor 0.7s step-end infinite;
+        escribirCodigo 8s steps(72,end) infinite,
+        cursorCodigo .65s step-end infinite;
 }
 
-.typing-line:nth-child(2) {
-    animation-delay: 0.7s;
-}
-
-.typing-line:nth-child(3) {
-    animation-delay: 1.4s;
-}
-
-.typing-line:nth-child(4) {
-    animation-delay: 2.1s;
-}
-
-.typing-line:nth-child(5) {
-    animation-delay: 2.8s;
-}
-
-@keyframes typing {
+@keyframes escribirCodigo {
 
     0% {
         width: 0;
     }
 
-    35% {
+    62% {
         width: 100%;
     }
 
-    65% {
+    70% {
         width: 100%;
+    }
+
+    91% {
+        width: 0;
     }
 
     100% {
@@ -1299,155 +1241,14 @@ section {
 
 }
 
-@keyframes blinkCursor {
+@keyframes cursorCodigo {
 
     0%,100% {
-        border-color: transparent;
-    }
-
-    50% {
         border-color: #00b7ff;
     }
 
-}
-
-
-/* =====================================================
-   ANIMACIÓN PUBLICAMOS
-===================================================== */
-
-.publish-animation {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.server {
-    position: absolute;
-
-    width: 100px;
-    height: 120px;
-
-    left: 50%;
-    top: 18%;
-
-    transform:
-        translateX(-50%);
-
-    border:
-        2px solid
-        rgba(255,255,255,0.65);
-
-    border-radius: 8px;
-
-    background:
-        rgba(3,15,25,0.90);
-
-    box-shadow:
-        0 0 25px
-        rgba(0,183,255,0.20);
-}
-
-.server::before,
-.server::after {
-    content: "";
-
-    position: absolute;
-
-    left: 15px;
-    right: 15px;
-
-    height: 25px;
-
-    border:
-        1px solid
-        rgba(0,183,255,0.5);
-
-    border-radius: 4px;
-}
-
-.server::before {
-    top: 18px;
-}
-
-.server::after {
-    top: 58px;
-}
-
-.server-light {
-    position: absolute;
-
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #00b7ff;
-
-    left: 22px;
-    top: 28px;
-
-    box-shadow:
-        0 40px 0 #00b7ff;
-
-    animation:
-        serverBlink 1s infinite;
-}
-
-.upload-arrow {
-    position: absolute;
-
-    font-size: 45px;
-
-    color: #ffffff;
-
-    left: 50%;
-    top: 60%;
-
-    transform:
-        translateX(-50%);
-
-    animation:
-        uploadMove 1.5s ease-in-out infinite;
-}
-
-@keyframes serverBlink {
-
-    0%,100% {
-        opacity: 0.35;
-    }
-
     50% {
-        opacity: 1;
-    }
-
-}
-
-@keyframes uploadMove {
-
-    0% {
-        transform:
-            translateX(-50%)
-            translateY(12px);
-
-        opacity: 0.3;
-    }
-
-    50% {
-        transform:
-            translateX(-50%)
-            translateY(-10px);
-
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            translateX(-50%)
-            translateY(-25px);
-
-        opacity: 0;
+        border-color: transparent;
     }
 
 }
@@ -1476,10 +1277,7 @@ section {
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.08);
     background: #0d1c2d;
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,0.25);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
 }
 
 .web-design-card img {
@@ -1513,9 +1311,6 @@ section {
     font-size: 21px;
     font-weight: 800;
     letter-spacing: 1.5px;
-
-    text-shadow:
-        0 2px 8px rgba(0,0,0,0.9);
 }
 
 .web-design-overlay h3 {
@@ -1533,6 +1328,7 @@ section {
 
 /* =====================================================
    COSTOS
+   NO MODIFICADOS
 ===================================================== */
 
 .plans {
@@ -1552,23 +1348,15 @@ section {
     border: 2px solid #00b7ff;
     border-radius: 18px;
     padding: 38px 32px;
-
     display: flex;
     flex-direction: column;
-
-    box-shadow:
-        0 10px 35px
-        rgba(0,183,255,0.08);
-
+    box-shadow: 0 10px 35px rgba(0,183,255,0.08);
     transition: 0.3s;
 }
 
 .plan:hover {
     transform: translateY(-7px);
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,183,255,0.18);
+    box-shadow: 0 15px 40px rgba(0,183,255,0.18);
 }
 
 .plan-label {
@@ -1682,13 +1470,8 @@ section {
     max-width: 1000px;
     margin: 50px auto 0;
     padding: 30px;
-
     background: #0d1c2d;
-
-    border:
-        1px solid
-        rgba(0,183,255,0.35);
-
+    border: 1px solid rgba(0,183,255,0.35);
     border-radius: 15px;
     text-align: center;
 }
@@ -1760,18 +1543,10 @@ section {
     max-width: 800px;
     margin: auto;
     text-align: center;
-
-    background:
-        rgba(13,28,45,0.90);
-
+    background: rgba(13,28,45,0.90);
     padding: 50px 30px;
-
     border-radius: 18px;
-
-    border:
-        2px solid
-        rgba(0,183,255,0.40);
-
+    border: 2px solid rgba(0,183,255,0.40);
     backdrop-filter: blur(5px);
 }
 
@@ -1807,17 +1582,11 @@ section {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,183,255,0.30);
+    box-shadow: 0 10px 30px rgba(0,183,255,0.30);
 }
 
 .btn-secondary {
-    border:
-        1px solid
-        rgba(255,255,255,0.25);
-
+    border: 1px solid rgba(255,255,255,0.25);
     color: white;
 }
 
@@ -1835,11 +1604,9 @@ section {
     position: fixed;
     right: 22px;
     bottom: 25px;
-
     display: flex;
     flex-direction: column;
     gap: 12px;
-
     z-index: 2000;
 }
 
@@ -1847,26 +1614,17 @@ section {
     width: 58px;
     height: 58px;
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
-
     font-size: 27px;
-
     transition: 0.3s;
-
-    box-shadow:
-        0 5px 20px
-        rgba(0,0,0,0.35);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
 }
 
 .social-button:hover {
-    transform:
-        translateY(-4px)
-        scale(1.05);
+    transform: translateY(-4px) scale(1.05);
 }
 
 .facebook-button {
@@ -1945,16 +1703,11 @@ footer p {
         top: 78px;
         left: 0;
         width: 100%;
-
         background: #07111f;
-
         flex-direction: column;
         text-align: center;
-
         padding: 25px;
-
         display: none;
-
         gap: 20px;
     }
 
@@ -2048,44 +1801,23 @@ footer p {
         height: 68px;
     }
 
-    .device-phone {
-        left: 5%;
+    .device-laptop {
+        width: 125px;
+        height: 72px;
     }
 
     .device-tablet {
-        left: 38%;
+        left: 15%;
+        transform: scale(.85);
     }
 
-    .device-laptop {
-        right: 2%;
-        transform: scale(0.75);
+    .device-phone {
+        right: 15%;
+        transform: scale(.85);
     }
 
-    .web-code {
-        width: 90%;
-        font-size: 10px;
-    }
-
-    .rocket {
-        font-size: 62px;
-        top: 20%;
-    }
-
-}
-
-
-/* =====================================================
-   REDUCIR MOVIMIENTO SI EL DISPOSITIVO LO SOLICITA
-===================================================== */
-
-@media(prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
+    .code-window {
+        width: 92%;
     }
 
 }
@@ -2097,11 +1829,13 @@ footer p {
     class="logo-container"
     aria-label="ERWEB Inicio">
 
+    <!-- ARCHIVO DEL NUEVO LOGO -->
     <img
-        src="LOGO"
+        src="LOGO.jpg"
         alt="Logo ERWEB"
         class="logo-img">
 
+    <!-- LUZ RECORRIENDO LAS CUATRO ORILLAS -->
     <svg
         class="logo-light"
         viewBox="0 0 300 76"
@@ -2151,8 +1885,6 @@ footer p {
 
     <a href="#servicios">Servicios</a>
 
-    <a href="#proceso">Cómo trabajamos</a>
-
     <a href="#diseno-web">Diseño web</a>
 
     <a href="#planes">Costos</a>
@@ -2172,7 +1904,8 @@ footer p {
     </small>
 
     <h1>
-        Tu negocio merece una web
+        Tu negocio merece
+        una web
         <span>profesional.</span>
     </h1>
 
@@ -2214,23 +1947,6 @@ footer p {
 
     <div class="service-card service-web">
 
-        <div class="web-animation">
-
-            <div class="web-grid"></div>
-
-            <div class="web-code">
-
-                <span>&lt;html&gt;</span>
-                <span>&lt;head&gt;</span>
-                <span>&nbsp;&nbsp;&lt;title&gt;ERWEB&lt;/title&gt;</span>
-                <span>&lt;/head&gt;</span>
-                <span>&lt;/html&gt;</span>
-
-            </div>
-
-        </div>
-
-
         <div class="service-icon">
             <i class="fa-solid fa-code"></i>
         </div>
@@ -2247,12 +1963,29 @@ footer p {
     </div>
 
 
-    <!-- TIENDA -->
+    <!-- TIENDAS ONLINE -->
 
     <div class="service-card service-store">
 
+        <div class="store-animation">
+
+            <div class="store-shelf"></div>
+
+            <div class="store-product"></div>
+            <div class="store-product"></div>
+            <div class="store-product"></div>
+            <div class="store-product"></div>
+
+            <div class="store-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+        </div>
+
         <div class="service-icon">
+
             <i class="fa-solid fa-cart-shopping"></i>
+
         </div>
 
         <h3>
@@ -2273,10 +2006,6 @@ footer p {
 
         <div class="devices-animation">
 
-            <div class="device-phone">
-                <div class="device-screen"></div>
-            </div>
-
             <div class="device-tablet">
                 <div class="device-screen"></div>
             </div>
@@ -2285,11 +2014,16 @@ footer p {
                 <div class="device-screen"></div>
             </div>
 
+            <div class="device-phone">
+                <div class="device-screen"></div>
+            </div>
+
         </div>
 
-
         <div class="service-icon">
+
             <i class="fa-solid fa-mobile-screen-button"></i>
+
         </div>
 
         <h3>
@@ -2308,19 +2042,20 @@ footer p {
 
     <div class="service-card service-publish">
 
-        <div class="rocket-animation">
+        <div class="publish-animation">
 
             <div class="rocket">
                 <i class="fa-solid fa-rocket"></i>
             </div>
 
-            <div class="rocket-trail"></div>
+            <div class="rocket-fire"></div>
 
         </div>
 
-
         <div class="service-icon">
+
             <i class="fa-solid fa-rocket"></i>
+
         </div>
 
         <h3>
@@ -2339,8 +2074,30 @@ footer p {
 
     <div class="service-card service-maintenance">
 
+        <div class="maintenance-animation">
+
+            <div class="gear gear-one">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+            <div class="gear gear-two">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+            <div class="gear gear-three">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+            <div class="maintenance-wrench">
+                <i class="fa-solid fa-wrench"></i>
+            </div>
+
+        </div>
+
         <div class="service-icon">
+
             <i class="fa-solid fa-screwdriver-wrench"></i>
+
         </div>
 
         <h3>
@@ -2359,8 +2116,30 @@ footer p {
 
     <div class="service-card service-whatsapp">
 
+        <div class="whatsapp-animation">
+
+            <div class="whatsapp-logo-animation">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+            <div class="chat-bubble chat-one">
+                Hola, quisiera información.
+            </div>
+
+            <div class="chat-bubble chat-two">
+                Sí, con gusto podemos ayudarte.
+            </div>
+
+            <div class="chat-bubble chat-three">
+                Muchas gracias.
+            </div>
+
+        </div>
+
         <div class="service-icon">
+
             <i class="fa-brands fa-whatsapp"></i>
+
         </div>
 
         <h3>
@@ -2399,26 +2178,25 @@ footer p {
 
     <div class="process-card process-talk">
 
-        <div class="chat-animation">
+        <div class="talk-animation">
 
-            <div class="chat-message one">
+            <div class="talk-message">
                 Buenos días, necesito información.
             </div>
 
-            <div class="chat-message two">
-                ¡Sí! Con gusto podemos apoyarte.
+            <div class="talk-message">
+                Sí, con gusto podemos apoyarte.
             </div>
 
-            <div class="chat-message three">
+            <div class="talk-message">
                 Diseñamos páginas web profesionales.
             </div>
 
-            <div class="chat-message four">
+            <div class="talk-message">
                 Perfecto, quiero conocer más.
             </div>
 
         </div>
-
 
         <div class="number">
             1
@@ -2442,14 +2220,21 @@ footer p {
 
         <div class="design-animation">
 
-            <div class="design-circle"></div>
+            <div class="design-screen">
 
-            <div class="design-cursor">
-                <i class="fa-solid fa-arrow-pointer"></i>
+                <div class="design-line one"></div>
+                <div class="design-line two"></div>
+                <div class="design-line three"></div>
+
+                <div class="design-circle"></div>
+
+            </div>
+
+            <div class="design-pencil">
+                <i class="fa-solid fa-pen-ruler"></i>
             </div>
 
         </div>
-
 
         <div class="number">
             2
@@ -2471,34 +2256,37 @@ footer p {
 
     <div class="process-card process-develop">
 
-        <div class="html-animation">
+        <div class="develop-animation">
 
-            <div class="html-code-box">
+            <div class="code-window">
 
-                <span class="typing-line">
-                    &lt;html&gt;
-                </span>
+                <div class="code-top">
 
-                <span class="typing-line">
-                    &nbsp;&nbsp;&lt;head&gt;
-                </span>
+                    <div class="code-dot"></div>
+                    <div class="code-dot"></div>
+                    <div class="code-dot"></div>
 
-                <span class="typing-line">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;ERWEB&lt;/title&gt;
-                </span>
+                </div>
 
-                <span class="typing-line">
-                    &nbsp;&nbsp;&lt;/head&gt;
-                </span>
+                <div class="code-lines">
 
-                <span class="typing-line">
-                    &lt;/html&gt;
-                </span>
+                    <span class="typing-code">&lt;!DOCTYPE html&gt;
+
+<html>
+<head>
+<title>ERWEB</title>
+</head>
+<body>
+<h1>Mi página web</h1>
+<p>Bienvenidos a nuestro sitio</p>
+</body>
+</html></span>
+
+                </div>
 
             </div>
 
         </div>
-
 
         <div class="number">
             3
@@ -2519,21 +2307,6 @@ footer p {
     <!-- PUBLICAMOS -->
 
     <div class="process-card process-publish">
-
-        <div class="publish-animation">
-
-            <div class="server">
-
-                <div class="server-light"></div>
-
-            </div>
-
-            <div class="upload-arrow">
-                <i class="fa-solid fa-arrow-up"></i>
-            </div>
-
-        </div>
-
 
         <div class="number">
             4
@@ -2869,7 +2642,6 @@ footer p {
 
     </div>
 
-
 </div>
 
 
@@ -2904,7 +2676,6 @@ footer p {
     </h2>
 
 </div>
-
 
 <div class="about-content">
 
@@ -3004,7 +2775,7 @@ footer p {
 </div><!-- =====================================================
      FOOTER
 ===================================================== --><footer><img
-    src="LOGO"
+    src="LOGO.jpg"
     alt="Logo ERWEB"
     class="footer-logo">
 
