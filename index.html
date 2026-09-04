@@ -10,7 +10,9 @@ content="ERWEB | Creación de páginas web profesionales">
 <meta property="og:description"
 content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
 
-<meta property="og:type" content="website"><meta property="og:image" content="LOGO.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+<meta property="og:type" content="website"><meta property="og:image" content="LOGO.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
 rel="stylesheet"><link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
 
@@ -61,12 +63,13 @@ header {
 
 /* =====================================================
    LOGO
+   2 VECES MÁS GRANDE
 ===================================================== */
 
 .logo-container {
     position: relative;
-    width: 135px;
-    height: 78px;
+    width: 270px;
+    height: 156px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -1015,7 +1018,7 @@ section {
 
 
 /* =====================================================
-   CÓDIGO HTML ESCRIBIÉNDOSE
+   CÓDIGO HTML ESCRIBIÉNDOSE Y BORRÁNDOSE
 ===================================================== */
 
 .html-code-animation {
@@ -1052,34 +1055,25 @@ section {
     white-space: pre-wrap;
     overflow: hidden;
     width: 0;
-    animation: escribirCodigo 10s steps(95,end) infinite;
+    animation: escribirBorrarCodigo 12s steps(95,end) infinite;
 }
 
-@keyframes escribirCodigo {
+@keyframes escribirBorrarCodigo {
 
     0% {
         width: 0;
-        opacity: 1;
     }
 
-    68% {
+    60% {
         width: 100%;
-        opacity: 1;
     }
 
     78% {
         width: 100%;
-        opacity: 1;
-    }
-
-    92% {
-        width: 0;
-        opacity: 0;
     }
 
     100% {
         width: 0;
-        opacity: 0;
     }
 
 }
@@ -1458,6 +1452,72 @@ section {
     border-radius: 18px;
     border: 2px solid rgba(0,183,255,0.40);
     backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* =====================================================
+   NUEVA ANIMACIÓN EN CUÉNTANOS QUÉ NECESITAS
+   NO INTERFIERE CON EL TEXTO
+===================================================== */
+
+.contact-box::before {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 2px solid rgba(0,183,255,0.22);
+    border-radius: 50%;
+    top: -75px;
+    right: -55px;
+    animation: contactOrb 7s ease-in-out infinite;
+    z-index: 0;
+}
+
+.contact-box::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 50%;
+    bottom: -55px;
+    left: -35px;
+    animation: contactOrbTwo 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+.contact-box > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes contactOrb {
+
+    0%,100% {
+        transform: scale(0.9) translate(0,0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: scale(1.15) translate(-25px,20px);
+        opacity: 0.55;
+    }
+
+}
+
+@keyframes contactOrbTwo {
+
+    0%,100% {
+        transform: scale(0.85) translate(0,0);
+        opacity: 0.18;
+    }
+
+    50% {
+        transform: scale(1.1) translate(25px,-20px);
+        opacity: 0.4;
+    }
+
 }
 
 .contact-box h3 {
@@ -1555,6 +1615,7 @@ section {
 
 /* =====================================================
    FOOTER
+   LOGO 2 VECES MÁS GRANDE
 ===================================================== */
 
 footer {
@@ -1564,8 +1625,8 @@ footer {
 }
 
 .footer-logo {
-    width: 135px;
-    height: 78px;
+    width: 270px;
+    height: 156px;
     object-fit: contain;
     margin-bottom: 12px;
 }
@@ -1604,8 +1665,8 @@ footer p {
     }
 
     .logo-container {
-        width: 118px;
-        height: 70px;
+        width: 236px;
+        height: 140px;
     }
 
     nav {
@@ -1707,8 +1768,8 @@ footer p {
     }
 
     .footer-logo {
-        width: 118px;
-        height: 70px;
+        width: 236px;
+        height: 140px;
     }
 
     .web-animation {
@@ -1908,16 +1969,19 @@ Diseñamos
 </h3><p>
 Creamos una propuesta
 visual para tu página.
-</p></div><!-- DESARROLLAMOS --><div class="process-card process-develop"><div class="html-code-animation"><div class="typing-code"><html>
-<head>
-<title>ERWEB</title>
-</head>
-<body>
-<h1>Tu página web</h1>
-<p>Diseño profesional</p>
-</body>
-</html>
-
+</p></div><!-- DESARROLLAMOS --><div class="process-card process-develop"><div class="html-code-animation"><div class="typing-code">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;ERWEB&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Tu página web&lt;/h1&gt;
+    &lt;p&gt;Diseño profesional&lt;/p&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Tu negocio en Internet&lt;/h2&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </div></div><div class="number">
 3
 </div><h3>
@@ -1925,8 +1989,8 @@ Desarrollamos
 </h3><p>
 Construimos la página
 y configuramos sus funciones.
-</p></div><!-- PUBLICAMOS --><div class="process-card process-publish"><div class="publish-process-animation"><div class="server"></div><div class="upload-arrow"><i class="fa-solid fa-arrow-up"></i>
-
+</p></div><!-- PUBLICAMOS --><div class="process-card process-publish"><div class="publish-process-animation"><div class="server"></div><div class="upload-arrow">
+<i class="fa-solid fa-arrow-up"></i>
 </div></div><div class="number">
 4
 </div><h3>
@@ -2026,7 +2090,7 @@ que buscan una presencia digital profesional,
 moderna y personalizada.
 </p><div class="includes-title">
 Incluye:
-</div><ul><li>Diseño personalizado</li><li>Varias secciones</li><li>Galería de imágenes</li><li>Videos</li><li>Botón de WhatsApp</li><li>Botón de correo electrónico</li><li>Botón de Facebook</li><li>Botón de Instagram</li><li>Botón de TikTok</li><li>Formulario de contacto</li><li>Optimización para celulares</li><li>Publicación web</li><li>Sección para subir CVs o currículums</li><li>Pestañas para catálogo de productos</li><li>Integración con redes sociales</li><li>Soporte</li><li>Configuración técnica y seguridad básica</li></ul><div class="cost-box"><div class="cost-title">
+</div><ul><li>Diseño personalizado</li><li>Varias secciones</li><li>Galería de imágenes</li><li>Videos</li><li>Botón de WhatsApp</li><li>Botón de correo electrónico</li><li>Botón de Facebook</li><li>Botón de Instagram</li><li>Botón de TikTok</li><li>Formulario de contacto</li><li>Optimización para celulares</li><li>Ubicación a través de Google Maps</li><li>Sección para subir CVs o currículums</li><li>Pestañas para catálogo de productos</li><li>Integración con redes sociales</li><li>Soporte</li><li>Configuración técnica y seguridad básica</li></ul><div class="cost-box"><div class="cost-title">
 Costo de creación
 </div><div class="price">
 Q1,400
