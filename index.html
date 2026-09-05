@@ -1452,6 +1452,11 @@ section {
     gap: 30px;
     max-width: 1050px;
     margin: auto;
+
+    /* MODIFICACIÓN:
+       Evita que un plan abierto estire
+       verticalmente al otro plan. */
+    align-items: start;
 }
 
 .plan {
@@ -1802,7 +1807,6 @@ section {
 
 /* =====================================================
    SOBRE ERWEB
-   INFORMACIÓN AHORA DEBAJO DEL BOTÓN
 ===================================================== */
 
 .about {
@@ -1883,8 +1887,6 @@ section {
 
 /* =====================================================
    INFORMACIÓN DESPLEGABLE
-   AHORA ESTÁ DENTRO DEL SECTION-TITLE
-   Y APARECE JUSTO DEBAJO DEL BOTÓN
 ===================================================== */
 
 .about-details {
@@ -2732,7 +2734,6 @@ footer p {
 
     /* =================================================
        SOBRE ERWEB
-       INFORMACIÓN DEBAJO DEL BOTÓN
     ================================================= */
 
     .about .section-title {
@@ -3433,7 +3434,7 @@ Elige la opción que mejor se adapte a las necesidades de tu negocio.
 
 <div class="plan compact" id="planCard1">
 
-<div class="plan-summary">
+<div class="plan-summary" id="planTitle1">
 
 <div class="plan-label">
 PLAN 01
@@ -3564,7 +3565,7 @@ REGRESAR
 
 <div class="plan compact" id="planCard2">
 
-<div class="plan-summary">
+<div class="plan-summary" id="planTitle2">
 
 <div class="plan-label">
 PLAN 02
@@ -3739,7 +3740,7 @@ El servicio de mantenimiento incluye actualizaciones periódicas de la página, 
 SOBRE ERWEB
 </small>
 
-<h2>
+<h2 id="aboutTitle">
 Transformamos ideas en páginas web
 </h2>
 
@@ -3762,7 +3763,6 @@ VER MÁS
 
 <!-- =================================================
      INFORMACIÓN DESPLEGABLE
-     APARECE JUSTO DEBAJO DEL BOTÓN
 ================================================= -->
 
 <div class="about-details" id="aboutDetails">
@@ -3809,7 +3809,7 @@ Creemos que una página web no tiene que ser complicada ni inaccesible. Nuestro 
 <button
 class="reveal-button back-button"
 type="button"
-onclick="toggleAbout()">
+onclick="toggleAbout(true)">
 
 <span>
 REGRESAR
@@ -3830,7 +3830,7 @@ REGRESAR
 
 <!-- =================================================
      INTRODUCCIÓN
-================================================= -->
+===================================================== -->
 
 <div class="about-content">
 
@@ -4102,43 +4102,70 @@ animarCodigo();
 
 
 /* =====================================================
-   SOBRE ERWEB
-   ABRIR / CERRAR
-   SIN DESPLAZAMIENTO AUTOMÁTICO
+   FUNCIÓN PARA DESPLAZARSE EXACTAMENTE AL TÍTULO
+   RESPETANDO EL HEADER FIJO
 ===================================================== */
 
-function toggleAbout() {
+function volverAlTitulo(elemento) {
 
-    const details =
-        document.getElementById("aboutDetails");
+    if (!elemento) return;
 
-    details.classList.toggle("active");
+    const header =
+        document.querySelector("header");
 
+    const alturaHeader =
+        header ? header.offsetHeight : 0;
+
+    const posicion =
+        elemento.getBoundingClientRect().top
+        + window.pageYOffset
+        - alturaHeader
+        - 10;
+
+    window.scrollTo({
+        top: posicion,
+        behavior: "smooth"
+    });
 }
 
 
 /* =====================================================
-   PLANES
+   SOBRE ERWEB
    ABRIR / CERRAR
-   SIN DESPLAZAMIENTO AUTOMÁTICO
 ===================================================== */
 
-function togglePlan(
-    id,
-    regresar = false
-) {
+function toggleAbout(regresar = false) {
 
     const details =
-        document.getElementById(id);
+        document.getElementById("aboutDetails");
+
+    const title =
+        document.getElementById("aboutTitle");
+
+
+    if (!details) return;
 
 
     /* ================================================
-       REGRESAR AL PLAN
+       REGRESAR
     ================================================ */
 
     if (regresar) {
 
         details.classList.remove("active");
+
+
+        /*
+         * Esperamos a que termine de cerrarse
+         * el recuadro antes de posicionarnos.
+         * Así el título queda exactamente en pantalla.
+         */
+
+        setTimeout(() => {
+
+            volverAlTitulo(title);
+
+        }, 820);
 
         return;
     }
@@ -4151,6 +4178,82 @@ function togglePlan(
     details.classList.toggle("active");
 
 }
+
+
+/* =====================================================
+   PLANES
+   CADA PLAN FUNCIONA DE FORMA INDEPENDIENTE
+===================================================== */
+
+function togglePlan(
+    id,
+    regresar = false
+) {
+
+    const details =
+        document.getElementById(id);
+
+
+    if (!details) return;
+
+
+    /*
+     * Identificamos automáticamente
+     * el título correspondiente al plan.
+     */
+
+    let title = null;
+
+
+    if (id === "plan1") {
+
+        title =
+            document.getElementById("planTitle1");
+
+    }
+
+
+    if (id === "plan2") {
+
+        title =
+            document.getElementById("planTitle2");
+
+    }
+
+
+    /* ================================================
+       REGRESAR AL TÍTULO DEL PLAN
+    ================================================ */
+
+    if (regresar) {
+
+        details.classList.remove("active");
+
+
+        /*
+         * Esperamos a que termine la animación
+         * de cierre para que la posición final
+         * sea exactamente la del título.
+         */
+
+        setTimeout(() => {
+
+            volverAlTitulo(title);
+
+        }, 820);
+
+        return;
+    }
+
+
+    /* ================================================
+       ABRIR / CERRAR SOLO ESTE PLAN
+    ================================================ */
+
+    details.classList.toggle("active");
+
+}
+
 
 </script>
 
