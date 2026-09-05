@@ -2015,7 +2015,6 @@ section {
 
 /* =====================================================
    DESPLEGABLE DE PLANES
-   CORREGIDO PARA PC
 ===================================================== */
 
 .plan-details {
@@ -2803,10 +2802,8 @@ footer p {
 
 /* =====================================================
    MODAL PARA LOS BOTONES "VER MÁS"
-   NUEVA CONFIGURACIÓN
 ===================================================== */
 
-/* Fondo oscuro detrás del modal */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -2828,13 +2825,19 @@ footer p {
 }
 
 
-/* Bloqueo del desplazamiento de la página */
+/* =====================================================
+   BLOQUEO DEL DESPLAZAMIENTO
+===================================================== */
+
 body.modal-open {
     overflow: hidden;
 }
 
 
-/* Modal de Sobre ERWEB y Planes */
+/* =====================================================
+   MODAL DE SOBRE ERWEB Y PLANES
+===================================================== */
+
 .about-details,
 .plan-details {
     position: fixed !important;
@@ -2885,7 +2888,10 @@ body.modal-open {
 }
 
 
-/* Modal abierto */
+/* =====================================================
+   MODAL ABIERTO
+===================================================== */
+
 .about-details.active,
 .plan-details.active {
     max-height: calc(100vh - 130px) !important;
@@ -2904,7 +2910,81 @@ body.modal-open {
 }
 
 
-/* Barra de desplazamiento interna */
+/* =====================================================
+   CORRECCIÓN PC
+   EVITA QUE EL HOVER DE LOS PLANES ALTERE
+   LA POSICIÓN DEL MODAL FIXED
+===================================================== */
+
+@media(min-width:701px) {
+
+    .plan:has(.plan-details.active) {
+        transform: none !important;
+    }
+
+    .plan:has(.plan-details.active):hover {
+        transform: none !important;
+    }
+
+    .plan-details.active {
+        position: fixed !important;
+
+        top: 50% !important;
+        left: 50% !important;
+
+        width: min(900px, 90vw) !important;
+
+        max-width: 900px !important;
+
+        max-height: calc(100vh - 130px) !important;
+
+        margin: 0 !important;
+
+        padding: 40px 32px !important;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1) !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        z-index: 3001 !important;
+    }
+
+    .about-details.active {
+        position: fixed !important;
+
+        top: 50% !important;
+        left: 50% !important;
+
+        width: min(900px, 90vw) !important;
+
+        max-width: 900px !important;
+
+        max-height: calc(100vh - 130px) !important;
+
+        margin: 0 !important;
+
+        padding: 40px 32px !important;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1) !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        z-index: 3001 !important;
+    }
+
+}
+
+
+/* =====================================================
+   BARRA DE DESPLAZAMIENTO INTERNA
+===================================================== */
+
 .about-details::-webkit-scrollbar,
 .plan-details::-webkit-scrollbar {
     width: 7px;
@@ -4248,7 +4328,6 @@ function abrirModal(details) {
     const overlay =
         document.getElementById("modalOverlay");
 
-    /* Cerrar cualquier otro contenido abierto */
     document
     .querySelectorAll(".about-details.active, .plan-details.active")
     .forEach(elemento => {
@@ -4350,7 +4429,6 @@ function cerrarModalPorFondo(event) {
 
 /* =====================================================
    SOBRE ERWEB
-   ABRIR / CERRAR MODAL
 ===================================================== */
 
 function toggleAbout(regresar = false) {
@@ -4365,10 +4443,6 @@ function toggleAbout(regresar = false) {
     if (!details) return;
 
 
-    /* ================================================
-       REGRESAR
-    ================================================ */
-
     if (regresar) {
 
         cerrarModal(
@@ -4380,10 +4454,6 @@ function toggleAbout(regresar = false) {
     }
 
 
-    /* ================================================
-       ABRIR MODAL
-    ================================================ */
-
     abrirModal(details);
 
 }
@@ -4391,7 +4461,6 @@ function toggleAbout(regresar = false) {
 
 /* =====================================================
    PLANES
-   CADA PLAN FUNCIONA DE FORMA INDEPENDIENTE
 ===================================================== */
 
 function togglePlan(id, regresar = false) {
@@ -4422,10 +4491,6 @@ function togglePlan(id, regresar = false) {
     }
 
 
-    /* ================================================
-       REGRESAR
-    ================================================ */
-
     if (regresar) {
 
         cerrarModal(
@@ -4437,17 +4502,13 @@ function togglePlan(id, regresar = false) {
     }
 
 
-    /* ================================================
-       ABRIR MODAL SOLO PARA ESTE PLAN
-    ================================================ */
-
     abrirModal(details);
 
 }
 
 
 /* =====================================================
-   TECLA ESC PARA CERRAR
+   TECLA ESC
 ===================================================== */
 
 document.addEventListener(
