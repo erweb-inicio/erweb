@@ -493,8 +493,7 @@ animation-delay: 4s;
 }
 
 /* =====================================================
-ANIMACIÓN DISEÑO ADAPTABLE
-CORREGIDA PARA EVITAR RECORTE SUPERIOR
+DISEÑO ADAPTABLE
 ===================================================== */
 
 .devices-animation {
@@ -613,24 +612,9 @@ font-size: 25px;
 animation: cloudMove 5s ease-in-out infinite;
 }
 
-.cloud-one {
-left: 27%;
-top: 30px;
-}
-
-.cloud-two {
-left: 54%;
-top: 70px;
-font-size: 21px;
-animation-delay: 1.3s;
-}
-
-.cloud-three {
-right: 8%;
-top: 25px;
-font-size: 23px;
-animation-delay: 2.2s;
-}
+.cloud-one { left: 27%; top: 30px; }
+.cloud-two { left: 54%; top: 70px; font-size: 21px; animation-delay: 1.3s; }
+.cloud-three { right: 8%; top: 25px; font-size: 23px; animation-delay: 2.2s; }
 
 @keyframes rocketTakeoff {
 0% {
@@ -639,9 +623,7 @@ top: 78px;
 opacity: 0;
 transform: rotate(-45deg) scale(0.8);
 }
-15% {
-opacity: 1;
-}
+15% { opacity: 1; }
 40% {
 left: 18%;
 top: 55px;
@@ -739,16 +721,8 @@ white-space: nowrap;
 animation: chatFloat 3.5s ease-in-out infinite;
 }
 
-.chat-one {
-left: 0;
-top: 10px;
-}
-
-.chat-two {
-right: 0;
-top: 68px;
-animation-delay: 1.2s;
-}
+.chat-one { left: 0; top: 10px; }
+.chat-two { right: 0; top: 68px; animation-delay: 1.2s; }
 
 .whatsapp-logo {
 position: absolute;
@@ -847,10 +821,6 @@ margin-top: 10px;
 font-size: 14px;
 line-height: 1.6;
 }
-
-/* =====================================================
-FONDOS PROCESO
-===================================================== */
 
 .process-talk {
 background-image:
@@ -1111,19 +1081,9 @@ top: 48px;
 animation: connectionMove 2.5s linear infinite;
 }
 
-.connection-one {
-left: 30%;
-}
-
-.connection-two {
-left: 43%;
-animation-delay: 0.5s;
-}
-
-.connection-three {
-left: 56%;
-animation-delay: 1s;
-}
+.connection-one { left: 30%; }
+.connection-two { left: 43%; animation-delay: 0.5s; }
+.connection-three { left: 56%; animation-delay: 1s; }
 
 .planet {
 position: absolute;
@@ -1186,12 +1146,8 @@ opacity: 1;
 left: 0%;
 opacity: 0;
 }
-20% {
-opacity: 1;
-}
-80% {
-opacity: 1;
-}
+20% { opacity: 1; }
+80% { opacity: 1; }
 100% {
 left: 100%;
 opacity: 0;
@@ -1463,208 +1419,260 @@ font-size: 14px;
 }
 
 /* =====================================================
-NOSOTROS
-NUEVO FONDO ANIMADO TIPO VIDEO
+SOBRE ERWEB
+NUEVA ANIMACIÓN DE PROGRAMACIÓN
 ===================================================== */
 
 .about {
 position: relative;
-background: #050d18;
+background: #07111f;
 overflow: hidden;
 isolation: isolate;
 }
 
-/* Capa principal de movimiento */
+/* Capa general de la animación */
 
-.about::before {
-content: "";
+.about-code-bg {
 position: absolute;
-inset: -20%;
-z-index: -3;
-
+inset: 0;
+overflow: hidden;
+z-index: 0;
+pointer-events: none;
+opacity: 0.55;
 background:
-    linear-gradient(
-        115deg,
-        transparent 0%,
-        rgba(0,183,255,0.06) 22%,
-        transparent 42%,
-        rgba(0,183,255,0.08) 62%,
-        transparent 82%
-    ),
-    repeating-linear-gradient(
-        90deg,
-        transparent 0px,
-        transparent 75px,
-        rgba(0,183,255,0.045) 76px,
-        transparent 77px
-    ),
-    repeating-linear-gradient(
-        0deg,
-        transparent 0px,
-        transparent 75px,
-        rgba(255,255,255,0.025) 76px,
-        transparent 77px
-    );
-
-animation: aboutVideoMove 14s linear infinite;
-
+radial-gradient(
+circle at center,
+rgba(0,183,255,0.13),
+rgba(7,17,31,0.94) 72%
+);
 }
 
-/* Segunda capa: luces tecnológicas */
+/* Líneas horizontales del editor */
 
-.about::after {
+.about-code-bg::before {
 content: "";
 position: absolute;
-inset: -30%;
-z-index: -2;
-
+inset: 0;
 background:
-    radial-gradient(
-        circle at 20% 40%,
-        rgba(0,183,255,0.20),
-        transparent 16%
-    ),
-    radial-gradient(
-        circle at 78% 65%,
-        rgba(0,183,255,0.16),
-        transparent 18%
-    ),
-    radial-gradient(
-        circle at 50% 15%,
-        rgba(255,255,255,0.07),
-        transparent 12%
-    );
-
-animation: aboutLightMove 10s ease-in-out infinite alternate;
-
+repeating-linear-gradient(
+to bottom,
+rgba(0,183,255,0.07) 0px,
+rgba(0,183,255,0.07) 1px,
+transparent 1px,
+transparent 28px
+);
+animation: codeGridMove 8s linear infinite;
 }
 
-/* Líneas diagonales en movimiento */
+/* Brillo tecnológico */
 
-.about .section-title::before {
+.about-code-bg::after {
 content: "";
 position: absolute;
-width: 180%;
-height: 2px;
-left: -40%;
-top: 45%;
+width: 55%;
+height: 180%;
+top: -40%;
+left: -20%;
 background:
 linear-gradient(
 90deg,
 transparent,
-rgba(0,183,255,0.0),
-rgba(0,183,255,0.35),
-rgba(255,255,255,0.18),
-rgba(0,183,255,0.0),
+rgba(0,183,255,0.09),
 transparent
 );
-transform: rotate(-12deg);
-animation: aboutScan 6s linear infinite;
-pointer-events: none;
+transform: rotate(12deg);
+animation: codeLightSweep 7s ease-in-out infinite;
 }
 
-/* Movimiento general */
+/* Contenedor del código */
 
-@keyframes aboutVideoMove {
+.about-code-stream {
+position: absolute;
+left: 3%;
+top: -45%;
+width: 94%;
+font-family: "Courier New", monospace;
+font-size: 14px;
+line-height: 1.9;
+color: rgba(255,255,255,0.30);
+white-space: pre;
+letter-spacing: 0.3px;
+animation: aboutCodeScroll 20s linear infinite;
+}
+
+/* Segunda capa para dar profundidad */
+
+.about-code-stream.second {
+left: 14%;
+top: -80%;
+opacity: 0.48;
+font-size: 12px;
+animation-duration: 26s;
+animation-delay: -8s;
+}
+
+/* Tercera capa */
+
+.about-code-stream.third {
+left: 48%;
+top: -65%;
+opacity: 0.34;
+font-size: 13px;
+animation-duration: 23s;
+animation-delay: -13s;
+}
+
+/* Color de algunas partes del código */
+
+.about-code-stream .tag {
+color: rgba(0,183,255,0.60);
+}
+
+.about-code-stream .text {
+color: rgba(255,255,255,0.28);
+}
+
+.about-code-stream .attribute {
+color: rgba(0,183,255,0.42);
+}
+
+/* Línea luminosa que atraviesa el código */
+
+.about-code-line {
+position: absolute;
+left: 0;
+width: 100%;
+height: 1px;
+top: 42%;
+background: linear-gradient(
+90deg,
+transparent,
+rgba(0,183,255,0.65),
+transparent
+);
+box-shadow: 0 0 18px rgba(0,183,255,0.45);
+opacity: 0.55;
+animation: aboutScanLine 5s ease-in-out infinite;
+}
+
+/* Panel central muy sutil */
+
+.about-code-panel {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+width: min(850px,88%);
+height: 70%;
+border: 1px solid rgba(0,183,255,0.12);
+border-radius: 18px;
+background: rgba(3,10,18,0.20);
+box-shadow:
+inset 0 0 50px rgba(0,183,255,0.035),
+0 0 50px rgba(0,0,0,0.12);
+backdrop-filter: blur(1px);
+}
+
+/* Movimiento vertical del código */
+
+@keyframes aboutCodeScroll {
 
 0% {
-    transform: translate3d(-5%, -3%, 0) rotate(0deg);
-}
-
-25% {
-    transform: translate3d(2%, 2%, 0) rotate(0.5deg);
-}
-
-50% {
-    transform: translate3d(6%, -1%, 0) rotate(0deg);
-}
-
-75% {
-    transform: translate3d(0%, 5%, 0) rotate(-0.5deg);
+    transform: translateY(0);
 }
 
 100% {
-    transform: translate3d(-5%, -3%, 0) rotate(0deg);
+    transform: translateY(95%);
 }
 
 }
 
-/* Movimiento de las luces */
-
-@keyframes aboutLightMove {
+@keyframes codeGridMove {
 
 0% {
-    transform: translate(-5%, 4%) scale(1);
-    opacity: 0.65;
+    transform: translateY(0);
 }
 
-50% {
-    transform: translate(4%, -3%) scale(1.12);
+100% {
+    transform: translateY(28px);
+}
+
+}
+
+@keyframes codeLightSweep {
+
+0%,100% {
+    transform: translateX(-20%) rotate(12deg);
+    opacity: 0;
+}
+
+35% {
+    opacity: 1;
+}
+
+65% {
     opacity: 1;
 }
 
 100% {
-    transform: translate(-2%, 5%) scale(0.96);
-    opacity: 0.75;
-}
-
-}
-
-/* Barrido luminoso */
-
-@keyframes aboutScan {
-
-0% {
-    transform: translateX(-35%) rotate(-12deg);
+    transform: translateX(220%) rotate(12deg);
     opacity: 0;
 }
 
-15% {
-    opacity: 0.35;
+}
+
+@keyframes aboutScanLine {
+
+0%,100% {
+    top: 25%;
+    opacity: 0.15;
 }
 
 50% {
+    top: 76%;
     opacity: 0.65;
 }
 
-85% {
-    opacity: 0.25;
 }
 
-100% {
-    transform: translateX(35%) rotate(-12deg);
-    opacity: 0;
-}
+/* Contenido de Sobre ERWEB */
 
-}
-
-/* Contenido por encima de la animación */
-
-.about > * {
+.about > .section-title,
+.about > .about-content {
 position: relative;
-z-index: 2;
+z-index: 5;
 }
 
-/* Panel sutil para separar el texto del fondo */
+.about > .section-title {
+text-shadow:
+0 3px 15px rgba(0,0,0,0.95),
+0 0 25px rgba(0,0,0,0.8);
+}
 
 .about-content {
 max-width: 850px;
 margin: auto;
 text-align: center;
-padding: 35px 30px;
+padding: 30px;
 border-radius: 18px;
 background: rgba(3,10,18,0.48);
 border: 1px solid rgba(0,183,255,0.16);
-backdrop-filter: blur(3px);
 box-shadow:
-0 15px 45px rgba(0,0,0,0.22);
+0 15px 45px rgba(0,0,0,0.22),
+inset 0 0 30px rgba(0,183,255,0.025);
+backdrop-filter: blur(3px);
 }
 
 .about-content p {
-color: #d0d9e2;
+color: #e1e8ef;
 line-height: 1.9;
 margin-bottom: 20px;
 font-size: 15px;
+text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+}
+
+.about-content p:last-child {
+margin-bottom: 0;
 }
 
 /* =====================================================
@@ -2086,11 +2094,6 @@ section {
     top: 58px;
 }
 
-
-/* =================================================
-   TIENDA ONLINE
-================================================= */
-
 .store-animation {
     top: 62px;
     left: 4%;
@@ -2099,12 +2102,6 @@ section {
     overflow: hidden;
     clip-path: inset(0 0 0 0);
 }
-
-
-/* =================================================
-   DISEÑO ADAPTABLE
-   CORRECCIÓN ESPECIAL PARA MÓVIL
-================================================= */
 
 .devices-animation {
     top: 70px;
@@ -2130,11 +2127,6 @@ section {
     margin-top: 26px;
 }
 
-
-/* =================================================
-   PUBLICACIÓN WEB
-================================================= */
-
 .publish-animation {
     top: 35px;
 }
@@ -2143,19 +2135,9 @@ section {
     font-size: 48px;
 }
 
-
-/* =================================================
-   MANTENIMIENTO
-================================================= */
-
 .maintenance-animation {
     top: 42px;
 }
-
-
-/* =================================================
-   WHATSAPP
-================================================= */
 
 .whatsapp-animation {
     top: 78px;
@@ -2177,30 +2159,15 @@ section {
     right: 0;
 }
 
-
-/* =================================================
-   HABLAMOS
-================================================= */
-
 .chat-animation {
     top: 40px;
     transform: scale(0.9);
 }
 
-
-/* =================================================
-   DISEÑAMOS
-================================================= */
-
 .design-animation {
     top: 35px;
     transform: scale(0.88);
 }
-
-
-/* =================================================
-   DESARROLLAMOS
-================================================= */
 
 .html-code-animation {
     top: 28px;
@@ -2215,11 +2182,6 @@ section {
     line-height: 1.38;
 }
 
-
-/* =================================================
-   PUBLICAMOS
-================================================= */
-
 .publish-process-animation {
     top: 30px;
     left: 3%;
@@ -2229,25 +2191,41 @@ section {
     transform-origin: top center;
 }
 
+/* SOBRE ERWEB - MÓVIL */
 
-/* =================================================
-   SOBRE ERWEB
-   AJUSTE DEL FONDO ANIMADO EN MÓVIL
-================================================= */
-
-.about::before {
-    inset: -35%;
-    animation-duration: 12s;
+.about-code-stream {
+    left: -18%;
+    width: 136%;
+    font-size: 10px;
+    line-height: 1.75;
 }
 
-.about::after {
-    inset: -40%;
-    animation-duration: 8s;
+.about-code-stream.second {
+    left: 5%;
+    font-size: 9px;
+}
+
+.about-code-stream.third {
+    left: 40%;
+    font-size: 9px;
+}
+
+.about-code-panel {
+    width: 94%;
+    height: 72%;
+}
+
+.about-code-bg {
+    opacity: 0.48;
 }
 
 .about-content {
-    padding: 28px 20px;
-    background: rgba(3,10,18,0.54);
+    padding: 25px 20px;
+    background: rgba(3,10,18,0.58);
+}
+
+.about-content p {
+    font-size: 14px;
 }
 
 }
@@ -2270,9 +2248,7 @@ ACCESIBILIDAD
 
 </style></head><body>
 
-<!-- =====================================================
-     HEADER
-===================================================== --><header><a href="#inicio"
+<header><a href="#inicio"
 class="logo-container"
 aria-label="ERWEB Inicio">
 
@@ -2290,25 +2266,21 @@ aria-label="Abrir menú"><i class="fa-solid fa-bars"></i>
 <a href="#planes">Costos</a>
 <a href="#contacto">Contacto</a>
 
-</nav></header><!-- =====================================================
-     INICIO
-===================================================== --><section class="hero" id="inicio"><div class="hero-content"><small>
+</nav></header><section class="hero" id="inicio"><div class="hero-content"><small>
 DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
 </small><h1>
 Tu negocio merece una web
 <span>profesional.</span>
 </h1><p>
 En ERWEB creamos páginas web modernas, rápidas y adaptadas a celulares para ayudarte a mostrar tu negocio en Internet.
-</p></div></section><!-- =====================================================
-     SERVICIOS
-===================================================== --><section class="services" id="servicios"><div class="section-title"><small>
+</p></div></section><section class="services" id="servicios"><div class="section-title"><small>
 LO QUE HACEMOS
 </small><h2>
 Nuestro servicio
 </h2><p>
 Soluciones web pensadas para empresas, negocios y emprendimientos que quieren tener presencia profesional en Internet.
-</p></div><div class="service-grid"><div class="service-card service-web"><div class="web-animation"><div class="web-screen"><div class="web-lines"></div></div></div><div class="service-icon"><i class="fa-solid fa-code"></i>
-
+</p></div><div class="service-grid"><div class="service-card service-web"><div class="web-animation"><div class="web-screen"><div class="web-lines"></div></div></div><div class="service-icon">
+<i class="fa-solid fa-code"></i>
 </div><h3>
 Página web
 </h3><p>
@@ -2319,14 +2291,16 @@ Creamos sitios web modernos y profesionales adaptados a las necesidades de cada 
 <i class="fa-solid fa-shoe-prints"></i>
 </div><div class="product">
 <i class="fa-solid fa-bag-shopping"></i>
-</div></div><div class="service-icon"><i class="fa-solid fa-cart-shopping"></i>
-
+</div></div><div class="service-icon">
+<i class="fa-solid fa-cart-shopping"></i>
 </div><h3>
 Tiendas online (dentro de la página web)
 </h3><p>
 Diseñamos catálogos y espacios digitales para mostrar productos y facilitar las ventas.
-</p></div><div class="service-card service-responsive"><div class="devices-animation"><div class="phone"></div><div class="tablet"></div><div class="laptop"></div></div><div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i>
-
+</p></div><div class="service-card service-responsive"><div class="devices-animation"><div class="phone"></div>
+<div class="tablet"></div>
+<div class="laptop"></div></div><div class="service-icon">
+<i class="fa-solid fa-mobile-screen-button"></i>
 </div><h3>
 Diseño adaptable
 </h3><p>
@@ -2339,18 +2313,17 @@ Tu página funcionará correctamente en celulares, tablets y computadoras.
 <i class="fa-solid fa-cloud"></i>
 </div><div class="cloud cloud-three">
 <i class="fa-solid fa-cloud"></i>
-</div></div><div class="service-icon"><i class="fa-solid fa-rocket"></i>
-
+</div></div><div class="service-icon">
+<i class="fa-solid fa-rocket"></i>
 </div><h3>
 Publicación web
 </h3><p>
 Te ayudamos a publicar tu página en Internet y dejarla disponible para tus clientes.
 </p></div><div class="service-card service-maintenance"><div class="maintenance-animation"><i class="fa-solid fa-gear gear"></i>
-
 <i class="fa-solid fa-gear gear small"></i>
 
-</div><div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i>
-
+</div><div class="service-icon">
+<i class="fa-solid fa-screwdriver-wrench"></i>
 </div><h3>
 Mantenimiento
 </h3><p>
@@ -2361,15 +2334,13 @@ Hola 👋
 <i class="fa-brands fa-whatsapp"></i>
 </div><div class="chat-bubble chat-two">
 ¡Con gusto te ayudamos!
-</div></div><div class="service-icon"><i class="fa-brands fa-whatsapp"></i>
-
+</div></div><div class="service-icon">
+<i class="fa-brands fa-whatsapp"></i>
 </div><h3>
 Botón de WhatsApp
 </h3><p>
 Agregamos un botón de contacto para que tus clientes puedan comunicarse directamente contigo.
-</p></div></div></section><!-- =====================================================
-     PROCESO
-===================================================== --><section id="proceso"><div class="section-title"><small>
+</p></div></div></section><section id="proceso"><div class="section-title"><small>
 NUESTRO MÉTODO
 </small><h2>
 ¿Cómo trabajamos?
@@ -2381,41 +2352,24 @@ Necesito información
 Sí, con gusto
 </div><div class="message four">
 Podemos ayudarte
-</div></div><div class="number">
-1
-</div><h3>
-Hablamos
-</h3><p>
+</div></div><div class="number">1</div><h3>Hablamos</h3><p>
 Conocemos tu negocio y lo que necesitas.
-</p></div><div class="process-card process-design"><div class="design-animation"><div class="design-panel"><div class="design-circle"></div><div class="design-line"></div></div></div><div class="number">
-2
-</div><h3>
-Diseñamos
-</h3><p>
+</p></div><div class="process-card process-design"><div class="design-animation"><div class="design-panel"><div class="design-circle"></div>
+<div class="design-line"></div></div></div><div class="number">2</div><h3>Diseñamos</h3><p>
 Creamos una propuesta visual para tu página.
-</p></div><div class="process-card process-develop"><div class="html-code-animation"><div class="typing-code"></div></div><div class="number">
-3
-</div><h3>
-Desarrollamos
-</h3><p>
+</p></div><div class="process-card process-develop"><div class="html-code-animation"><div class="typing-code"></div></div><div class="number">3</div><h3>Desarrollamos</h3><p>
 Construimos la página y configuramos sus funciones.
-</p></div><div class="process-card process-publish"><div class="publish-process-animation"><div class="network-laptop"><i class="fa-solid fa-laptop"></i>
-
+</p></div><div class="process-card process-publish"><div class="publish-process-animation"><div class="network-laptop">
+<i class="fa-solid fa-laptop"></i>
 </div><div class="network-lines"></div><div class="connection-arrow connection-one">
 <i class="fa-solid fa-chevron-right"></i>
 </div><div class="connection-arrow connection-two">
 <i class="fa-solid fa-chevron-right"></i>
 </div><div class="connection-arrow connection-three">
 <i class="fa-solid fa-chevron-right"></i>
-</div><div class="planet"></div></div><div class="number">
-4
-</div><h3>
-Publicamos
-</h3><p>
+</div><div class="planet"></div></div><div class="number">4</div><h3>Publicamos</h3><p>
 Ponemos tu sitio en Internet para que tus clientes puedan encontrarlo.
-</p></div></div></section><!-- =====================================================
-     DISEÑO WEB
-===================================================== --><section class="web-design" id="diseno-web"><div class="section-title"><small>
+</p></div></div></section><section class="web-design" id="diseno-web"><div class="section-title"><small>
 CREACIÓN WEB
 </small><h2>
 Diseñamos tu presencia digital
@@ -2426,9 +2380,9 @@ src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fi
 alt="Diseño y desarrollo de páginas web"
 loading="lazy">
 
-<div class="web-design-overlay"><span>
-DISEÑO Y DESARROLLO
-</span><h3>
+<div class="web-design-overlay"><span>DISEÑO Y DESARROLLO</span>
+
+<h3>
 Páginas web profesionales
 </h3><p>
 Diseños modernos pensados para presentar tu negocio de manera profesional.
@@ -2437,23 +2391,19 @@ src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=c
 alt="Diseño web adaptable"
 loading="lazy">
 
-<div class="web-design-overlay"><span>
-DISEÑO ADAPTABLE
-</span><h3>
+<div class="web-design-overlay"><span>DISEÑO ADAPTABLE</span>
+
+<h3>
 Tu web en cualquier dispositivo
 </h3><p>
 Una experiencia visual preparada para celulares, tablets y computadoras.
-</p></div></div></div></section><!-- =====================================================
-     COSTOS
-===================================================== --><section class="plans" id="planes"><div class="section-title"><small>
+</p></div></div></div></section><section class="plans" id="planes"><div class="section-title"><small>
 OPCIONES
 </small><h2>
 Costos de creación de páginas web
 </h2><p>
 Elige la opción que mejor se adapte a las necesidades de tu negocio.
-</p></div><div class="plans-grid"><div class="plan"><div class="plan-label">
-PLAN 01
-</div><h3>
+</p></div><div class="plans-grid"><div class="plan"><div class="plan-label">PLAN 01</div><h3>
 Página Inicial Básica
 </h3><p class="plan-description">
 Una opción ideal para comenzar tu presencia profesional en Internet.
@@ -2488,9 +2438,7 @@ rel="noopener noreferrer">
 
 Cotizar
 
-</a></div><div class="plan"><div class="plan-label">
-PLAN 02
-</div><h3>
+</a></div><div class="plan"><div class="plan-label">PLAN 02</div><h3>
 Página Profesional
 </h3><p class="plan-description">
 Una solución completa para empresas y negocios que buscan una presencia digital profesional, moderna y personalizada.
@@ -2539,8 +2487,120 @@ Mantenimiento de tu página web
 </h3><p>
 El servicio de mantenimiento incluye actualizaciones periódicas de la página, cambios de imágenes, modificación de textos e información, ajustes y mejoras necesarias para mantener el sitio actualizado.
 </p></div></section><!-- =====================================================
-     NOSOTROS
-===================================================== --><section class="about" id="nosotros"><div class="section-title"><small>
+     SOBRE ERWEB
+===================================================== --><section class="about" id="nosotros"><!-- FONDO ANIMADO DE PROGRAMACIÓN --><div class="about-code-bg"><div class="about-code-panel"></div><div class="about-code-line"></div><div class="about-code-stream"><span class="tag"><!DOCTYPE html></span>
+<br>
+<span class="tag"><html</span> <span class="attribute">lang="es"</span><span class="tag">></span>
+<br>
+  <span class="tag"><head></span>
+<br>
+    <span class="tag"><title></span><span class="text">ERWEB</span><span class="tag"></title></span>
+<br>
+    <span class="tag"><meta</span> <span class="attribute">name="viewport"</span><span class="tag">></span>
+<br>
+  <span class="tag"></head></span>
+<br>
+  <span class="tag"><body></span>
+<br>
+    <span class="tag"><header></span>
+<br>
+      <span class="text">ERWEB</span>
+<br>
+    <span class="tag"></header></span>
+<br>
+<br>
+    <span class="tag"><section</span> <span class="attribute">class="web"</span><span class="tag">></span>
+<br>
+      <span class="tag"><h1></span>
+<br>
+        <span class="text">Tu negocio en Internet</span>
+<br>
+      <span class="tag"></h1></span>
+<br>
+    <span class="tag"></section></span>
+<br>
+<br>
+    <span class="tag"><script></span>
+<br>
+      <span class="text">const web = "ERWEB";</span>
+<br>
+      <span class="text">crearPagina(web);</span>
+<br>
+    <span class="tag"></script></span>
+<br>
+<br>
+  <span class="tag"></body></span>
+<br>
+<span class="tag"></html></span>
+
+</div><div class="about-code-stream second"><span class="tag"><style></span>
+<br>
+  body {
+<br>
+    background: #07111f;
+<br>
+    color: #ffffff;
+<br>
+    font-family: Montserrat;
+<br>
+  }
+<br>
+<br>
+  .website {
+<br>
+    max-width: 1200px;
+<br>
+    margin: auto;
+<br>
+    display: flex;
+<br>
+  }
+<br>
+<br>
+  .responsive {
+<br>
+    width: 100%;
+<br>
+    transition: all .3s;
+<br>
+  }
+<br>
+<span class="tag"></style></span>
+<br>
+<br>
+<span class="tag"><div</span> <span class="attribute">class="responsive"</span><span class="tag">></span>
+<br>
+  <span class="text">Diseño adaptable</span>
+<br>
+<span class="tag"></div></span>
+
+</div><div class="about-code-stream third"><span class="tag"><main></span>
+<br>
+  <span class="tag"><article></span>
+<br>
+    <span class="text">Diseño</span>
+<br>
+    <span class="text">Tecnología</span>
+<br>
+    <span class="text">Presencia digital</span>
+<br>
+  <span class="tag"></article></span>
+<br>
+<br>
+  <span class="tag"><footer></span>
+<br>
+    <span class="text">© 2026 ERWEB</span>
+<br>
+  <span class="tag"></footer></span>
+<br>
+<span class="tag"></main></span>
+<br>
+<br>
+<span class="tag"><!-- CREANDO PRESENCIA DIGITAL --></span>
+<br>
+<span class="tag"><!-- ERWEB --></span>
+
+</div></div><div class="section-title"><small>
 SOBRE ERWEB
 </small><h2>
 Transformamos ideas en páginas web
@@ -2548,9 +2608,7 @@ Transformamos ideas en páginas web
 ERWEB nace con la idea de ayudar a pequeños negocios, emprendedores y empresas a tener una presencia profesional en Internet.
 </p><p>
 Creemos que una página web no tiene que ser complicada ni inaccesible. Nuestro objetivo es crear sitios modernos, funcionales y adaptados a las necesidades de cada cliente.
-</p></div></section><!-- =====================================================
-     CONTACTO
-===================================================== --><section class="contact" id="contacto"><div class="section-title"><small>
+</p></div></section><section class="contact" id="contacto"><div class="section-title"><small>
 HABLEMOS
 </small><h2>
 ¿Tienes un proyecto?
@@ -2570,9 +2628,7 @@ rel="noopener noreferrer">
 
 Escribir por Messenger
 
-</a></div></section><!-- =====================================================
-     BOTONES FLOTANTES
-===================================================== --><div class="social-floating"><a
+</a></div></section><div class="social-floating"><a
 href="https://www.facebook.com/profile.php?id=61594227622678"
 class="social-button facebook-button"
 target="_blank"
@@ -2597,9 +2653,7 @@ aria-label="WhatsApp ERWEB">
 
 <i class="fa-brands fa-whatsapp"></i>
 
-</a></div><!-- =====================================================
-     FOOTER
-===================================================== --><footer><img
+</a></div><footer><img
 src="LOGO.jpg"
 alt="Logo ERWEB"
 class="footer-logo">
@@ -2622,7 +2676,6 @@ function toggleMenu() {
     menu.classList.toggle("active");
 
 }
-
 
 document
 .querySelectorAll("nav a")
@@ -2673,7 +2726,6 @@ function animarCodigo() {
 
     if (!elementoCodigo) return;
 
-
     if (!borrando) {
 
         elementoCodigo.textContent =
@@ -2683,7 +2735,6 @@ function animarCodigo() {
             );
 
         posicion++;
-
 
         if (
             posicion >
@@ -2700,12 +2751,10 @@ function animarCodigo() {
             return;
         }
 
-
         setTimeout(
             animarCodigo,
             24
         );
-
 
     } else {
 
@@ -2716,7 +2765,6 @@ function animarCodigo() {
             );
 
         posicion--;
-
 
         if (posicion < 0) {
 
@@ -2731,7 +2779,6 @@ function animarCodigo() {
 
             return;
         }
-
 
         setTimeout(
             animarCodigo,
