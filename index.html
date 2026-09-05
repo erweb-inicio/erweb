@@ -4,13 +4,16 @@ content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares
 <meta name="keywords"
 content="ERWEB, páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, sitios web, diseño adaptable, páginas para negocios">
 
-<meta name="author" content="ERWEB"><meta name="robots" content="index, follow"><link rel="canonical" href="https://erwebinicio.github.io/"><meta property="og:title"
+<meta name="author" content="ERWEB">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://erwebinicio.github.io/"><meta property="og:title"
 content="ERWEB | Creación de páginas web profesionales">
 
 <meta property="og:description"
 content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
 
-<meta property="og:type" content="website"><meta property="og:image" content="LOGO.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect"
+<meta property="og:type" content="website">
+<meta property="og:image" content="LOGO.jpg"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
 href="https://fonts.gstatic.com"
 crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
 rel="stylesheet"><link rel="stylesheet"
@@ -63,20 +66,19 @@ header {
 
 /* =====================================================
    LOGO
-   CORRECCIÓN: SIN RECUADRO NEGRO
 ===================================================== */
 
 .logo-container {
     position: relative;
     width: 270px;
-    height: 82px;
+    height: 156px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     border-radius: 3px;
-    background: transparent;
+    background: #000;
 }
 
 .logo-img {
@@ -325,26 +327,11 @@ section {
    FONDOS SERVICIOS
 ===================================================== */
 
-.service-web {
-    background: #06111d;
-}
-
-.service-store {
-    background: #06111d;
-}
-
-.service-responsive {
-    background: #06111d;
-}
-
-.service-publish {
-    background: #06111d;
-}
-
-.service-maintenance {
-    background: #06111d;
-}
-
+.service-web,
+.service-store,
+.service-responsive,
+.service-publish,
+.service-maintenance,
 .service-whatsapp {
     background: #06111d;
 }
@@ -495,45 +482,47 @@ section {
 
 /* =====================================================
    ANIMACIÓN DISEÑO ADAPTABLE
+   LIGERAMENTE MÁS GRANDE
 ===================================================== */
 
 .devices-animation {
     position: absolute;
-    top: 42px;
+    top: 34px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 125px;
+    transform: translateX(-50%) scale(1.08);
+    transform-origin: center top;
+    width: 94%;
+    height: 135px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     opacity: 0.58;
     z-index: 2;
 }
 
 .phone {
-    width: 42px;
-    height: 82px;
+    width: 45px;
+    height: 88px;
     border: 3px solid #00b7ff;
-    border-radius: 8px;
+    border-radius: 9px;
     background: #07111f;
     margin-top: 18px;
     animation: deviceFloat 2.5s ease-in-out infinite;
 }
 
 .tablet {
-    width: 76px;
-    height: 100px;
+    width: 82px;
+    height: 108px;
     border: 3px solid #ffffff;
-    border-radius: 7px;
+    border-radius: 8px;
     background: #07111f;
     animation: deviceFloat 2.5s ease-in-out infinite 0.3s;
 }
 
 .laptop {
-    width: 125px;
-    height: 78px;
+    width: 135px;
+    height: 84px;
     border: 3px solid #00b7ff;
     border-radius: 7px 7px 3px 3px;
     background: #07111f;
@@ -545,7 +534,7 @@ section {
 .laptop::after {
     content: "";
     position: absolute;
-    width: 140px;
+    width: 150px;
     height: 5px;
     background: #00b7ff;
     left: -10px;
@@ -567,90 +556,151 @@ section {
 
 
 /* =====================================================
-   PUBLICACIÓN
+   PUBLICACIÓN WEB
+   NAVE DESPEGANDO + NUBES
 ===================================================== */
 
 .publish-animation {
     position: absolute;
-    top: 45px;
+    top: 34px;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 140px;
     overflow: hidden;
-    opacity: 0.55;
+    opacity: 0.56;
     z-index: 2;
 }
 
 .rocket {
     position: absolute;
-    left: 8%;
-    top: 65px;
+    left: 42%;
+    top: 70px;
     color: #00b7ff;
-    font-size: 48px;
+    font-size: 58px;
     transform: rotate(-45deg);
-    animation: rocketFly 4s ease-in-out infinite;
+    animation: rocketTakeoff 4.5s ease-in-out infinite;
 }
 
 .rocket-trail {
     position: absolute;
-    width: 110px;
+    width: 105px;
     height: 3px;
     background: linear-gradient(90deg,transparent,#00b7ff);
-    left: 4%;
-    top: 92px;
-    animation: trailMove 4s ease-in-out infinite;
+    left: 35%;
+    top: 110px;
+    transform: rotate(-35deg);
+    animation: trailTakeoff 4.5s ease-in-out infinite;
 }
 
-@keyframes rocketFly {
+/* NUBES */
+
+.cloud {
+    position: absolute;
+    color: rgba(255,255,255,0.55);
+    font-size: 27px;
+    animation: cloudFloat 5s ease-in-out infinite;
+}
+
+.cloud-one {
+    left: 7%;
+    top: 28px;
+}
+
+.cloud-two {
+    right: 7%;
+    top: 75px;
+    font-size: 23px;
+    animation-delay: 1.8s;
+}
+
+.cloud-three {
+    left: 24%;
+    top: 105px;
+    font-size: 19px;
+    animation-delay: 0.8s;
+}
+
+.cloud-four {
+    right: 24%;
+    top: 18px;
+    font-size: 20px;
+    animation-delay: 2.5s;
+}
+
+@keyframes rocketTakeoff {
 
     0% {
-        left: 5%;
-        top: 75px;
+        left: 39%;
+        top: 78px;
         opacity: 0;
+        transform: rotate(-45deg) scale(0.85);
     }
 
     15% {
         opacity: 1;
     }
 
-    50% {
-        left: 48%;
-        top: 35px;
+    45% {
+        left: 47%;
+        top: 45px;
+        transform: rotate(-45deg) scale(1);
     }
 
-    85% {
-        left: 82%;
-        top: 5px;
+    75% {
+        left: 56%;
+        top: 10px;
         opacity: 1;
+        transform: rotate(-45deg) scale(1.08);
     }
 
     100% {
-        left: 95%;
-        top: -10px;
+        left: 62%;
+        top: -18px;
         opacity: 0;
+        transform: rotate(-45deg) scale(1.12);
     }
 
 }
 
-@keyframes trailMove {
+@keyframes trailTakeoff {
 
     0% {
-        left: 0;
+        left: 35%;
+        top: 110px;
         opacity: 0;
+        transform: rotate(-35deg) scaleX(0.5);
     }
 
     20% {
         opacity: 1;
     }
 
-    80% {
-        left: 75%;
+    70% {
+        left: 48%;
+        top: 55px;
         opacity: 0.8;
+        transform: rotate(-35deg) scaleX(1);
     }
 
     100% {
-        left: 90%;
+        left: 56%;
+        top: 18px;
         opacity: 0;
+        transform: rotate(-35deg) scaleX(0.6);
+    }
+
+}
+
+@keyframes cloudFloat {
+
+    0%,100% {
+        transform: translateX(0);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateX(10px);
+        opacity: 0.65;
     }
 
 }
@@ -687,6 +737,7 @@ section {
 }
 
 @keyframes gearSpin {
+
     from {
         transform: rotate(0deg);
     }
@@ -694,51 +745,56 @@ section {
     to {
         transform: rotate(360deg);
     }
+
 }
 
 
 /* =====================================================
    WHATSAPP
+   ANIMACIÓN COMPLETAMENTE CONTENIDA
 ===================================================== */
 
 .whatsapp-animation {
     position: absolute;
-    top: 43px;
-    left: 0;
-    width: 100%;
-    height: 110px;
-    opacity: 0.55;
+    top: 40px;
+    left: 8%;
+    width: 84%;
+    height: 100px;
+    opacity: 0.45;
     z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
 }
 
 .chat-bubble {
     position: absolute;
-    padding: 9px 14px;
-    border-radius: 16px;
+    padding: 8px 12px;
+    border-radius: 14px;
     background: #25d366;
     color: #00101c;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
+    white-space: nowrap;
     animation: chatFloat 3.5s ease-in-out infinite;
 }
 
 .chat-one {
-    left: 12%;
-    top: 15px;
+    left: 0;
+    top: 8px;
 }
 
 .chat-two {
-    right: 12%;
-    top: 52px;
+    right: 0;
+    top: 62px;
     animation-delay: 1.2s;
 }
 
 .whatsapp-logo {
     position: absolute;
     left: 50%;
-    top: 8px;
+    top: 18px;
     transform: translateX(-50%);
-    font-size: 55px;
+    font-size: 48px;
     color: #25d366;
     animation: whatsappPulse 2s ease-in-out infinite;
 }
@@ -750,7 +806,7 @@ section {
     }
 
     50% {
-        transform: translateY(-9px);
+        transform: translateY(-7px);
     }
 
 }
@@ -762,7 +818,7 @@ section {
     }
 
     50% {
-        transform: translateX(-50%) scale(1.12);
+        transform: translateX(-50%) scale(1.08);
     }
 
 }
@@ -1018,7 +1074,8 @@ section {
 
 
 /* =====================================================
-   CÓDIGO HTML ESCRIBIÉNDOSE Y BORRÁNDOSE
+   CÓDIGO HTML
+   ANIMACIÓN MÁS CONSTANTE
 ===================================================== */
 
 .html-code-animation {
@@ -1055,7 +1112,7 @@ section {
     white-space: pre-wrap;
     overflow: hidden;
     width: 0;
-    animation: escribirBorrarCodigo 12s steps(95,end) infinite;
+    animation: escribirBorrarCodigo 6s steps(95,end) infinite;
 }
 
 @keyframes escribirBorrarCodigo {
@@ -1064,11 +1121,11 @@ section {
         width: 0;
     }
 
-    60% {
+    42% {
         width: 100%;
     }
 
-    78% {
+    55% {
         width: 100%;
     }
 
@@ -1080,70 +1137,172 @@ section {
 
 
 /* =====================================================
-   ANIMACIÓN PUBLICAMOS
+   PUBLICAMOS
+   PLANETA + INDICADORES DE RED
 ===================================================== */
 
 .publish-process-animation {
     position: absolute;
-    top: 35px;
+    top: 30px;
     left: 0;
     width: 100%;
-    height: 125px;
+    height: 135px;
     opacity: 0.55;
     z-index: 2;
+    overflow: hidden;
 }
 
-.server {
+.planet {
     position: absolute;
     left: 50%;
-    top: 8px;
+    top: 20px;
     transform: translateX(-50%);
-    width: 120px;
-    height: 80px;
-    border: 2px solid #00b7ff;
-    border-radius: 7px;
-    background: rgba(3,10,18,0.9);
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    border: 3px solid #00b7ff;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(0,183,255,0.35),
+            rgba(3,10,18,0.95) 65%
+        );
+    box-shadow:
+        0 0 20px rgba(0,183,255,0.20),
+        inset 0 0 15px rgba(0,183,255,0.15);
+    animation: planetPulse 3s ease-in-out infinite;
 }
 
-.server::before,
-.server::after {
+.planet::before,
+.planet::after {
     content: "";
     position: absolute;
-    left: 15px;
-    right: 15px;
-    height: 15px;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 3px;
+    border: 1px solid rgba(0,183,255,0.55);
+    border-radius: 50%;
 }
 
-.server::before {
-    top: 15px;
+.planet::before {
+    width: 112px;
+    height: 34px;
+    left: -18px;
+    top: 22px;
+    transform: rotate(-18deg);
 }
 
-.server::after {
-    top: 42px;
+.planet::after {
+    width: 125px;
+    height: 42px;
+    left: -23px;
+    top: 17px;
+    transform: rotate(18deg);
+    opacity: 0.45;
 }
 
-.upload-arrow {
+.network-node {
     position: absolute;
-    left: 50%;
-    bottom: 2px;
-    transform: translateX(-50%);
-    color: #00b7ff;
-    font-size: 32px;
-    animation: uploadMove 1.7s ease-in-out infinite;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00b7ff;
+    box-shadow: 0 0 10px rgba(0,183,255,0.75);
+    animation: networkPulse 2s ease-in-out infinite;
 }
 
-@keyframes uploadMove {
+.node-one {
+    left: 17%;
+    top: 25px;
+}
+
+.node-two {
+    right: 17%;
+    top: 45px;
+    animation-delay: 0.6s;
+}
+
+.node-three {
+    left: 25%;
+    bottom: 20px;
+    animation-delay: 1.1s;
+}
+
+.node-four {
+    right: 25%;
+    bottom: 15px;
+    animation-delay: 1.6s;
+}
+
+.network-line {
+    position: absolute;
+    height: 1px;
+    background: rgba(0,183,255,0.55);
+    transform-origin: left center;
+    animation: networkLinePulse 2.5s ease-in-out infinite;
+}
+
+.line-one {
+    width: 95px;
+    left: 20%;
+    top: 33px;
+    transform: rotate(8deg);
+}
+
+.line-two {
+    width: 100px;
+    right: 20%;
+    top: 57px;
+    transform: rotate(-10deg);
+}
+
+.line-three {
+    width: 80px;
+    left: 28%;
+    bottom: 27px;
+    transform: rotate(-25deg);
+}
+
+.line-four {
+    width: 80px;
+    right: 28%;
+    bottom: 25px;
+    transform: rotate(25deg);
+}
+
+@keyframes planetPulse {
 
     0%,100% {
-        transform: translateX(-50%) translateY(10px);
-        opacity: 0.4;
+        transform: translateX(-50%) scale(0.96);
+        opacity: 0.75;
     }
 
     50% {
-        transform: translateX(-50%) translateY(-4px);
+        transform: translateX(-50%) scale(1.04);
         opacity: 1;
+    }
+
+}
+
+@keyframes networkPulse {
+
+    0%,100% {
+        transform: scale(0.8);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+
+}
+
+@keyframes networkLinePulse {
+
+    0%,100% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.8;
     }
 
 }
@@ -1419,6 +1578,7 @@ section {
 
 /* =====================================================
    CONTACTO
+   VARIOS CÍRCULOS EN MOVIMIENTO
 ===================================================== */
 
 .contact {
@@ -1456,30 +1616,80 @@ section {
     overflow: hidden;
 }
 
+/* VARIOS CÍRCULOS */
+
 .contact-box::before {
     content: "";
     position: absolute;
-    width: 170px;
-    height: 170px;
-    border: 2px solid rgba(0,183,255,0.22);
+    width: 140px;
+    height: 140px;
+    border: 2px solid rgba(0,183,255,0.18);
     border-radius: 50%;
-    top: -75px;
-    right: -55px;
-    animation: contactOrb 7s ease-in-out infinite;
+    top: -55px;
+    right: -25px;
+    animation: contactCircleOne 6s ease-in-out infinite;
     z-index: 0;
 }
 
 .contact-box::after {
     content: "";
     position: absolute;
-    width: 120px;
-    height: 120px;
-    border: 1px solid rgba(255,255,255,0.16);
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(255,255,255,0.13);
     border-radius: 50%;
-    bottom: -55px;
-    left: -35px;
-    animation: contactOrbTwo 6s ease-in-out infinite;
+    bottom: -40px;
+    left: -20px;
+    animation: contactCircleTwo 5s ease-in-out infinite;
     z-index: 0;
+}
+
+/* CÍRCULOS ADICIONALES */
+
+.contact-box .contact-circle-one,
+.contact-box .contact-circle-two,
+.contact-box .contact-circle-three,
+.contact-box .contact-circle-four {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact-circle-one {
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(0,183,255,0.20);
+    left: 18%;
+    top: 15%;
+    animation: floatingCircleOne 7s ease-in-out infinite;
+}
+
+.contact-circle-two {
+    width: 75px;
+    height: 75px;
+    border: 1px solid rgba(255,255,255,0.12);
+    right: 16%;
+    bottom: 12%;
+    animation: floatingCircleTwo 8s ease-in-out infinite;
+}
+
+.contact-circle-three {
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgba(0,183,255,0.16);
+    left: 8%;
+    bottom: 25%;
+    animation: floatingCircleThree 5s ease-in-out infinite;
+}
+
+.contact-circle-four {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.14);
+    right: 8%;
+    top: 22%;
+    animation: floatingCircleFour 6s ease-in-out infinite;
 }
 
 .contact-box > * {
@@ -1487,29 +1697,85 @@ section {
     z-index: 2;
 }
 
-@keyframes contactOrb {
+@keyframes contactCircleOne {
 
     0%,100% {
-        transform: scale(0.9) translate(0,0);
+        transform: translate(0,0) scale(0.9);
         opacity: 0.25;
     }
 
     50% {
-        transform: scale(1.15) translate(-25px,20px);
+        transform: translate(-35px,25px) scale(1.12);
         opacity: 0.55;
     }
 
 }
 
-@keyframes contactOrbTwo {
+@keyframes contactCircleTwo {
 
     0%,100% {
-        transform: scale(0.85) translate(0,0);
+        transform: translate(0,0) scale(0.85);
         opacity: 0.18;
     }
 
     50% {
-        transform: scale(1.1) translate(25px,-20px);
+        transform: translate(30px,-25px) scale(1.1);
+        opacity: 0.4;
+    }
+
+}
+
+@keyframes floatingCircleOne {
+
+    0%,100% {
+        transform: translate(0,0);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translate(35px,25px);
+        opacity: 0.45;
+    }
+
+}
+
+@keyframes floatingCircleTwo {
+
+    0%,100% {
+        transform: translate(0,0);
+        opacity: 0.12;
+    }
+
+    50% {
+        transform: translate(-30px,-20px);
+        opacity: 0.35;
+    }
+
+}
+
+@keyframes floatingCircleThree {
+
+    0%,100% {
+        transform: translate(0,0) scale(0.8);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translate(25px,-20px) scale(1.2);
+        opacity: 0.4;
+    }
+
+}
+
+@keyframes floatingCircleFour {
+
+    0%,100% {
+        transform: translate(0,0);
+        opacity: 0.12;
+    }
+
+    50% {
+        transform: translate(-25px,30px);
         opacity: 0.4;
     }
 
@@ -1660,8 +1926,7 @@ footer p {
 
     .logo-container {
         width: 236px;
-        height: 78px;
-        background: transparent;
+        height: 140px;
     }
 
     nav {
@@ -1776,12 +2041,12 @@ footer p {
     }
 
     .devices-animation {
-        top: 38px;
-        transform: translateX(-50%) scale(0.85);
+        top: 34px;
+        transform: translateX(-50%) scale(0.94);
     }
 
     .publish-animation {
-        top: 40px;
+        top: 35px;
     }
 
     .maintenance-animation {
@@ -1790,6 +2055,10 @@ footer p {
 
     .whatsapp-animation {
         top: 38px;
+        left: 7%;
+        width: 86%;
+        transform: scale(0.92);
+        transform-origin: top center;
     }
 
     .chat-animation {
@@ -1804,6 +2073,12 @@ footer p {
 
     .html-code-animation {
         top: 35px;
+        transform: scale(0.92);
+        transform-origin: top center;
+    }
+
+    .publish-process-animation {
+        top: 30px;
         transform: scale(0.92);
         transform-origin: top center;
     }
@@ -1904,7 +2179,15 @@ Diseño adaptable
 </h3><p>
 Tu página funcionará correctamente
 en celulares, tablets y computadoras.
-</p></div><!-- PUBLICACIÓN --><div class="service-card service-publish"><div class="publish-animation"><div class="rocket">
+</p></div><!-- PUBLICACIÓN --><div class="service-card service-publish"><div class="publish-animation"><div class="cloud cloud-one">
+<i class="fa-solid fa-cloud"></i>
+</div><div class="cloud cloud-two">
+<i class="fa-solid fa-cloud"></i>
+</div><div class="cloud cloud-three">
+<i class="fa-solid fa-cloud"></i>
+</div><div class="cloud cloud-four">
+<i class="fa-solid fa-cloud"></i>
+</div><div class="rocket">
 <i class="fa-solid fa-rocket"></i>
 </div><div class="rocket-trail"></div></div><div class="service-icon">
 <i class="fa-solid fa-rocket"></i>
@@ -1985,9 +2268,13 @@ Desarrollamos
 </h3><p>
 Construimos la página
 y configuramos sus funciones.
-</p></div><!-- PUBLICAMOS --><div class="process-card process-publish"><div class="publish-process-animation"><div class="server"></div><div class="upload-arrow">
-<i class="fa-solid fa-arrow-up"></i>
-</div></div><div class="number">
+</p></div><!-- PUBLICAMOS --><div class="process-card process-publish"><div class="publish-process-animation"><div class="planet"></div><div class="network-node node-one"></div>
+<div class="network-node node-two"></div>
+<div class="network-node node-three"></div>
+<div class="network-node node-four"></div><div class="network-line line-one"></div>
+<div class="network-line line-two"></div>
+<div class="network-line line-three"></div>
+<div class="network-line line-four"></div></div><div class="number">
 4
 </div><h3>
 Publicamos
@@ -2051,7 +2338,14 @@ Una opción ideal para comenzar tu presencia
 profesional en Internet.
 </p><div class="includes-title">
 Incluye:
-</div><ul><li>Página informativa</li><li>Diseño adaptable</li><li>Sección de contacto</li><li>Botón de WhatsApp</li><li>Publicación web</li><li>Galería de imágenes</li><li>Optimización para celulares</li><li>Soporte</li></ul><div class="cost-box"><div class="cost-title">
+</div><ul><li>Página informativa</li>
+<li>Diseño adaptable</li>
+<li>Sección de contacto</li>
+<li>Botón de WhatsApp</li>
+<li>Publicación web</li>
+<li>Galería de imágenes</li>
+<li>Optimización para celulares</li>
+<li>Soporte</li></ul><div class="cost-box"><div class="cost-title">
 Costo de creación
 </div><div class="price">
 Q750 – Q950
@@ -2086,7 +2380,23 @@ que buscan una presencia digital profesional,
 moderna y personalizada.
 </p><div class="includes-title">
 Incluye:
-</div><ul><li>Diseño personalizado</li><li>Varias secciones</li><li>Galería de imágenes</li><li>Videos</li><li>Botón de WhatsApp</li><li>Botón de correo electrónico</li><li>Botón de Facebook</li><li>Botón de Instagram</li><li>Botón de TikTok</li><li>Formulario de contacto</li><li>Optimización para celulares</li><li>Ubicación a través de Google Maps</li><li>Sección para subir CVs o currículums</li><li>Pestañas para catálogo de productos</li><li>Integración con redes sociales</li><li>Soporte</li><li>Configuración técnica y seguridad básica</li></ul><div class="cost-box"><div class="cost-title">
+</div><ul><li>Diseño personalizado</li>
+<li>Varias secciones</li>
+<li>Galería de imágenes</li>
+<li>Videos</li>
+<li>Botón de WhatsApp</li>
+<li>Botón de correo electrónico</li>
+<li>Botón de Facebook</li>
+<li>Botón de Instagram</li>
+<li>Botón de TikTok</li>
+<li>Formulario de contacto</li>
+<li>Optimización para celulares</li>
+<li>Ubicación a través de Google Maps</li>
+<li>Sección para subir CVs o currículums</li>
+<li>Pestañas para catálogo de productos</li>
+<li>Integración con redes sociales</li>
+<li>Soporte</li>
+<li>Configuración técnica y seguridad básica</li></ul><div class="cost-box"><div class="cost-title">
 Costo de creación
 </div><div class="price">
 Q1,400
@@ -2144,7 +2454,10 @@ id="contacto"><div class="section-title"><small>
 HABLEMOS
 </small><h2>
 ¿Tienes un proyecto?
-</h2></div><div class="contact-box"><h3>
+</h2></div><div class="contact-box"><div class="contact-circle-one"></div>
+<div class="contact-circle-two"></div>
+<div class="contact-circle-three"></div>
+<div class="contact-circle-four"></div><h3>
 Cuéntanos qué necesitas
 </h3><p>
 Escríbenos y cuéntanos qué tipo de página
