@@ -1863,11 +1863,6 @@ section {
         inset 0 0 40px rgba(0,183,255,0.04);
 }
 
-
-/* =====================================================
-   INFORMACIÓN ABIERTA
-===================================================== */
-
 .about-details.active {
 
     max-height: 700px;
@@ -2803,6 +2798,197 @@ footer p {
         scroll-behavior: auto !important;
     }
 
+}
+
+
+/* =====================================================
+   MODAL PARA LOS BOTONES "VER MÁS"
+   NUEVA CONFIGURACIÓN
+===================================================== */
+
+/* Fondo oscuro detrás del modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 3000;
+    transition:
+        opacity 0.30s ease,
+        visibility 0.30s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* Bloqueo del desplazamiento de la página */
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* Modal de Sobre ERWEB y Planes */
+.about-details,
+.plan-details {
+    position: fixed !important;
+
+    top: 50% !important;
+    left: 50% !important;
+
+    width: min(900px, 90vw) !important;
+
+    max-width: 900px !important;
+
+    max-height: calc(100vh - 130px) !important;
+
+    margin: 0 !important;
+
+    padding: 40px 32px !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%, -46%)
+        scale(0.92) !important;
+
+    transform-origin: center center !important;
+
+    z-index: 3001 !important;
+
+    border-radius: 18px !important;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.60),
+        0 0 35px rgba(0,183,255,0.12);
+
+    transition:
+        opacity 0.30s ease,
+        visibility 0.30s ease,
+        transform 0.38s cubic-bezier(0.22,1,0.36,1);
+
+    scrollbar-width: thin;
+    scrollbar-color: #00b7ff rgba(255,255,255,0.08);
+}
+
+
+/* Modal abierto */
+.about-details.active,
+.plan-details.active {
+    max-height: calc(100vh - 130px) !important;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    margin: 0 !important;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1) !important;
+}
+
+
+/* Barra de desplazamiento interna */
+.about-details::-webkit-scrollbar,
+.plan-details::-webkit-scrollbar {
+    width: 7px;
+}
+
+.about-details::-webkit-scrollbar-track,
+.plan-details::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+}
+
+.about-details::-webkit-scrollbar-thumb,
+.plan-details::-webkit-scrollbar-thumb {
+    background: #00b7ff;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   MODAL EN CELULARES
+===================================================== */
+
+@media(max-width:700px) {
+
+    .modal-overlay {
+        backdrop-filter: blur(4px);
+    }
+
+    .about-details,
+    .plan-details {
+        top: 50% !important;
+        left: 50% !important;
+
+        width: 92vw !important;
+
+        max-width: 92vw !important;
+
+        max-height: calc(100vh - 105px) !important;
+
+        padding: 30px 20px !important;
+
+        border-radius: 16px !important;
+
+        transform:
+            translate(-50%, -46%)
+            scale(0.94) !important;
+    }
+
+    .about-details.active,
+    .plan-details.active {
+        max-height: calc(100vh - 105px) !important;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1) !important;
+    }
+
+    .about-details-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .plan-details .includes-title {
+        margin-top: 5px;
+    }
+
+    .plan-details .plan li {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .plan-details .price {
+        font-size: 34px;
+    }
+
+    .plan-details .maintenance-price {
+        font-size: 26px;
+    }
+
+    .plan-details .btn,
+    .about-details .back-button {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 </style>
@@ -3874,6 +4060,17 @@ Creación de páginas web profesionales.
 </footer>
 
 
+<!-- =====================================================
+     FONDO DEL MODAL
+===================================================== -->
+
+<div
+class="modal-overlay"
+id="modalOverlay"
+onclick="cerrarModalPorFondo(event)">
+</div>
+
+
 <script>
 
 
@@ -4041,8 +4238,119 @@ function volverAlTitulo(elemento) {
 
 
 /* =====================================================
+   CONTROL GENERAL DEL MODAL
+===================================================== */
+
+function abrirModal(details) {
+
+    if (!details) return;
+
+    const overlay =
+        document.getElementById("modalOverlay");
+
+    /* Cerrar cualquier otro contenido abierto */
+    document
+    .querySelectorAll(".about-details.active, .plan-details.active")
+    .forEach(elemento => {
+
+        if (elemento !== details) {
+            elemento.classList.remove("active");
+        }
+
+    });
+
+    details.classList.add("active");
+
+    document.body.classList.add("modal-open");
+
+    if (overlay) {
+        overlay.classList.add("active");
+    }
+
+}
+
+
+function cerrarModal(details, elementoTitulo = null) {
+
+    if (!details) return;
+
+    details.classList.remove("active");
+
+    const overlay =
+        document.getElementById("modalOverlay");
+
+    if (overlay) {
+        overlay.classList.remove("active");
+    }
+
+    document.body.classList.remove("modal-open");
+
+    if (elementoTitulo) {
+
+        setTimeout(() => {
+
+            volverAlTitulo(elementoTitulo);
+
+        }, 320);
+
+    }
+
+}
+
+
+function cerrarModalPorFondo(event) {
+
+    if (
+        event &&
+        event.target &&
+        event.target.id === "modalOverlay"
+    ) {
+
+        const abierto =
+            document.querySelector(
+                ".about-details.active, .plan-details.active"
+            );
+
+        if (abierto) {
+
+            let titulo = null;
+
+            if (abierto.id === "aboutDetails") {
+
+                titulo =
+                    document.getElementById("aboutTitle");
+
+            }
+
+            if (abierto.id === "plan1") {
+
+                titulo =
+                    document.getElementById("planTitle1");
+
+            }
+
+            if (abierto.id === "plan2") {
+
+                titulo =
+                    document.getElementById("planTitle2");
+
+            }
+
+            cerrarModal(
+                abierto,
+                titulo
+            );
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
    SOBRE ERWEB
-   ABRIR / CERRAR
+   ABRIR / CERRAR MODAL
 ===================================================== */
 
 function toggleAbout(regresar = false) {
@@ -4063,19 +4371,20 @@ function toggleAbout(regresar = false) {
 
     if (regresar) {
 
-        details.classList.remove("active");
-
-        setTimeout(() => {
-
-            volverAlTitulo(title);
-
-        }, 420);
+        cerrarModal(
+            details,
+            title
+        );
 
         return;
     }
 
 
-    details.classList.toggle("active");
+    /* ================================================
+       ABRIR MODAL
+    ================================================ */
+
+    abrirModal(details);
 
 }
 
@@ -4119,25 +4428,76 @@ function togglePlan(id, regresar = false) {
 
     if (regresar) {
 
-        details.classList.remove("active");
-
-        setTimeout(() => {
-
-            volverAlTitulo(title);
-
-        }, 430);
+        cerrarModal(
+            details,
+            title
+        );
 
         return;
     }
 
 
     /* ================================================
-       ABRIR / CERRAR SOLO ESTE PLAN
+       ABRIR MODAL SOLO PARA ESTE PLAN
     ================================================ */
 
-    details.classList.toggle("active");
+    abrirModal(details);
 
 }
+
+
+/* =====================================================
+   TECLA ESC PARA CERRAR
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key !== "Escape") return;
+
+        const abierto =
+            document.querySelector(
+                ".about-details.active, .plan-details.active"
+            );
+
+        if (!abierto) return;
+
+
+        let titulo = null;
+
+
+        if (abierto.id === "aboutDetails") {
+
+            titulo =
+                document.getElementById("aboutTitle");
+
+        }
+
+
+        if (abierto.id === "plan1") {
+
+            titulo =
+                document.getElementById("planTitle1");
+
+        }
+
+
+        if (abierto.id === "plan2") {
+
+            titulo =
+                document.getElementById("planTitle2");
+
+        }
+
+
+        cerrarModal(
+            abierto,
+            titulo
+        );
+
+    }
+);
 
 
 </script>
