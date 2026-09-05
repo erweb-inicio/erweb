@@ -433,17 +433,19 @@ section {
 
 /* =====================================================
    ANIMACIÓN TIENDA ONLINE
+   CORRECCIÓN: CONTENIDA DENTRO DEL RECUADRO
 ===================================================== */
 
 .store-animation {
     position: absolute;
-    top: 48px;
-    left: 0;
-    width: 100%;
-    height: 105px;
+    top: 58px;
+    left: 4%;
+    width: 92%;
+    height: 92px;
     overflow: hidden;
     opacity: 0.58;
     z-index: 2;
+    clip-path: inset(0 0 0 0);
 }
 
 .product {
@@ -479,19 +481,19 @@ section {
 @keyframes productMove {
 
     0% {
-        transform: translateX(0) translateY(10px);
+        transform: translateX(0) translateY(5px);
     }
 
     45% {
-        transform: translateX(210px) translateY(-5px);
+        transform: translateX(180px) translateY(0);
     }
 
     70% {
-        transform: translateX(360px) translateY(5px);
+        transform: translateX(310px) translateY(5px);
     }
 
     100% {
-        transform: translateX(520px) translateY(-10px);
+        transform: translateX(430px) translateY(0);
     }
 
 }
@@ -499,17 +501,17 @@ section {
 
 /* =====================================================
    ANIMACIÓN DISEÑO ADAPTABLE
-   CONTENIDA Y SIN PASAR BAJO EL ÍCONO
+   CORRECCIÓN: CONTENIDA DENTRO DEL RECUADRO
 ===================================================== */
 
 .devices-animation {
     position: absolute;
-    top: 72px;
+    top: 82px;
     left: 50%;
-    transform: translateX(-50%) scale(0.82);
+    transform: translateX(-50%) scale(0.78);
     transform-origin: top center;
-    width: 92%;
-    height: 108px;
+    width: 88%;
+    height: 92px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -526,7 +528,7 @@ section {
     border: 3px solid #00b7ff;
     border-radius: 9px;
     background: #07111f;
-    margin-top: 18px;
+    margin-top: 8px;
     animation: deviceFloat 2.5s ease-in-out infinite;
 }
 
@@ -576,8 +578,6 @@ section {
 
 /* =====================================================
    PUBLICACIÓN WEB
-   NAVE DESPEGANDO + NUBES
-   SIN LÍNEA DE ESTELA
 ===================================================== */
 
 .publish-animation {
@@ -727,7 +727,6 @@ section {
 
 /* =====================================================
    WHATSAPP
-   ANIMACIÓN COMPLETA Y CONTENIDA
 ===================================================== */
 
 .whatsapp-animation {
@@ -1051,7 +1050,6 @@ section {
 
 /* =====================================================
    CÓDIGO HTML
-   ESCRITURA Y BORRADO CONTINUO
 ===================================================== */
 
 .html-code-animation {
@@ -1985,21 +1983,37 @@ footer p {
         top: 58px;
     }
 
+    /* =================================================
+       TIENDA ONLINE
+       CORRECCIÓN SOLO PARA MÓVIL
+    ================================================= */
+
     .store-animation {
-        top: 43px;
+        top: 62px;
+        left: 4%;
+        width: 92%;
+        height: 88px;
+        overflow: hidden;
+        clip-path: inset(0 0 0 0);
     }
 
-    /*
-       Diseño adaptable:
-       separado del pequeño ícono superior
-       y contenido dentro de su área.
-    */
+    /* =================================================
+       DISEÑO ADAPTABLE
+       CORRECCIÓN SOLO PARA MÓVIL
+    ================================================= */
 
     .devices-animation {
-        top: 78px;
-        width: 94%;
-        height: 105px;
-        transform: translateX(-50%) scale(0.70);
+        top: 88px;
+        width: 88%;
+        height: 88px;
+        transform: translateX(-50%) scale(0.66);
+        transform-origin: top center;
+        overflow: hidden;
+        clip-path: inset(0 0 0 0);
+    }
+
+    .phone {
+        margin-top: 5px;
     }
 
     .publish-animation {
@@ -2013,11 +2027,6 @@ footer p {
     .maintenance-animation {
         top: 42px;
     }
-
-    /*
-       WhatsApp contenido debajo del ícono,
-       sin cruzar ni salirse del recuadro.
-    */
 
     .whatsapp-animation {
         top: 78px;
@@ -2048,10 +2057,6 @@ footer p {
         top: 35px;
         transform: scale(0.88);
     }
-
-    /*
-       Código HTML más grande y contenido.
-    */
 
     .html-code-animation {
         top: 28px;
@@ -2502,8 +2507,6 @@ document
 
 /* =====================================================
    ANIMACIÓN CÓDIGO HTML
-   ESCRIBE → TERMINA → BORRA → REPITE
-   SIN PAUSA LARGA
 ===================================================== */
 
 const codigoHTML = `<html>
