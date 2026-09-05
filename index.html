@@ -502,7 +502,7 @@ section {
 
 
 /* =====================================================
-   ANIMACIÓN DISEÑO ADAPTABLE
+   DISEÑO ADAPTABLE
 ===================================================== */
 
 .devices-animation {
@@ -1102,7 +1102,7 @@ section {
 
 
 /* =====================================================
-   CÓDIGO HTML DEL PROCESO
+   CÓDIGO HTML
 ===================================================== */
 
 .html-code-animation {
@@ -1576,14 +1576,16 @@ section {
 
 
 /* =====================================================
-   NOSOTROS
-   NUEVA ANIMACIÓN TECNOLÓGICA CONTENIDA
-   EXCLUSIVAMENTE EN ESTA SECCIÓN
+   SOBRE ERWEB
+   NUEVO DISEÑO CON INFORMACIÓN DESPLEGABLE
 ===================================================== */
 
 .about {
     position: relative;
-    background: #07111f;
+    background-image:
+        url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1800&q=90");
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 
@@ -1592,188 +1594,269 @@ section {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(0,183,255,0.10),
-            transparent 55%
+        linear-gradient(
+            135deg,
+            rgba(3,10,18,0.90),
+            rgba(3,15,28,0.82),
+            rgba(0,50,80,0.72)
         );
     z-index: 0;
-    pointer-events: none;
 }
+
+.about > * {
+    position: relative;
+    z-index: 2;
+}
+
+.about .section-title {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 35px;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.about-intro {
+    color: #e6edf4;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.about-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 30px;
+    border: 2px solid #00b7ff;
+    border-radius: 8px;
+    background: #00b7ff;
+    color: #00101c;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.about-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,183,255,0.30);
+}
+
+
+/* =====================================================
+   INFORMACIÓN DESPLEGABLE
+===================================================== */
+
+.about-details {
+    max-width: 900px;
+    margin: 28px auto 0;
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition:
+        max-height 0.7s ease,
+        opacity 0.45s ease,
+        transform 0.5s ease;
+    border-radius: 18px;
+}
+
+.about-details.active {
+    max-height: 900px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   FONDO ANIMADO DE HTML
+   SOLO DENTRO DE SOBRE ERWEB
+===================================================== */
 
 .about-code-background {
     position: absolute;
     inset: 0;
+    background:
+        linear-gradient(
+            rgba(2,9,17,0.76),
+            rgba(2,12,22,0.88)
+        );
     overflow: hidden;
     z-index: 0;
-    pointer-events: none;
-    opacity: 0.18;
 }
 
-.about-code-line {
+.about-code-background span {
     position: absolute;
-    color: #00b7ff;
+    color: rgba(0,183,255,0.16);
     font-family: "Courier New", monospace;
-    font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
-    text-shadow: 0 0 10px rgba(0,183,255,0.45);
-    animation: aboutCodeMove linear infinite;
-}
-
-.about-code-line:nth-child(1) {
-    left: 4%;
-    top: 12%;
-    animation-duration: 13s;
-}
-
-.about-code-line:nth-child(2) {
-    left: 20%;
-    top: 28%;
-    animation-duration: 17s;
-    animation-delay: -5s;
-}
-
-.about-code-line:nth-child(3) {
-    left: 52%;
-    top: 15%;
-    animation-duration: 15s;
-    animation-delay: -8s;
-}
-
-.about-code-line:nth-child(4) {
-    left: 68%;
-    top: 35%;
-    animation-duration: 19s;
-    animation-delay: -3s;
-}
-
-.about-code-line:nth-child(5) {
-    left: 8%;
-    top: 58%;
-    animation-duration: 16s;
-    animation-delay: -9s;
-}
-
-.about-code-line:nth-child(6) {
-    left: 43%;
-    top: 70%;
-    animation-duration: 14s;
-    animation-delay: -6s;
-}
-
-.about-code-line:nth-child(7) {
-    left: 73%;
-    top: 63%;
-    animation-duration: 18s;
-    animation-delay: -11s;
-}
-
-.about-code-line:nth-child(8) {
-    left: 30%;
-    top: 84%;
-    animation-duration: 15s;
-    animation-delay: -4s;
-}
-
-@keyframes aboutCodeMove {
-
-    0% {
-        transform: translateX(-80px) translateY(0);
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 0.75;
-    }
-
-    50% {
-        transform: translateX(70px) translateY(-8px);
-        opacity: 0.55;
-    }
-
-    85% {
-        opacity: 0.75;
-    }
-
-    100% {
-        transform: translateX(150px) translateY(5px);
-        opacity: 0;
-    }
-
-}
-
-.about-tech-panel {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: min(760px, 90%);
-    height: 260px;
-    transform: translate(-50%, -50%);
-    border: 1px solid rgba(0,183,255,0.14);
-    border-radius: 20px;
-    background: rgba(2,9,17,0.18);
-    box-shadow:
-        inset 0 0 50px rgba(0,183,255,0.04),
-        0 0 40px rgba(0,0,0,0.15);
-    overflow: hidden;
+    user-select: none;
     pointer-events: none;
 }
 
-.about-tech-panel::before {
-    content: "ERWEB / WEB DEVELOPMENT";
-    position: absolute;
-    top: 16px;
-    left: 20px;
-    color: rgba(0,183,255,0.65);
-    font-family: "Courier New", monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
+.about-code-background .code-one {
+    top: 10%;
+    left: -10%;
+    font-size: 18px;
+    animation: aboutCodeMoveOne 13s linear infinite;
 }
 
-.about-tech-panel::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(0,183,255,0.20),
-        transparent
-    );
-    animation: aboutScan 4s ease-in-out infinite;
+.about-code-background .code-two {
+    top: 35%;
+    left: -20%;
+    font-size: 14px;
+    animation: aboutCodeMoveTwo 16s linear infinite;
 }
 
-@keyframes aboutScan {
+.about-code-background .code-three {
+    top: 62%;
+    left: -15%;
+    font-size: 20px;
+    animation: aboutCodeMoveThree 18s linear infinite;
+}
+
+.about-code-background .code-four {
+    top: 82%;
+    left: -25%;
+    font-size: 13px;
+    animation: aboutCodeMoveFour 15s linear infinite;
+}
+
+.about-code-background .code-five {
+    top: 22%;
+    left: 65%;
+    font-size: 16px;
+    animation: aboutCodeFloat 5s ease-in-out infinite;
+}
+
+.about-code-background .code-six {
+    top: 72%;
+    left: 55%;
+    font-size: 15px;
+    animation: aboutCodeFloat 6s ease-in-out infinite 1s;
+}
+
+@keyframes aboutCodeMoveOne {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(125%);
+    }
+
+}
+
+@keyframes aboutCodeMoveTwo {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(140%);
+    }
+
+}
+
+@keyframes aboutCodeMoveThree {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(125%);
+    }
+
+}
+
+@keyframes aboutCodeMoveFour {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(145%);
+    }
+
+}
+
+@keyframes aboutCodeFloat {
 
     0%,100% {
-        transform: translateY(-85px);
-        opacity: 0.2;
+        transform: translateY(0);
+        opacity: 0.35;
     }
 
     50% {
-        transform: translateY(85px);
-        opacity: 0.7;
+        transform: translateY(-14px);
+        opacity: 0.75;
     }
 
 }
 
-.about-content {
+
+/* =====================================================
+   PANEL DE INFORMACIÓN
+===================================================== */
+
+.about-details-content {
     position: relative;
     z-index: 3;
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
+    padding: 40px 35px 35px;
+    background: rgba(5,14,25,0.76);
+    border: 1px solid rgba(0,183,255,0.45);
+    border-radius: 18px;
+    backdrop-filter: blur(4px);
 }
 
-.about-content p {
-    color: #aeb9c5;
+.about-details-content p {
+    color: #e3eaf1;
     line-height: 1.9;
     margin-bottom: 20px;
     font-size: 15px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.about-details-content p:last-of-type {
+    margin-bottom: 28px;
+}
+
+.about-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    border: 1px solid rgba(255,255,255,0.30);
+    border-radius: 8px;
+    background: rgba(7,17,31,0.80);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.about-back:hover {
+    border-color: #00b7ff;
+    color: #00b7ff;
+    transform: translateY(-2px);
 }
 
 
@@ -2217,9 +2300,7 @@ footer p {
     }
 
 
-    /* =================================================
-       TIENDA ONLINE
-    ================================================= */
+    /* TIENDA ONLINE */
 
     .store-animation {
         top: 62px;
@@ -2231,18 +2312,18 @@ footer p {
     }
 
 
-    /* =================================================
-       DISEÑO ADAPTABLE
-    ================================================= */
+    /* DISEÑO ADAPTABLE */
 
     .devices-animation {
         top: 70px;
         left: 50%;
         width: 94%;
         height: 130px;
+
         transform:
             translateX(-50%)
             scale(0.58);
+
         transform-origin: top center;
         overflow: hidden;
     }
@@ -2260,9 +2341,7 @@ footer p {
     }
 
 
-    /* =================================================
-       PUBLICACIÓN WEB
-    ================================================= */
+    /* PUBLICACIÓN WEB */
 
     .publish-animation {
         top: 35px;
@@ -2273,18 +2352,14 @@ footer p {
     }
 
 
-    /* =================================================
-       MANTENIMIENTO
-    ================================================= */
+    /* MANTENIMIENTO */
 
     .maintenance-animation {
         top: 42px;
     }
 
 
-    /* =================================================
-       WHATSAPP
-    ================================================= */
+    /* WHATSAPP */
 
     .whatsapp-animation {
         top: 78px;
@@ -2307,9 +2382,7 @@ footer p {
     }
 
 
-    /* =================================================
-       HABLAMOS
-    ================================================= */
+    /* HABLAMOS */
 
     .chat-animation {
         top: 40px;
@@ -2317,9 +2390,7 @@ footer p {
     }
 
 
-    /* =================================================
-       DISEÑAMOS
-    ================================================= */
+    /* DISEÑAMOS */
 
     .design-animation {
         top: 35px;
@@ -2327,9 +2398,7 @@ footer p {
     }
 
 
-    /* =================================================
-       DESARROLLAMOS
-    ================================================= */
+    /* DESARROLLAMOS */
 
     .html-code-animation {
         top: 28px;
@@ -2345,9 +2414,7 @@ footer p {
     }
 
 
-    /* =================================================
-       PUBLICAMOS
-    ================================================= */
+    /* PUBLICAMOS */
 
     .publish-process-animation {
         top: 30px;
@@ -2360,25 +2427,49 @@ footer p {
 
 
     /* =================================================
-       SOBRE ERWEB
-       ANIMACIÓN CONTENIDA
+       SOBRE ERWEB - MÓVIL
     ================================================= */
 
-    .about-code-background {
-        opacity: 0.15;
+    .about {
+        background-position: center;
     }
 
-    .about-code-line {
-        font-size: 9px;
+    .about-details-content {
+        padding: 30px 22px 25px;
     }
 
-    .about-tech-panel {
-        width: 92%;
-        height: 230px;
+    .about-details-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .about-code-background .code-one {
+        font-size: 14px;
+    }
+
+    .about-code-background .code-two {
+        font-size: 11px;
+    }
+
+    .about-code-background .code-three {
+        font-size: 15px;
+    }
+
+    .about-code-background .code-four {
+        font-size: 10px;
+    }
+
+    .about-code-background .code-five,
+    .about-code-background .code-six {
+        font-size: 12px;
     }
 
 }
 
+
+/* =====================================================
+   ACCESIBILIDAD
+===================================================== */
 
 @media(prefers-reduced-motion: reduce) {
 
@@ -2407,17 +2498,11 @@ onclick="toggleMenu()"
 aria-label="Abrir menú"><i class="fa-solid fa-bars"></i>
 
 </div><nav id="menu"><a href="#inicio">Inicio</a>
-
 <a href="#servicios">Servicios</a>
-
 <a href="#proceso">Procesos</a>
-
 <a href="#diseno-web">Diseño web</a>
-
 <a href="#planes">Costos</a>
-
 <a href="#nosotros">Sobre nosotros</a>
-
 <a href="#contacto">Contacto</a>
 
 </nav></header><!-- =====================================================
@@ -2437,31 +2522,33 @@ LO QUE HACEMOS
 Nuestro servicio
 </h2><p>
 Soluciones web pensadas para empresas, negocios y emprendimientos que quieren tener presencia profesional en Internet.
-</p></div><div class="service-grid"><!-- PÁGINA WEB --><div class="service-card service-web"><div class="web-animation"><div class="web-screen"><div class="web-lines"></div></div></div><div class="service-icon"><i class="fa-solid fa-code"></i>
-
+</p></div><div class="service-grid"><div class="service-card service-web"><div class="web-animation"><div class="web-screen"><div class="web-lines"></div></div></div><div class="service-icon">
+<i class="fa-solid fa-code"></i>
 </div><h3>
 Página web
 </h3><p>
 Creamos sitios web modernos y profesionales adaptados a las necesidades de cada negocio.
-</p></div><!-- TIENDA ONLINE --><div class="service-card service-store"><div class="store-animation"><div class="product">
+</p></div><div class="service-card service-store"><div class="store-animation"><div class="product">
 <i class="fa-solid fa-shirt"></i>
 </div><div class="product">
 <i class="fa-solid fa-shoe-prints"></i>
 </div><div class="product">
 <i class="fa-solid fa-bag-shopping"></i>
-</div></div><div class="service-icon"><i class="fa-solid fa-cart-shopping"></i>
-
+</div></div><div class="service-icon">
+<i class="fa-solid fa-cart-shopping"></i>
 </div><h3>
 Tiendas online (dentro de la página web)
 </h3><p>
 Diseñamos catálogos y espacios digitales para mostrar productos y facilitar las ventas.
-</p></div><!-- DISEÑO ADAPTABLE --><div class="service-card service-responsive"><div class="devices-animation"><div class="phone"></div><div class="tablet"></div><div class="laptop"></div></div><div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i>
-
+</p></div><div class="service-card service-responsive"><div class="devices-animation"><div class="phone"></div>
+<div class="tablet"></div>
+<div class="laptop"></div></div><div class="service-icon">
+<i class="fa-solid fa-mobile-screen-button"></i>
 </div><h3>
 Diseño adaptable
 </h3><p>
 Tu página funcionará correctamente en celulares, tablets y computadoras.
-</p></div><!-- PUBLICACIÓN --><div class="service-card service-publish"><div class="publish-animation"><div class="rocket">
+</p></div><div class="service-card service-publish"><div class="publish-animation"><div class="rocket">
 <i class="fa-solid fa-rocket"></i>
 </div><div class="cloud cloud-one">
 <i class="fa-solid fa-cloud"></i>
@@ -2469,30 +2556,30 @@ Tu página funcionará correctamente en celulares, tablets y computadoras.
 <i class="fa-solid fa-cloud"></i>
 </div><div class="cloud cloud-three">
 <i class="fa-solid fa-cloud"></i>
-</div></div><div class="service-icon"><i class="fa-solid fa-rocket"></i>
-
+</div></div><div class="service-icon">
+<i class="fa-solid fa-rocket"></i>
 </div><h3>
 Publicación web
 </h3><p>
 Te ayudamos a publicar tu página en Internet y dejarla disponible para tus clientes.
-</p></div><!-- MANTENIMIENTO --><div class="service-card service-maintenance"><div class="maintenance-animation"><i class="fa-solid fa-gear gear"></i>
+</p></div><div class="service-card service-maintenance"><div class="maintenance-animation"><i class="fa-solid fa-gear gear"></i>
 
 <i class="fa-solid fa-gear gear small"></i>
 
-</div><div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i>
-
+</div><div class="service-icon">
+<i class="fa-solid fa-screwdriver-wrench"></i>
 </div><h3>
 Mantenimiento
 </h3><p>
 Realizamos modificaciones, actualizaciones y mejoras para mantener tu página actualizada.
-</p></div><!-- WHATSAPP --><div class="service-card service-whatsapp"><div class="whatsapp-animation"><div class="chat-bubble chat-one">
+</p></div><div class="service-card service-whatsapp"><div class="whatsapp-animation"><div class="chat-bubble chat-one">
 Hola 👋
 </div><div class="whatsapp-logo">
 <i class="fa-brands fa-whatsapp"></i>
 </div><div class="chat-bubble chat-two">
 ¡Con gusto te ayudamos!
-</div></div><div class="service-icon"><i class="fa-brands fa-whatsapp"></i>
-
+</div></div><div class="service-icon">
+<i class="fa-brands fa-whatsapp"></i>
 </div><h3>
 Botón de WhatsApp
 </h3><p>
@@ -2503,7 +2590,7 @@ Agregamos un botón de contacto para que tus clientes puedan comunicarse directa
 NUESTRO MÉTODO
 </small><h2>
 ¿Cómo trabajamos?
-</h2></div><div class="process-grid"><!-- HABLAMOS --><div class="process-card process-talk"><div class="chat-animation"><div class="message one">
+</h2></div><div class="process-grid"><div class="process-card process-talk"><div class="chat-animation"><div class="message one">
 Buenos días
 </div><div class="message two">
 Necesito información
@@ -2517,20 +2604,20 @@ Podemos ayudarte
 Hablamos
 </h3><p>
 Conocemos tu negocio y lo que necesitas.
-</p></div><!-- DISEÑAMOS --><div class="process-card process-design"><div class="design-animation"><div class="design-panel"><div class="design-circle"></div><div class="design-line"></div></div></div><div class="number">
+</p></div><div class="process-card process-design"><div class="design-animation"><div class="design-panel"><div class="design-circle"></div><div class="design-line"></div></div></div><div class="number">
 2
 </div><h3>
 Diseñamos
 </h3><p>
 Creamos una propuesta visual para tu página.
-</p></div><!-- DESARROLLAMOS --><div class="process-card process-develop"><div class="html-code-animation"><div class="typing-code"></div></div><div class="number">
+</p></div><div class="process-card process-develop"><div class="html-code-animation"><div class="typing-code"></div></div><div class="number">
 3
 </div><h3>
 Desarrollamos
 </h3><p>
 Construimos la página y configuramos sus funciones.
-</p></div><!-- PUBLICAMOS --><div class="process-card process-publish"><div class="publish-process-animation"><div class="network-laptop"><i class="fa-solid fa-laptop"></i>
-
+</p></div><div class="process-card process-publish"><div class="publish-process-animation"><div class="network-laptop">
+<i class="fa-solid fa-laptop"></i>
 </div><div class="network-lines"></div><div class="connection-arrow connection-one">
 <i class="fa-solid fa-chevron-right"></i>
 </div><div class="connection-arrow connection-two">
@@ -2581,7 +2668,7 @@ OPCIONES
 Costos de creación de páginas web
 </h2><p>
 Elige la opción que mejor se adapte a las necesidades de tu negocio.
-</p></div><div class="plans-grid"><!-- PLAN 1 --><div class="plan"><div class="plan-label">
+</p></div><div class="plans-grid"><div class="plan"><div class="plan-label">
 PLAN 01
 </div><h3>
 Página Inicial Básica
@@ -2618,7 +2705,7 @@ rel="noopener noreferrer">
 
 Cotizar
 
-</a></div><!-- PLAN 2 --><div class="plan"><div class="plan-label">
+</a></div><div class="plan"><div class="plan-label">
 PLAN 02
 </div><h3>
 Página Profesional
@@ -2670,34 +2757,51 @@ Mantenimiento de tu página web
 El servicio de mantenimiento incluye actualizaciones periódicas de la página, cambios de imágenes, modificación de textos e información, ajustes y mejoras necesarias para mantener el sitio actualizado.
 </p></div></section><!-- =====================================================
      SOBRE ERWEB
-===================================================== --><section class="about" id="nosotros"><!-- =====================================================
-     ANIMACIÓN DE PROGRAMACIÓN
-     ESTA ANIMACIÓN EXISTE SOLO DENTRO DE SOBRE ERWEB
-===================================================== --><div class="about-code-background"><div class="about-code-line">
-&lt;html&gt; &nbsp; &lt;body&gt; &nbsp; ERWEB
-</div><div class="about-code-line">
-&lt;section&gt; &nbsp; diseño-web &nbsp; &lt;/section&gt;
-</div><div class="about-code-line">
-const website = "profesional";
-</div><div class="about-code-line">
-&lt;h1&gt; Tu negocio en Internet &lt;/h1&gt;
-</div><div class="about-code-line">
-responsive: true; &nbsp; modern: true;
-</div><div class="about-code-line">
-function crearPaginaWeb() { return ERWEB; }
-</div><div class="about-code-line">
-&lt;button&gt; Contactar &lt;/button&gt;
-</div><div class="about-code-line">
-CSS { design: modern; responsive: true; }
-</div></div><div class="about-tech-panel"></div><div class="section-title"><small>
+===================================================== --><section class="about" id="nosotros"><div class="section-title"><small>
 SOBRE ERWEB
 </small><h2>
 Transformamos ideas en páginas web
-</h2></div><div class="about-content"><p>
+</h2></div><div class="about-content"><p class="about-intro">
+Creamos soluciones digitales pensadas para ayudar a tu negocio a tener una presencia profesional en Internet.
+</p><button
+class="about-toggle"
+id="aboutOpenBtn"
+onclick="abrirSobre()">
+
+Ver más
+<i class="fa-solid fa-chevron-down"></i>
+
+</button><div
+class="about-details"
+id="aboutDetails"><!-- =================================================
+     ANIMACIÓN HTML EXCLUSIVA DE SOBRE ERWEB
+================================================= --><div class="about-code-background"><span class="code-one">
+&lt;html&gt; &lt;head&gt; &lt;title&gt; ERWEB &lt;/title&gt; &lt;/head&gt;
+</span><span class="code-two">
+&lt;div class="website"&gt; &lt;section&gt; &lt;h1&gt; Tu negocio en Internet &lt;/h1&gt;
+</span><span class="code-three">
+&lt;body&gt; &lt;header&gt; ERWEB &lt;/header&gt; &lt;main&gt; Diseño · Tecnología · Web &lt;/main&gt;
+</span><span class="code-four">
+&lt;/section&gt; &lt;/main&gt; &lt;footer&gt; ERWEB © 2026 &lt;/footer&gt; &lt;/body&gt; &lt;/html&gt;
+</span><span class="code-five">
+&lt;database&gt; DATA &lt;/database&gt;
+</span><span class="code-six">
+&lt;script&gt; website.init(); &lt;/script&gt;
+</span></div><div class="about-details-content"><p>
 ERWEB nace con la idea de ayudar a pequeños negocios, emprendedores y empresas a tener una presencia profesional en Internet.
 </p><p>
 Creemos que una página web no tiene que ser complicada ni inaccesible. Nuestro objetivo es crear sitios modernos, funcionales y adaptados a las necesidades de cada cliente.
-</p></div></section><!-- =====================================================
+</p><p>
+Trabajamos para que cada página represente de manera clara y profesional la identidad de cada negocio, utilizando tecnología web moderna y diseños adaptados a celulares, tablets y computadoras.
+</p><button
+class="about-back"
+onclick="cerrarSobre()">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+Regresar
+
+</button></div></div></div></section><!-- =====================================================
      CONTACTO
 ===================================================== --><section class="contact" id="contacto"><div class="section-title"><small>
 HABLEMOS
@@ -2791,7 +2895,7 @@ document
 
 
 /* =====================================================
-   ANIMACIÓN CÓDIGO HTML
+   ANIMACIÓN CÓDIGO HTML - PROCESO
 ===================================================== */
 
 const codigoHTML = `<html>
@@ -2891,6 +2995,48 @@ function animarCodigo() {
 
 
 animarCodigo();
+
+
+/* =====================================================
+   SOBRE ERWEB - ABRIR
+===================================================== */
+
+function abrirSobre() {
+
+    const detalles =
+        document.getElementById("aboutDetails");
+
+    const boton =
+        document.getElementById("aboutOpenBtn");
+
+    detalles.classList.add("active");
+
+    boton.style.display = "none";
+
+}
+
+
+/* =====================================================
+   SOBRE ERWEB - REGRESAR
+===================================================== */
+
+function cerrarSobre() {
+
+    const detalles =
+        document.getElementById("aboutDetails");
+
+    const boton =
+        document.getElementById("aboutOpenBtn");
+
+    detalles.classList.remove("active");
+
+    setTimeout(() => {
+
+        boton.style.display = "inline-flex";
+
+    }, 400);
+
+}
 
 </script></body>
 </html>
