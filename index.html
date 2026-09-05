@@ -1,16 +1,21 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ERWEB | Creación de páginas web profesionales en Guatemala</title><meta name="description"
+<!DOCTYPE html><html lang="es">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ERWEB | Creación de páginas web profesionales en Guatemala</title><meta name="description"
 content="ERWEB crea páginas web profesionales, modernas y adaptadas a celulares para empresas, negocios y emprendimientos en Guatemala.">
 
 <meta name="keywords"
 content="ERWEB, páginas web Guatemala, creación de páginas web, diseño web Guatemala, páginas web profesionales, sitios web, diseño adaptable, páginas para negocios">
 
-<meta name="author" content="ERWEB"><meta name="robots" content="index, follow"><link rel="canonical" href="https://erwebinicio.github.io/"><meta property="og:title"
+<meta name="author" content="ERWEB">
+<meta name="robots" content="index, follow"><link rel="canonical" href="https://erwebinicio.github.io/"><meta property="og:title"
 content="ERWEB | Creación de páginas web profesionales">
 
 <meta property="og:description"
 content="Creamos páginas web modernas, profesionales y adaptadas a celulares para empresas, negocios y emprendimientos.">
 
-<meta property="og:type" content="website"><meta property="og:image" content="LOGO.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect"
+<meta property="og:type" content="website">
+<meta property="og:image" content="LOGO.jpg"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
 href="https://fonts.gstatic.com"
 crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
 rel="stylesheet"><link rel="stylesheet"
@@ -503,12 +508,12 @@ section {
 
 /* =====================================================
    ANIMACIÓN DISEÑO ADAPTABLE
-   CORRECCIÓN DEFINITIVA
+   MOVIMIENTO AMPLIADO Y CONTROLADO
 ===================================================== */
 
 .devices-animation {
     position: absolute;
-    top: 62px;
+    top: 58px;
     left: 50%;
     transform: translateX(-50%) scale(0.66);
     transform-origin: top center;
@@ -524,13 +529,9 @@ section {
     opacity: 0.58;
     z-index: 2;
 
-    /*
-       IMPORTANTE:
-       No recortamos la animación.
-       Esto permite que la base del laptop
-       y el movimiento vertical se vean completos.
-    */
-    overflow: visible;
+    /* La animación queda dentro de su zona
+       y no invade el contenido inferior */
+    overflow: hidden;
 
     pointer-events: none;
 }
@@ -544,11 +545,11 @@ section {
 
     background: #07111f;
 
-    margin-top: 8px;
+    margin-top: 12px;
 
     flex-shrink: 0;
 
-    animation: deviceFloat 2.5s ease-in-out infinite;
+    animation: deviceFloatPhone 2.8s ease-in-out infinite;
 }
 
 .tablet {
@@ -560,11 +561,11 @@ section {
 
     background: #07111f;
 
-    margin-top: 0;
+    margin-top: 5px;
 
     flex-shrink: 0;
 
-    animation: deviceFloat 2.5s ease-in-out infinite 0.3s;
+    animation: deviceFloatTablet 2.8s ease-in-out infinite 0.25s;
 }
 
 .laptop {
@@ -576,13 +577,13 @@ section {
 
     background: #07111f;
 
-    margin-top: 3px;
+    margin-top: 8px;
 
     position: relative;
 
     flex-shrink: 0;
 
-    animation: deviceFloat 2.5s ease-in-out infinite 0.6s;
+    animation: deviceFloatLaptop 2.8s ease-in-out infinite 0.5s;
 }
 
 .laptop::after {
@@ -601,13 +602,70 @@ section {
     border-radius: 4px;
 }
 
-@keyframes deviceFloat {
+
+/* TELÉFONO */
+
+@keyframes deviceFloatPhone {
 
     0%,100% {
         transform: translateY(0);
     }
 
+    25% {
+        transform: translateY(-9px);
+    }
+
     50% {
+        transform: translateY(-15px);
+    }
+
+    75% {
+        transform: translateY(-6px);
+    }
+
+}
+
+
+/* TABLET */
+
+@keyframes deviceFloatTablet {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-12px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    75% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* LAPTOP */
+
+@keyframes deviceFloatLaptop {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-8px);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+
+    75% {
         transform: translateY(-5px);
     }
 
@@ -2038,12 +2096,13 @@ footer p {
 
     /* =================================================
        DISEÑO ADAPTABLE
-       CORRECCIÓN PARA MÓVIL
+       MOVIMIENTO AMPLIADO PARA MÓVIL
     ================================================= */
 
     .devices-animation {
-        top: 68px;
+        top: 62px;
         left: 50%;
+
         width: 94%;
         height: 120px;
 
@@ -2053,19 +2112,19 @@ footer p {
 
         transform-origin: top center;
 
-        overflow: visible;
+        overflow: hidden;
     }
 
     .phone {
-        margin-top: 5px;
+        margin-top: 9px;
     }
 
     .tablet {
-        margin-top: 0;
+        margin-top: 3px;
     }
 
     .laptop {
-        margin-top: 3px;
+        margin-top: 6px;
     }
 
 
@@ -2201,13 +2260,9 @@ onclick="toggleMenu()"
 aria-label="Abrir menú"><i class="fa-solid fa-bars"></i>
 
 </div><nav id="menu"><a href="#inicio">Inicio</a>
-
 <a href="#servicios">Servicios</a>
-
 <a href="#diseno-web">Diseño web</a>
-
 <a href="#planes">Costos</a>
-
 <a href="#contacto">Contacto</a>
 
 </nav></header><!-- =====================================================
@@ -2379,7 +2434,14 @@ Página Inicial Básica
 Una opción ideal para comenzar tu presencia profesional en Internet.
 </p><div class="includes-title">
 Incluye:
-</div><ul><li>Página informativa</li><li>Diseño adaptable</li><li>Sección de contacto</li><li>Botón de WhatsApp</li><li>Publicación web</li><li>Galería de imágenes</li><li>Optimización para celulares</li><li>Soporte</li></ul><div class="cost-box"><div class="cost-title">
+</div><ul><li>Página informativa</li>
+<li>Diseño adaptable</li>
+<li>Sección de contacto</li>
+<li>Botón de WhatsApp</li>
+<li>Publicación web</li>
+<li>Galería de imágenes</li>
+<li>Optimización para celulares</li>
+<li>Soporte</li></ul><div class="cost-box"><div class="cost-title">
 Costo de creación
 </div><div class="price">
 Q750 – Q950
@@ -2409,7 +2471,23 @@ Página Profesional
 Una solución completa para empresas y negocios que buscan una presencia digital profesional, moderna y personalizada.
 </p><div class="includes-title">
 Incluye:
-</div><ul><li>Diseño personalizado</li><li>Varias secciones</li><li>Galería de imágenes</li><li>Videos</li><li>Botón de WhatsApp</li><li>Botón de correo electrónico</li><li>Botón de Facebook</li><li>Botón de Instagram</li><li>Botón de TikTok</li><li>Formulario de contacto</li><li>Optimización para celulares</li><li>Ubicación a través de Google Maps</li><li>Sección para subir CVs o currículums</li><li>Pestañas para catálogo de productos</li><li>Integración con redes sociales</li><li>Soporte</li><li>Configuración técnica y seguridad básica</li></ul><div class="cost-box"><div class="cost-title">
+</div><ul><li>Diseño personalizado</li>
+<li>Varias secciones</li>
+<li>Galería de imágenes</li>
+<li>Videos</li>
+<li>Botón de WhatsApp</li>
+<li>Botón de correo electrónico</li>
+<li>Botón de Facebook</li>
+<li>Botón de Instagram</li>
+<li>Botón de TikTok</li>
+<li>Formulario de contacto</li>
+<li>Optimización para celulares</li>
+<li>Ubicación a través de Google Maps</li>
+<li>Sección para subir CVs o currículums</li>
+<li>Pestañas para catálogo de productos</li>
+<li>Integración con redes sociales</li>
+<li>Soporte</li>
+<li>Configuración técnica y seguridad básica</li></ul><div class="cost-box"><div class="cost-title">
 Costo de creación
 </div><div class="price">
 Q1,400
@@ -2451,7 +2529,9 @@ Creemos que una página web no tiene que ser complicada ni inaccesible. Nuestro 
 HABLEMOS
 </small><h2>
 ¿Tienes un proyecto?
-</h2></div><div class="contact-box"><div class="contact-circle contact-circle-1"></div><div class="contact-circle contact-circle-2"></div><div class="contact-circle contact-circle-3"></div><h3>
+</h2></div><div class="contact-box"><div class="contact-circle contact-circle-1"></div>
+<div class="contact-circle contact-circle-2"></div>
+<div class="contact-circle contact-circle-3"></div><h3>
 Cuéntanos qué necesitas
 </h3><p>
 Escríbenos y cuéntanos qué tipo de página web necesitas. Te ayudaremos a encontrar la mejor opción para tu negocio.
@@ -2641,4 +2721,5 @@ function animarCodigo() {
 
 animarCodigo();
 
-</script></body></html>
+</script></body>
+</html>
