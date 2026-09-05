@@ -508,18 +508,22 @@ section {
 
 /* =====================================================
    ANIMACIÓN DISEÑO ADAPTABLE
-   MOVIMIENTO AMPLIADO Y CONTROLADO
+   CORREGIDA PARA EVITAR RECORTE SUPERIOR
 ===================================================== */
 
 .devices-animation {
     position: absolute;
-    top: 58px;
+
+    /* Se baja ligeramente la zona para dejar
+       espacio de seguridad arriba */
+    top: 68px;
+
     left: 50%;
     transform: translateX(-50%) scale(0.66);
     transform-origin: top center;
 
     width: 94%;
-    height: 125px;
+    height: 130px;
 
     display: flex;
     align-items: flex-start;
@@ -529,12 +533,17 @@ section {
     opacity: 0.58;
     z-index: 2;
 
-    /* La animación queda dentro de su zona
-       y no invade el contenido inferior */
+    /*
+       Se mantiene oculto para que nada salga
+       del área de animación.
+    */
     overflow: hidden;
 
     pointer-events: none;
 }
+
+
+/* TELÉFONO */
 
 .phone {
     width: 46px;
@@ -545,12 +554,19 @@ section {
 
     background: #07111f;
 
-    margin-top: 12px;
+    /*
+       Más espacio superior para permitir
+       el movimiento hacia arriba sin recorte.
+    */
+    margin-top: 28px;
 
     flex-shrink: 0;
 
     animation: deviceFloatPhone 2.8s ease-in-out infinite;
 }
+
+
+/* TABLET */
 
 .tablet {
     width: 78px;
@@ -561,12 +577,18 @@ section {
 
     background: #07111f;
 
-    margin-top: 5px;
+    /*
+       Espacio de seguridad superior.
+    */
+    margin-top: 24px;
 
     flex-shrink: 0;
 
     animation: deviceFloatTablet 2.8s ease-in-out infinite 0.25s;
 }
+
+
+/* LAPTOP */
 
 .laptop {
     width: 125px;
@@ -577,7 +599,11 @@ section {
 
     background: #07111f;
 
-    margin-top: 8px;
+    /*
+       Espacio superior para evitar
+       que la animación toque el borde.
+    */
+    margin-top: 27px;
 
     position: relative;
 
@@ -603,7 +629,9 @@ section {
 }
 
 
-/* TELÉFONO */
+/* =====================================================
+   MOVIMIENTO TELÉFONO
+===================================================== */
 
 @keyframes deviceFloatPhone {
 
@@ -626,7 +654,9 @@ section {
 }
 
 
-/* TABLET */
+/* =====================================================
+   MOVIMIENTO TABLET
+===================================================== */
 
 @keyframes deviceFloatTablet {
 
@@ -649,7 +679,9 @@ section {
 }
 
 
-/* LAPTOP */
+/* =====================================================
+   MOVIMIENTO LAPTOP
+===================================================== */
 
 @keyframes deviceFloatLaptop {
 
@@ -2096,15 +2128,20 @@ footer p {
 
     /* =================================================
        DISEÑO ADAPTABLE
-       MOVIMIENTO AMPLIADO PARA MÓVIL
+       CORRECCIÓN ESPECIAL PARA MÓVIL
     ================================================= */
 
     .devices-animation {
-        top: 62px;
+        /*
+           Se baja la animación para crear
+           una zona segura arriba.
+        */
+        top: 70px;
+
         left: 50%;
 
         width: 94%;
-        height: 120px;
+        height: 130px;
 
         transform:
             translateX(-50%)
@@ -2112,19 +2149,29 @@ footer p {
 
         transform-origin: top center;
 
+        /*
+           La zona permanece cerrada para que
+           ningún dispositivo salga del recuadro.
+        */
         overflow: hidden;
     }
 
+    /*
+       Los tres dispositivos reciben espacio
+       superior adicional. Esto permite que
+       suban bastante sin tocar el borde.
+    */
+
     .phone {
-        margin-top: 9px;
+        margin-top: 27px;
     }
 
     .tablet {
-        margin-top: 3px;
+        margin-top: 23px;
     }
 
     .laptop {
-        margin-top: 6px;
+        margin-top: 26px;
     }
 
 
@@ -2245,9 +2292,15 @@ footer p {
 
 }
 
-</style></head><body><!-- =====================================================
+</style></head><body>
+
+<!-- =====================================================
      HEADER
-===================================================== --><header><a href="#inicio"
+===================================================== -->
+
+<header>
+
+<a href="#inicio"
 class="logo-container"
 aria-label="ERWEB Inicio">
 
@@ -2255,207 +2308,634 @@ aria-label="ERWEB Inicio">
 alt="Logo ERWEB"
 class="logo-img">
 
-</a><div class="menu-btn"
-onclick="toggleMenu()"
-aria-label="Abrir menú"><i class="fa-solid fa-bars"></i>
+</a>
 
-</div><nav id="menu"><a href="#inicio">Inicio</a>
+<div class="menu-btn"
+onclick="toggleMenu()"
+aria-label="Abrir menú">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+<nav id="menu">
+
+<a href="#inicio">Inicio</a>
 <a href="#servicios">Servicios</a>
 <a href="#diseno-web">Diseño web</a>
 <a href="#planes">Costos</a>
 <a href="#contacto">Contacto</a>
 
-</nav></header><!-- =====================================================
+</nav>
+
+</header>
+
+
+<!-- =====================================================
      INICIO
-===================================================== --><section class="hero" id="inicio"><div class="hero-content"><small>
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<small>
 DISEÑO · TECNOLOGÍA · PRESENCIA DIGITAL
-</small><h1>
+</small>
+
+<h1>
 Tu negocio merece una web
 <span>profesional.</span>
-</h1><p>
+</h1>
+
+<p>
 En ERWEB creamos páginas web modernas, rápidas y adaptadas a celulares para ayudarte a mostrar tu negocio en Internet.
-</p></div></section><!-- =====================================================
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      SERVICIOS
-===================================================== --><section class="services" id="servicios"><div class="section-title"><small>
+===================================================== -->
+
+<section class="services" id="servicios">
+
+<div class="section-title">
+
+<small>
 LO QUE HACEMOS
-</small><h2>
+</small>
+
+<h2>
 Nuestro servicio
-</h2><p>
+</h2>
+
+<p>
 Soluciones web pensadas para empresas, negocios y emprendimientos que quieren tener presencia profesional en Internet.
-</p></div><div class="service-grid"><!-- PÁGINA WEB --><div class="service-card service-web"><div class="web-animation"><div class="web-screen"><div class="web-lines"></div></div></div><div class="service-icon"><i class="fa-solid fa-code"></i>
+</p>
 
-</div><h3>
+</div>
+
+
+<div class="service-grid">
+
+
+<!-- PÁGINA WEB -->
+
+<div class="service-card service-web">
+
+<div class="web-animation">
+
+<div class="web-screen">
+
+<div class="web-lines"></div>
+
+</div>
+
+</div>
+
+<div class="service-icon">
+
+<i class="fa-solid fa-code"></i>
+
+</div>
+
+<h3>
 Página web
-</h3><p>
+</h3>
+
+<p>
 Creamos sitios web modernos y profesionales adaptados a las necesidades de cada negocio.
-</p></div><!-- TIENDA ONLINE --><div class="service-card service-store"><div class="store-animation"><div class="product">
+</p>
+
+</div>
+
+
+<!-- TIENDA ONLINE -->
+
+<div class="service-card service-store">
+
+<div class="store-animation">
+
+<div class="product">
 <i class="fa-solid fa-shirt"></i>
-</div><div class="product">
+</div>
+
+<div class="product">
 <i class="fa-solid fa-shoe-prints"></i>
-</div><div class="product">
+</div>
+
+<div class="product">
 <i class="fa-solid fa-bag-shopping"></i>
-</div></div><div class="service-icon"><i class="fa-solid fa-cart-shopping"></i>
+</div>
 
-</div><h3>
+</div>
+
+<div class="service-icon">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+</div>
+
+<h3>
 Tiendas online (dentro de la página web)
-</h3><p>
+</h3>
+
+<p>
 Diseñamos catálogos y espacios digitales para mostrar productos y facilitar las ventas.
-</p></div><!-- DISEÑO ADAPTABLE --><div class="service-card service-responsive"><div class="devices-animation"><div class="phone"></div><div class="tablet"></div><div class="laptop"></div></div><div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i>
+</p>
 
-</div><h3>
+</div>
+
+
+<!-- DISEÑO ADAPTABLE -->
+
+<div class="service-card service-responsive">
+
+<div class="devices-animation">
+
+<div class="phone"></div>
+
+<div class="tablet"></div>
+
+<div class="laptop"></div>
+
+</div>
+
+<div class="service-icon">
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+</div>
+
+<h3>
 Diseño adaptable
-</h3><p>
-Tu página funcionará correctamente en celulares, tablets y computadoras.
-</p></div><!-- PUBLICACIÓN --><div class="service-card service-publish"><div class="publish-animation"><div class="rocket">
-<i class="fa-solid fa-rocket"></i>
-</div><div class="cloud cloud-one">
-<i class="fa-solid fa-cloud"></i>
-</div><div class="cloud cloud-two">
-<i class="fa-solid fa-cloud"></i>
-</div><div class="cloud cloud-three">
-<i class="fa-solid fa-cloud"></i>
-</div></div><div class="service-icon"><i class="fa-solid fa-rocket"></i>
+</h3>
 
-</div><h3>
+<p>
+Tu página funcionará correctamente en celulares, tablets y computadoras.
+</p>
+
+</div>
+
+
+<!-- PUBLICACIÓN -->
+
+<div class="service-card service-publish">
+
+<div class="publish-animation">
+
+<div class="rocket">
+<i class="fa-solid fa-rocket"></i>
+</div>
+
+<div class="cloud cloud-one">
+<i class="fa-solid fa-cloud"></i>
+</div>
+
+<div class="cloud cloud-two">
+<i class="fa-solid fa-cloud"></i>
+</div>
+
+<div class="cloud cloud-three">
+<i class="fa-solid fa-cloud"></i>
+</div>
+
+</div>
+
+<div class="service-icon">
+
+<i class="fa-solid fa-rocket"></i>
+
+</div>
+
+<h3>
 Publicación web
-</h3><p>
+</h3>
+
+<p>
 Te ayudamos a publicar tu página en Internet y dejarla disponible para tus clientes.
-</p></div><!-- MANTENIMIENTO --><div class="service-card service-maintenance"><div class="maintenance-animation"><i class="fa-solid fa-gear gear"></i>
+</p>
+
+</div>
+
+
+<!-- MANTENIMIENTO -->
+
+<div class="service-card service-maintenance">
+
+<div class="maintenance-animation">
+
+<i class="fa-solid fa-gear gear"></i>
 
 <i class="fa-solid fa-gear gear small"></i>
 
-</div><div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i>
+</div>
 
-</div><h3>
+<div class="service-icon">
+
+<i class="fa-solid fa-screwdriver-wrench"></i>
+
+</div>
+
+<h3>
 Mantenimiento
-</h3><p>
+</h3>
+
+<p>
 Realizamos modificaciones, actualizaciones y mejoras para mantener tu página actualizada.
-</p></div><!-- WHATSAPP --><div class="service-card service-whatsapp"><div class="whatsapp-animation"><div class="chat-bubble chat-one">
+</p>
+
+</div>
+
+
+<!-- WHATSAPP -->
+
+<div class="service-card service-whatsapp">
+
+<div class="whatsapp-animation">
+
+<div class="chat-bubble chat-one">
 Hola 👋
-</div><div class="whatsapp-logo"><i class="fa-brands fa-whatsapp"></i>
+</div>
 
-</div><div class="chat-bubble chat-two">
+<div class="whatsapp-logo">
+<i class="fa-brands fa-whatsapp"></i>
+</div>
+
+<div class="chat-bubble chat-two">
 ¡Con gusto te ayudamos!
-</div></div><div class="service-icon"><i class="fa-brands fa-whatsapp"></i>
+</div>
 
-</div><h3>
+</div>
+
+<div class="service-icon">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</div>
+
+<h3>
 Botón de WhatsApp
-</h3><p>
+</h3>
+
+<p>
 Agregamos un botón de contacto para que tus clientes puedan comunicarse directamente contigo.
-</p></div></div></section><!-- =====================================================
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      PROCESO
-===================================================== --><section id="proceso"><div class="section-title"><small>
+===================================================== -->
+
+<section id="proceso">
+
+<div class="section-title">
+
+<small>
 NUESTRO MÉTODO
-</small><h2>
+</small>
+
+<h2>
 ¿Cómo trabajamos?
-</h2></div><div class="process-grid"><!-- HABLAMOS --><div class="process-card process-talk"><div class="chat-animation"><div class="message one">
+</h2>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<!-- HABLAMOS -->
+
+<div class="process-card process-talk">
+
+<div class="chat-animation">
+
+<div class="message one">
 Buenos días
-</div><div class="message two">
+</div>
+
+<div class="message two">
 Necesito información
-</div><div class="message three">
+</div>
+
+<div class="message three">
 Sí, con gusto
-</div><div class="message four">
+</div>
+
+<div class="message four">
 Podemos ayudarte
-</div></div><div class="number">
+</div>
+
+</div>
+
+<div class="number">
 1
-</div><h3>
+</div>
+
+<h3>
 Hablamos
-</h3><p>
+</h3>
+
+<p>
 Conocemos tu negocio y lo que necesitas.
-</p></div><!-- DISEÑAMOS --><div class="process-card process-design"><div class="design-animation"><div class="design-panel"><div class="design-circle"></div><div class="design-line"></div></div></div><div class="number">
+</p>
+
+</div>
+
+
+<!-- DISEÑAMOS -->
+
+<div class="process-card process-design">
+
+<div class="design-animation">
+
+<div class="design-panel">
+
+<div class="design-circle"></div>
+
+<div class="design-line"></div>
+
+</div>
+
+</div>
+
+<div class="number">
 2
-</div><h3>
+</div>
+
+<h3>
 Diseñamos
-</h3><p>
+</h3>
+
+<p>
 Creamos una propuesta visual para tu página.
-</p></div><!-- DESARROLLAMOS --><div class="process-card process-develop"><div class="html-code-animation"><div class="typing-code"></div></div><div class="number">
+</p>
+
+</div>
+
+
+<!-- DESARROLLAMOS -->
+
+<div class="process-card process-develop">
+
+<div class="html-code-animation">
+
+<div class="typing-code"></div>
+
+</div>
+
+<div class="number">
 3
-</div><h3>
+</div>
+
+<h3>
 Desarrollamos
-</h3><p>
+</h3>
+
+<p>
 Construimos la página y configuramos sus funciones.
-</p></div><!-- PUBLICAMOS --><div class="process-card process-publish"><div class="publish-process-animation"><div class="network-laptop"><i class="fa-solid fa-laptop"></i>
+</p>
 
-</div><div class="network-lines"></div><div class="connection-arrow connection-one"><i class="fa-solid fa-chevron-right"></i>
+</div>
 
-</div><div class="connection-arrow connection-two"><i class="fa-solid fa-chevron-right"></i>
 
-</div><div class="connection-arrow connection-three"><i class="fa-solid fa-chevron-right"></i>
+<!-- PUBLICAMOS -->
 
-</div><div class="planet"></div></div><div class="number">
+<div class="process-card process-publish">
+
+<div class="publish-process-animation">
+
+<div class="network-laptop">
+
+<i class="fa-solid fa-laptop"></i>
+
+</div>
+
+<div class="network-lines"></div>
+
+<div class="connection-arrow connection-one">
+<i class="fa-solid fa-chevron-right"></i>
+</div>
+
+<div class="connection-arrow connection-two">
+<i class="fa-solid fa-chevron-right"></i>
+</div>
+
+<div class="connection-arrow connection-three">
+<i class="fa-solid fa-chevron-right"></i>
+</div>
+
+<div class="planet"></div>
+
+</div>
+
+<div class="number">
 4
-</div><h3>
+</div>
+
+<h3>
 Publicamos
-</h3><p>
+</h3>
+
+<p>
 Ponemos tu sitio en Internet para que tus clientes puedan encontrarlo.
-</p></div></div></section><!-- =====================================================
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      DISEÑO WEB
-===================================================== --><section class="web-design" id="diseno-web"><div class="section-title"><small>
+===================================================== -->
+
+<section class="web-design" id="diseno-web">
+
+<div class="section-title">
+
+<small>
 CREACIÓN WEB
-</small><h2>
+</small>
+
+<h2>
 Diseñamos tu presencia digital
-</h2><p>
+</h2>
+
+<p>
 Creamos páginas web modernas, atractivas y adaptadas a diferentes dispositivos para que tu negocio tenga una presencia profesional en Internet.
-</p></div><div class="web-design-grid"><div class="web-design-card"><img
+</p>
+
+</div>
+
+
+<div class="web-design-grid">
+
+<div class="web-design-card">
+
+<img
 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
 alt="Diseño y desarrollo de páginas web"
 loading="lazy">
 
-<div class="web-design-overlay"><span>
+<div class="web-design-overlay">
+
+<span>
 DISEÑO Y DESARROLLO
-</span><h3>
+</span>
+
+<h3>
 Páginas web profesionales
-</h3><p>
+</h3>
+
+<p>
 Diseños modernos pensados para presentar tu negocio de manera profesional.
-</p></div></div><div class="web-design-card"><img
+</p>
+
+</div>
+
+</div>
+
+
+<div class="web-design-card">
+
+<img
 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
 alt="Diseño web adaptable"
 loading="lazy">
 
-<div class="web-design-overlay"><span>
+<div class="web-design-overlay">
+
+<span>
 DISEÑO ADAPTABLE
-</span><h3>
+</span>
+
+<h3>
 Tu web en cualquier dispositivo
-</h3><p>
+</h3>
+
+<p>
 Una experiencia visual preparada para celulares, tablets y computadoras.
-</p></div></div></div></section><!-- =====================================================
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      COSTOS
-===================================================== --><section class="plans" id="planes"><div class="section-title"><small>
+===================================================== -->
+
+<section class="plans" id="planes">
+
+<div class="section-title">
+
+<small>
 OPCIONES
-</small><h2>
+</small>
+
+<h2>
 Costos de creación de páginas web
-</h2><p>
+</h2>
+
+<p>
 Elige la opción que mejor se adapte a las necesidades de tu negocio.
-</p></div><div class="plans-grid"><!-- PLAN 1 --><div class="plan"><div class="plan-label">
+</p>
+
+</div>
+
+
+<div class="plans-grid">
+
+
+<!-- PLAN 1 -->
+
+<div class="plan">
+
+<div class="plan-label">
 PLAN 01
-</div><h3>
+</div>
+
+<h3>
 Página Inicial Básica
-</h3><p class="plan-description">
+</h3>
+
+<p class="plan-description">
 Una opción ideal para comenzar tu presencia profesional en Internet.
-</p><div class="includes-title">
+</p>
+
+<div class="includes-title">
 Incluye:
-</div><ul><li>Página informativa</li>
+</div>
+
+<ul>
+
+<li>Página informativa</li>
 <li>Diseño adaptable</li>
 <li>Sección de contacto</li>
 <li>Botón de WhatsApp</li>
 <li>Publicación web</li>
 <li>Galería de imágenes</li>
 <li>Optimización para celulares</li>
-<li>Soporte</li></ul><div class="cost-box"><div class="cost-title">
+<li>Soporte</li>
+
+</ul>
+
+<div class="cost-box">
+
+<div class="cost-title">
 Costo de creación
-</div><div class="price">
+</div>
+
+<div class="price">
 Q750 – Q950
-</div><p class="payment-description">
+</div>
+
+<p class="payment-description">
 Pago único por la creación de la página web.
-</p><div class="cost-title">
+</p>
+
+<div class="cost-title">
 Mantenimiento anual
-</div><div class="maintenance-price">
+</div>
+
+<div class="maintenance-price">
 Q700 – Q950
-</div><div class="maintenance"><h4>
+</div>
+
+<div class="maintenance">
+
+<h4>
 ¿Qué incluye el mantenimiento?
-</h4><p>
+</h4>
+
+<p>
 Mantenimiento y actualización de la página, cambio de imágenes, modificación de información y textos, ajustes necesarios y mejoras para mantener el sitio actualizado.
-</p></div></div><a
+</p>
+
+</div>
+
+</div>
+
+<a
 href="https://m.me/61594227622678?ref=Quiero%20cotizar%20una%20Pagina%20Inicial%20Basica"
 class="btn btn-secondary"
 target="_blank"
@@ -2463,15 +2943,34 @@ rel="noopener noreferrer">
 
 Cotizar
 
-</a></div><!-- PLAN 2 --><div class="plan"><div class="plan-label">
+</a>
+
+</div>
+
+
+<!-- PLAN 2 -->
+
+<div class="plan">
+
+<div class="plan-label">
 PLAN 02
-</div><h3>
+</div>
+
+<h3>
 Página Profesional
-</h3><p class="plan-description">
+</h3>
+
+<p class="plan-description">
 Una solución completa para empresas y negocios que buscan una presencia digital profesional, moderna y personalizada.
-</p><div class="includes-title">
+</p>
+
+<div class="includes-title">
 Incluye:
-</div><ul><li>Diseño personalizado</li>
+</div>
+
+<ul>
+
+<li>Diseño personalizado</li>
 <li>Varias secciones</li>
 <li>Galería de imágenes</li>
 <li>Videos</li>
@@ -2487,21 +2986,47 @@ Incluye:
 <li>Pestañas para catálogo de productos</li>
 <li>Integración con redes sociales</li>
 <li>Soporte</li>
-<li>Configuración técnica y seguridad básica</li></ul><div class="cost-box"><div class="cost-title">
+<li>Configuración técnica y seguridad básica</li>
+
+</ul>
+
+<div class="cost-box">
+
+<div class="cost-title">
 Costo de creación
-</div><div class="price">
+</div>
+
+<div class="price">
 Q1,400
-</div><p class="payment-description">
+</div>
+
+<p class="payment-description">
 Pago único por la creación de la página web.
-</p><div class="cost-title">
+</p>
+
+<div class="cost-title">
 Mantenimiento anual
-</div><div class="maintenance-price">
+</div>
+
+<div class="maintenance-price">
 Q1,350
-</div><div class="maintenance"><h4>
+</div>
+
+<div class="maintenance">
+
+<h4>
 ¿Qué incluye el mantenimiento?
-</h4><p>
+</h4>
+
+<p>
 Mantenimiento y actualización de la página, cambio de imágenes, modificación de información y textos, ajustes necesarios y mejoras para mantener el sitio actualizado.
-</p></div></div><a
+</p>
+
+</div>
+
+</div>
+
+<a
 href="https://m.me/61594227622678?ref=Quiero%20cotizar%20una%20Pagina%20Profesional"
 class="btn btn-primary"
 target="_blank"
@@ -2509,33 +3034,95 @@ rel="noopener noreferrer">
 
 Cotizar
 
-</a></div></div><div class="maintenance-note"><h3>
+</a>
+
+</div>
+
+</div>
+
+
+<div class="maintenance-note">
+
+<h3>
 Mantenimiento de tu página web
-</h3><p>
+</h3>
+
+<p>
 El servicio de mantenimiento incluye actualizaciones periódicas de la página, cambios de imágenes, modificación de textos e información, ajustes y mejoras necesarias para mantener el sitio actualizado.
-</p></div></section><!-- =====================================================
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      NOSOTROS
-===================================================== --><section class="about" id="nosotros"><div class="section-title"><small>
+===================================================== -->
+
+<section class="about" id="nosotros">
+
+<div class="section-title">
+
+<small>
 SOBRE ERWEB
-</small><h2>
+</small>
+
+<h2>
 Transformamos ideas en páginas web
-</h2></div><div class="about-content"><p>
+</h2>
+
+</div>
+
+<div class="about-content">
+
+<p>
 ERWEB nace con la idea de ayudar a pequeños negocios, emprendedores y empresas a tener una presencia profesional en Internet.
-</p><p>
+</p>
+
+<p>
 Creemos que una página web no tiene que ser complicada ni inaccesible. Nuestro objetivo es crear sitios modernos, funcionales y adaptados a las necesidades de cada cliente.
-</p></div></section><!-- =====================================================
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      CONTACTO
-===================================================== --><section class="contact" id="contacto"><div class="section-title"><small>
+===================================================== -->
+
+<section class="contact" id="contacto">
+
+<div class="section-title">
+
+<small>
 HABLEMOS
-</small><h2>
+</small>
+
+<h2>
 ¿Tienes un proyecto?
-</h2></div><div class="contact-box"><div class="contact-circle contact-circle-1"></div>
+</h2>
+
+</div>
+
+
+<div class="contact-box">
+
+<div class="contact-circle contact-circle-1"></div>
 <div class="contact-circle contact-circle-2"></div>
-<div class="contact-circle contact-circle-3"></div><h3>
+<div class="contact-circle contact-circle-3"></div>
+
+<h3>
 Cuéntanos qué necesitas
-</h3><p>
+</h3>
+
+<p>
 Escríbenos y cuéntanos qué tipo de página web necesitas. Te ayudaremos a encontrar la mejor opción para tu negocio.
-</p><a
+</p>
+
+<a
 href="https://m.me/61594227622678"
 class="btn btn-primary"
 target="_blank"
@@ -2545,9 +3132,20 @@ rel="noopener noreferrer">
 
 Escribir por Messenger
 
-</a></div></section><!-- =====================================================
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      BOTONES FLOTANTES
-===================================================== --><div class="social-floating"><a
+===================================================== -->
+
+<div class="social-floating">
+
+<a
 href="https://www.facebook.com/profile.php?id=61594227622678"
 class="social-button facebook-button"
 target="_blank"
@@ -2556,14 +3154,18 @@ aria-label="Facebook ERWEB">
 
 <i class="fa-brands fa-facebook-f"></i>
 
-</a><a
+</a>
+
+<a
 href="mailto:erwebinicio@gmail.com"
 class="social-button email-button"
 aria-label="Correo electrónico ERWEB">
 
 <i class="fa-solid fa-envelope"></i>
 
-</a><a
+</a>
+
+<a
 href="https://wa.me/50200000000?text=Hola%20ERWEB,%20quiero%20informaci%C3%B3n%20sobre%20la%20creaci%C3%B3n%20de%20una%20p%C3%A1gina%20web."
 class="social-button whatsapp-button"
 target="_blank"
@@ -2572,19 +3174,34 @@ aria-label="WhatsApp ERWEB">
 
 <i class="fa-brands fa-whatsapp"></i>
 
-</a></div><!-- =====================================================
+</a>
+
+</div>
+
+
+<!-- =====================================================
      FOOTER
-===================================================== --><footer><img
+===================================================== -->
+
+<footer>
+
+<img
 src="LOGO.jpg"
 alt="Logo ERWEB"
 class="footer-logo">
 
 <p>
 Creación de páginas web profesionales.
-</p><p style="margin-top:15px;">
-© 2026 ERWEB. Todos los derechos reservados.
-</p></footer><script>
+</p>
 
+<p style="margin-top:15px;">
+© 2026 ERWEB. Todos los derechos reservados.
+</p>
+
+</footer>
+
+
+<script>
 
 /* =====================================================
    MENÚ
@@ -2721,5 +3338,7 @@ function animarCodigo() {
 
 animarCodigo();
 
-</script></body>
+</script>
+
+</body>
 </html>
