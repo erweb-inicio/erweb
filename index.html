@@ -1802,32 +1802,22 @@ section {
 
 /* =====================================================
    SOBRE ERWEB
-   CAMBIO PRINCIPAL
+   INFORMACIÓN AHORA DEBAJO DEL BOTÓN
 ===================================================== */
 
 .about {
     position: relative;
-
     background: #07111f;
-
     overflow: hidden;
 }
 
 
 /* =====================================================
    TÍTULO SOBRE ERWEB
-   AHORA OCUPA TODO EL ANCHO DE LA PANTALLA
-   SIN ESTAR DENTRO DE UN CUADRO
 ===================================================== */
 
 .about .section-title {
     position: relative;
-
-    /*
-       La sección tiene 7% de espacio lateral.
-       Estas medidas compensan ese espacio para que
-       el fondo llegue completamente de borde a borde.
-    */
 
     width: calc(100% + 14%);
 
@@ -1855,8 +1845,6 @@ section {
 
 /* =====================================================
    IMAGEN DEL TÍTULO
-   IMAGEN 1:
-   LAPTOP + PROGRAMACIÓN + DESARROLLO WEB
 ===================================================== */
 
 .about .section-title::before {
@@ -1884,7 +1872,7 @@ section {
 
 
 /* =====================================================
-   CONTENIDO DEL TÍTULO POR ENCIMA DE LA IMAGEN
+   CONTENIDO DEL TÍTULO
 ===================================================== */
 
 .about .section-title > * {
@@ -1894,30 +1882,16 @@ section {
 
 
 /* =====================================================
-   INTRODUCCIÓN
-===================================================== */
-
-.about-content {
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
-}
-
-.about-intro {
-    color: #aeb9c5;
-    line-height: 1.9;
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-
-/* =====================================================
    INFORMACIÓN DESPLEGABLE
-   IMAGEN DIFERENTE A LA DEL TÍTULO
+   AHORA ESTÁ DENTRO DEL SECTION-TITLE
+   Y APARECE JUSTO DEBAJO DEL BOTÓN
 ===================================================== */
 
 .about-details {
     position: relative;
+
+    width: 100%;
+    max-width: 1000px;
 
     max-height: 0;
 
@@ -1925,7 +1899,7 @@ section {
 
     overflow: hidden;
 
-    margin-top: 0;
+    margin: 0 auto;
 
     border-radius: 18px;
 
@@ -1933,11 +1907,6 @@ section {
         max-height 0.8s ease,
         opacity 0.5s ease,
         margin-top 0.8s ease;
-
-    /*
-       IMAGEN 2 DIFERENTE
-       ESTA SOLO APARECE AL ABRIR "VER MÁS"
-    */
 
     background-image:
         linear-gradient(
@@ -2100,6 +2069,24 @@ section {
     max-width: 220px;
 
     margin-top: 10px;
+}
+
+
+/* =====================================================
+   INTRODUCCIÓN
+===================================================== */
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-intro {
+    color: #aeb9c5;
+    line-height: 1.9;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
 
@@ -2745,7 +2732,7 @@ footer p {
 
     /* =================================================
        SOBRE ERWEB
-       TÍTULO A TODO EL ANCHO EN CELULAR
+       INFORMACIÓN DEBAJO DEL BOTÓN
     ================================================= */
 
     .about .section-title {
@@ -2756,6 +2743,8 @@ footer p {
         margin-right: 0;
 
         margin-top: -80px;
+
+        margin-bottom: 25px;
 
         padding:
             70px 5%
@@ -2774,9 +2763,20 @@ footer p {
         background-position: center;
     }
 
+    .about-details {
+
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .about-details.active {
+
         padding:
             30px 20px;
+
+        margin-top: 22px;
     }
 
     .about-details-content p {
@@ -3733,11 +3733,6 @@ El servicio de mantenimiento incluye actualizaciones periódicas de la página, 
 <section class="about" id="nosotros">
 
 
-<!-- =================================================
-     TÍTULO SOBRE ERWEB
-     FONDO A TODO EL ANCHO
-================================================= -->
-
 <div class="section-title">
 
 <small>
@@ -3764,22 +3759,10 @@ VER MÁS
 
 </button>
 
-</div>
-
-
-<div class="about-content">
-
-
-<div class="about-intro">
-
-Creamos soluciones web modernas para ayudar a negocios y emprendimientos a tener una presencia profesional en Internet.
-
-</div>
-
 
 <!-- =================================================
      INFORMACIÓN DESPLEGABLE
-     CON IMAGEN DIFERENTE
+     APARECE JUSTO DEBAJO DEL BOTÓN
 ================================================= -->
 
 <div class="about-details" id="aboutDetails">
@@ -3839,6 +3822,21 @@ REGRESAR
 </button>
 
 </div>
+
+</div>
+
+</div>
+
+
+<!-- =================================================
+     INTRODUCCIÓN
+================================================= -->
+
+<div class="about-content">
+
+<div class="about-intro">
+
+Creamos soluciones web modernas para ayudar a negocios y emprendimientos a tener una presencia profesional en Internet.
 
 </div>
 
